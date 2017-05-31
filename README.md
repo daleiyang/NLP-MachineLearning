@@ -6,6 +6,12 @@
 |Week 3|2017/05/13|
 |Week 4|2017/05/15|
 
+### Machine Learning in Action
+|章节|完成时间|
+|:----------|:----------|
+|1. Machine learning basics|2017/05/26|
+|2. Classifying with k-Nearest Neighbors|2017/05/31|
+
 ### Yoshua Bengio: Deep Learning (Text Book) 
 |章节|完成时间|
 |:----------|:----------|
