@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<!-- saved from url=(0051)http://www.hankcs.com/ml/naive-bayesian-method.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<link rel="dns-prefetch" href="http://apps.bdimg.com/">
+<meta http-equiv="X-UA-Compatible" content="IE=11,IE=10,IE=9,IE=8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<meta name="apple-mobile-web-app-title" content="码农场">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+<title>朴素贝叶斯法-码农场</title>
+<link rel="dns-prefetch" href="http://apps.bdimg.com/">
+<link rel="dns-prefetch" href="http://s.w.org/">
+		<script async="" src="./naive-bayesian-method_files/analytics.js.下载"></script><script src="./naive-bayesian-method_files/ca-pub-1152644711996772.js.下载"></script><script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2.2.1\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2.2.1\/svg\/","svgExt":".svg","source":{"concatemoji":"http:\/\/www.hankcs.com\/wp-includes\/js\/wp-emoji-release.min.js?ver=4.7.5"}};
+			!function(a,b,c){function d(a){var b,c,d,e,f=String.fromCharCode;if(!k||!k.fillText)return!1;switch(k.clearRect(0,0,j.width,j.height),k.textBaseline="top",k.font="600 32px Arial",a){case"flag":return k.fillText(f(55356,56826,55356,56819),0,0),!(j.toDataURL().length<3e3)&&(k.clearRect(0,0,j.width,j.height),k.fillText(f(55356,57331,65039,8205,55356,57096),0,0),b=j.toDataURL(),k.clearRect(0,0,j.width,j.height),k.fillText(f(55356,57331,55356,57096),0,0),c=j.toDataURL(),b!==c);case"emoji4":return k.fillText(f(55357,56425,55356,57341,8205,55357,56507),0,0),d=j.toDataURL(),k.clearRect(0,0,j.width,j.height),k.fillText(f(55357,56425,55356,57341,55357,56507),0,0),e=j.toDataURL(),d!==e}return!1}function e(a){var c=b.createElement("script");c.src=a,c.defer=c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var f,g,h,i,j=b.createElement("canvas"),k=j.getContext&&j.getContext("2d");for(i=Array("flag","emoji4"),c.supports={everything:!0,everythingExceptFlag:!0},h=0;h<i.length;h++)c.supports[i[h]]=d(i[h]),c.supports.everything=c.supports.everything&&c.supports[i[h]],"flag"!==i[h]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[i[h]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(g=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",g,!1),a.addEventListener("load",g,!1)):(a.attachEvent("onload",g),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),f=c.source||{},f.concatemoji?e(f.concatemoji):f.wpemoji&&f.twemoji&&(e(f.twemoji),e(f.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script><script src="./naive-bayesian-method_files/wp-emoji-release.min.js.下载" type="text/javascript" defer=""></script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+<link rel="stylesheet" id="_bootstrap-css" href="./naive-bayesian-method_files/bootstrap.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="_fontawesome-css" href="./naive-bayesian-method_files/font-awesome.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="_main-css" href="./naive-bayesian-method_files/main.css" type="text/css" media="all">
+<script type="text/javascript" src="./naive-bayesian-method_files/jquery.min.js.下载"></script>
+<link rel="https://api.w.org/" href="http://www.hankcs.com/wp-json/">
+<link rel="prev" title="POJ 1981 Circle and Points 题解 《挑战程序设计竞赛》" href="http://www.hankcs.com/program/algorithm/poj-1981-circle-and-points.html">
+<link rel="next" title="POJ 1418 Viva Confetti 题解 《挑战程序设计竞赛》" href="http://www.hankcs.com/program/algorithm/poj-1418-viva-confetti.html">
+<link rel="canonical" href="http://www.hankcs.com/ml/naive-bayesian-method.html">
+<link rel="shortlink" href="http://www.hankcs.com/?p=4881">
+<link rel="alternate" type="application/json+oembed" href="http://www.hankcs.com/wp-json/oembed/1.0/embed?url=http%3A%2F%2Fwww.hankcs.com%2Fml%2Fnaive-bayesian-method.html">
+<link rel="alternate" type="text/xml+oembed" href="http://www.hankcs.com/wp-json/oembed/1.0/embed?url=http%3A%2F%2Fwww.hankcs.com%2Fml%2Fnaive-bayesian-method.html&amp;format=xml">
+<meta name="keywords" content="《统计学习方法》, 机器学习">
+<meta name="description" content="本文是《统计学习方法》第4章的笔记，用图形补充说明了条件概率分布计算时可能引发的维数灾难，在文末用Python实现了一个基于贝叶斯文本分类器的简单情感极性分析器，可以分析中文句子的情感极性。朴素贝叶斯法是基于贝叶斯定理与特征条件独立假设的分类方法。训练的时候，学习输入输出的联合概率分布；分类的时候，利用贝叶斯定理计算后验概率最大的输出。朴素贝叶斯法的学习与分">
+<link rel="icon" href="http://www.hankcs.com/wp-content/uploads/2017/04/cropped-Hankcs_512-32x32.png" sizes="32x32">
+<link rel="icon" href="http://www.hankcs.com/wp-content/uploads/2017/04/cropped-Hankcs_512-192x192.png" sizes="192x192">
+<link rel="apple-touch-icon-precomposed" href="http://www.hankcs.com/wp-content/uploads/2017/04/cropped-Hankcs_512-180x180.png">
+<meta name="msapplication-TileImage" content="http://www.hankcs.com/wp-content/uploads/2017/04/cropped-Hankcs_512-270x270.png">
+<link rel="shortcut icon" href="http://www.hankcs.com/favicon.ico">
+<!--[if lt IE 9]><script src="http://www.hankcs.com/wp-content/themes/dux/js/libs/html5.min.js"></script><![endif]-->
+<!--
+	generated 39325 seconds ago
+	generated in 0.232 seconds
+	served from batcache in 0.004 seconds
+	expires in 47075 seconds
+-->
+<script async="" data-requirecontext="_" data-requiremodule="main" src="./naive-bayesian-method_files/main.js.下载"></script><script src="./naive-bayesian-method_files/share.js.下载"></script><script async="" data-requirecontext="_" data-requiremodule="lazyload" src="./naive-bayesian-method_files/lazyload.min.js.下载"></script><script async="" data-requirecontext="_" data-requiremodule="prettyprint" src="./naive-bayesian-method_files/prettyprint.js.下载"></script><script async="" data-requirecontext="_" data-requiremodule="signpop" src="./naive-bayesian-method_files/signpop.js.下载"></script><script async="" data-requirecontext="_" data-requiremodule="comment" src="./naive-bayesian-method_files/comment.js.下载"></script><link href="./naive-bayesian-method_files/share.css" rel="styleSheet" type="text/css"></head>
+<body class="post-template-default single single-post postid-4881 single-format-standard comment-open site-layout-2">
+<header class="header">
+	<div class="container">
+		<div class="logo"><a href="http://www.hankcs.com/" title="码农场-自然语言处理、机器学习算法"><img src="./naive-bayesian-method_files/logo.png">码农场</a></div>		<a href="http://www.hankcs.com/" title="码农场-自然语言处理、机器学习算法" class="brand">放牧代码和思想
+<br>专注自然语言处理、机器学习算法</a>		<ul class="site-nav site-navbar">
+			<li id="menu-item-1834" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1834"><a href="http://www.hankcs.com/program/cpp/">C++</a></li>
+<li id="menu-item-1835" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1835"><a href="http://www.hankcs.com/program/java/">Java</a></li>
+<li id="menu-item-5754" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-5754"><a href="http://www.hankcs.com/ml/">机器学习</a></li>
+<li id="menu-item-2954" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-2954"><a href="http://www.hankcs.com/nlp/">NLP</a>
+<ul class="sub-menu">
+	<li id="menu-item-4344" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-4344"><a href="http://www.hankcs.com/nlp/corpus/">语料库</a></li>
+	<li id="menu-item-4342" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-4342"><a href="http://www.hankcs.com/nlp/segment/">中文分词</a></li>
+	<li id="menu-item-4343" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-4343"><a href="http://www.hankcs.com/nlp/ner/">命名实体识别</a></li>
+	<li id="menu-item-4479" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-4479"><a href="http://www.hankcs.com/nlp/parsing/">句法分析</a></li>
+</ul>
+</li>
+<li id="menu-item-1837" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1837"><a href="http://www.hankcs.com/program/algorithm/">算法</a></li>
+<li id="menu-item-1839" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1839"><a href="http://www.hankcs.com/software/">软件</a></li>
+<li id="menu-item-1838" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-1838"><a href="http://www.hankcs.com/nihongonote/">日语</a>
+<ul class="sub-menu">
+	<li id="menu-item-1860" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1860"><a href="http://www.hankcs.com/nihongonote/riyurimen/">日语入门</a></li>
+	<li id="menu-item-1861" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1861"><a href="http://www.hankcs.com/nihongonote/listening/">日语听力</a></li>
+	<li id="menu-item-1863" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-1863"><a href="http://www.hankcs.com/nihongonote/tekusuto/">日语综合教程</a>
+	<ul class="sub-menu">
+		<li id="menu-item-2190" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2190"><a href="http://www.hankcs.com/nihongonote/tekusuto/disance/">第三册</a></li>
+		<li id="menu-item-2192" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2192"><a href="http://www.hankcs.com/nihongonote/tekusuto/daiyonnsatu/">第四册</a></li>
+		<li id="menu-item-2191" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2191"><a href="http://www.hankcs.com/nihongonote/tekusuto/5/">第五册</a></li>
+		<li id="menu-item-2702" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2702"><a href="http://www.hankcs.com/nihongonote/tekusuto/%e7%ac%ac%e5%85%ad%e5%86%8c/">第六册</a></li>
+		<li id="menu-item-3604" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-3604"><a href="http://www.hankcs.com/nihongonote/tekusuto/%e7%ac%ac%e4%b8%83%e5%86%8c/">第七册</a></li>
+	</ul>
+</li>
+	<li id="menu-item-1859" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-1859"><a href="http://www.hankcs.com/nihongonote/fd2/">新编日语阅读文选</a>
+	<ul class="sub-menu">
+		<li id="menu-item-2187" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2187"><a href="http://www.hankcs.com/nihongonote/fd2/c1/">第一册</a></li>
+		<li id="menu-item-2189" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2189"><a href="http://www.hankcs.com/nihongonote/fd2/c2/">第二册</a></li>
+		<li id="menu-item-2188" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2188"><a href="http://www.hankcs.com/nihongonote/fd2/c3/">第三册</a></li>
+	</ul>
+</li>
+	<li id="menu-item-1858" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1858"><a href="http://www.hankcs.com/nihongonote/jpkaiwa/">日语商务贸易会话</a></li>
+</ul>
+</li>
+<li id="menu-item-1843" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1843"><a href="http://www.hankcs.com/about/">关于</a></li>
+							<li class="navto-search"><a href="javascript:;" class="search-show active"><i class="fa fa-search"></i></a></li>
+					</ul>
+		<div class="topbar">
+			<ul class="site-nav topmenu">
+				<li id="menu-item-5755" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-5755"><a href="http://www.hankcs.com/about/#comments"><i class="fa fa-comment"></i> 留言板</a></li>
+				<li><a target="_blank" rel="external nofollow" href="https://github.com/hankcs"><i class="fa fa-github-alt"></i> GitHub</a></li>                                <li><a target="_blank" rel="external nofollow" href="http://weibo.com/hankcs"><i class="fa fa-weibo"></i> 微博</a></li>                                <li><a target="_blank" rel="external nofollow" href="https://twitter.com/hankcs"><i class="fa fa-twitter"></i> Twitter</a></li>                                <li><a target="_blank" href="http://www.hankcs.com/feed"><i class="fa fa-rss"></i> RSS订阅</a></li>			</ul>
+							&nbsp; &nbsp; <i class="fa fa-bullhorn url"></i> 恕不接待索要源码语料者、索求技术方案者、以及不Google的懒人。					</div>
+		<i class="fa fa-bars m-icon-nav"></i>
+	</div>
+</header>
+<div class="site-search">
+	<div class="container">
+		<form method="get" class="site-search-form" action="http://www.hankcs.com/"><input class="search-input" name="s" type="text" placeholder="输入关键字" value=""><button class="search-btn" type="submit"><i class="fa fa-search"></i></button></form>	</div>
+</div><section class="container">
+	<div class="content-wrap">
+	<div class="content">
+				<header class="article-header">
+			<h1 class="article-title"><a href="http://www.hankcs.com/ml/naive-bayesian-method.html">朴素贝叶斯法</a></h1>
+			<div class="article-meta">
+				<span class="item">
+					<a href="http://www.hankcs.com/">码农场</a> <small>&gt;</small> <a href="http://www.hankcs.com/ml/">机器学习</a><span class="muted"></span>				</span>
+				<span class="item">2015-02-09</span>
+																<span class="item post-views">阅读(3525)</span>				<span class="item"><a class="pc" href="http://www.hankcs.com/ml/naive-bayesian-method.html#comments">评论(8)</a></span>				<span class="item"></span>
+			</div>
+		</header>
+		<article class="article-content">
+			<div class="asb asb-post asb-post-01"><script async="" src="./naive-bayesian-method_files/adsbygoogle.js.下载"></script>
+<!-- 文章页 - 页面标题下 728 90 -->
+<ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-1152644711996772" data-ad-slot="5413029241" data-adsbygoogle-status="done"><ins id="aswift_0_expand" style="display:inline-table;border:none;height:90px;margin:0;padding:0;position:relative;visibility:visible;width:728px;background-color:transparent"><ins id="aswift_0_anchor" style="display:block;border:none;height:90px;margin:0;padding:0;position:relative;visibility:visible;width:728px;background-color:transparent"><iframe width="728" height="90" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_0" name="aswift_0" style="left:0;position:absolute;top:0;width:728px;height:90px;" src="./naive-bayesian-method_files/saved_resource.html"></iframe></ins></ins></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></div>			<div class="post_nav" style="width: 0px;"><div class="post_nav_side" style="height: 100%;"><div class="post_nav_top"><p>目录</p></div><div class="post_nav_bottom"></div><span class="post_nav_close icon-remove" title="关闭目录" style="opacity: 0; display: none;"><i class="fa fa-times"></i></span></div><ul class="post_nav_content"><li class="h2_nav"><a href="http://www.hankcs.com/ml/naive-bayesian-method.html#h2-0">朴素贝叶斯法的学习与分类</a><i class="post_nav_dot"></i></li>
+<li class="h3_nav active"><a href="http://www.hankcs.com/ml/naive-bayesian-method.html#h3-1">基本方法</a><i class="post_nav_dot"></i></li>
+<li class="h3_nav"><a href="http://www.hankcs.com/ml/naive-bayesian-method.html#h3-2">后验概率最大化的含义</a><i class="post_nav_dot"></i></li>
+<li class="h2_nav"><a href="http://www.hankcs.com/ml/naive-bayesian-method.html#h2-3">朴素贝叶斯法的参数估计</a><i class="post_nav_dot"></i></li>
+<li class="h3_nav"><a href="http://www.hankcs.com/ml/naive-bayesian-method.html#h3-4">极大似然估计</a><i class="post_nav_dot"></i></li>
+<li class="h3_nav"><a href="http://www.hankcs.com/ml/naive-bayesian-method.html#h3-5">学习与分类算法</a><i class="post_nav_dot"></i></li>
+<li class="h2_nav"><a href="http://www.hankcs.com/ml/naive-bayesian-method.html#h2-6">贝叶斯情感极性分析器</a><i class="post_nav_dot"></i></li>
+<li class="h2_nav"><a href="http://www.hankcs.com/ml/naive-bayesian-method.html#h2-7">Reference</a><i class="post_nav_dot"></i></li>
+</ul></div><p style="text-indent: 2em;"><img src="./naive-bayesian-method_files/6cbb8645jw1eozn0y3spcj20mn0h3q3a.jpg" title="维数灾难图示.png" style="text-align: center; white-space: normal; width: 0px; height: 0px;" width="0" height="0" border="0" hspace="0" vspace="0" data-tag="bdshare">本文是《统计学习方法》第4章的笔记，用图形补充说明了条件概率分布计算时可能引发的维数灾难，在文末用Python实现了一个基于贝叶斯文本分类器的简单情感极性分析器，可以分析中文句子的情感极性。</p>
+<p style="text-indent: 2em;">朴素贝叶斯法是基于贝叶斯定理与特征条件独立假设的分类方法。训练的时候，学习输入输出的联合概率分布；分类的时候，利用贝叶斯定理计算后验概率最大的输出。</p>
+<h2 id="h2-0">朴素贝叶斯法的学习与分类</h2>
+<h3 id="h3-1">基本方法</h3>
+<p style="text-indent: 2em;">设输入空间<img src="./naive-bayesian-method_files/6cbb8645jw1eoykvopigdj201m00n741.jpg" title="输入空间.png" data-tag="bdshare">为n维向量的集合，输出空间为类标记集合<img src="./naive-bayesian-method_files/6cbb8645jw1eoykx3in44j200i00j0gw.jpg" title="输出空间.png" data-tag="bdshare">={c<sub>1</sub>……c<sub>k</sub>}。输入特征向量x和输出类标记y分属于这两个集合。X是输入空间上的随机变量，Y是输出空间上的随机变量。P(X,Y)是X和Y的联合概率分布，训练数据集</p>
+<p style="text-align: center"><img src="./naive-bayesian-method_files/6cbb8645jw1eozm3reokwj206o00qt8j.jpg" title="训练数据集.png" data-tag="bdshare"></p>
+<p style="text-indent: 2em;">由P(X,Y)独立同分布产生。</p>
+<p style="text-indent: 2em;">朴素贝叶斯法通过T学习联合概率分布P(X,Y)。具体来讲，学习以下先验概率：</p>
+<p style="text-align: center"><img src="./naive-bayesian-method_files/6cbb8645jw1eozm6j4czmj205s018q2q.jpg" title="先验概率.png" data-tag="bdshare"></p>
+<p style="text-indent: 2em;">以及条件概率分布：</p>
+<p style="text-align: center"><img src="./naive-bayesian-method_files/6cbb8645jw1eozmai1tyoj20e70113yf.jpg" title="贝叶斯条件概率.png" data-tag="bdshare"></p>
+<p style="text-indent: 2em;">于是根据联合概率分布密度函数：</p>
+<p style="text-align: center"><img src="./naive-bayesian-method_files/6cbb8645jw1eozmb8zylfj20ji00l3yg.jpg" title="联合分布.png" data-tag="bdshare"></p>
+<p style="text-indent: 2em;">学习到联合概率分布<span style="text-indent: 32px;">P(X,Y)。</span></p>
+<p style="text-indent: 2em;"><span style="text-indent: 32px;">而条件概率分布<img src="./naive-bayesian-method_files/6cbb8645jw1eozn5axzj6j203f00twe9.jpg" title="条件概率分布.png" data-tag="bdshare">的参数数量是指数级的，也就是X和Y的组合很多，假设x<sub>j</sub>可能取值S<sub>j</sub>个，Y可能取值有K个，那么参数的个数是<img src="./naive-bayesian-method_files/6cbb8645jw1eozmfhf33rj201n016jr5.jpg" title="参数个数.png" data-tag="bdshare">。特别地，取xj=S，那么参数个数为KS<sup>n</sup>，当维数n很大的时候，就会发生维数灾难。</span></p>
+<h4 style="text-indent: 2em;"><span style="text-indent: 32px;">豆知识：维数灾难<br></span></h4>
+<p style="text-indent: 2em;"><span style="text-indent: 32px;">一维空间中，把一个单位空间（退化为区间）以每个点距离不超过0.01采样，需要10<sup>2</sup>个平均分布的采样点，而在10维度空间中，需要10<sup>20</sup>个点才行。计算方式用Python描述如下：</span></p>
+<pre class="brush:python;toolbar:false prettyprint linenums"><ol class="linenums"><li class="L0"><span class="pln">dimensionality&nbsp;</span><span class="pun">=</span><span class="pln">&nbsp;</span><span class="lit">10</span></li><li class="L1"><span class="kwd">print</span><span class="pln">&nbsp;</span><span class="lit">1</span><span class="pln">&nbsp;</span><span class="pun">/</span><span class="pln">&nbsp;</span><span class="pun">(</span><span class="lit">0.01</span><span class="pln">&nbsp;</span><span class="pun">**</span><span class="pln">&nbsp;dimensionality</span><span class="pun">)</span></li></ol></pre>
+<p style="text-indent: 2em;">也可以如下可视化：</p>
+<pre class="brush:python;toolbar:false prettyprint linenums"><ol class="linenums"><li class="L0"><span class="com">#&nbsp;-*-&nbsp;coding:utf-8&nbsp;-*-</span></li><li class="L1"><span class="com">#&nbsp;Filename:&nbsp;dimensionality.py</span></li><li class="L2"><span class="com">#&nbsp;Author：hankcs</span></li><li class="L3"><span class="com">#&nbsp;Date:&nbsp;2015/2/6&nbsp;14:40</span></li><li class="L4"><span class="kwd">from</span><span class="pln">&nbsp;matplotlib&nbsp;</span><span class="kwd">import</span><span class="pln">&nbsp;pyplot&nbsp;</span><span class="kwd">as</span><span class="pln">&nbsp;plt</span></li><li class="L5"><span class="kwd">import</span><span class="pln">&nbsp;numpy&nbsp;</span><span class="kwd">as</span><span class="pln">&nbsp;np</span></li><li class="L6"><span class="pln">&nbsp;</span></li><li class="L7"><span class="pln">max_dimensionality&nbsp;</span><span class="pun">=</span><span class="pln">&nbsp;</span><span class="lit">10</span></li><li class="L8"><span class="pln">ax&nbsp;</span><span class="pun">=</span><span class="pln">&nbsp;plt</span><span class="pun">.</span><span class="pln">axes</span><span class="pun">(</span><span class="pln">xlim</span><span class="pun">=(</span><span class="lit">0</span><span class="pun">,</span><span class="pln">&nbsp;max_dimensionality</span><span class="pun">),</span><span class="pln">&nbsp;ylim</span><span class="pun">=(</span><span class="lit">0</span><span class="pun">,</span><span class="pln">&nbsp;</span><span class="lit">1</span><span class="pln">&nbsp;</span><span class="pun">/</span><span class="pln">&nbsp;</span><span class="pun">(</span><span class="lit">0.01</span><span class="pln">&nbsp;</span><span class="pun">**</span><span class="pln">&nbsp;max_dimensionality</span><span class="pun">)))</span></li><li class="L9"><span class="pln">x&nbsp;</span><span class="pun">=</span><span class="pln">&nbsp;np</span><span class="pun">.</span><span class="pln">linspace</span><span class="pun">(</span><span class="lit">0</span><span class="pun">,</span><span class="pln">&nbsp;max_dimensionality</span><span class="pun">,</span><span class="pln">&nbsp;</span><span class="lit">1000</span><span class="pun">)</span></li><li class="L0"><span class="pln">y&nbsp;</span><span class="pun">=</span><span class="pln">&nbsp;</span><span class="lit">1</span><span class="pln">&nbsp;</span><span class="pun">/</span><span class="pln">&nbsp;</span><span class="pun">(</span><span class="lit">0.01</span><span class="pln">&nbsp;</span><span class="pun">**</span><span class="pln">&nbsp;x</span><span class="pun">)</span></li><li class="L1"><span class="pln">plt</span><span class="pun">.</span><span class="pln">plot</span><span class="pun">(</span><span class="pln">x</span><span class="pun">,</span><span class="pln">&nbsp;y</span><span class="pun">,</span><span class="pln">&nbsp;lw</span><span class="pun">=</span><span class="lit">2</span><span class="pun">)</span></li><li class="L2"><span class="pln">plt</span><span class="pun">.</span><span class="pln">show</span><span class="pun">()</span></li></ol></pre>
+<p style="text-indent: 2em;">可视化图像：</p>
+<p style="text-align: center"><img src="./naive-bayesian-method_files/6cbb8645jw1eozn0y3spcj20mn0h3q3a.jpg" title="维数灾难图示.png" data-tag="bdshare"></p>
+<p style="text-indent: 2em;">这种指数级的复杂度增长被称为维数灾难。</p>
+<p style="text-indent: 2em;">看完这个图大概就能理解为什么条件概率分布<img src="./naive-bayesian-method_files/6cbb8645jw1eozn5axzj6j203f00twe9.jpg" title="条件概率分布.png" style="text-indent: 32px; white-space: normal;" data-tag="bdshare">无法计算了。</p>
+<p style="text-indent: 2em;">为了计算它，朴素贝叶斯法对它做了条件独立性的假设：</p>
+<p style="text-align: center"><img src="./naive-bayesian-method_files/6cbb8645jw1eozn72gncqj20ay02d3yh.jpg" title="条件独立性假设.png" data-tag="bdshare"></p>
+<p style="text-indent: 2em;">也就是各个维度的特征在类确定的情况下都是独立分布的。这一假设简化了计算，也牺牲了一定的分类准确率。</p>
+<p style="text-indent: 2em;">基于此假设，以及<a href="http://www.hankcs.com/math/bayesian-non-mathematical-language-understanding.html" target="_blank">贝叶斯定理</a>，<span style="text-indent: 2em;">后验概率为：</span></p>
+<p style="text-align: center"><img src="./naive-bayesian-method_files/6cbb8645jw1eozod86wnqj20al01rmx4.jpg" title="后验概率的计算.png" data-tag="bdshare"></p>
+<p style="text-indent: 2em;">分母其实是P(X=x)，等同于<span style="text-indent: 32px;">枚举</span><span style="text-indent: 32px;">c</span><sub style="text-indent: 32px; white-space: normal;">k</sub><span style="text-indent: 32px;">求<span style="text-indent: 32px;">联合分布的</span>和：</span>∑P(X=x,Y=c<sub>k</sub>)，此联合分布按公式<img src="./naive-bayesian-method_files/6cbb8645jw1eozmb8zylfj20ji00l3yg.jpg" title="联合分布.png" style="text-align: center; white-space: normal;" data-tag="bdshare">拆开，等于上式分母。</p>
+<p style="text-indent: 2em;">将独立性假设代入上式，得到：</p>
+<p style="text-align: center"><img src="./naive-bayesian-method_files/6cbb8645jw1eozqtv3qs4j20em01uglo.jpg" title="代入后.png" data-tag="bdshare"></p>
+<p style="text-indent: 2em;">朴素贝叶斯分类器可以表示为：</p>
+<p style="text-align: center"><img src="./naive-bayesian-method_files/6cbb8645jw1eozquro0caj20c501ydfv.jpg" title="朴素贝叶斯分类器的表示.png" data-tag="bdshare"></p>
+<p style="text-indent: 2em;">也就是给定参数，找一个概率最大的c<sub>k</sub>出来。注意到上式分母其实就是P(X=x)，x给定了就固定了，跟<span style="text-indent: 32px;">c</span><sub style="text-indent: 32px; white-space: normal;">k</sub>一点关系都没有，所以分母可以去掉，得到：</p>
+<p style="text-align: center"><img src="./naive-bayesian-method_files/6cbb8645jw1eozqxp3kutj209n011a9x.jpg" title="简化的朴素贝叶斯.png" data-tag="bdshare"></p>
+<h3 id="h3-2">后验概率最大化的含义<br></h3>
+<p style="text-indent: 2em;">选择0-1损失函数：</p>
+<p style="text-align: center"><img src="./naive-bayesian-method_files/6cbb8645jw1eozr1rdiwqj206u01v3yd.jpg" title="贝叶斯损失函数.png" data-tag="bdshare"></p>
+<p style="text-indent: 2em;">f(X)就是分类器的决策函数，损失函数的参数其实是一个联合分布。</p>
+<p style="text-indent: 2em;">此时期望风险函数为：</p>
+<p style="text-align: center"><img src="./naive-bayesian-method_files/6cbb8645jw1eozr2vwsm9j205600x743.jpg" title="期望风险函数.png" data-tag="bdshare"></p>
+<p style="text-indent: 2em;">上面说过，这是一个联合分布P(X,Y)，是一个and（连乘）的形式，由此取条件期望为风险函数：</p>
+<p style="text-align: center"><img src="./naive-bayesian-method_files/6cbb8645jw1eozrfcksvxj208i01fdfp.jpg" title="条件期望.png" data-tag="bdshare"></p>
+<p style="text-indent: 2em;">所谓条件期望，就是指X=x时，Y的期望。上式其实可以这么推回去：</p>
+<p style="text-indent: 2em;">E<sub>x</sub><span style="text-indent: 32px;">∑[L()]</span>P(c<sub>k</sub>|X)=<span style="text-indent: 32px;">∑</span>P(X)<span style="text-indent: 32px;">∑[L()]</span>P(X,<span style="text-indent: 32px;">c</span><sub style="text-indent: 32px; white-space: normal;">k</sub>)/P(X)=<span style="text-indent: 32px;">∑[L()]</span><span style="text-indent: 32px;">P(X,</span><span style="text-indent: 32px;">c</span><sub style="text-indent: 32px; white-space: normal;">k</sub><span style="text-indent: 32px;">)=E[L()]</span></p>
+<p style="text-indent: 2em;"><span style="text-indent: 32px;">格式比较乱，但愿意思到了。</span></p>
+<p style="text-indent: 2em;"><span style="text-indent: 32px;">为了最小化上式，只需对每个X=x执行最小化，那么加起来肯定是极小化的，由此有：</span></p>
+<p style="text-align: center"><img src="./naive-bayesian-method_files/6cbb8645jw1eozrpi01bjj207p04lmxb.jpg" title="极小化.png" data-tag="bdshare"></p>
+<p style="text-indent: 2em;"><span style="text-indent: 32px;"></span></p>
+<p style="text-indent: 2em;"><span style="text-indent: 32px;">其实不用这么一堆公式，光靠感觉也很好理解，给了一些证据后，不挑后验概率最大的，还能挑啥呢？</span></p>
+<h2 id="h2-3"><span style="text-indent: 32px;">朴素贝叶斯法的参数估计</span></h2>
+<h3 id="h3-4"><span style="text-indent: 32px;">极大似然估计</span></h3>
+<p style="text-indent: 2em;"><span style="text-indent: 32px;">前面说过，朴素贝叶斯法要学习的东西就是P(Y=<span style="text-indent: 32px;">c</span><sub style="text-indent: 32px; white-space: normal;">k</sub>)和P(X=x|Y=<span style="text-indent: 32px;">c</span><sub style="text-indent: 32px; white-space: normal;">k</sub>)，这两个概率的估计用极大似然估计法（简单讲，就是用样本猜测模型参数，或者说使得似然函数最大的参数）进行：<br></span></p>
+<p style="text-indent: 2em;"><span style="text-indent: 32px;"></span></p>
+<p style="text-align: center"><img src="./naive-bayesian-method_files/6cbb8645jw1eozsd1ervfj208j022a9x.jpg" title="先验概率估计.png" data-tag="bdshare"></p>
+<p style="text-indent: 2em;">也就是用样本中<span style="text-indent: 32px;">c</span><sub style="text-indent: 32px; white-space: normal;">k</sub>的出现次数除以样本容量。<span style="text-indent: 32px;"></span></p>
+<p style="text-align: center"><img src="./naive-bayesian-method_files/6cbb8645jw1eozsffyp4fj209r02rt8o.jpg" title="条件概率分布估计.png" data-tag="bdshare"></p>
+<p style="text-indent: 2em;">分子是样本中变量组合的出现次数，分母是上面说过的<span style="text-indent: 32px;">样本中</span><span style="text-indent: 32px;">c</span><sub style="text-indent: 32px; white-space: normal;">k</sub><span style="text-indent: 32px;">的出现次数。</span></p>
+<h3 id="h3-5"><span style="text-indent: 32px;">学习与分类算法</span></h3>
+<p style="text-indent: 2em;"><span style="text-indent: 32px;">于是就有朴素贝叶斯算法，先从训练数据中计算先验概率和条件概率，然后对于给定的实例计算最大的条件概率，输出该条件对应的类别。形式化的描述如下：</span></p>
+<p style="text-indent: 2em;"><span style="text-indent: 32px;"></span></p>
+<p style="text-align: center"><img src="./naive-bayesian-method_files/6cbb8645jw1eozskpe051j20hs0evdhq.jpg" title="朴素贝叶斯算法.png" data-tag="bdshare"></p>
+<p style="text-indent: 2em;">例子<span style="text-indent: 32px;"></span></p>
+<p style="text-indent: 2em;">给定训练数据：</p>
+<p style="text-align: center"><img src="./naive-bayesian-method_files/6cbb8645jw1eozxaigv2rj20hf037mxi.jpg" title="训练数据.png" data-tag="bdshare"></p>
+<p style="text-indent: 2em;">给x=(2,S)<sup>T</sup>分类。</p>
+<p style="text-indent: 2em;">这个太简单了，利用（3）中的式子就行了。</p>
+<p style="text-indent: 2em;">贝叶斯估计</p>
+<p style="text-indent: 2em;">最大似然估计有个隐患，假设训练数据中没有出现某种参数和类别的组合怎么办？此时估计的概率值为0，但是这不代表真实数据中就没有这样的组合。解决办法是采用贝叶斯估计</p>
+<p style="text-indent: 2em;">1、条件概率的贝叶斯估计：</p>
+<p style="text-align: center"><img src="./naive-bayesian-method_files/条件概率贝叶斯估计.png" title="条件概率贝叶斯估计.png" data-tag="bdshare"></p>
+<p style="text-indent: 2em;">其中<img src="./naive-bayesian-method_files/平滑因子.png" title="平滑因子.png" data-tag="bdshare">，S<sub>j</sub>表示<span style="text-indent: 32px;">x</span><sub style="text-indent: 32px; white-space: normal;">j</sub><span style="text-indent: 32px;">可能取值的种数</span>。<span style="text-indent: 2em;">分子和分母分别比最大似然估计多了一点东西，其意义是在随机变量每个取值的频数上加一个常量<img src="./naive-bayesian-method_files/平滑因子.png" title="平滑因子.png" style="text-indent: 32px; white-space: normal;" data-tag="bdshare">。当此常量取0时，就是最大似然估计，当此常量取1时，称为拉普拉斯平滑。</span></p>
+<p style="text-indent: 2em;">2、先验概率的贝叶斯估计：</p>
+<p style="text-align: center"><img src="./naive-bayesian-method_files/先验概率的贝叶斯估计.png" title="先验概率的贝叶斯估计.png" data-tag="bdshare"></p>
+<h2 id="h2-6">贝叶斯情感极性分析器<br></h2>
+<p style="text-indent: 2em;">书中例题太简单，不过瘾。这里分析一个基于贝叶斯文本分类器实现的简单情感极性分析器。</p>
+<p style="text-indent: 2em;">调用实例：</p>
+<pre class="brush:python;toolbar:false prettyprint linenums"><ol class="linenums"><li class="L0"><span class="com">#&nbsp;-*-&nbsp;coding:utf-8&nbsp;-*-</span></li><li class="L1"><span class="com">#&nbsp;Filename:&nbsp;Bayes.py</span></li><li class="L2"><span class="com">#&nbsp;Author：hankcs</span></li><li class="L3"><span class="com">#&nbsp;Date:&nbsp;2015/2/6&nbsp;22:25</span></li><li class="L4"><span class="kwd">from</span><span class="pln">&nbsp;math&nbsp;</span><span class="kwd">import</span><span class="pln">&nbsp;log</span><span class="pun">,</span><span class="pln">&nbsp;exp</span></li><li class="L5"><span class="pln">&nbsp;</span></li><li class="L6"><span class="pln">&nbsp;</span></li><li class="L7"><span class="kwd">class</span><span class="pln">&nbsp;</span><span class="typ">LaplaceEstimate</span><span class="pun">(</span><span class="kwd">object</span><span class="pun">):</span></li><li class="L8"><span class="pln">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="str">"""</span></li><li class="L9"><span class="str">&nbsp;&nbsp;&nbsp;&nbsp;拉普拉斯平滑处理的贝叶斯估计</span></li><li class="L0"><span class="str">&nbsp;&nbsp;&nbsp;&nbsp;"""</span></li><li class="L1"><span class="pln">&nbsp;</span></li><li class="L2"><span class="pln">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="kwd">def</span><span class="pln">&nbsp;__init__</span><span class="pun">(</span><span class="kwd">self</span><span class="pun">):</span></li><li class="L3"><span class="pln">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="kwd">self</span><span class="pun">.</span><span class="pln">d&nbsp;</span><span class="pun">=</span><span class="pln">&nbsp;</span><span class="pun">{}</span><span class="pln">&nbsp;&nbsp;</span><span class="com">#&nbsp;[词-词频]的map</span></li><li class="L4"><span class="pln">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="kwd">self</span><span class="pun">.</span><span class="pln">total&nbsp;</span><span class="pun">=</span><span class="pln">&nbsp;</span><span class="lit">0.0</span><span class="pln">&nbsp;&nbsp;</span><span class="com">#&nbsp;全部词的词频</span></li><li class="L5"><span class="pln">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="kwd">self</span><span class="pun">.</span><span class="pln">none&nbsp;</span><span class="pun">=</span><span class="pln">&nbsp;</span><span class="lit">1</span><span class="pln">&nbsp;&nbsp;</span><span class="com">#&nbsp;当一个词不存在的时候，它的词频（等于0+1）</span></li><li class="L6"><span class="pln">&nbsp;</span></li><li class="L7"><span class="pln">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="kwd">def</span><span class="pln">&nbsp;exists</span><span class="pun">(</span><span class="kwd">self</span><span class="pun">,</span><span class="pln">&nbsp;key</span><span class="pun">):</span></li><li class="L8"><span class="pln">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="kwd">return</span><span class="pln">&nbsp;key&nbsp;</span><span class="kwd">in</span><span class="pln">&nbsp;</span><span class="kwd">self</span><span class="pun">.</span><span class="pln">d</span></li><li class="L9"><span class="pln">&nbsp;</span></li><li class="L0"><span class="pln">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="kwd">def</span><span class="pln">&nbsp;getsum</span><span class="pun">(</span><span class="kwd">self</span><span class="pun">):</span></li><li class="L1"><span class="pln">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="kwd">return</span><span class="pln">&nbsp;</span><span class="kwd">self</span><span class="pun">.</span><span class="pln">total</span></li><li class="L2"><span class="pln">&nbsp;</span></li><li class="L3"><span class="pln">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="kwd">def</span><span class="pln">&nbsp;</span><span class="kwd">get</span><span class="pun">(</span><span class="kwd">self</span><span class="pun">,</span><span class="pln">&nbsp;key</span><span class="pun">):</span></li><li class="L4"><span class="pln">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="kwd">if</span><span class="pln">&nbsp;</span><span class="kwd">not</span><span class="pln">&nbsp;</span><span class="kwd">self</span><span class="pun">.</span><span class="pln">exists</span><span class="pun">(</span><span class="pln">key</span><span class="pun">):</span></li><li class="L5"><span class="pln">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="kwd">return</span><span class="pln">&nbsp;</span><span class="kwd">False</span><span class="pun">,</span><span class="pln">&nbsp;</span><span class="kwd">self</span><span class="pun">.</span><span class="pln">none</span></li><li class="L6"><span class="pln">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="kwd">return</span><span class="pln">&nbsp;</span><span class="kwd">True</span><span class="pun">,</span><span class="pln">&nbsp;</span><span class="kwd">self</span><span class="pun">.</span><span class="pln">d</span><span class="pun">[</span><span class="pln">key</span><span class="pun">]</span></li><li class="L7"><span class="pln">&nbsp;</span></li><li class="L8"><span class="pln">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="kwd">def</span><span class="pln">&nbsp;getprob</span><span class="pun">(</span><span class="kwd">self</span><span class="pun">,</span><span class="pln">&nbsp;key</span><span class="pun">):</span></li><li class="L9"><span class="pln">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="str">"""</span></li><li class="L0"><span class="str">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;估计先验概率</span></li><li class="L1"><span class="str">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:param&nbsp;key:&nbsp;词</span></li><li class="L2"><span class="str">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:return:&nbsp;概率</span></li><li class="L3"><span class="str">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"""</span></li><li class="L4"><span class="pln">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="kwd">return</span><span class="pln">&nbsp;</span><span class="kwd">float</span><span class="pun">(</span><span class="kwd">self</span><span class="pun">.</span><span class="kwd">get</span><span class="pun">(</span><span class="pln">key</span><span class="pun">)[</span><span class="lit">1</span><span class="pun">])</span><span class="pln">&nbsp;</span><span class="pun">/</span><span class="pln">&nbsp;</span><span class="kwd">self</span><span class="pun">.</span><span class="pln">total</span></li><li class="L5"><span class="pln">&nbsp;</span></li><li class="L6"><span class="pln">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="kwd">def</span><span class="pln">&nbsp;samples</span><span class="pun">(</span><span class="kwd">self</span><span class="pun">):</span></li><li class="L7"><span class="pln">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="str">"""</span></li><li class="L8"><span class="str">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;获取全部样本</span></li><li class="L9"><span class="str">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:return:</span></li><li class="L0"><span class="str">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"""</span></li><li class="L1"><span class="pln">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="kwd">return</span><span class="pln">&nbsp;</span><span class="kwd">self</span><span class="pun">.</span><span class="pln">d</span><span class="pun">.</span><span class="pln">keys</span><span class="pun">()</span></li><li class="L2"><span class="pln">&nbsp;</span></li><li class="L3"><span class="pln">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="kwd">def</span><span class="pln">&nbsp;add</span><span class="pun">(</span><span class="kwd">self</span><span class="pun">,</span><span class="pln">&nbsp;key</span><span class="pun">,</span><span class="pln">&nbsp;value</span><span class="pun">):</span></li><li class="L4"><span class="pln">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="kwd">self</span><span class="pun">.</span><span class="pln">total&nbsp;</span><span class="pun">+=</span><span class="pln">&nbsp;value</span></li><li class="L5"><span class="pln">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="kwd">if</span><span class="pln">&nbsp;</span><span class="kwd">not</span><span class="pln">&nbsp;</span><span class="kwd">self</span><span class="pun">.</span><span class="pln">exists</span><span class="pun">(</span><span class="pln">key</span><span class="pun">):</span></li><li class="L6"><span class="pln">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="kwd">self</span><span class="pun">.</span><span class="pln">d</span><span class="pun">[</span><span class="pln">key</span><span class="pun">]</span><span class="pln">&nbsp;</span><span class="pun">=</span><span class="pln">&nbsp;</span><span class="lit">1</span></li><li class="L7"><span class="pln">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="kwd">self</span><span class="pun">.</span><span class="pln">total&nbsp;</span><span class="pun">+=</span><span class="pln">&nbsp;</span><span class="lit">1</span></li><li class="L8"><span class="pln">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="kwd">self</span><span class="pun">.</span><span class="pln">d</span><span class="pun">[</span><span class="pln">key</span><span class="pun">]</span><span class="pln">&nbsp;</span><span class="pun">+=</span><span class="pln">&nbsp;value</span></li><li class="L9"><span class="pln">&nbsp;</span></li><li class="L0"><span class="pln">&nbsp;</span></li><li class="L1"><span class="kwd">class</span><span class="pln">&nbsp;</span><span class="typ">Bayes</span><span class="pun">(</span><span class="kwd">object</span><span class="pun">):</span></li><li class="L2"><span class="pln">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="kwd">def</span><span class="pln">&nbsp;__init__</span><span class="pun">(</span><span class="kwd">self</span><span class="pun">):</span></li><li class="L3"><span class="pln">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="kwd">self</span><span class="pun">.</span><span class="pln">d&nbsp;</span><span class="pun">=</span><span class="pln">&nbsp;</span><span class="pun">{}</span><span class="pln">&nbsp;&nbsp;</span><span class="com">#&nbsp;[标签,&nbsp;概率]&nbsp;map</span></li><li class="L4"><span class="pln">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="kwd">self</span><span class="pun">.</span><span class="pln">total&nbsp;</span><span class="pun">=</span><span class="pln">&nbsp;</span><span class="lit">0</span><span class="pln">&nbsp;&nbsp;</span><span class="com">#&nbsp;全部词频</span></li><li class="L5"><span class="pln">&nbsp;</span></li><li class="L6"><span class="pln">&nbsp;</span></li><li class="L7"><span class="pln">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="kwd">def</span><span class="pln">&nbsp;train</span><span class="pun">(</span><span class="kwd">self</span><span class="pun">,</span><span class="pln">&nbsp;data</span><span class="pun">):</span></li><li class="L8"><span class="pln">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="kwd">for</span><span class="pln">&nbsp;d&nbsp;</span><span class="kwd">in</span><span class="pln">&nbsp;data</span><span class="pun">:</span><span class="pln">&nbsp;&nbsp;</span><span class="com">#&nbsp;d是[[词链表],&nbsp;标签]</span></li><li class="L9"><span class="pln">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;c&nbsp;</span><span class="pun">=</span><span class="pln">&nbsp;d</span><span class="pun">[</span><span class="lit">1</span><span class="pun">]</span><span class="pln">&nbsp;&nbsp;</span><span class="com">#&nbsp;c是分类</span></li><li class="L0"><span class="pln">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="kwd">if</span><span class="pln">&nbsp;c&nbsp;</span><span class="kwd">not</span><span class="pln">&nbsp;</span><span class="kwd">in</span><span class="pln">&nbsp;</span><span class="kwd">self</span><span class="pun">.</span><span class="pln">d</span><span class="pun">:</span></li><li class="L1"><span class="pln">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="kwd">self</span><span class="pun">.</span><span class="pln">d</span><span class="pun">[</span><span class="pln">c</span><span class="pun">]</span><span class="pln">&nbsp;</span><span class="pun">=</span><span class="pln">&nbsp;</span><span class="typ">LaplaceEstimate</span><span class="pun">()</span><span class="pln">&nbsp;&nbsp;</span><span class="com">#&nbsp;d[c]是概率统计工具</span></li><li class="L2"><span class="pln">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="kwd">for</span><span class="pln">&nbsp;word&nbsp;</span><span class="kwd">in</span><span class="pln">&nbsp;d</span><span class="pun">[</span><span class="lit">0</span><span class="pun">]:</span></li><li class="L3"><span class="pln">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="kwd">self</span><span class="pun">.</span><span class="pln">d</span><span class="pun">[</span><span class="pln">c</span><span class="pun">].</span><span class="pln">add</span><span class="pun">(</span><span class="pln">word</span><span class="pun">,</span><span class="pln">&nbsp;</span><span class="lit">1</span><span class="pun">)</span><span class="pln">&nbsp;&nbsp;</span><span class="com">#&nbsp;统计词频</span></li><li class="L4"><span class="pln">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="kwd">self</span><span class="pun">.</span><span class="pln">total&nbsp;</span><span class="pun">=</span><span class="pln">&nbsp;sum</span><span class="pun">(</span><span class="pln">map</span><span class="pun">(</span><span class="kwd">lambda</span><span class="pln">&nbsp;x</span><span class="pun">:</span><span class="pln">&nbsp;</span><span class="kwd">self</span><span class="pun">.</span><span class="pln">d</span><span class="pun">[</span><span class="pln">x</span><span class="pun">].</span><span class="pln">getsum</span><span class="pun">(),</span><span class="pln">&nbsp;</span><span class="kwd">self</span><span class="pun">.</span><span class="pln">d</span><span class="pun">.</span><span class="pln">keys</span><span class="pun">()))</span></li><li class="L5"><span class="pln">&nbsp;</span></li><li class="L6"><span class="pln">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="kwd">def</span><span class="pln">&nbsp;classify</span><span class="pun">(</span><span class="kwd">self</span><span class="pun">,</span><span class="pln">&nbsp;x</span><span class="pun">):</span></li><li class="L7"><span class="pln">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;tmp&nbsp;</span><span class="pun">=</span><span class="pln">&nbsp;</span><span class="pun">{}</span></li><li class="L8"><span class="pln">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="kwd">for</span><span class="pln">&nbsp;c&nbsp;</span><span class="kwd">in</span><span class="pln">&nbsp;</span><span class="kwd">self</span><span class="pun">.</span><span class="pln">d</span><span class="pun">:</span><span class="pln">&nbsp;&nbsp;</span><span class="com">#&nbsp;分类</span></li><li class="L9"><span class="pln">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;tmp</span><span class="pun">[</span><span class="pln">c</span><span class="pun">]</span><span class="pln">&nbsp;</span><span class="pun">=</span><span class="pln">&nbsp;log</span><span class="pun">(</span><span class="kwd">self</span><span class="pun">.</span><span class="pln">d</span><span class="pun">[</span><span class="pln">c</span><span class="pun">].</span><span class="pln">getsum</span><span class="pun">())</span><span class="pln">&nbsp;</span><span class="pun">-</span><span class="pln">&nbsp;log</span><span class="pun">(</span><span class="kwd">self</span><span class="pun">.</span><span class="pln">total</span><span class="pun">)</span><span class="pln">&nbsp;&nbsp;</span><span class="com">#&nbsp;P(Y=ck)</span></li><li class="L0"><span class="pln">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="kwd">for</span><span class="pln">&nbsp;word&nbsp;</span><span class="kwd">in</span><span class="pln">&nbsp;x</span><span class="pun">:</span></li><li class="L1"><span class="pln">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;tmp</span><span class="pun">[</span><span class="pln">c</span><span class="pun">]</span><span class="pln">&nbsp;</span><span class="pun">+=</span><span class="pln">&nbsp;log</span><span class="pun">(</span><span class="kwd">self</span><span class="pun">.</span><span class="pln">d</span><span class="pun">[</span><span class="pln">c</span><span class="pun">].</span><span class="pln">getprob</span><span class="pun">(</span><span class="pln">word</span><span class="pun">))</span><span class="pln">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="com">#&nbsp;P(Xj=xj&nbsp;|&nbsp;Y=ck)</span></li><li class="L2"><span class="pln">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ret</span><span class="pun">,</span><span class="pln">&nbsp;prob&nbsp;</span><span class="pun">=</span><span class="pln">&nbsp;</span><span class="lit">0</span><span class="pun">,</span><span class="pln">&nbsp;</span><span class="lit">0</span></li><li class="L3"><span class="pln">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="kwd">for</span><span class="pln">&nbsp;c&nbsp;</span><span class="kwd">in</span><span class="pln">&nbsp;</span><span class="kwd">self</span><span class="pun">.</span><span class="pln">d</span><span class="pun">:</span></li><li class="L4"><span class="pln">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;now&nbsp;</span><span class="pun">=</span><span class="pln">&nbsp;</span><span class="lit">0</span></li><li class="L5"><span class="pln">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="kwd">try</span><span class="pun">:</span></li><li class="L6"><span class="pln">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="kwd">for</span><span class="pln">&nbsp;otherc&nbsp;</span><span class="kwd">in</span><span class="pln">&nbsp;</span><span class="kwd">self</span><span class="pun">.</span><span class="pln">d</span><span class="pun">:</span></li><li class="L7"><span class="pln">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;now&nbsp;</span><span class="pun">+=</span><span class="pln">&nbsp;exp</span><span class="pun">(</span><span class="pln">tmp</span><span class="pun">[</span><span class="pln">otherc</span><span class="pun">]</span><span class="pln">&nbsp;</span><span class="pun">-</span><span class="pln">&nbsp;tmp</span><span class="pun">[</span><span class="pln">c</span><span class="pun">])</span><span class="pln">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="com">#&nbsp;将对数还原为1/p</span></li><li class="L8"><span class="pln">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;now&nbsp;</span><span class="pun">=</span><span class="pln">&nbsp;</span><span class="lit">1</span><span class="pln">&nbsp;</span><span class="pun">/</span><span class="pln">&nbsp;now</span></li><li class="L9"><span class="pln">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="kwd">except</span><span class="pln">&nbsp;</span><span class="typ">OverflowError</span><span class="pun">:</span></li><li class="L0"><span class="pln">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;now&nbsp;</span><span class="pun">=</span><span class="pln">&nbsp;</span><span class="lit">0</span></li><li class="L1"><span class="pln">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="kwd">if</span><span class="pln">&nbsp;now&nbsp;</span><span class="pun">&gt;</span><span class="pln">&nbsp;prob</span><span class="pun">:</span></li><li class="L2"><span class="pln">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ret</span><span class="pun">,</span><span class="pln">&nbsp;prob&nbsp;</span><span class="pun">=</span><span class="pln">&nbsp;c</span><span class="pun">,</span><span class="pln">&nbsp;now</span></li><li class="L3"><span class="pln">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="kwd">return</span><span class="pln">&nbsp;</span><span class="pun">(</span><span class="pln">ret</span><span class="pun">,</span><span class="pln">&nbsp;prob</span><span class="pun">)</span></li><li class="L4"><span class="pln">&nbsp;</span></li><li class="L5"><span class="pln">&nbsp;</span></li><li class="L6"><span class="kwd">class</span><span class="pln">&nbsp;</span><span class="typ">Sentiment</span><span class="pun">(</span><span class="kwd">object</span><span class="pun">):</span></li><li class="L7"><span class="pln">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="kwd">def</span><span class="pln">&nbsp;__init__</span><span class="pun">(</span><span class="kwd">self</span><span class="pun">):</span></li><li class="L8"><span class="pln">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="kwd">self</span><span class="pun">.</span><span class="pln">classifier&nbsp;</span><span class="pun">=</span><span class="pln">&nbsp;</span><span class="typ">Bayes</span><span class="pun">()</span></li><li class="L9"><span class="pln">&nbsp;</span></li><li class="L0"><span class="pln">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="kwd">def</span><span class="pln">&nbsp;segment</span><span class="pun">(</span><span class="kwd">self</span><span class="pun">,</span><span class="pln">&nbsp;sent</span><span class="pun">):</span></li><li class="L1"><span class="pln">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;words&nbsp;</span><span class="pun">=</span><span class="pln">&nbsp;sent</span><span class="pun">.</span><span class="pln">split</span><span class="pun">(</span><span class="str">'&nbsp;'</span><span class="pun">)</span></li><li class="L2"><span class="pln">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="kwd">return</span><span class="pln">&nbsp;words</span></li><li class="L3"><span class="pln">&nbsp;</span></li><li class="L4"><span class="pln">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="kwd">def</span><span class="pln">&nbsp;train</span><span class="pun">(</span><span class="kwd">self</span><span class="pun">,</span><span class="pln">&nbsp;neg_docs</span><span class="pun">,</span><span class="pln">&nbsp;pos_docs</span><span class="pun">):</span></li><li class="L5"><span class="pln">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;data&nbsp;</span><span class="pun">=</span><span class="pln">&nbsp;</span><span class="pun">[]</span></li><li class="L6"><span class="pln">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="kwd">for</span><span class="pln">&nbsp;sent&nbsp;</span><span class="kwd">in</span><span class="pln">&nbsp;neg_docs</span><span class="pun">:</span></li><li class="L7"><span class="pln">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;data</span><span class="pun">.</span><span class="pln">append</span><span class="pun">([</span><span class="kwd">self</span><span class="pun">.</span><span class="pln">segment</span><span class="pun">(</span><span class="pln">sent</span><span class="pun">),</span><span class="pln">&nbsp;u</span><span class="str">'neg'</span><span class="pun">])</span></li><li class="L8"><span class="pln">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="kwd">for</span><span class="pln">&nbsp;sent&nbsp;</span><span class="kwd">in</span><span class="pln">&nbsp;pos_docs</span><span class="pun">:</span></li><li class="L9"><span class="pln">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;data</span><span class="pun">.</span><span class="pln">append</span><span class="pun">([</span><span class="kwd">self</span><span class="pun">.</span><span class="pln">segment</span><span class="pun">(</span><span class="pln">sent</span><span class="pun">),</span><span class="pln">&nbsp;u</span><span class="str">'pos'</span><span class="pun">])</span></li><li class="L0"><span class="pln">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="kwd">self</span><span class="pun">.</span><span class="pln">classifier</span><span class="pun">.</span><span class="pln">train</span><span class="pun">(</span><span class="pln">data</span><span class="pun">)</span></li><li class="L1"><span class="pln">&nbsp;</span></li><li class="L2"><span class="pln">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="kwd">def</span><span class="pln">&nbsp;classify</span><span class="pun">(</span><span class="kwd">self</span><span class="pun">,</span><span class="pln">&nbsp;sent</span><span class="pun">):</span></li><li class="L3"><span class="pln">&nbsp;</span></li><li class="L4"><span class="pln">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="kwd">return</span><span class="pln">&nbsp;</span><span class="kwd">self</span><span class="pun">.</span><span class="pln">classifier</span><span class="pun">.</span><span class="pln">classify</span><span class="pun">(</span><span class="kwd">self</span><span class="pun">.</span><span class="pln">segment</span><span class="pun">(</span><span class="pln">sent</span><span class="pun">))</span></li><li class="L5"><span class="pln">&nbsp;</span></li><li class="L6"><span class="pln">s&nbsp;</span><span class="pun">=</span><span class="pln">&nbsp;</span><span class="typ">Sentiment</span><span class="pun">()</span></li><li class="L7"><span class="pln">s</span><span class="pun">.</span><span class="pln">train</span><span class="pun">([</span><span class="pln">u</span><span class="str">'糟糕'</span><span class="pun">,</span><span class="pln">&nbsp;u</span><span class="str">'好&nbsp;差劲'</span><span class="pun">],</span><span class="pln">&nbsp;</span><span class="pun">[</span><span class="pln">u</span><span class="str">'优秀'</span><span class="pun">,</span><span class="pln">&nbsp;u</span><span class="str">'很&nbsp;好'</span><span class="pun">])</span><span class="pln">&nbsp;</span><span class="com">#&nbsp;空格分词</span></li><li class="L8"><span class="pln">&nbsp;</span></li><li class="L9"><span class="kwd">print</span><span class="pln">&nbsp;s</span><span class="pun">.</span><span class="pln">classify</span><span class="pun">(</span><span class="pln">u</span><span class="str">"好&nbsp;优秀"</span><span class="pun">)</span></li></ol></pre>
+<p style="text-indent: 2em;">输出</p>
+<pre class="brush:python;toolbar:false prettyprint linenums"><ol class="linenums"><li class="L0"><span class="pun">(</span><span class="pln">u</span><span class="str">'pos'</span><span class="pun">,</span><span class="pln">&nbsp;</span><span class="lit">0.6666666666666665</span><span class="pun">)</span></li></ol></pre>
+<p style="text-indent: 2em;">说明“好优秀”这句话具有正能量的概率是66%，虽然“好”这个词语也存在于负极性的语句中，但是分类器还是准确地区分了它。</p>
+<p style="text-indent: 2em;">上面的贝叶斯分类器使用了拉布拉斯平滑处理策略，在进行条件概率的时候，不是连乘，而是取对数相加，最后逐差取指数，这个过程会发生归一化，得出一个概率出来。</p>
+<h2 id="h2-7">Reference<br></h2>
+<p style="text-indent: 2em;">情感极性分析器主要参考了snownlp的实现。</p>
+<p class="post-copyright"><a href="http://www.hankcs.com/license/" target="_blank"><img alt="知识共享许可协议" style="border-width: 0px;margin: 0 !important;" src="./naive-bayesian-method_files/CC-BY-NC-SA-icon-88x31.png" width="88" height="31" border="0" vspace="0" title="知识共享许可协议" data-tag="bdshare"></a>&nbsp;<a href="http://www.hankcs.com/license/" target="_blank" textvalue="知识共享署名-非商业性使用-相同方式共享">知识共享署名-非商业性使用-相同方式共享</a>：<a href="http://www.hankcs.com/">码农场</a> » <a href="http://www.hankcs.com/ml/naive-bayesian-method.html">朴素贝叶斯法</a></p>		</article>
+								<div class="action-share bdsharebuttonbox bdshare-button-style0-24" data-bd-bind="1497594432776">
+			<span>分享到：</span><a class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a><a class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a><a class="bds_weixin" data-cmd="weixin" title="分享到微信"></a><a class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博"></a><a class="bds_sqq" data-cmd="sqq" title="分享到QQ好友"></a><a class="bds_bdhome" data-cmd="bdhome" title="分享到百度新首页"></a><a class="bds_tqf" data-cmd="tqf" title="分享到腾讯朋友"></a><a class="bds_renren" data-cmd="renren" title="分享到人人网"></a><a class="bds_diandian" data-cmd="diandian" title="分享到点点网"></a><a class="bds_youdao" data-cmd="youdao" title="分享到有道云笔记"></a><a class="bds_ty" data-cmd="ty" title="分享到天涯社区"></a><a class="bds_kaixin001" data-cmd="kaixin001" title="分享到开心网"></a><a class="bds_taobao" data-cmd="taobao"></a><a class="bds_douban" data-cmd="douban" title="分享到豆瓣网"></a><a class="bds_fbook" data-cmd="fbook" title="分享到Facebook"></a><a class="bds_twi" data-cmd="twi" title="分享到Twitter"></a><a class="bds_mail" data-cmd="mail" title="分享到邮件分享"></a><a class="bds_copy" data-cmd="copy" title="分享到复制网址"></a><a class="bds_more" data-cmd="more">更多</a> <span>(</span><a class="bds_count" data-cmd="count" title="累计分享6次">6</a><span>)</span>		</div>
+		<div class="article-tags">继续浏览有关 <a href="http://www.hankcs.com/ml/"><i class="fa fa-folder-open"></i> 机器学习</a><a href="http://www.hankcs.com/tag/%e3%80%8a%e7%bb%9f%e8%ae%a1%e5%ad%a6%e4%b9%a0%e6%96%b9%e6%b3%95%e3%80%8b/" rel="tag">《统计学习方法》</a> 的文章</div>		<div class="asb asb-post asb-post-02"><script async="" src="./naive-bayesian-method_files/adsbygoogle.js.下载"></script>
+<!-- 文章页正文下 页首横幅 -->
+<ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-1152644711996772" data-ad-slot="2657945648" data-adsbygoogle-status="done"><ins id="aswift_1_expand" style="display:inline-table;border:none;height:90px;margin:0;padding:0;position:relative;visibility:visible;width:728px;background-color:transparent"><ins id="aswift_1_anchor" style="display:block;border:none;height:90px;margin:0;padding:0;position:relative;visibility:visible;width:728px;background-color:transparent"><iframe width="728" height="90" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_1" name="aswift_1" style="left:0;position:absolute;top:0;width:728px;height:90px;" src="./naive-bayesian-method_files/saved_resource(2).html"></iframe></ins></ins></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></div>		<nav class="article-nav">
+			<span class="article-nav-prev">上一篇 <a href="http://www.hankcs.com/ml/k-nearest-neighbor-method.html" rel="prev">k近邻法</a></span>
+			<span class="article-nav-next"><a href="http://www.hankcs.com/ml/decision-tree.html" rel="next">决策树</a> 下一篇</span>
+		</nav>
+				<div class="asb asb-post asb-post-03"><script async="" src="./naive-bayesian-method_files/adsbygoogle.js.下载"></script>
+<!-- 匹配内容 -->
+<ins class="adsbygoogle" style="display: block; height: 354px;" data-ad-client="ca-pub-1152644711996772" data-ad-slot="7343699642" data-ad-format="autorelaxed" data-adsbygoogle-status="done"><ins id="aswift_2_expand" style="display:inline-table;border:none;height:354px;margin:0;padding:0;position:relative;visibility:visible;width:591px;background-color:transparent"><ins id="aswift_2_anchor" style="display:block;border:none;height:354px;margin:0;padding:0;position:relative;visibility:visible;width:591px;background-color:transparent"><iframe width="591" height="354" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_2" name="aswift_2" style="left:0;position:absolute;top:0;width:591px;height:354px;" src="./naive-bayesian-method_files/saved_resource(3).html"></iframe></ins></ins></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></div>		<div class="title" id="comments">
+	<h3>评论 <b>8</b></h3>
+</div>
+<div id="respond" class="no_webshot">
+		
+	<form action="http://www.hankcs.com/wp-comments-post.php" method="post" id="commentform">
+		<div class="comt">
+			<div class="comt-title">
+				<img alt="" data-src="http://0.gravatar.com/avatar/?s=50&amp;d=http%3A%2F%2Fwww.hankcs.com%2Fwp-content%2Fthemes%2Fdux%2Fimg%2Favatar-default.png&amp;r=g" srcset="http://0.gravatar.com/avatar/?s=100&amp;d=http%3A%2F%2Fwww.hankcs.com%2Fwp-content%2Fthemes%2Fdux%2Fimg%2Favatar-default.png&amp;r=g 2x" class="avatar avatar-50 photo avatar-default" height="50" width="50" src="./naive-bayesian-method_files/saved_resource" style="display: inline;">				<p><a id="cancel-comment-reply-link" href="javascript:;">取消</a></p>
+			</div>
+			<div class="comt-box">
+				<textarea placeholder="此处不受理任何开源项目问题，请在GitHub上发issue ，大家一起讨论，谢谢。" class="input-block-level comt-area" name="comment" id="comment" cols="100%" rows="3" tabindex="1" onkeydown="if(event.ctrlKey&amp;&amp;event.keyCode==13){document.getElementById(&#39;submit&#39;).click();return false};"></textarea>
+				<div class="comt-ctrl">
+					<div class="comt-tips"><input type="hidden" name="comment_post_ID" value="4881" id="comment_post_ID">
+<input type="hidden" name="comment_parent" id="comment_parent" value="0">
+<p style="display: none;"><input type="hidden" id="akismet_comment_nonce" name="akismet_comment_nonce" value="d60c165aaa"></p><label for="comment_mail_notify" class="checkbox inline hide" style="padding-top:0"><input type="checkbox" name="comment_mail_notify" id="comment_mail_notify" value="comment_mail_notify" checked="checked">有人回复时邮件通知我</label><p style="display: none;"></p><div class="comt-tip comt-loading" style="display: none;">评论提交中...</div><div class="comt-tip comt-error" style="display: none;">#</div></div>
+					<button type="submit" name="submit" id="submit" tabindex="5">提交评论</button>
+					<!-- <span data-type="comment-insert-smilie" class="muted comt-smilie"><i class="icon-thumbs-up icon12"></i> 表情</span> -->
+				</div>
+			</div>
+
+												<div class="comt-comterinfo" id="comment-author-info">
+						<ul>
+							<li class="form-inline"><label class="hide" for="author">昵称</label><input class="ipt" type="text" name="author" id="author" value="" tabindex="2" placeholder="昵称"><span class="text-muted">昵称 (必填)</span></li>
+							<li class="form-inline"><label class="hide" for="email">邮箱</label><input class="ipt" type="text" name="email" id="email" value="" tabindex="3" placeholder="邮箱"><span class="text-muted">邮箱 (必填)</span></li>
+							<li class="form-inline"><label class="hide" for="url">网址</label><input class="ipt" type="text" name="url" id="url" value="" tabindex="4" placeholder="网址"><span class="text-muted">网址</span></li>
+						</ul>
+					</div>
+									</div>
+
+	<input type="hidden" id="ak_js" name="ak_js" value="1497594432590"></form>
+	</div>
+<div id="postcomments">
+	<ol class="commentlist">
+		<li class="comment even thread-even depth-1" id="comment-4141"><span class="comt-f">#5</span><div class="comt-avatar"><img alt="" data-src="http://1.gravatar.com/avatar/7482203457f830930435014e9c1114a6?s=50&amp;d=http%3A%2F%2Fwww.hankcs.com%2Fwp-content%2Fthemes%2Fdux%2Fimg%2Favatar-default.png&amp;r=g" srcset="http://1.gravatar.com/avatar/7482203457f830930435014e9c1114a6?s=100&amp;d=http%3A%2F%2Fwww.hankcs.com%2Fwp-content%2Fthemes%2Fdux%2Fimg%2Favatar-default.png&amp;r=g 2x" class="avatar avatar-50 photo" height="50" width="50" src="./naive-bayesian-method_files/7482203457f830930435014e9c1114a6" style="display: block;"></div><div class="comt-main" id="div-comment-4141"><p>推出来了。。博主，我刚刚开始研究ml，公式能看懂，但是转化成代码，有些困难，希望你可以给一些建议~</p>
+<div class="comt-meta"><span class="comt-author">yeepom</span>1年前 (2016-04-28)<a rel="nofollow" class="comment-reply-link" href="javascript:;" onclick="return addComment.moveForm( &quot;div-comment-4141&quot;, &quot;4141&quot;, &quot;respond&quot;, &quot;4881&quot; )" aria-label="回复给yeepom">回复</a></div></div></li><!-- #comment-## -->
+<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-4140"><span class="comt-f">#4</span><div class="comt-avatar"><img alt="" data-src="http://1.gravatar.com/avatar/7482203457f830930435014e9c1114a6?s=50&amp;d=http%3A%2F%2Fwww.hankcs.com%2Fwp-content%2Fthemes%2Fdux%2Fimg%2Favatar-default.png&amp;r=g" srcset="http://1.gravatar.com/avatar/7482203457f830930435014e9c1114a6?s=100&amp;d=http%3A%2F%2Fwww.hankcs.com%2Fwp-content%2Fthemes%2Fdux%2Fimg%2Favatar-default.png&amp;r=g 2x" class="avatar avatar-50 photo" height="50" width="50" src="./naive-bayesian-method_files/7482203457f830930435014e9c1114a6" style="display: block;"></div><div class="comt-main" id="div-comment-4140"><p>博主，代码里面第78行，是如何推导的啊？推了好久，没弄明白。。</p>
+<div class="comt-meta"><span class="comt-author">yeepom</span>1年前 (2016-04-28)<a rel="nofollow" class="comment-reply-link" href="javascript:;" onclick="return addComment.moveForm( &quot;div-comment-4140&quot;, &quot;4140&quot;, &quot;respond&quot;, &quot;4881&quot; )" aria-label="回复给yeepom">回复</a></div></div></li><!-- #comment-## -->
+<li class="comment even thread-even depth-1" id="comment-2578"><span class="comt-f">#3</span><div class="comt-avatar"><img alt="" data-src="http://2.gravatar.com/avatar/?s=50&amp;d=http%3A%2F%2Fwww.hankcs.com%2Fwp-content%2Fthemes%2Fdux%2Fimg%2Favatar-default.png&amp;r=g" srcset="http://1.gravatar.com/avatar/?s=100&amp;d=http%3A%2F%2Fwww.hankcs.com%2Fwp-content%2Fthemes%2Fdux%2Fimg%2Favatar-default.png&amp;r=g 2x" class="avatar avatar-50 photo avatar-default" height="50" width="50" src="./naive-bayesian-method_files/saved_resource(1)" style="display: block;"></div><div class="comt-main" id="div-comment-2578"><p>请问，怎么对文本信息进行分类</p>
+<div class="comt-meta"><span class="comt-author"><a href="http://t.qq.com/dalian9392" rel="external nofollow" class="url" target="_blank">Dalian</a></span>2年前 (2015-03-30)<a rel="nofollow" class="comment-reply-link" href="javascript:;" onclick="return addComment.moveForm( &quot;div-comment-2578&quot;, &quot;2578&quot;, &quot;respond&quot;, &quot;4881&quot; )" aria-label="回复给Dalian">回复</a></div></div></li><!-- #comment-## -->
+<li class="comment byuser comment-author-hankcs bypostauthor odd alt thread-odd thread-alt depth-1" id="comment-2562"><span class="comt-f">#2</span><div class="comt-avatar"><img alt="" data-src="http://1.gravatar.com/avatar/de961732ee897fa88c707396fb1d55a4?s=50&amp;d=http%3A%2F%2Fwww.hankcs.com%2Fwp-content%2Fthemes%2Fdux%2Fimg%2Favatar-default.png&amp;r=g" srcset="http://1.gravatar.com/avatar/de961732ee897fa88c707396fb1d55a4?s=100&amp;d=http%3A%2F%2Fwww.hankcs.com%2Fwp-content%2Fthemes%2Fdux%2Fimg%2Favatar-default.png&amp;r=g 2x" class="avatar avatar-50 photo" height="50" width="50" src="./naive-bayesian-method_files/de961732ee897fa88c707396fb1d55a4" style="display: block;"></div><div class="comt-main" id="div-comment-2562"><p>s = Sentiment()</p>
+<div class="comt-meta"><span class="comt-author"><a href="http://www.hankcs.com/" rel="external nofollow" class="url" target="_blank">hankcs</a></span>2年前 (2015-03-27)<a rel="nofollow" class="comment-reply-link" href="javascript:;" onclick="return addComment.moveForm( &quot;div-comment-2562&quot;, &quot;2562&quot;, &quot;respond&quot;, &quot;4881&quot; )" aria-label="回复给hankcs">回复</a></div></div></li><!-- #comment-## -->
+<li class="comment even thread-even depth-1" id="comment-2439"><span class="comt-f">#1</span><div class="comt-avatar"><img alt="" data-src="http://2.gravatar.com/avatar/e92cb12a9cb7088543d878fee0827bcc?s=50&amp;d=http%3A%2F%2Fwww.hankcs.com%2Fwp-content%2Fthemes%2Fdux%2Fimg%2Favatar-default.png&amp;r=g" srcset="http://2.gravatar.com/avatar/e92cb12a9cb7088543d878fee0827bcc?s=100&amp;d=http%3A%2F%2Fwww.hankcs.com%2Fwp-content%2Fthemes%2Fdux%2Fimg%2Favatar-default.png&amp;r=g 2x" class="avatar avatar-50 photo" height="50" width="50" src="./naive-bayesian-method_files/e92cb12a9cb7088543d878fee0827bcc" style="display: block;"></div><div class="comt-main" id="div-comment-2439"><p>我想知道的是楼主学概率论和高数么？明明是文科生为什么这些公式理解起来这么轻松啊。。</p>
+<div class="comt-meta"><span class="comt-author"><a href="http://weibo.com/2036948865" rel="external nofollow" class="url" target="_blank">lzru--</a></span>2年前 (2015-02-11)<a rel="nofollow" class="comment-reply-link" href="javascript:;" onclick="return addComment.moveForm( &quot;div-comment-2439&quot;, &quot;2439&quot;, &quot;respond&quot;, &quot;4881&quot; )" aria-label="回复给lzru--">回复</a></div></div><ul class="children">
+<li class="comment byuser comment-author-hankcs bypostauthor odd alt depth-2" id="comment-2441"><div class="comt-avatar"><img alt="" data-src="http://1.gravatar.com/avatar/de961732ee897fa88c707396fb1d55a4?s=50&amp;d=http%3A%2F%2Fwww.hankcs.com%2Fwp-content%2Fthemes%2Fdux%2Fimg%2Favatar-default.png&amp;r=g" srcset="http://1.gravatar.com/avatar/de961732ee897fa88c707396fb1d55a4?s=100&amp;d=http%3A%2F%2Fwww.hankcs.com%2Fwp-content%2Fthemes%2Fdux%2Fimg%2Favatar-default.png&amp;r=g 2x" class="avatar avatar-50 photo" height="50" width="50" src="./naive-bayesian-method_files/de961732ee897fa88c707396fb1d55a4" style="display: block;"></div><div class="comt-main" id="div-comment-2441"><p>学是学过，早忘光了，基本现学的。我是个怪物。</p>
+<div class="comt-meta"><span class="comt-author"><a href="http://www.hankcs.com/" rel="external nofollow" class="url" target="_blank">hankcs</a></span>2年前 (2015-02-12)<a rel="nofollow" class="comment-reply-link" href="javascript:;" onclick="return addComment.moveForm( &quot;div-comment-2441&quot;, &quot;2441&quot;, &quot;respond&quot;, &quot;4881&quot; )" aria-label="回复给hankcs">回复</a></div></div><ul class="children">
+<li class="comment even depth-3" id="comment-2612"><div class="comt-avatar"><img alt="" data-src="http://0.gravatar.com/avatar/?s=50&amp;d=http%3A%2F%2Fwww.hankcs.com%2Fwp-content%2Fthemes%2Fdux%2Fimg%2Favatar-default.png&amp;r=g" srcset="http://1.gravatar.com/avatar/?s=100&amp;d=http%3A%2F%2Fwww.hankcs.com%2Fwp-content%2Fthemes%2Fdux%2Fimg%2Favatar-default.png&amp;r=g 2x" class="avatar avatar-50 photo avatar-default" height="50" width="50" src="./naive-bayesian-method_files/saved_resource" style="display: block;"></div><div class="comt-main" id="div-comment-2612"><p>真的好牛b，膜拜！！！！</p>
+<div class="comt-meta"><span class="comt-author"><a href="http://weibo.com/2210643391" rel="external nofollow" class="url" target="_blank">__因你而在__</a></span>2年前 (2015-04-07)<a rel="nofollow" class="comment-reply-link" href="javascript:;" onclick="return addComment.moveForm( &quot;div-comment-2612&quot;, &quot;2612&quot;, &quot;respond&quot;, &quot;4881&quot; )" aria-label="回复给__因你而在__">回复</a></div></div></li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+	</ol>
+	<div class="pagenav">
+			</div>
+</div>
+	</div>
+	</div>
+	<aside class="sidebar">
+<div class="widget widget_categories affix-top" style="top: 0px;"><h3>栏目分类</h3><label class="screen-reader-text" for="cat">栏目分类</label><select name="cat" id="cat" class="postform">
+	<option value="-1">选择分类目录</option>
+	<option class="level-0" value="18">ACG&nbsp;&nbsp;(7)</option>
+	<option class="level-1" value="117">&nbsp;&nbsp;&nbsp;游戏&nbsp;&nbsp;(5)</option>
+	<option class="level-0" value="7">Web开发&nbsp;&nbsp;(80)</option>
+	<option class="level-1" value="64">&nbsp;&nbsp;&nbsp;BAE&nbsp;&nbsp;(13)</option>
+	<option class="level-1" value="11">&nbsp;&nbsp;&nbsp;Linux相关&nbsp;&nbsp;(9)</option>
+	<option class="level-1" value="54">&nbsp;&nbsp;&nbsp;Mac OS&nbsp;&nbsp;(1)</option>
+	<option class="level-1" value="27">&nbsp;&nbsp;&nbsp;WordPress&nbsp;&nbsp;(8)</option>
+	<option class="level-1" value="65">&nbsp;&nbsp;&nbsp;Yii&nbsp;&nbsp;(17)</option>
+	<option class="level-1" value="2">&nbsp;&nbsp;&nbsp;主机域名&nbsp;&nbsp;(26)</option>
+	<option class="level-1" value="66">&nbsp;&nbsp;&nbsp;数据库&nbsp;&nbsp;(4)</option>
+	<option class="level-0" value="140">信息安全&nbsp;&nbsp;(3)</option>
+	<option class="level-0" value="1">其他类别&nbsp;&nbsp;(184)</option>
+	<option class="level-1" value="78">&nbsp;&nbsp;&nbsp;心情&nbsp;&nbsp;(1)</option>
+	<option class="level-1" value="15">&nbsp;&nbsp;&nbsp;旧的博文&nbsp;&nbsp;(170)</option>
+	<option class="level-0" value="87">操作系统&nbsp;&nbsp;(3)</option>
+	<option class="level-1" value="88">&nbsp;&nbsp;&nbsp;Windows&nbsp;&nbsp;(2)</option>
+	<option class="level-0" value="81">数学基礎&nbsp;&nbsp;(3)</option>
+	<option class="level-0" value="4">日语教程&nbsp;&nbsp;(120)</option>
+	<option class="level-1" value="96">&nbsp;&nbsp;&nbsp;口译&nbsp;&nbsp;(1)</option>
+	<option class="level-1" value="59">&nbsp;&nbsp;&nbsp;新编日语商务贸易会话&nbsp;&nbsp;(14)</option>
+	<option class="level-1" value="19">&nbsp;&nbsp;&nbsp;新编日语阅读文选&nbsp;&nbsp;(34)</option>
+	<option class="level-2" value="44">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;第一册&nbsp;&nbsp;(20)</option>
+	<option class="level-2" value="61">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;第三册&nbsp;&nbsp;(2)</option>
+	<option class="level-2" value="20">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;第二册&nbsp;&nbsp;(10)</option>
+	<option class="level-1" value="46">&nbsp;&nbsp;&nbsp;日语入门&nbsp;&nbsp;(2)</option>
+	<option class="level-1" value="62">&nbsp;&nbsp;&nbsp;日语听力&nbsp;&nbsp;(2)</option>
+	<option class="level-1" value="5">&nbsp;&nbsp;&nbsp;日语综合教程&nbsp;&nbsp;(64)</option>
+	<option class="level-2" value="120">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;第七册&nbsp;&nbsp;(14)</option>
+	<option class="level-2" value="50">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;第三册&nbsp;&nbsp;(7)</option>
+	<option class="level-2" value="73">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;第五册&nbsp;&nbsp;(12)</option>
+	<option class="level-2" value="98">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;第六册&nbsp;&nbsp;(18)</option>
+	<option class="level-2" value="6">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;第四册&nbsp;&nbsp;(12)</option>
+	<option class="level-1" value="86">&nbsp;&nbsp;&nbsp;月の珊瑚&nbsp;&nbsp;(3)</option>
+	<option class="level-0" value="131">机器学习&nbsp;&nbsp;(56)</option>
+	<option class="level-0" value="16">经济人文&nbsp;&nbsp;(19)</option>
+	<option class="level-1" value="17">&nbsp;&nbsp;&nbsp;国际贸易理论与政策&nbsp;&nbsp;(9)</option>
+	<option class="level-1" value="30">&nbsp;&nbsp;&nbsp;当代世界经济与政治&nbsp;&nbsp;(3)</option>
+	<option class="level-0" value="9">编程开发&nbsp;&nbsp;(556)</option>
+	<option class="level-1" value="8">&nbsp;&nbsp;&nbsp;Android&nbsp;&nbsp;(30)</option>
+	<option class="level-1" value="13">&nbsp;&nbsp;&nbsp;C++&nbsp;&nbsp;(237)</option>
+	<option class="level-1" value="25">&nbsp;&nbsp;&nbsp;Drupal&nbsp;&nbsp;(23)</option>
+	<option class="level-1" value="10">&nbsp;&nbsp;&nbsp;Java&nbsp;&nbsp;(69)</option>
+	<option class="level-1" value="123">&nbsp;&nbsp;&nbsp;Javascript&nbsp;&nbsp;(1)</option>
+	<option class="level-1" value="24">&nbsp;&nbsp;&nbsp;PHP&nbsp;&nbsp;(57)</option>
+	<option class="level-1" value="94">&nbsp;&nbsp;&nbsp;Python&nbsp;&nbsp;(8)</option>
+	<option class="level-1" value="14">&nbsp;&nbsp;&nbsp;汇编逆向&nbsp;&nbsp;(12)</option>
+	<option class="level-1" value="70">&nbsp;&nbsp;&nbsp;算法&nbsp;&nbsp;(235)</option>
+	<option class="level-1" value="121">&nbsp;&nbsp;&nbsp;网络&nbsp;&nbsp;(6)</option>
+	<option class="level-0" value="104">自然语言处理&nbsp;&nbsp;(63)</option>
+	<option class="level-1" value="109">&nbsp;&nbsp;&nbsp;中文分词&nbsp;&nbsp;(10)</option>
+	<option class="level-1" value="128">&nbsp;&nbsp;&nbsp;句法分析&nbsp;&nbsp;(5)</option>
+	<option class="level-1" value="127">&nbsp;&nbsp;&nbsp;命名实体识别&nbsp;&nbsp;(6)</option>
+	<option class="level-1" value="105">&nbsp;&nbsp;&nbsp;语料库&nbsp;&nbsp;(4)</option>
+	<option class="level-0" value="12">软件发布&nbsp;&nbsp;(9)</option>
+</select>
+
+<script type="text/javascript">
+/* <![CDATA[ */
+(function() {
+	var dropdown = document.getElementById( "cat" );
+	function onCatChange() {
+		if ( dropdown.options[ dropdown.selectedIndex ].value > 0 ) {
+			location.href = "http://www.hankcs.com/?cat=" + dropdown.options[ dropdown.selectedIndex ].value;
+		}
+	}
+	dropdown.onchange = onCatChange;
+})();
+/* ]]> */
+</script>
+
+</div><div class="widget widget_archive" style="top: 0px;"><h3>文章归档</h3>		<label class="screen-reader-text" for="archives-dropdown-5">文章归档</label>
+		<select id="archives-dropdown-5" name="archive-dropdown" onchange="document.location.href=this.options[this.selectedIndex].value;">
+			
+			<option value="">选择月份</option>
+				<option value="http://www.hankcs.com/2017/06/"> 2017年六月 &nbsp;(14)</option>
+	<option value="http://www.hankcs.com/2017/05/"> 2017年五月 &nbsp;(8)</option>
+	<option value="http://www.hankcs.com/2017/03/"> 2017年三月 &nbsp;(12)</option>
+	<option value="http://www.hankcs.com/2017/02/"> 2017年二月 &nbsp;(13)</option>
+	<option value="http://www.hankcs.com/2017/01/"> 2017年一月 &nbsp;(22)</option>
+	<option value="http://www.hankcs.com/2016/12/"> 2016年十二月 &nbsp;(2)</option>
+	<option value="http://www.hankcs.com/2016/11/"> 2016年十一月 &nbsp;(15)</option>
+	<option value="http://www.hankcs.com/2016/10/"> 2016年十月 &nbsp;(3)</option>
+	<option value="http://www.hankcs.com/2016/09/"> 2016年九月 &nbsp;(3)</option>
+	<option value="http://www.hankcs.com/2016/08/"> 2016年八月 &nbsp;(7)</option>
+	<option value="http://www.hankcs.com/2016/07/"> 2016年七月 &nbsp;(1)</option>
+	<option value="http://www.hankcs.com/2016/06/"> 2016年六月 &nbsp;(1)</option>
+	<option value="http://www.hankcs.com/2016/05/"> 2016年五月 &nbsp;(3)</option>
+	<option value="http://www.hankcs.com/2016/04/"> 2016年四月 &nbsp;(2)</option>
+	<option value="http://www.hankcs.com/2016/03/"> 2016年三月 &nbsp;(3)</option>
+	<option value="http://www.hankcs.com/2016/02/"> 2016年二月 &nbsp;(3)</option>
+	<option value="http://www.hankcs.com/2015/12/"> 2015年十二月 &nbsp;(3)</option>
+	<option value="http://www.hankcs.com/2015/11/"> 2015年十一月 &nbsp;(6)</option>
+	<option value="http://www.hankcs.com/2015/10/"> 2015年十月 &nbsp;(4)</option>
+	<option value="http://www.hankcs.com/2015/09/"> 2015年九月 &nbsp;(4)</option>
+	<option value="http://www.hankcs.com/2015/08/"> 2015年八月 &nbsp;(2)</option>
+	<option value="http://www.hankcs.com/2015/07/"> 2015年七月 &nbsp;(6)</option>
+	<option value="http://www.hankcs.com/2015/05/"> 2015年五月 &nbsp;(3)</option>
+	<option value="http://www.hankcs.com/2015/04/"> 2015年四月 &nbsp;(5)</option>
+	<option value="http://www.hankcs.com/2015/03/"> 2015年三月 &nbsp;(3)</option>
+	<option value="http://www.hankcs.com/2015/02/"> 2015年二月 &nbsp;(22)</option>
+	<option value="http://www.hankcs.com/2015/01/"> 2015年一月 &nbsp;(14)</option>
+	<option value="http://www.hankcs.com/2014/12/"> 2014年十二月 &nbsp;(10)</option>
+	<option value="http://www.hankcs.com/2014/11/"> 2014年十一月 &nbsp;(21)</option>
+	<option value="http://www.hankcs.com/2014/10/"> 2014年十月 &nbsp;(14)</option>
+	<option value="http://www.hankcs.com/2014/09/"> 2014年九月 &nbsp;(16)</option>
+	<option value="http://www.hankcs.com/2014/08/"> 2014年八月 &nbsp;(11)</option>
+	<option value="http://www.hankcs.com/2014/07/"> 2014年七月 &nbsp;(6)</option>
+	<option value="http://www.hankcs.com/2014/06/"> 2014年六月 &nbsp;(13)</option>
+	<option value="http://www.hankcs.com/2014/05/"> 2014年五月 &nbsp;(28)</option>
+	<option value="http://www.hankcs.com/2014/04/"> 2014年四月 &nbsp;(41)</option>
+	<option value="http://www.hankcs.com/2014/03/"> 2014年三月 &nbsp;(26)</option>
+	<option value="http://www.hankcs.com/2014/02/"> 2014年二月 &nbsp;(52)</option>
+	<option value="http://www.hankcs.com/2014/01/"> 2014年一月 &nbsp;(28)</option>
+	<option value="http://www.hankcs.com/2013/12/"> 2013年十二月 &nbsp;(29)</option>
+	<option value="http://www.hankcs.com/2013/11/"> 2013年十一月 &nbsp;(21)</option>
+	<option value="http://www.hankcs.com/2013/10/"> 2013年十月 &nbsp;(11)</option>
+	<option value="http://www.hankcs.com/2013/09/"> 2013年九月 &nbsp;(19)</option>
+	<option value="http://www.hankcs.com/2013/08/"> 2013年八月 &nbsp;(22)</option>
+	<option value="http://www.hankcs.com/2013/07/"> 2013年七月 &nbsp;(36)</option>
+	<option value="http://www.hankcs.com/2013/06/"> 2013年六月 &nbsp;(24)</option>
+	<option value="http://www.hankcs.com/2013/05/"> 2013年五月 &nbsp;(36)</option>
+	<option value="http://www.hankcs.com/2013/04/"> 2013年四月 &nbsp;(29)</option>
+	<option value="http://www.hankcs.com/2013/03/"> 2013年三月 &nbsp;(46)</option>
+	<option value="http://www.hankcs.com/2013/02/"> 2013年二月 &nbsp;(5)</option>
+	<option value="http://www.hankcs.com/2012/05/"> 2012年五月 &nbsp;(2)</option>
+	<option value="http://www.hankcs.com/2012/04/"> 2012年四月 &nbsp;(6)</option>
+	<option value="http://www.hankcs.com/2010/12/"> 2010年十二月 &nbsp;(5)</option>
+	<option value="http://www.hankcs.com/2010/11/"> 2010年十一月 &nbsp;(10)</option>
+	<option value="http://www.hankcs.com/2010/10/"> 2010年十月 &nbsp;(13)</option>
+	<option value="http://www.hankcs.com/2010/09/"> 2010年九月 &nbsp;(6)</option>
+	<option value="http://www.hankcs.com/2010/08/"> 2010年八月 &nbsp;(5)</option>
+	<option value="http://www.hankcs.com/2010/07/"> 2010年七月 &nbsp;(3)</option>
+	<option value="http://www.hankcs.com/2010/06/"> 2010年六月 &nbsp;(12)</option>
+	<option value="http://www.hankcs.com/2010/05/"> 2010年五月 &nbsp;(14)</option>
+	<option value="http://www.hankcs.com/2010/04/"> 2010年四月 &nbsp;(8)</option>
+	<option value="http://www.hankcs.com/2010/03/"> 2010年三月 &nbsp;(16)</option>
+	<option value="http://www.hankcs.com/2010/01/"> 2010年一月 &nbsp;(16)</option>
+	<option value="http://www.hankcs.com/2009/12/"> 2009年十二月 &nbsp;(33)</option>
+	<option value="http://www.hankcs.com/2009/11/"> 2009年十一月 &nbsp;(26)</option>
+	<option value="http://www.hankcs.com/2009/09/"> 2009年九月 &nbsp;(2)</option>
+
+		</select>
+		</div><div class="widget widget_ui_posts"><h3>热门文章</h3><ul>		<li><a target="_blank" href="http://www.hankcs.com/ml/machine-learning-entry-list.html"><span class="thumbnail"><img src="./naive-bayesian-method_files/6cbb8645gw1ew7s3qoi2uj20h30meaco.jpg" class="thumb" alt="机器学习入门书单" title="机器学习入门书单"></span><span class="text">机器学习入门书单</span><span class="muted">2015-02-04</span><span class="muted">评论(26)</span></a></li>
+		<li><a target="_blank" href="http://www.hankcs.com/ml/back-propagation-neural-network.html"><span class="thumbnail"><img src="./naive-bayesian-method_files/6cbb8645gw1exsm4yho09j208c044t8o.jpg" class="thumb" alt="反向传播神经网络极简入门" title="反向传播神经网络极简入门"></span><span class="text">反向传播神经网络极简入门</span><span class="muted">2015-11-08</span><span class="muted">评论(25)</span></a></li>
+		<li><a target="_blank" href="http://www.hankcs.com/ml/k-nearest-neighbor-method.html"><span class="thumbnail"><img src="./naive-bayesian-method_files/6cbb8645jw1eoxj45stqqg20m80godki.gif" class="thumb" alt="k近邻法" title="k近邻法"></span><span class="text">k近邻法</span><span class="muted">2015-02-06</span><span class="muted">评论(11)</span></a></li>
+		<li><a target="_blank" href="http://www.hankcs.com/ml/naive-bayesian-method.html"><span class="thumbnail"><img src="./naive-bayesian-method_files/6cbb8645jw1eozn0y3spcj20mn0h3q3a(1).jpg" class="thumb" alt="朴素贝叶斯法" title="朴素贝叶斯法"></span><span class="text">朴素贝叶斯法</span><span class="muted">2015-02-09</span><span class="muted">评论(8)</span></a></li>
+		<li><a target="_blank" href="http://www.hankcs.com/ml/crf-code-analysis.html"><span class="thumbnail"><img src="./naive-bayesian-method_files/6cbb8645gw1f72dgz2npkj21hc0uhwrp.jpg" class="thumb" alt="CRF++代码分析" title="CRF++代码分析"></span><span class="text">CRF++代码分析</span><span class="muted">2016-08-22</span><span class="muted">评论(8)</span></a></li>
+		<li><a target="_blank" href="http://www.hankcs.com/ml/understanding-the-convolution-in-deep-learning.html"><span class="thumbnail"><img src="./naive-bayesian-method_files/006Fmjmcly1fdwjpji6qtj30dw05d0t8.jpg" class="thumb" alt="理解深度学习中的卷积" title="理解深度学习中的卷积"></span><span class="text">理解深度学习中的卷积</span><span class="muted">2017-03-24</span><span class="muted">评论(7)</span></a></li>
+</ul></div><div class="widget widget_ui_posts" style="top: 0px;"><h3>最新文章</h3><ul>		<li><a target="_blank" href="http://www.hankcs.com/ml/hinton-recent-applications-of-deep-neural-nets.html"><span class="thumbnail"><img src="./naive-bayesian-method_files/006Fmjmcly1fga3c5iit4j30n40hg0tw.jpg" class="thumb" alt="Hinton神经网络公开课16 Recent applications of deep neural nets" title="Hinton神经网络公开课16 Recent applications of deep neural nets"></span><span class="text">Hinton神经网络公开课16 Recent applications of deep neural nets</span><span class="muted">2017-06-05</span><span class="muted">评论(0)</span></a></li>
+		<li><a target="_blank" href="http://www.hankcs.com/ml/hinton-modeling-hierarchical-structure-with-neural-nets.html"><span class="thumbnail"><img src="./naive-bayesian-method_files/006Fmjmcly1fg9g1g542jj30z60n07t8.jpg" class="thumb" alt="Hinton神经网络公开课15 Modeling hierarchical structure with neural nets" title="Hinton神经网络公开课15 Modeling hierarchical structure with neural nets"></span><span class="text">Hinton神经网络公开课15 Modeling hierarchical structure with neural nets</span><span class="muted">2017-06-04</span><span class="muted">评论(0)</span></a></li>
+		<li><a target="_blank" href="http://www.hankcs.com/ml/nnml-rbm.html"><span class="thumbnail"><img src="./naive-bayesian-method_files/006Fmjmcly1fg8ao6kthsj31kw11x48q.jpg" class="thumb" alt="Hinton神经网络公开课编程练习4 Restricted Boltzmann Machines" title="Hinton神经网络公开课编程练习4 Restricted Boltzmann Machines"></span><span class="text">Hinton神经网络公开课编程练习4 Restricted Boltzmann Machines</span><span class="muted">2017-06-03</span><span class="muted">评论(0)</span></a></li>
+		<li><a target="_blank" href="http://www.hankcs.com/ml/hinton-deep-neural-nets-with-generative-pre-training.html"><span class="thumbnail"><img src="./naive-bayesian-method_files/006Fmjmcly1fg61rho89qj30p00e6gsm.jpg" class="thumb" alt="Hinton神经网络公开课14 Deep neural nets with generative pre-training" title="Hinton神经网络公开课14 Deep neural nets with generative pre-training"></span><span class="text">Hinton神经网络公开课14 Deep neural nets with generative pre-training</span><span class="muted">2017-06-02</span><span class="muted">评论(0)</span></a></li>
+		<li><a target="_blank" href="http://www.hankcs.com/ml/hinton-stacking-rbms-to-make-deep-belief-nets.html"><span class="thumbnail"><img src="./naive-bayesian-method_files/006Fmjmcly1fg4sosou7jj30zk0aqac0.jpg" class="thumb" alt="Hinton神经网络公开课13 Stacking RBMs to make Deep Belief Nets" title="Hinton神经网络公开课13 Stacking RBMs to make Deep Belief Nets"></span><span class="text">Hinton神经网络公开课13 Stacking RBMs to make Deep Belief Nets</span><span class="muted">2017-05-31</span><span class="muted">评论(0)</span></a></li>
+		<li><a target="_blank" href="http://www.hankcs.com/ml/hinton-rbm.html"><span class="thumbnail"><img src="./naive-bayesian-method_files/006Fmjmcly1fg2jgwwqzxj30h70ay0td.jpg" class="thumb" alt="Hinton神经网络公开课12 Restricted Boltzmann machines (RBMs)" title="Hinton神经网络公开课12 Restricted Boltzmann machines (RBMs)"></span><span class="text">Hinton神经网络公开课12 Restricted Boltzmann machines (RBMs)</span><span class="muted">2017-05-29</span><span class="muted">评论(0)</span></a></li>
+</ul></div><div class="widget widget_text"><h3>订阅关注</h3>			<div class="textwidget"><iframe width="100%" height="400" class="share_self" frameborder="0" scrolling="no" src="./naive-bayesian-method_files/index.html"></iframe></div>
+		</div><div class="widget widget_ui_tags" style="top: 0px;"><h3>热门标签</h3><div class="d_tags"><a href="http://www.hankcs.com/tag/%e3%80%8a%e6%8c%91%e6%88%98%e7%a8%8b%e5%ba%8f%e8%ae%be%e8%ae%a1%e7%ab%9e%e8%b5%9b%e7%ac%ac2%e7%89%88%e3%80%8b/">《挑战程序设计竞赛(第2版)》 (184)</a><a href="http://www.hankcs.com/tag/%e3%80%8a%e6%97%a5%e8%af%ad%e7%bb%bc%e5%90%88%e6%95%99%e7%a8%8b%e3%80%8b/">《日语综合教程》 (57)</a><a href="http://www.hankcs.com/tag/%e3%80%8a%e6%96%b0%e7%bc%96%e6%97%a5%e8%af%ad%e9%98%85%e8%af%bb%e6%96%87%e9%80%89%e3%80%8b/">《新编日语阅读文选》 (34)</a><a href="http://www.hankcs.com/tag/%e3%80%8a%e6%99%ba%e8%83%bdweb%e7%ae%97%e6%b3%95%e3%80%8b/">《智能Web算法》 (20)</a><a href="http://www.hankcs.com/tag/neural-networks-for-machine-learning/">Neural Networks for Machine Learning (19)</a><a href="http://www.hankcs.com/tag/%e4%b8%ad%e6%96%87%e5%88%86%e8%af%8d/">中文分词 (18)</a><a href="http://www.hankcs.com/tag/wordpress/">WordPress (17)</a><a href="http://www.hankcs.com/tag/lucene/">Lucene (15)</a><a href="http://www.hankcs.com/tag/%e7%bb%b4%e7%89%b9%e6%af%94%e7%ae%97%e6%b3%95/">维特比算法 (15)</a><a href="http://www.hankcs.com/tag/%e6%96%b0%e7%bc%96%e6%97%a5%e8%af%ad%e5%95%86%e5%8a%a1%e8%b4%b8%e6%98%93%e4%bc%9a%e8%af%9d/">新编日语商务贸易会话 (14)</a><a href="http://www.hankcs.com/tag/intellij-idea/">IntelliJ IDEA (13)</a><a href="http://www.hankcs.com/tag/%e3%80%8a%e7%bb%9f%e8%ae%a1%e5%ad%a6%e4%b9%a0%e6%96%b9%e6%b3%95%e3%80%8b/">《统计学习方法》 (12)</a><a href="http://www.hankcs.com/tag/uva/">UVa (11)</a><a href="http://www.hankcs.com/tag/drupal7%e4%b8%93%e4%b8%9a%e5%bc%80%e5%8f%91%e6%8c%87%e5%8d%97-%e7%ac%ac%e4%b8%89%e7%89%88/">Drupal7专业开发指南 第三版 (10)</a><a href="http://www.hankcs.com/tag/%e3%80%8a%e6%8c%91%e6%88%98%e7%bc%96%e7%a8%8b-%e7%a8%8b%e5%ba%8f%e8%ae%be%e8%ae%a1%e7%ab%9e%e8%b5%9b%e8%ae%ad%e7%bb%83%e6%89%8b%e5%86%8c%e3%80%8b/">《挑战编程-程序设计竞赛训练手册》 (10)</a><a href="http://www.hankcs.com/tag/hmm/">HMM (10)</a><a href="http://www.hankcs.com/tag/matlab/">matlab (9)</a><a href="http://www.hankcs.com/tag/cs224n/">CS224n (9)</a><a href="http://www.hankcs.com/tag/cs229/">CS229 (8)</a><a href="http://www.hankcs.com/tag/google-code-jam/">Google code jam (7)</a><a href="http://www.hankcs.com/tag/%e3%80%8ac%e6%a0%87%e5%87%86%e7%a8%8b%e5%ba%8f%e5%ba%93-%e8%87%aa%e4%bf%ae%e6%95%99%e7%a8%8b%e4%b8%8e%e5%8f%82%e8%80%83%e6%89%8b%e5%86%8c%e3%80%8b/">《C++标准程序库—自修教程与参考手册》 (7)</a><a href="http://www.hankcs.com/tag/crf/">CRF (7)</a><a href="http://www.hankcs.com/tag/word2vec/">word2vec (7)</a><a href="http://www.hankcs.com/tag/yii/">Yii (6)</a><a href="http://www.hankcs.com/tag/%e6%b7%b1%e5%ba%a6%e5%ad%a6%e4%b9%a0/">深度学习 (6)</a><a href="http://www.hankcs.com/tag/webrtc/">WebRTC (5)</a><a href="http://www.hankcs.com/tag/cocos2d-x/">Cocos2d-x (5)</a><a href="http://www.hankcs.com/tag/tensorflow/">TensorFlow (5)</a><a href="http://www.hankcs.com/tag/cnn/">CNN (5)</a><a href="http://www.hankcs.com/tag/android/">Android (4)</a></div></div></aside></section>
+
+<div class="branding branding-black">
+	<div class="container">
+		<h2>我的开源项目</h2>
+		<a target="blank" class="btn btn-lg" href="https://github.com/hankcs/HanLP">HanLP自然语言处理包</a><a target="blank" class="btn btn-lg" href="https://github.com/hankcs/AhoCorasickDoubleArrayTrie">基于DoubleArrayTrie的Aho Corasick自动机</a>	</div>
+</div>
+<footer class="footer">
+	<div class="container">
+		<div class="fcode">
+					</div>
+		<p>© 2017 <a href="http://www.hankcs.com/">码农场</a> &nbsp; <a href="http://www.hankcs.com/sitemap.xml">网站地图</a> &nbsp; <a href="http://www.miitbeian.gov.cn/" target="_blank">沪ICP备14002007号-1</a></p>
+		<div style="display:none">
+<script language="javascript" type="text/javascript" src="./naive-bayesian-method_files/trace.js.下载"></script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-47205472-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<script language="javascript" type="text/javascript" src="./naive-bayesian-method_files/15590612.js.下载"></script><a href="http://www.51.la/?15590612" target="_blank" title="51.La 网站流量统计系统"><img alt="51.La 网站流量统计系统" src="./naive-bayesian-method_files/icon_2.gif" style="border:none"></a>
+
+<noscript>&lt;a href="//www.51.la/?15590612" target="_blank"&gt;&lt;img alt="&amp;#x6211;&amp;#x8981;&amp;#x5566;&amp;#x514D;&amp;#x8D39;&amp;#x7EDF;&amp;#x8BA1;" src="//img.users.51.la/15590612.asp" style="border:none" /&gt;&lt;/a&gt;</noscript>
+</div>	</div>
+</footer>
+
+<script>
+window.jsui={
+    www: 'http://www.hankcs.com',
+    uri: 'http://www.hankcs.com/wp-content/themes/dux',
+    ver: '1.3',
+	roll: ["1","2","6","4"],
+    ajaxpager: '500',
+    url_rp: 'http://www.hankcs.com/about/'
+};
+</script>
+<script type="text/javascript" src="./naive-bayesian-method_files/form.js.下载"></script>
+<script type="text/javascript" src="./naive-bayesian-method_files/bootstrap.min.js.下载"></script>
+<script type="text/javascript" src="./naive-bayesian-method_files/loader.js.下载"></script>
+<script type="text/javascript" src="./naive-bayesian-method_files/wp-embed.min.js.下载"></script>
+
+    <div class="m-mask"></div>    <div class="rollbar" style="display: none;"><ul><li><a href="javascript:(scrollTo());"><i class="fa fa-angle-up"></i></a><h6>去顶部<i></i></h6></li><li><a href="javascript:(on_click_toc_button());"><i class="fa fa-list post_open_icon"></i></a><h6 id="toc_label">打开目录<i></i></h6></li><li><a href="javascript:(scrollTo(&#39;#comments&#39;,-15));"><i class="fa fa-comments"></i></a><h6>去评论<i></i></h6></li></ul></div><ul class="m-navbar">
+			<li id="menu-item-1834" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1834"><a href="http://www.hankcs.com/program/cpp/">C++</a></li>
+<li id="menu-item-1835" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1835"><a href="http://www.hankcs.com/program/java/">Java</a></li>
+<li id="menu-item-5754" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-5754"><a href="http://www.hankcs.com/ml/">机器学习</a></li>
+<li id="menu-item-2954" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-2954"><a href="http://www.hankcs.com/nlp/">NLP</a>
+<ul class="sub-menu">
+	<li id="menu-item-4344" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-4344"><a href="http://www.hankcs.com/nlp/corpus/">语料库</a></li>
+	<li id="menu-item-4342" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-4342"><a href="http://www.hankcs.com/nlp/segment/">中文分词</a></li>
+	<li id="menu-item-4343" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-4343"><a href="http://www.hankcs.com/nlp/ner/">命名实体识别</a></li>
+	<li id="menu-item-4479" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-4479"><a href="http://www.hankcs.com/nlp/parsing/">句法分析</a></li>
+</ul>
+</li>
+<li id="menu-item-1837" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1837"><a href="http://www.hankcs.com/program/algorithm/">算法</a></li>
+<li id="menu-item-1839" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1839"><a href="http://www.hankcs.com/software/">软件</a></li>
+<li id="menu-item-1838" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-1838"><a href="http://www.hankcs.com/nihongonote/">日语</a>
+<ul class="sub-menu">
+	<li id="menu-item-1860" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1860"><a href="http://www.hankcs.com/nihongonote/riyurimen/">日语入门</a></li>
+	<li id="menu-item-1861" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1861"><a href="http://www.hankcs.com/nihongonote/listening/">日语听力</a></li>
+	<li id="menu-item-1863" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-1863"><a href="http://www.hankcs.com/nihongonote/tekusuto/">日语综合教程</a>
+	<ul class="sub-menu">
+		<li id="menu-item-2190" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2190"><a href="http://www.hankcs.com/nihongonote/tekusuto/disance/">第三册</a></li>
+		<li id="menu-item-2192" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2192"><a href="http://www.hankcs.com/nihongonote/tekusuto/daiyonnsatu/">第四册</a></li>
+		<li id="menu-item-2191" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2191"><a href="http://www.hankcs.com/nihongonote/tekusuto/5/">第五册</a></li>
+		<li id="menu-item-2702" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2702"><a href="http://www.hankcs.com/nihongonote/tekusuto/%e7%ac%ac%e5%85%ad%e5%86%8c/">第六册</a></li>
+		<li id="menu-item-3604" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-3604"><a href="http://www.hankcs.com/nihongonote/tekusuto/%e7%ac%ac%e4%b8%83%e5%86%8c/">第七册</a></li>
+	</ul>
+</li>
+	<li id="menu-item-1859" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-1859"><a href="http://www.hankcs.com/nihongonote/fd2/">新编日语阅读文选</a>
+	<ul class="sub-menu">
+		<li id="menu-item-2187" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2187"><a href="http://www.hankcs.com/nihongonote/fd2/c1/">第一册</a></li>
+		<li id="menu-item-2189" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2189"><a href="http://www.hankcs.com/nihongonote/fd2/c2/">第二册</a></li>
+		<li id="menu-item-2188" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2188"><a href="http://www.hankcs.com/nihongonote/fd2/c3/">第三册</a></li>
+	</ul>
+</li>
+	<li id="menu-item-1858" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1858"><a href="http://www.hankcs.com/nihongonote/jpkaiwa/">日语商务贸易会话</a></li>
+</ul>
+</li>
+<li id="menu-item-1843" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1843"><a href="http://www.hankcs.com/about/">关于</a></li>
+							<li class="navto-search"><a href="javascript:;" class="search-show active"><i class="fa fa-search"></i></a></li>
+					</ul>			<div class="sign">			    <div class="sign-mask"></div>			    <div class="container">			        <a href="http://www.hankcs.com/ml/naive-bayesian-method.html#" class="close-link signclose-loader"><i class="fa fa-close"></i></a>			        <div class="sign-tips"></div>			        <form id="sign-in">  			            <h3><small class="signup-loader">切换注册</small>登录</h3>			            <h6>			                <label for="inputEmail">用户名或邮箱</label>			                <input type="text" name="username" class="form-control" id="inputEmail" placeholder="用户名或邮箱">			            </h6>			            <h6>			                <label for="inputPassword">密码</label>			                <input type="password" name="password" class="form-control" id="inputPassword" placeholder="登录密码">			            </h6>			            <div class="sign-submit">			                <input type="button" class="btn btn-primary signsubmit-loader" name="submit" value="登录">  			                <input type="hidden" name="action" value="signin">			                <label><input type="checkbox" checked="checked" name="remember" value="forever">记住我</label>			            </div><div class="sign-info"><a href="http://www.hankcs.com/about/">找回密码？</a></div></form>			        <form id="sign-up"> 			            <h3><small class="signin-loader">切换登录</small>注册</h3>			            <h6>			                <label for="inputName">昵称</label>			                <input type="text" name="name" class="form-control" id="inputName" placeholder="设置昵称">			            </h6>			            <h6>			                <label for="inputEmail">邮箱</label>			                <input type="email" name="email" class="form-control" id="inputEmail" placeholder="邮箱">			            </h6>			            <div class="sign-submit">			                <input type="button" class="btn btn-primary btn-block signsubmit-loader" name="submit" value="快速注册">  			                <input type="hidden" name="action" value="signup">  			            </div>			        </form>			    </div>			</div>		</body></html>
