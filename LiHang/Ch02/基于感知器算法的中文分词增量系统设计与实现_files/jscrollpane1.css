@@ -1,0 +1,55 @@
+@charset "utf-8";
+/* * CSS Styles that are needed by jScrollPane for it to operate correctly. * * Include this stylesheet in your site or copy and paste the styles below into your stylesheet - jScrollPane * may not operate correctly without them. */
+/*5-27滚动条样式*/
+body{margin:0;padding:0;font:12px/1.5 "微软雅黑","宋体";color:#333;}
+a{text-decoration: none;}
+a:hover{text-decoration: underline;}
+.topic{width: 228px;height: 16px;padding: 10px;}
+.topic h3{float: left;font:16px/100% "微软雅黑","宋体";color: #666;}
+.topic a{display: block;float: right;font-size: 12px;color: #146c88;}
+.wrapper{px;width: 236px;px;height: 208px;px;padding: 10px 5px;border-top: 1px solid #ccc;}
+.wrapper a{font-size: 12px;color: #146c88;}
+.wrapper a:hover{background: #ECEFF5;}
+.jp-container{height:208px;}
+.jp-container a  {display: block;height: 26px;line-height: 26px;overflow: hidden;}
+.jp-container a:hover{background:#ECEFF5;}
+.jp-container a img{float:left;margin:5px;width: 16px;}
+.wrapper a h6{width: 180px;display:block;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;}
+.jspContainer{overflow:hidden;position:relative;}
+.jspPane{position:absolute;top: 0;max-height: 1300px;}
+.jspVerticalBar{position:absolute;top:0;right:0;width:8px;height:100%;background:white;}
+/*.jspHorizontalBar{position:absolute;bottom:0;left:0;width:100%;height:10px;background:red;}*/
+.jspVerticalBar *,.jspHorizontalBar *{margin:0;padding:0;}
+.jspCap{display:none;}
+.jspHorizontalBar .jspCap{float:left;}
+.jspTrack{
+	background:#F2F4F8;
+	position:relative;
+	width: 6px;
+	height: 100px;
+	border:1px solid #F2F4F8;
+	-moz-border-radius:3px;
+	-webkit-border-radius:3px;
+	border-radius:3px;
+}
+.jspDrag{
+	width: 6px;
+	background:#ccc;
+	position:relative;
+	top:0;
+	left:0;
+	cursor:pointer;
+	border:1px solid #ccc;
+	-moz-border-radius:3px;
+	-webkit-border-radius:3px;
+	border-radius:3px;
+}
+.jspHorizontalBar .jspTrack,.jspHorizontalBar .jspDrag{float:left;height:100%;}
+.jspArrow{background:#50506d;text-indent:-20000px;display:block;cursor:pointer;}
+.jspArrow.jspDisabled{cursor:default;background:#80808d;}
+.jspVerticalBar .jspArrow{height:10px;}
+.jspHorizontalBar .jspArrow{width:10px;float:left;height:100%;}
+.jspVerticalBar .jspArrow:focus{outline:none;}
+.jspCorner{background:#eeeef4;float:left;height:100%;}
+/* Yuk! CSS Hack for IE6 3 pixel bug :( */
+* html .jspCorner{margin:0 -3px 0 0;}

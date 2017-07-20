@@ -1,0 +1,464 @@
+! function() {
+	var a = window.baidu || {
+		version: "1-1-0"
+	};
+	a.object = a.object || {}, a.object.extend = function(a, b) {
+			for (var c in b) b.hasOwnProperty(c) && (a[c] = b[c])
+		}, a.extend = a.object.extend, a.dom = a.dom || {}, a.dom.g = function(a) {
+			return "string" == typeof a || a instanceof String ? document.getElementById(a) : a && a.nodeName && (1 == a.nodeType || 9 == a.nodeType) ? a : null
+		}, a.g = a.G = a.dom.g, a.dom.getDocument = function(b) {
+			return b = a.dom.g(b), 9 == b.nodeType ? b : b.ownerDocument || b.document
+		}, a.dom._styleFixer = a.dom._styleFixer || {}, a.dom._styleFilter = a.dom._styleFilter || [], a.dom._styleFilter.filter = function(b, c, d) {
+			for (var g, e = 0, f = a.dom._styleFilter; g = f[e]; e++)(g = g[d]) && (c = g(b, c));
+			return c
+		}, a.string = a.string || {}, a.string.toCamelCase = function(a) {
+			return String(a).replace(/[-_]\D/g, function(a) {
+				return a.charAt(1).toUpperCase()
+			})
+		}, a.dom.getStyle = function(b, c) {
+			var d = a.dom;
+			b = d.g(b), c = a.string.toCamelCase(c);
+			var e = b.style[c];
+			if (e) return e;
+			var f = d._styleFixer[c],
+				g = b.currentStyle || (a.browser.ie ? b.style : getComputedStyle(b, null));
+			return e = "object" == typeof f && f.get ? f.get(b, g) : g[f || c], (f = d._styleFilter) && (e = f.filter(c, e, "get")), e
+		}, a.getStyle = a.dom.getStyle, a.browser = a.browser || {}, /msie (\d+\.\d)/i.test(navigator.userAgent) && (a.ie = a.browser.ie = parseFloat(RegExp.$1)), /opera\/(\d+\.\d)/i.test(navigator.userAgent) && (a.browser.opera = parseFloat(RegExp.$1)), a.browser.isWebkit = /webkit/i.test(navigator.userAgent), a.browser.isGecko = /gecko/i.test(navigator.userAgent) && !/like gecko/i.test(navigator.userAgent), a.browser.isStrict = "CSS1Compat" == document.compatMode, a.dom.getPosition = function(c) {
+			var d = a.dom.getDocument(c),
+				e = a.browser;
+			c = a.dom.g(c);
+			var f = e.isGecko > 0 && d.getBoxObjectFor && "absolute" == a.dom.getStyle(c, "position") && ("" === c.style.top || "" === c.style.left),
+				g = {
+					left: 0,
+					top: 0
+				},
+				h = e.ie && !e.isStrict ? d.body : d.documentElement;
+			if (c == h) return g;
+			var j, i = null;
+			if (c.getBoundingClientRect) j = c.getBoundingClientRect(), g.left = Math.floor(j.left) + Math.max(d.documentElement.scrollLeft, d.body.scrollLeft), g.top = Math.floor(j.top) + Math.max(d.documentElement.scrollTop, d.body.scrollTop), g.left -= d.documentElement.clientLeft, g.top -= d.documentElement.clientTop, e.ie && !e.isStrict && (g.left -= 2, g.top -= 2);
+			else if (d.getBoxObjectFor && !f) {
+				j = d.getBoxObjectFor(c);
+				var k = d.getBoxObjectFor(h);
+				g.left = j.screenX - k.screenX, g.top = j.screenY - k.screenY
+			} else {
+				i = c;
+				do {
+					if (g.left += i.offsetLeft, g.top += i.offsetTop, e.isWebkit > 0 && "fixed" == a.dom.getStyle(i, "position")) {
+						g.left += d.body.scrollLeft, g.top += d.body.scrollTop;
+						break
+					}
+					i = i.offsetParent
+				} while (i && i != c);
+				for ((e.opera > 0 || e.isWebkit > 0 && "absolute" == a.dom.getStyle(c, "position")) && (g.top -= d.body.offsetTop), i = c.offsetParent; i && i != d.body;) g.left -= i.scrollLeft, b.opera && "TR" == i.tagName || (g.top -= i.scrollTop), i = i.offsetParent
+			}
+			return g
+		}, a.event = a.event || {}, a.event._unload = function() {
+			for (var e, f, b = a.event._listeners, c = b.length, d = !!window.removeEventListener; c--;) e = b[c], f = e[0], f.removeEventListener ? f.removeEventListener(e[1], e[3], !1) : f.detachEvent && f.detachEvent("on" + e[1], e[3]);
+			d ? window.removeEventListener("unload", a.event._unload, !1) : window.detachEvent("onunload", a.event._unload)
+		}, window.attachEvent ? window.attachEvent("onunload", a.event._unload) : window.addEventListener("unload", a.event._unload, !1), a.event._listeners = a.event._listeners || [], a.event.on = function(b, c, d) {
+			c = c.replace(/^on/i, ""), "string" == typeof b && (b = a.dom.g(b));
+			var e = function(a) {
+					d.call(b, a)
+				},
+				f = a.event._listeners;
+			return f[f.length] = [b, c, d, e], b.attachEvent ? b.attachEvent("on" + c, e) : b.addEventListener && b.addEventListener(c, e, !1), b
+		}, a.on = a.event.on, a.event.preventDefault = function(a) {
+			a.preventDefault ? a.preventDefault() : a.returnValue = !1
+		}, a.ui = a.ui || {}, a.suggestion = a.ui.suggestion = a.ui.suggestion || {},
+		function() {
+			var b = {},
+				c = function(a) {
+					var b = {};
+					a.listen = function(c, d) {
+						b[c] = b[c] || [];
+						for (var e = 0; e < b[c].length && b[c][e] != d;) e++;
+						return e == b[c].length && b[c].push(d), a
+					}, a.call = function(c) {
+						if (b[c])
+							for (var d = 0; d < b[c].length; d++) b[c][d].apply(this, Array.prototype.slice.call(arguments, 1));
+						return a
+					}
+				};
+			b.extend = function(a) {
+				return new c(a), a
+			}, b.extend(b), a.suggestion._Central = b
+		}(), a.ui.suggestion._Div = function(b, c, d, e, f) {
+			function p(a, c) {
+				if ("none" == n.style.display) return void b.call("need_data", d.getValue());
+				var e = r()[0];
+				if (q(), a) {
+					if (0 == e) return u(c), void e--; - 1 == e && (e = i.length), e--
+				} else {
+					if (e == i.length - 1) return u(c), void(e = -1);
+					e++
+				}
+				t(e), s();
+				var g = d.getValue();
+				u(e);
+				var h = r();
+				f.onpick(g, h[0], h[1], h[2])
+			}
+
+			function q() {
+				for (var a = 0; a < m.length; a++) m[a].className = l + "ml"
+			}
+
+			function r() {
+				if (m && "none" != n.style.display)
+					for (var a = 0; a < m.length; a++)
+						if (m[a].className == l + "mo") return [a, i[a], j[a]];
+				return [-1, ""]
+			}
+
+			function s() {
+				var a = r();
+				f.onhighlight(d.getValue(), a[0], a[1], a[2])
+			}
+
+			function t(a) {
+				q(), m[a].className = l + "mo"
+			}
+
+			function u(a) {
+				var c = i && "number" == typeof a && "undefined" != typeof i[a] ? i[a] : a;
+				b.call("pick_word", c)
+			}
+
+			function v() {
+				return "none" == n.style.display ? null : (o.style.display = n.style.display = "none", void f.onhide())
+			}
+
+			function w(a) {
+				var c = a;
+				return function() {
+					b.call("confirm_item", d.getValue(), i[c], c, j[c]);
+					var a = d.getValue();
+					u(i[c]), f.onpick(a, c, i[c], j[c]), f.onconfirm(d.getValue(), c, i[c], j[c]), v()
+				}
+			}
+			var i, j, k, m, g = this,
+				l = f.class_prefix,
+				n = document.createElement("DIV");
+			n.id = l + (new Date).getTime(), n.className = l + "wpr", n.style.display = "none";
+			var o = document.createElement("IFRAME");
+			return o.className = l + "sd", o.style.display = "none", o.style.position = "absolute", o.style.borderWidth = "0px", f.apd_body ? document.body.appendChild(n) : c.parentNode.appendChild(n), n.parentNode.insertBefore(o, n), b.listen("start", function() {
+				a.on(document, "mousedown", function(a) {
+					a = a || window.event;
+					var b = a.target || a.srcElement;
+					if (b != c) {
+						for (; b = b.parentNode;)
+							if (b == n) return;
+						v()
+					}
+				}), a.on(window, "blur", v)
+			}), b.listen("key_enter", function() {
+				var a = r(),
+					b = -1 == a[0] ? k : a[1];
+				f.onconfirm(d.getValue(), a[0], b, a[2], !0), v()
+			}), b.listen("key_up", function(a) {
+				p(1, a)
+			}), b.listen("key_down", function(a) {
+				p(0, a)
+			}), b.listen("key_tab", v), b.listen("key_esc", v), b.listen("all_clear", v), b.listen("data_ready", function(c, d) {
+				k = d, i = [], j = [];
+				for (var f = 0, h = d.length; h > f; f++) "undefined" != typeof d[f].input ? (i[f] = d[f].input, j[f] = d[f].selection) : j[f] = i[f] = d[f];
+				if (0 != i.length) {
+					m = e(n, j, g);
+					for (var f = 0, h = m.length; h > f; f++) a.on(m[f], "mouseover", function() {
+						q(), this.className = l + "mo", s()
+					}), a.on(m[f], "mouseout", q), a.on(m[f], "mousedown", function(c) {
+						return b.call("mousedown_item"), a.ie ? void 0 : (c.stopPropagation(), c.preventDefault(), !1)
+					}), a.on(m[f], "click", w(f))
+				} else v()
+			}), {
+				element: n,
+				shade: o,
+				pick: u,
+				highlight: t,
+				hide: v,
+				dispose: function() {
+					n.parentNode.removeChild(n)
+				}
+			}
+		}, a.ui.suggestion._Data = function(a, b) {
+			var d = {};
+			return a.listen("response_data", function(b, c) {
+				d[b] = c, a.call("data_ready", b, c)
+			}), a.listen("need_data", function(c) {
+				"undefined" == typeof d[c] ? b(c) : a.call("data_ready", c, d[c])
+			}), {}
+		}, a.ui.suggestion._InputWatcher = function(b, c, d) {
+			var f, k, g = 0,
+				h = "",
+				i = "",
+				j = "",
+				l = !1,
+				m = !1,
+				n = !1;
+			return c.setAttribute("autocomplete", "off"), a.on(c, "keydown", function(c) {
+				n || (b.call("start"), n = !0), c = c || window.event;
+				var d;
+				switch (c.keyCode) {
+					case 9:
+						d = "tab";
+						break;
+					case 27:
+						d = "esc";
+						break;
+					case 13:
+						d = "enter";
+						break;
+					case 38:
+						d = "up", a.event.preventDefault(c);
+						break;
+					case 40:
+						d = "down"
+				}
+				d && b.call("key_" + d, i)
+			}), a.on(c, "mousedown", function() {
+				n || (b.call("start"), n = !0)
+			}), a.on(c, "beforedeactivate", function() {
+				l && (window.event.cancelBubble = !0, window.event.returnValue = !1)
+			}), b.listen("start", function() {
+				j = c.value, g = setInterval(function() {
+					if (!m) {
+						null == a.G(c) && suggestion.dispose();
+						var d = c.value;
+						d == h && "" != d && d != j && d != k ? 0 == f && (f = setTimeout(function() {
+							b.call("need_data", d)
+						}, 100)) : (clearTimeout(f), f = 0, "" == d && "" != h && (k = "", b.call("all_clear")), h = d, d != k && (i = d), j != c.value && (j = ""))
+					}
+				}, 10)
+			}), b.listen("pick_word", function(a) {
+				if (l) try {
+					c.blur()
+				} catch (b) {
+					setTimeout(function() {
+						c.blur()
+					}, 600)
+				}
+				c.value = k = a, l && c.focus()
+			}), b.listen("mousedown_item", function(a) {
+				l = !0, m = !0, setTimeout(function() {
+					m = !1, l = !1
+				}, 500)
+			}), b.listen("confirm_item", function(a, b, c, d) {
+				m = !1, i = h = c
+			}), {
+				getValue: function() {
+					return c.value
+				},
+				dispose: function() {
+					clearInterval(g)
+				}
+			}
+		}, a.ui.suggestion._Suggestion = function(b, c) {
+			var d = this;
+			a.ui.suggestion._MessageDispatcher;
+			if (d.options = {
+					onpick: function() {},
+					onconfirm: function() {},
+					onhighlight: function() {},
+					onhide: function() {},
+					view: null,
+					getData: !1,
+					prepend_html: "",
+					append_html: "",
+					class_prefix: "tangram_sug_",
+					apd_body: !1
+				}, a.extend(d.options, c), !(b = a.G(b))) return null;
+			d.inputElement = b, b.id ? d.options._inputId = b.id : b.id = d.options._inputId = d.options.class_prefix + "ipt" + (new Date).getTime(), d._adjustPos = function(c) {
+				var e = i.element,
+					f = i.shade,
+					g = document,
+					h = "BackCompat" == g.compatMode ? g.body : g.documentElement,
+					j = h.clientHeight,
+					k = h.clientWidth;
+				if ("none" != e.style.display || !c) {
+					var l = a.dom.getPosition(b),
+						m = [l.top + b.offsetHeight - 1, l.left, b.offsetWidth];
+					m = "function" == typeof d.options.view ? d.options.view(m) : m, e.style.display = f.style.display = "block", f.style.top = m[0] + "px", f.style.left = m[1] + "px", f.style.width = m[2] + "px";
+					var n = parseFloat(a.getStyle(e, "marginTop")) || 0,
+						o = parseFloat(a.getStyle(e, "marginLeft")) || 0;
+					if (e.style.top = m[0] - n + "px", e.style.left = m[1] - o + "px", a.ie && "BackCompat" == document.compatMode) e.style.width = m[2] + "px";
+					else {
+						var p = parseFloat(a.getStyle(e, "borderLeftWidth")) || 0,
+							q = parseFloat(a.getStyle(e, "borderRightWidth")) || 0,
+							r = parseFloat(a.getStyle(e, "marginRight")) || 0;
+						e.style.width = m[2] - p - q - o - r + "px"
+					}
+					f.style.height = e.offsetHeight + "px", (j != h.clientHeight || k != h.clientWidth) && d._adjustPos()
+				}
+			}, d._draw = function(a, b) {
+				var c = [],
+					e = document.createElement("TABLE");
+				e.cellPadding = 2, e.cellSpacing = 0;
+				var f = document.createElement("TBODY");
+				e.appendChild(f);
+				for (var g = 0, h = b.length; h > g; g++) {
+					var i = f.insertRow(-1);
+					c.push(i);
+					var j = i.insertCell(-1);
+					j.innerHTML = b[g]
+				}
+				var k = document.createElement("DIV");
+				k.className = d.options.class_prefix + "pre", k.innerHTML = d.options.prepend_html;
+				var l = document.createElement("DIV");
+				return l.className = d.options.class_prefix + "app", l.innerHTML = d.options.append_html, a.innerHTML = "", a.appendChild(k), a.appendChild(e), a.appendChild(l), d._adjustPos(), c
+			};
+			var f = a.suggestion._Central.extend(d),
+				h = (new a.ui.suggestion._Data(f, d.options.getData), new a.ui.suggestion._InputWatcher(f, b, i)),
+				i = new a.ui.suggestion._Div(f, b, h, d._draw, d.options);
+			return f.listen("start", function() {
+				setInterval(function() {
+					var a = i.element;
+					0 != a.offsetWidth && b.offsetWidth != a.offsetWidth && d._adjustPos()
+				}, 100), a.on(window, "resize", function() {
+					d._adjustPos(!0)
+				})
+			}), {
+				pick: i.pick,
+				hide: i.hide,
+				highlight: i.highlight,
+				getElement: function() {
+					return i.element
+				},
+				getData: d.options.getData,
+				giveData: function(a, b) {
+					f.call("response_data", a, b)
+				},
+				dispose: function() {
+					i.dispose(), h.dispose()
+				}
+			}
+		}, a.ui.suggestion.create = function(b, c) {
+			return new a.ui.suggestion._Suggestion(b, c)
+		}, window.baidu = a
+}();
+var BaiduSuggestion = function() {
+	function c(a) {
+		return document.createElement(a)
+	}
+
+	function e(c, e, j, k) {
+		if (c) {
+			if (("string" == typeof c || c instanceof String) && (c = baidu.G(c)), c.sugId || (c.sugId = (new Date).getTime()), b["sug" + c.sugId]) return !1;
+			if (null == e) var e = [];
+			else {
+				k = e.sugSubmit;
+				var l = e.fontColor ? e.fontColor : "#000",
+					m = e.fontSize ? e.fontSize : "14px",
+					n = e.fontFamily ? e.fontFamily : "verdana",
+					o = e.bgcolorHI ? e.bgcolorHI : "#36c",
+					p = e.fontColorHI ? e.fontColorHI : "#FFF",
+					q = e.borderColor ? e.borderColor : "#817f82";
+				h(".bdSug_wpr", "border:1px solid " + q + ";position:absolute;z-index:9;top:28px;left:0;color:" + l), h(".bdSug_wpr td", "font-size:" + m + ";font-family:" + n), h(".bdSug_mo", "background-color:" + o + ";color:" + p)
+			}
+			if ("relative" == i(document.body, "position") || "absolute" == i(document.body, "position")) {
+				var r = g(document.body);
+				e.XOffset = (e.XOffset ? parseInt(e.XOffset) : 0) + r.x, e.YOffset = (e.YOffset ? parseInt(e.YOffset) : 0) + r.y
+			}
+			b["sug" + c.sugId] = baidu.suggestion.create(c, d.createSugOptions(c.sugId, e, j, k ? f(c) : null)), a["give" + c.sugId] = d.createSugCallback(c.sugId)
+		}
+	}
+
+	function f(a) {
+		for (var b = a; b != document.body && "FORM" != b.tagName;) b = b.parentNode;
+		return "FORM" == b.tagName ? b : null
+	}
+
+	function g(a) {
+		var b = document,
+			c = 0,
+			d = 0;
+		if (a.getBoundingClientRect) {
+			var e = a.getBoundingClientRect();
+			c = e.left + Math.max(b.documentElement.scrollLeft, b.body.scrollLeft), d = e.top + Math.max(b.documentElement.scrollTop, b.body.scrollTop), c -= b.documentElement.clientLeft, d -= b.documentElement.clientTop
+		} else
+			for (; a = a.offsetParent;) c += a.offsetLeft, d += a.offsetTop;
+		return {
+			x: c,
+			y: d
+		}
+	}
+
+	function h(a, b) {
+		var c = document.styleSheets;
+		var d = document.createElement("STYLE");
+		d.type = "text/css";
+		var e = document.getElementsByTagName("HEAD")[0];
+		e.appendChild(d)
+		c = document.styleSheets, 
+		c = c[c.length - 1], 
+		baidu.ie ? c.addRule(a, b) : c.insertRule(a + " { " + b + " }", c.cssRules.length)
+	}
+
+	function i(a, b, c) {
+		if (a)
+			if (void 0 != c) a.style[b] = c;
+			else {
+				if (a.style[b]) return a.style[b];
+				if (a.currentStyle) return a.currentStyle[b];
+				if (document.defaultView && document.defaultView.getComputedStyle) {
+					b = b.replace(/([A-Z])/g, "-$1").toLowerCase();
+					var d = document.defaultView.getComputedStyle(a, "");
+					return d && d.getPropertyValue(b) || ""
+				}
+			}
+	}
+
+	function j() {
+		h(".bdSug_wpr", "line-height:normal;background:#FFF;padding:0;margin:0;border:1px solid #817F82;position:absolute;z-index:9999;"), h(".bdSug_wpr table", "padding:0;width:100%;background:#fff;cursor:default;"), h(".bdSug_wpr tr", "padding:0;margin:0"), h(".bdSug_wpr td", "padding:2px;margin:0;text-align:left;vertical-align:middle;font:14px verdana;font-weight:normal;text-decoration:none;text-indent:0"), h(".bdSug_mo", "background:#36c;color:#fff"), h(".bdSug_app", "padding:0;margin:0;background:#fff"), h(".bdSug_pre", "padding:0;margin:0"), h(".bdsug_copy", "margin:0;background:transparent url(http://www.baidu.com/img/bd.gif) no-repeat;font-size:13px;color:#77c;text-decoration:none;padding:0 2px 0 16px;")
+	}
+	var a = {},
+		b = {},
+		d = {
+			createSugOptions: function(a, b, d, e) {
+				return {
+					class_prefix: "bdSug_",
+					onconfirm: function(a, b, c, f, g) {
+						if (d && b > -1) try {
+							d.apply(window, [c])
+						} catch (h) {}
+						e && !g && e.submit(), jQuery("#searchForm .ico_btn_search").length > 0 && jQuery("#searchForm .ico_btn_search").click(), jQuery(".btn_search").length > 0 && jQuery(".btn_search").click(), jQuery("#searchBox .search-btn").length > 0 && jQuery("#searchBox .search-btn").click(), jQuery(".seach-wrap .search-btn").length > 0 && jQuery(".seach-wrap .search-btn").click(), jQuery(".search-box-new .search-btn").length > 0 && jQuery(".search-box-new .search-btn").click(), jQuery(".endSearchBar .search-btn").length > 0 && jQuery(".endSearchBar .search-btn").click()
+					},
+					view: function(a) {
+						return b && b.width && (a[2] = parseInt(b.width)), b && b.XOffset && b.YOffset ? [a[0] - b.YOffset, a[1] - b.XOffset, a[2]] : [a[0], a[1], a[2]]
+					},
+					getData: function(b) {
+						var d = (new Date).getTime(),
+							e = baidu.G("bdSug_script");
+						e && document.body.removeChild(e);
+						var f = c("script");
+						f.setAttribute("charset", "gbk"), f.src = "http://unionsug.baidu.com/su?wd=" + encodeURIComponent(b) + "&p=3&cb=BaiduSuggestion.callbacks.give" + a + "&t=" + d, f.id = "bdSug_script", document.body.appendChild(f)
+					},
+					append_html: "<div style='background:#FFF;line-height:normal;border:0;text-align:right;margin:0;padding:0;'><a class='bdsug_copy' href='http://www.baidu.com/search/sug/sugcode.html' ltarget='_blank' >\u767e\u5ea6\u641c\u7d22\u6846\u63d0\u793a</a></div>",
+					apd_body: !0
+				}
+			},
+			createSugCallback: function(a) {
+				return function(c) {
+					if (c) {
+						for (var d = [], e = 0; e < c.s.length; e++) {
+							var f = {};
+							f.input = c.s[e], f.selection = c.s[e], d.push(f)
+						}
+						b["sug" + a].giveData(c.q, d)
+					}
+				}
+			}
+		};
+	j();
+	for (var k = document.body.getElementsByTagName("INPUT"), l = 0, m = k.length; m > l; l++) {
+		var n = k[l];
+		if (n && "text" == n.type && (1 == n.getAttribute("baiduSug") || 2 == n.getAttribute("baiduSug"))) {
+			n.sugId = l;
+			var o = 1 == n.getAttribute("baiduSug");
+			e(n, null, null, o)
+		}
+	}
+	return {
+		bind: e,
+		callbacks: a
+	}
+}();

@@ -1,0 +1,1691 @@
+<!DOCTYPE html>
+<!-- saved from url=(0037)http://www.docin.com/p-848543477.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><script async="" src="./基于感知器算法的高效中文分词与词性标注系统设计与实现_files/analytics.js.下载"></script> 
+
+<link title="豆丁网" type="application/opensearchdescription+xml" rel="search" href="http://www.docin.com/open_search.xml">
+<script>
+	var picture_image_path_v1 = "http://pics.wanlibo.com";
+</script>
+<title>基于感知器算法的高效中文分词与词性标注系统设计与实现 - 豆丁网</title>
+<meta name="description" content="基于感知器算法的高效中文分词与词性标注系统设计与实现,感知器算法,分词算法,词性标注,crf 词性标注,中科院分词算法,中文分词算法,英语词性标注,python 词性标注,java 分词算法,最短词典分词算法">
+<meta name="keywords" content="基于,感知,器,算法,高效,中文,分词,词性标注,系统,设计,一按我帮您,论文 ">
+<meta property="og:title" content="基于感知器算法的高效中文分词与词性标注系统设计与实现">
+<meta property="og:type" content="book">
+
+<meta http-equiv="PRAGMA" content="NO-CACHE">
+
+
+<meta property="og:url" content="http://www.docin.com/p-848543477.html">
+<meta property="og:image" content="http://img2.vonibo.com/docin_848543477_90x80.jpg">
+<meta property="og:site_name" content="豆丁网">
+<meta property="og:description" content="基于感知器算法的高效中文分词与词性标注系统设计与实现,感知器算法,分词算法,词性标注,crf 词性标注,中科院分词算法,中文分词算法,英语词性标注,python 词性标注,java 分词算法,最短词典分词算法">
+<meta name="ads8_union_verify" content="262c497d0f7396328772b8b81071008a"> 
+<meta name="apple-itunes-app" content="app-id=473506754">
+<link rel="canonical" href="http://www.docin.com/p-848543477.html">
+<script type="text/javascript">
+	var endBigScreen = true;
+</script> 
+<meta name="Author" content="豆丁网">
+<meta name="Copyright" content="豆丁网 docin.com 版权所有">
+<link rel="icon" href="http://pics.wanlibo.com/images_cn/favicon.ico?rand=20170717" type="image/x-icon">
+<link rel="shortcut icon" href="http://pics.wanlibo.com/images_cn/favicon.ico?rand=20170717" type="image/x-icon">
+<!--[if lt IE 9]>
+<script type="text/javascript" src="http://pics.wanlibo.com/js/html5.js?rand=20170717"></script>
+<![endif]-->
+<link href="./基于感知器算法的高效中文分词与词性标注系统设计与实现_files/common_flat.css" rel="stylesheet" type="text/css" media="screen, projection">
+<link id="sty" href="./基于感知器算法的高效中文分词与词性标注系统设计与实现_files/newEndFlat.css" rel="stylesheet" type="text/css">
+<style type="text/css">
+	.bdSug_wpr{width:auto!important;min-width:158px!important;}
+</style>
+
+<style type="text/css">
+/*小樊广告test 开始*/
+.sider_guanggao{height:auto;}
+.page_body .aside{z-index:auto;*margin-top:20px;*z-index:0;}
+.user_doc_mod{z-index:1;}
+.j_sidercontrol{z-index:1;width:310px;overflow:hidden;}
+/*.btn_floder{position:fixed;top:350px;}*/
+/*小樊广告test 结束*/
+</style>
+<style type="text/css">
+.wd100 .center{width:400px;float:right;margin-right:54px;}
+	.reader_container .no_more_mod{padding:46px 0;text-align:left;display:none;position:relative;border:1px solid #c7c7c7;margin-bottom:20px;text-align:center;background-color:#fff;box-shadow:0 0 3px #ccc;}
+	.no_more_tips .down_btns .btnc_blue{margin-top:2px;padding:0 18px;height:32px;line-height:32px;}
+	.no_more_tips .down_btns{float:none;margin-top:32px;text-align:center;}
+	.no_more_tips .down_btns .orange{float:none;margin-right:14px;width:124px;padding:0;height:32px;line-height:32px;}
+	.no_more_tips{width:380px;margin:0 auto;}
+	.no_more_tips p{font-size:20px;height:40px;line-height:40px;background:url(http://pics.wanlibo.com/images_cn/news/newend/ico_book.png) 0 center no-repeat;padding:0 0 0 72px;}
+	.mar44{margin-right:0px;}
+	#docinShareSlider {width:116px; height:200px; background:#CCC; position:fixed; right:-116px;_position:absolute; top:100px;z-index:100;}
+	#docinShareSlider span.slideButton {width:24px; height:88px;position:absolute; left:-24px; top:58px;background:url(http://pics.wanlibo.com/images_cn/share_but.png) 0 0 no-repeat;cursor:pointer;}
+
+	.bdshare-slide-list-box{border:solid 1px #e9e9e9;text-align:left;overflow:hidden;background:#f6f6f6;width:116px;}
+	.bdshare-slide-top{height:28px;color:#626262;overflow:hidden;font-weight:bold;font-size:14px;line-height:28px;padding:0 5px}
+	.bdshare-slide-list{background:#fff;overflow:auto;overflow-x:hidden;padding:5px 0;margin:0;background:#fff;overflow:auto;overflow-x:hidden;_zoom:1}
+	.bdshare-slide-list-ul{padding:0;margin:0;border:0;list-style:none}
+	.bdshare-slide-bottom{line-height:25px;font-size:12px;text-align:right;clear:both;height:30px}
+	.bdshare-slide-bottom a.slide-more{color:#999;text-decoration:none;border:0;float:right!important;}
+	.bdshare-slide-bottom a:hover{color:#00a9e0}
+	.bdshare-slide-list li{padding:2px;margin-left:6px;_margin-left:3px;overflow:hidden;list-style:none;width:100px}
+	.bdshare-slide-list a,.bdshare-slide-bottom a{color:#565656;font-size:12px;display:block;background-image:url(http://pics.wanlibo.com/images_cn/share_icons_16.png)!important;background-repeat:no-repeat;padding:5px 0 5px 28px!important;text-decoration:none;border:1px solid #fff;line-height:18px!important;float:none!important;margin:0!important;}
+	#docinShareSlider .bdshare-slide-list a{width:auto!important;}
+	.bdshare-slide-list a:hover{background-color:#f3f3f3!important;border:1px solid #eee;border-radius:3px;-webkit-border-radius:3px;-moz-border-radius:3px;}
+	.bdshare-slide-list-ul .bdshare-button-style0-16{float:none!important;margin-top:0!important;}
+	.bdshare-slide-list a.slide-qzone{background-position:4px -46px!important;}
+	.bdshare-slide-list a.slide-tsina{background-position:4px -98px!important;}
+	.bdshare-slide-list a.slide-weixin{background-position:4px -306px!important;}
+	.bdshare-slide-list a.slide-renren{background-position:4px -150px!important;}
+	.bdshare-slide-list a.slide-tqq{background-position:4px -202px!important;}
+	.bdshare-slide-list a.slide-sqq{background-position:4px -358px!important;}
+	.bdshare-slide-list a.slide-kaixin001{background-position:4px -254px!important;}
+	.bdshare-slide-bottom a.slide-more{background-position:4px 6px!important;}
+	/*用户信息简化*/
+	.user_info .user_cover a img{width:42px;height:42px;}
+	.user_info .user_name{height:24px;line-height:24px;font-size:14px;padding:0;}
+	.user_info .user_name a{font-size:14px;}
+	.user_info .user_cover{width:44px;height:44px;margin:0 10px 0 0;}
+	.user_info p{margin:0;}
+	.user_info .share_time{padding:0;color:#999;}
+	.user_doc_bd{padding:6px 10px 3px 10px;border:1px solid #e2e2e2;border-radius:4px;}
+	.user_doc_mod{margin-bottom:10px;}
+	.user_doc_mod .inner{height:45px;}
+	.user_doc_mod .show_all{bottom:2px;background:none;padding:0;color:#999;}
+	.user_doc_mod .show_all:hover{color:#999;}
+	.user_doc_mod .innerShow{height:auto;}
+	.ico_arrow{background:url(http://pics.wanlibo.com/images_cn/newDocin/icons_arrow.png) 0 0 no-repeat;}
+	.ico_arrow{display:inline-block;height:14px;margin-left:4px;vertical-align:-3px;width:15px;cursor:pointer;*vertical-align:2px;}
+	.ico_arrow_down{background-position:0 0;}
+	.ico_arrow_down:hover{background-position:-15px 0;}
+	.ico_arrow_up{background-position:0 -14px;}
+	.ico_arrow_up:hover{background-position:-15px -14px;}
+	.doc_fun_tips{display:none;}
+	.doc_fun_tips .new_tip {-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(opacity=0)"; filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0); opacity: 0; -webkit-transition: opacity 0.5s ease-in; -moz-transition: opacity 0.5s ease-in; -ms-transition: opacity 0.5s ease-in; transition: opacity 0.5s ease-in; font-family: Sofia Pro, sans-serif; position: absolute; max-width: 230px; text-align: center; z-index: 2999;}
+	.doc_fun_tips .opaque {-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(opacity=100)"; filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100); opacity: 1}
+	.doc_fun_tips .new_tip .tip_inner {display: inline-block; zoom: 1; *display: inline; background-color:#f1f2f3; border-radius: 3px; padding: 3px 8px; font-size: 12px; color:#000;line-height:normal;border:1px solid #747474;}
+	.doc_fun_tips .new_tip .tip_inner a {color:white;}
+</style>
+<script type="text/javascript" charset="gb2312" src="./基于感知器算法的高效中文分词与词性标注系统设计与实现_files/opensearchsug.js.下载"></script><script src="./基于感知器算法的高效中文分词与词性标注系统设计与实现_files/share.js.下载"></script><style type="text/css"></style><style type="text/css"></style><style type="text/css"></style><style type="text/css"></style><style type="text/css"></style><style type="text/css"></style><style type="text/css"></style><style type="text/css"></style><script src="./基于感知器算法的高效中文分词与词性标注系统设计与实现_files/logger.js.下载"></script><link href="./基于感知器算法的高效中文分词与词性标注系统设计与实现_files/bdsstyle.css" rel="stylesheet" type="text/css"><link rel="stylesheet" href="./基于感知器算法的高效中文分词与词性标注系统设计与实现_files/share_style0_16.css"></head>
+<body><iframe frameborder="0" style="display: none;" src="./基于感知器算法的高效中文分词与词性标注系统设计与实现_files/saved_resource.html"></iframe>
+<!-- 导航 -->
+<div class="doc_hd_mini">
+	<div class="top_nav_wrap">
+		<div class="nav_end_bd nav_end_sty2">
+			<div class="docin_logo">
+				<a onmousedown="return inpmv(5086);" href="http://www.docin.com/"></a>
+			</div>
+			<div class="channel_mod">
+				<a class="channel_btn" href="javascript:void(0);"><span class="ico_channel"></span>频道<span class="ico_miniarrow"></span></a>
+				<div class="channel_handel">
+					<div class="channel_inner">
+						<div class="u_l">
+							<dl class="channel_entry">
+								<dd><a onmousedown="return inpmv(5086);" href="http://www.docin.com/">豆丁首页</a></dd>
+								<dd><a onmousedown="return inpmv(5915);" href="http://www.docin.com/topicshow.do">专题</a></dd>
+								<dd><a onmousedown="return inpmv(5090);" href="http://shequ.docin.com/">社区</a></dd>
+								<dd><a onmousedown="return inpmv(5192);" href="http://docstore.docin.com/">商业工具</a></dd>
+								<dd><a onmousedown="return inpmv(5393);" href="http://www.docin.com/bcase/index.do">创业</a></dd>
+								<dd><a onmousedown="return inpmv(5395);" href="http://www.docin.com/minicase/index.do">微案例</a></dd>
+							</dl>
+							<dl class="channel_entry">
+								<dt>热门频道</dt>
+								<dd><a onmousedown="return inpmv(5093);" href="http://www.docin.com/kyzq/index.do">考研</a></dd>
+								<dd><a onmousedown="return inpmv(5477);" href="http://www.docin.com/zuowen/index.do">作文</a></dd>
+								<dd><a onmousedown="return inpmv(5478);" href="http://www.docin.com/gzzj/index.do">总结</a></dd>
+								<dd><a onmousedown="return inpmv(5094);" href="http://huiyi.docin.com/">会议</a></dd>
+								<dd><a onmousedown="return inpmv(5095);" href="http://www.docin.com/medical/index.do">医疗</a></dd>
+								<dd><a onmousedown="return inpmv(5095);" href="http://v.docin.com/">素材</a></dd>
+								<dd><a onmousedown="return inpmv();" href="http://manhua.docin.com/">漫画</a></dd>
+								<!-- <dd><a onmousedown="return inpmv(5560);" href="http://jz.docin.com">建筑</a></dd> -->
+							</dl>
+							<dl class="channel_entry">
+								<dt>文档分类</dt>
+								<dd><a onmousedown="return inpmv(5088);" href="http://www.docin.com/l-10008-0-0-0-0-1.html">论文</a></dd>
+								<dd><a onmousedown="return inpmv(5088);" href="http://www.docin.com/l-10034-0-0-0-0-1.html">生活休闲</a></dd>
+								<dd><a onmousedown="return inpmv(5088);" href="http://www.docin.com/l-10006-0-0-0-0-1.html">外语</a></dd>
+								<dd><a onmousedown="return inpmv(5088);" href="http://www.docin.com/l-10022-0-0-0-0-1.html">心理学</a></dd>
+								<dd><a href="http://www.docin.com/list.html">全部</a></dd>
+							</dl>
+						</div>
+						<div class="u_r">
+							<dl class="channel_entry">
+								<dd><a onmousedown="return inpmv(5697);" href="http://jz.docin.com/"><b>建筑频道</b></a></dd>
+								<dd><a onmousedown="return inpmv(5702);" href="http://jz.docin.com/jianzhu/fanganwenben">建筑文本</a></dd>
+								<dd><a onmousedown="return inpmv(5703);" href="http://jz.docin.com/jianzhu/shigongzuzhisheji">施组</a></dd>
+								<dd><a onmousedown="return inpmv(5704);" href="http://jz.docin.com/jianzhu/shigongfangan">方案</a></dd>
+								<dd><a onmousedown="return inpmv(5705);" href="http://jz.docin.com/jianzhu/shigongjiaodi">交底</a></dd>
+							</dl>
+							<dl class="channel_entry">
+								<dt>用户中心</dt>
+								<dd><a href="http://www.docin.com/app/my/fin/addmoney?recharge_from_type=index-userInfo">充值</a></dd>
+								<dd><a href="http://www.docin.com/app/login?forward=/app/jump_adv/checkVIpForJump.do">VIP</a></dd>
+								<dd><a onmousedown="return inpmv(5098);" href="http://www.docin.com/newMessage/informMessage.do">消息</a></dd>
+								<dd><a onmousedown="return inpmv(5098);" href="http://www.docin.com/app/user/editUserInfo">设置</a></dd>
+							</dl>
+							<dl class="channel_entry">
+								<dt>客户端</dt>
+								<dd><a onmousedown="return inpmv(5091);" href="http://www.docin.com/mobile_web/index.jsp">书房</a></dd>
+								<dd><a href="http://itunes.apple.com/cn/app/id490618045?mt=8" target="_blank">阅读</a></dd>
+								<dd><a href="http://itunes.apple.com/cn/app/hui-yippt/id535071308?mt=8" target="_blank">会议PPT</a></dd>
+							</dl>
+						</div>
+					</div>
+				</div>
+			</div>
+		    <div class="bold_nav_item">
+			    	<span class="viewNextTxt"></span>
+					<ul>
+						<li onselectstart="return false;">
+			        	 <p><a href="http://www.docin.com/minicase/index.do" target="_blank" style="font-size:14px;color:#FFD200;" onmousedown="return inpmv(6029);">商业案例库</a></p>
+			        	  <p><a href="http://v.docin.com/search.do?nkey=%E7%94%B5%E5%AD%90%E7%9B%B8%E5%86%8C&amp;order=2" target="_blank" style="font-size:14px;color:#FFD200;" onmousedown="return inpmv(6028);">毕业电子相册制作</a></p>
+			        	  <p><a href="http://manhua.docin.com/" target="_blank" style="font-size:14px;color:#FFD200;" onmousedown="return inpmv(6030);">【免费】精彩漫画等你来围观</a></p>
+			        	  
+			        	 <p><a href="http://www.docin.com/minicase/index.do" target="_blank" style="font-size:14px;color:#FFD200;" onmousedown="return inpmv(6029);">商业案例库</a></p>
+			        	  <p><a href="http://v.docin.com/search.do?nkey=%E7%94%B5%E5%AD%90%E7%9B%B8%E5%86%8C&amp;order=2" target="_blank" style="font-size:14px;color:#FFD200;" onmousedown="return inpmv(6028);">毕业电子相册制作</a></p>
+			        	  <p><a href="http://manhua.docin.com/" target="_blank" style="font-size:14px;color:#FFD200;" onmousedown="return inpmv(6030);">【免费】精彩漫画等你来围观</a></p>
+			        	  </li>
+					</ul>
+					</div>
+		        <div class="top_nav_item">
+				<ul class="nav_reg">
+					<li class="bj_sc"><a class="sc_bot" onmousedown="return inpmv(5089);" href="http://www.docin.com/app/docin_upload/index?end_registstat=109_848543477&amp;registerFrom=1">上传</a><span class="pad_line"></span></li>
+					<li class="bj_sc"><a target="_blank" class="ss_bot" onmousedown="return inpmv(5097);" href="http://shufang.docin.com/">书房</a><span class="pad_line"></span></li>
+					<li><a onclick="showlogin(&#39;107_848543477&amp;registerFrom=1&#39;)" href="javascript:void(0);" class="nav_login">登录</a></li>
+					<li><a href="http://www.docin.com/app/forward?forward=register&amp;end_registstat=108_848543477&amp;registerFrom=1" class="nav_register">注册</a></li>
+				</ul>
+			</div>
+			<div class="mini_search_wrap">
+				<form action="http://www.docin.com/search.do" method="get" id="searchForm">
+					<div class="search_in">
+						<input type="hidden" value="1001" id="searchcat" name="searchcat">
+						<input class="end_search_input" type="text" value="基于感知器算法的高效中文分词与词性标注系统设计与实现" placeholder="在四亿文档库里搜索文档" tabindex="1" autocomplete="off" baidusug="2" id="topsearch" maxlength="100" name="nkey">
+						<span class="submit_button">
+							<input type="submit" tabindex="2" class="ico_btn_search ico_btn_active" title="搜索" value="搜索" onclick="return searchNew();" onmousedown="return inpmv(5087);">
+						</span>
+					</div>
+				</form>
+			</div>
+			<div style="display:none;" class="new_nav_skills nav_skills_class" id="navClassSkills">
+				<div class="nav_skills_bd">
+					<span class="nav_skills_Arr"></span>
+					<div class="class_list clear">
+						<ul>
+							<li><a href="http://www.docin.com/l-10008-0-0-0-0-1.html" title="论文" onmousedown="return inpmv(5088);">论文</a></li>
+							<li><a href="http://www.docin.com/l-10003-0-0-0-0-1.html" title="中学教育" onmousedown="return inpmv(5088);">中学教育</a></li>
+							<li><a href="http://www.docin.com/l-10004-0-0-0-0-1.html" title="高等教育" onmousedown="return inpmv(5088);">高等教育</a></li>
+							<li><a href="http://www.docin.com/l-10006-0-0-0-0-1.html" title="外语学习" onmousedown="return inpmv(5088);">外语学习</a></li>
+							<li><a href="http://www.docin.com/l-10017-0-0-0-0-1.html" title="IT计算机" onmousedown="return inpmv(5088);">IT计算机</a></li>
+							<li><a href="http://www.docin.com/l-10027-0-0-0-0-1.html" title="研究报告" onmousedown="return inpmv(5088);">研究报告</a></li>
+							<li><a href="http://www.docin.com/l-10028-0-0-0-0-1.html" title="办公文档" onmousedown="return inpmv(5088);">办公文档</a></li>
+							<li><a href="http://www.docin.com/l-10023-0-0-0-0-1.html" title="行业资料" onmousedown="return inpmv(5088);">行业资料</a></li>
+						</ul>
+						<ul>
+							<li><a href="http://www.docin.com/l-10034-0-0-0-0-1.html" title="生活休闲" onmousedown="return inpmv(5088);">生活休闲</a></li>
+							<li><a href="http://www.docin.com/l-10019-0-0-0-0-1.html" title="建筑/环境" onmousedown="return inpmv(5088);">建筑/环境</a></li>
+							<li><a href="http://www.docin.com/l-10018-0-0-0-0-1.html" title="法律/法学" onmousedown="return inpmv(5088);">法律/法学</a></li>
+							<li><a href="http://www.docin.com/l-10020-0-0-0-0-1.html" title="通信/电子" onmousedown="return inpmv(5088);">通信/电子</a></li>
+							<li><a href="http://www.docin.com/l-10005-0-0-0-0-1.html" title="研究生考试" onmousedown="return inpmv(5088);">研究生考试</a></li>
+							<li><a href="http://www.docin.com/l-11926-0-0-0-0-1.html" title="经济/贸易/财会" onmousedown="return inpmv(5088);">经济/贸易/财会</a></li>
+							<li><a href="http://www.docin.com/l-10002-0-0-0-0-1.html" title="幼儿/小学教育" onmousedown="return inpmv(5088);">幼儿/小学教育</a></li>
+							<li><a href="http://www.docin.com/l-11937-0-0-0-0-1.html" title="管理/人力资源" onmousedown="return inpmv(5088);">管理/人力资源</a></li>
+						</ul>
+						<ul class="mar0">
+							<li><a href="http://www.docin.com/l-10024-0-0-0-0-1.html" title="汽车/机械/制造" onmousedown="return inpmv(5088);">汽车/机械/制造</a></li>
+							<li><a href="http://www.docin.com/l-10022-0-0-0-0-1.html" title="医学/心理学" onmousedown="return inpmv(5088);">医学/心理学</a></li>
+							<li><a href="http://www.docin.com/l-10007-0-0-0-0-1.html" title="资格/认证考试" onmousedown="return inpmv(5088);">资格/认证考试</a></li>
+							<li><a href="http://www.docin.com/l-11936-0-0-0-0-1.html" title="金融/证券 " onmousedown="return inpmv(5088);">金融/证券 </a></li>
+							<li><a href="http://www.docin.com/l-10031-0-0-0-0-1.html" title="文学/艺术/军事/历史" onmousedown="return inpmv(5088);">文学/艺术/军事/历史</a></li>
+							<li class="f_l"><a href="http://tushu.docin.com/" title="图书" onmousedown="return inpmv(5088);">图书</a></li>
+							<li class="f_l"><a href="http://zazhi.docin.com/" title="杂志" onmousedown="return inpmv(5088);">杂志</a></li>
+							<li class="f_l"><a href="http://www.docin.com/stock/list.do" title="股票" onmousedown="return inpmv(5088);">股票</a></li>
+							<li class="f_l"><a href="http://www.docin.com/medical/index.do" title="医疗" onmousedown="return inpmv(5088);">医疗</a></li>
+							</ul>
+					</div>  
+				</div>
+			</div>
+			</div>
+	</div>
+</div>
+ <script type="text/javascript">
+ var spider_name = 'baidu';  
+ </script>
+<div id="medalOrTaskPopBox" class="docinPop" style="display: none"></div><div id="page" style="z-index:10;">
+		<!--tools start-->
+	<div class="docin_reader_tools wd100" style="top: 0px;">
+				<div class="reader_tools_inner">
+					<div class="reader_menu">
+						<a href="javascript:void(0);" title="菜单" class="ico_reader_menu">菜单</a>
+						<div class="menu_list_wrap">
+							<ul class="menu_list">
+								<li class="cur" id="j_list"><a href="javascript:void(0);" onmousedown="return inpmv(5330);">列表阅读</a></li>
+									<li id="j_pic"><a href="javascript:void(0);" onmousedown="return inpmv(5331);">幻灯片阅读</a></li>
+								<li class="sp"><a onmousedown="return inpmv(5332);" href="http://www.docin.com/app/docin_upload/index" target="_blank">上传文档</a></li>
+								<li><a onmousedown="return inpmv(5333);" id="j_showinfo" href="javascript:void(0);">文档信息</a></li>
+								<li><a onmousedown="return inpmv(5334);" id="j_about" href="javascript:void(0);">关于豆丁</a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="down_btns">
+						<a onmousedown="return inpmv(5319);" id="addBookShop" class="ico_button green w136 mr18" href="javascript:void(0);" onclick="clickBookSave(&#39;848543477&#39;);">
+							<span class="ico_mini ico_addfav"></span>收藏到书房</a>
+						<a onmousedown="return inpmv(5318);" href="javascript:void(0)" id="docDownload" class="ico_button orange w146 mr18" onclick="javascript:clickDownload(&#39;848543477&#39;,&#39;&#39;);return false;">
+							<span class="ico_mini ico_download"></span>下载文档</a>
+						</div>
+						<!--用户信息-->
+							<!--用户信息-->
+						<div class="center">
+						<div class="reader_page">
+							<a onmousedown="return inpmv(5320);" id="preview" class="ico_rd page_prev_no" href="javascript:void(0);" data-label="上一页">上一页</a>
+							<input id="page_cur" class="page_cur" type="text" value="1">
+							<span class="page_num">/67</span>
+							<a onmousedown="return inpmv(5321);" id="nextPage" class="ico_rd page_next" href="javascript:void(0);" data-label="下一页">下一页</a>
+						</div>
+						
+						<div class="reade_c_r">
+						<a id="j_hand" onmousedown="return inpmv(5322);" href="javascript:void(0);" class="move_btn drag_hand btn_cur" data-label="手型"></a>
+							<a id="j_select" onmousedown="return inpmv(5323);" href="javascript:void(0);" class="move_btn select_hand" data-label="选择文本"></a>
+						<a onmousedown="return inpmv(5324);" id="j_zoomout" class="ico_rd zoom_out_no" data-label="缩小" href="javascript:void(0);"></a>
+							<a onmousedown="return inpmv(5325);" id="j_zoomin" class="ico_rd zoom_in" data-label="放大" href="javascript:void(0);"></a>
+							<a class="btn_fullscreen" href="javascript:void(0);" data-label="全屏" onmousedown="return inpmv(5327);">全屏</a>
+						</div>
+						</div>
+					<div class="right">
+						<a style="display:none;" onmousedown="return inpmv(5328);" class="ico_rd page_upload" data-label="分享" href="javascript:void(0);"></a>
+						<a onmousedown="return inpmv(5326);" class="ico_rd book_mark" data-label="书签" href="javascript:void(0);"></a>
+						<a onmousedown="return inpmv(5329);" class="ico_rd page_comment" data-label="评论" href="javascript:void(0);"></a>
+					</div>
+					<div class="bookmarkTips" id="bookmarktips" style="top: 41px; width: 800px;">
+							<a class="close" href="javascript:void(0);"></a>
+							<p></p>
+					</div>
+				</div>
+				<div class="tooltip_container" style="display: none;"></div>
+			</div>
+	<!--tools end-->
+	<div class="page_wrap" style="margin-top:50px;">
+	<div class="page_crubms clear">
+				<ul class="crubms">
+				<!-- 普通分类 -->
+					<li><a href="http://www.docin.com/l-10008-0-0-0-0-1.html">论文 </a>&nbsp;&gt;&nbsp;</li>
+					<li><a href="http://www.docin.com/l-10122-0-0-0-0-1.html">期刊/会议论文</a>&nbsp;&gt;&nbsp;</li>
+				</ul>
+			<div class="top_ad" id="top_right_ad" style="overflow:hidden; height: 20px;width: 280px">
+			<iframe width="100%" height="100%" scrolling="no" frameborder="0" style="display:block;margin:0 auto;" src="./基于感知器算法的高效中文分词与词性标注系统设计与实现_files/adv.html"></iframe></div>
+			</div>
+	<div class="page_body clear">
+			<div class="main" style="width: 802px;">
+				<div class="doc_main">
+					<div class="doc_header_mod">
+						<h1>
+							<em class="ico_2 ic_2_pdf" title="pdf"></em>
+							<span class="doc_title fs_c_76">基于感知器算法的高效中文分词与词性标注系统设计与实现</span>
+							<span class="ico_you" title="网友选出的优质文档"></span>
+							</h1>
+						<div class="doc_active_info ">
+							<div class="doc_new_share share_style2">
+								<span style="float:left;">分享：</span>
+								<div class="bdsharebuttonbox bdshare-button-style0-16" data-bd-bind="1500346906997">
+								<a onmousedown="return inpmv(5531);" title="分享到QQ空间" onclick="kaixinBdShare(848543477,0);" href="http://www.docin.com/p-848543477.html#" class="bds_qzone" data-cmd="qzone"></a>
+								<a onmousedown="return inpmv(5539);" title="分享到新浪微博" onclick="kaixinBdShare(848543477,0);" href="http://www.docin.com/p-848543477.html#" class="bds_tsina" data-cmd="tsina"></a>
+								<a onmousedown="return inpmv(5540);" title="分享到微信" onclick="kaixinBdShare(848543477,0);" href="http://www.docin.com/p-848543477.html#" class="bds_weixin" data-cmd="weixin"></a>
+								<a onmousedown="return inpmv(5541);" class="new_share_more" href="javascript:void(0);"></a>
+								</div>
+							</div>
+							<a data-tips="顶" onmousedown="return inpmv(5034);" class="top_num" href="javascript:void(0);" style="margin-right:0;" onclick="setTop(848543477,1);"><span class="ic ic_top"></span><span id="showlab">0</span></a><span style="color:#929292;padding:0 2px 0 4px;">/</span><a onmousedown="return inpmv(5035);" class="top_num" href="javascript:void(0);" onclick="setStepon(848543477,1);" data-tips="踩"><span class="ic ic_tread"></span><span id="steponlab">0</span></a>
+							<a onmousedown="return inpmv(5036);" class="top_num forb" href="javascript:void(0);" data-tips="浏览"><span class="ic ic_look"></span><em>661</em></a>
+								<a data-tips="收藏" onmousedown="return inpmv(5037);" class="top_num" href="javascript:void(0);" onclick="clickBookSave(&#39;848543477&#39;);"><span class="ic ic_store"></span><em>6</em></a>
+							<a id="showComm" onmousedown="return inpmv(5038);" class="top_num" href="javascript:void(0);" data-tips="评论"><span class="ic ic_comment"></span><em>0</em></a>
+							<a onmousedown="return inpmv(5039);" class="top_num" href="javascript:insertDoclist(848543477);" data-tips="加入豆单">加入豆单</a>
+							<a onmousedown="return inpmv(5040);" class="top_num" href="javascript:isShowFeek();" id="feekback1" data-tips="举报"><span class="ic ic_report"></span>举报</a>
+							<a onmousedown="return inpmv(5041);" class="top_num" href="javascript:void(0);" id="feekDimcCode" data-tips="手机扫码继续看"><span class="ic ic_dimcode"></span>手机看</a>
+							<div class="doc_fun_tips" style="display: none;"></div>
+						</div>
+						</div>
+					<div class="doc_reader_mod">
+						<div class="reader_container">
+							<div id="maskLeft" style="display:none;position:absolute;left:0;top:0;width:50%;height:100%;background-color:#000;opacity:0;filter:alpha(opacity:0);z-index:3;"></div>
+							<div id="maskRight" style="display:none;position:absolute;right:0;top:0;width:50%;height:100%;background-color:#000;opacity:0;filter:alpha(opacity:0);z-index:3;"></div>
+							<div id="contentcontainer" class="reader_inner" style="padding-top: 0px;"><div id="page_1" class="model panel"><div class="panel_inner scrollLoading" data-url="http://pics.wanlibo.com/players/PageViewer.swf?rand=20161209" style="width: 792px; height: 1120px; background-position: center center;"><object type="application/x-shockwave-flash" data="./基于感知器算法的高效中文分词与词性标注系统设计与实现_files/PageViewer.swf.下载" width="100%" height="100%" id="flash_1" style="visibility: visible;"><param name="wmode" value="transparent"><param name="allowscriptaccess" value="always"><param name="hasPriority" value="true"><param name="flashvars" value="productId=848543477&amp;pagenum=0&amp;loadurl=page2.douding.cn"></object></div><div id="ad1" class="adBox"><iframe src="./基于感知器算法的高效中文分词与词性标注系统设计与实现_files/end_page.html" width="760" height="90" scrolling="no" frameborder="0" style="display:block;margin:0 auto;"></iframe></div></div><div id="page_2" class="model panel"><div class="panel_inner scrollLoading" data-url="http://pics.wanlibo.com/players/PageViewer.swf?rand=20161209" style="width: 792px; height: 1120px;"><object type="application/x-shockwave-flash" data="./基于感知器算法的高效中文分词与词性标注系统设计与实现_files/PageViewer.swf.下载" width="100%" height="100%" id="flash_2" style="visibility: visible;"><param name="wmode" value="transparent"><param name="allowscriptaccess" value="always"><param name="hasPriority" value="true"><param name="flashvars" value="productId=848543477&amp;pagenum=1&amp;loadurl=page2.douding.cn"></object></div><div id="ad2" class="adBox"><iframe src="./基于感知器算法的高效中文分词与词性标注系统设计与实现_files/end_page(1).html" width="760" height="90" scrolling="no" frameborder="0" style="display:block;margin:0 auto;"></iframe></div></div><div id="page_3" class="model panel"><div class="panel_inner scrollLoading" data-url="http://pics.wanlibo.com/players/PageViewer.swf?rand=20161209" style="width: 792px; height: 1120px;"><div id="flash_3"></div></div></div><div id="page_4" class="model panel"><div class="panel_inner scrollLoading" data-url="http://pics.wanlibo.com/players/PageViewer.swf?rand=20161209" style="width: 792px; height: 1120px;"><div id="flash_4"></div></div><div id="ad3" class="adBox"><iframe src="./基于感知器算法的高效中文分词与词性标注系统设计与实现_files/end_page(2).html" width="760" height="90" scrolling="no" frameborder="0" style="display:block;margin:0 auto;"></iframe></div></div><div id="page_5" class="model panel"><div class="panel_inner scrollLoading" data-url="http://pics.wanlibo.com/players/PageViewer.swf?rand=20161209" style="width: 792px; height: 1120px;"><div id="flash_5"></div></div></div><div id="page_6" class="model panel"><div class="panel_inner scrollLoading" data-url="http://pics.wanlibo.com/players/PageViewer.swf?rand=20161209" style="width: 792px; height: 1120px;"><div id="flash_6"></div></div><div id="ad4" class="adBox"><iframe src="./基于感知器算法的高效中文分词与词性标注系统设计与实现_files/end_page(3).html" width="760" height="90" scrolling="no" frameborder="0" style="display:block;margin:0 auto;"></iframe></div></div><div id="page_7" class="model panel"><div class="panel_inner scrollLoading" data-url="http://pics.wanlibo.com/players/PageViewer.swf?rand=20161209" style="width: 792px; height: 1120px;"><div id="flash_7"></div></div></div><div id="page_8" class="model panel"><div class="panel_inner scrollLoading" data-url="http://pics.wanlibo.com/players/PageViewer.swf?rand=20161209" style="width: 792px; height: 1120px;"><div id="flash_8"></div></div><div id="ad5" class="adBox"><iframe src="./基于感知器算法的高效中文分词与词性标注系统设计与实现_files/end_page(4).html" width="760" height="90" scrolling="no" frameborder="0" style="display:block;margin:0 auto;"></iframe></div></div><div id="page_9" class="model panel"><div class="panel_inner scrollLoading" data-url="http://pics.wanlibo.com/players/PageViewer.swf?rand=20161209" style="width: 792px; height: 1120px;"><div id="flash_9"></div></div></div><div id="page_10" class="model panel"><div class="panel_inner scrollLoading" data-url="http://pics.wanlibo.com/players/PageViewer.swf?rand=20161209" style="width: 792px; height: 1120px;"><div id="flash_10"></div></div></div><div id="page_11" class="model panel"><div class="panel_inner scrollLoading" data-url="http://pics.wanlibo.com/players/PageViewer.swf?rand=20161209" style="width: 792px; height: 1120px;"><div id="flash_11"></div></div></div><div id="page_12" class="model panel"><div class="panel_inner scrollLoading" data-url="http://pics.wanlibo.com/players/PageViewer.swf?rand=20161209" style="width: 792px; height: 1120px;"><div id="flash_12"></div></div></div><div id="page_13" class="model panel"><div class="panel_inner scrollLoading" data-url="http://pics.wanlibo.com/players/PageViewer.swf?rand=20161209" style="width: 792px; height: 1120px;"><div id="flash_13"></div></div></div><div id="page_14" class="model panel"><div class="panel_inner scrollLoading" data-url="http://pics.wanlibo.com/players/PageViewer.swf?rand=20161209" style="width: 792px; height: 1120px;"><div id="flash_14"></div></div></div><div id="page_15" class="model panel"><div class="panel_inner scrollLoading" data-url="http://pics.wanlibo.com/players/PageViewer.swf?rand=20161209" style="width: 792px; height: 1120px;"><div id="flash_15"></div></div></div><div id="page_16" class="model panel"><div class="panel_inner scrollLoading" data-url="http://pics.wanlibo.com/players/PageViewer.swf?rand=20161209" style="width: 792px; height: 1120px;"><div id="flash_16"></div></div></div><div id="page_17" class="model panel"><div class="panel_inner scrollLoading" data-url="http://pics.wanlibo.com/players/PageViewer.swf?rand=20161209" style="width: 792px; height: 1120px;"><div id="flash_17"></div></div></div><div id="page_18" class="model panel"><div class="panel_inner scrollLoading" data-url="http://pics.wanlibo.com/players/PageViewer.swf?rand=20161209" style="width: 792px; height: 1120px;"><div id="flash_18"></div></div></div><div id="page_19" class="model panel"><div class="panel_inner scrollLoading" data-url="http://pics.wanlibo.com/players/PageViewer.swf?rand=20161209" style="width: 792px; height: 1120px;"><div id="flash_19"></div></div></div><div id="page_20" class="model panel"><div class="panel_inner scrollLoading" data-url="http://pics.wanlibo.com/players/PageViewer.swf?rand=20161209" style="width: 792px; height: 1120px;"><div id="flash_20"></div></div></div><div id="page_21" class="model panel"><div class="panel_inner scrollLoading" data-url="http://pics.wanlibo.com/players/PageViewer.swf?rand=20161209" style="width: 792px; height: 1120px;"><div id="flash_21"></div></div></div><div id="page_22" class="model panel"><div class="panel_inner scrollLoading" data-url="http://pics.wanlibo.com/players/PageViewer.swf?rand=20161209" style="width: 792px; height: 1120px;"><div id="flash_22"></div></div></div><div id="page_23" class="model panel"><div class="panel_inner scrollLoading" data-url="http://pics.wanlibo.com/players/PageViewer.swf?rand=20161209" style="width: 792px; height: 1120px;"><div id="flash_23"></div></div></div><div id="page_24" class="model panel"><div class="panel_inner scrollLoading" data-url="http://pics.wanlibo.com/players/PageViewer.swf?rand=20161209" style="width: 792px; height: 1120px;"><div id="flash_24"></div></div></div><div id="page_25" class="model panel"><div class="panel_inner scrollLoading" data-url="http://pics.wanlibo.com/players/PageViewer.swf?rand=20161209" style="width: 792px; height: 1120px;"><div id="flash_25"></div></div></div><div id="page_26" class="model panel"><div class="panel_inner scrollLoading" data-url="http://pics.wanlibo.com/players/PageViewer.swf?rand=20161209" style="width: 792px; height: 1120px;"><div id="flash_26"></div></div></div><div id="page_27" class="model panel"><div class="panel_inner scrollLoading" data-url="http://pics.wanlibo.com/players/PageViewer.swf?rand=20161209" style="width: 792px; height: 1120px;"><div id="flash_27"></div></div></div><div id="page_28" class="model panel"><div class="panel_inner scrollLoading" data-url="http://pics.wanlibo.com/players/PageViewer.swf?rand=20161209" style="width: 792px; height: 1120px;"><div id="flash_28"></div></div></div><div id="page_29" class="model panel"><div class="panel_inner scrollLoading" data-url="http://pics.wanlibo.com/players/PageViewer.swf?rand=20161209" style="width: 792px; height: 1120px;"><div id="flash_29"></div></div></div><div id="page_30" class="model panel"><div class="panel_inner scrollLoading" data-url="http://pics.wanlibo.com/players/PageViewer.swf?rand=20161209" style="width: 792px; height: 1120px;"><div id="flash_30"></div></div></div><div id="page_31" class="model panel"><div class="panel_inner scrollLoading" data-url="http://pics.wanlibo.com/players/PageViewer.swf?rand=20161209" style="width: 792px; height: 1120px;"><div id="flash_31"></div></div></div><div id="page_32" class="model panel"><div class="panel_inner scrollLoading" data-url="http://pics.wanlibo.com/players/PageViewer.swf?rand=20161209" style="width: 792px; height: 1120px;"><div id="flash_32"></div></div></div><div id="page_33" class="model panel"><div class="panel_inner scrollLoading" data-url="http://pics.wanlibo.com/players/PageViewer.swf?rand=20161209" style="width: 792px; height: 1120px;"><div id="flash_33"></div></div></div><div id="page_34" class="model panel"><div class="panel_inner scrollLoading" data-url="http://pics.wanlibo.com/players/PageViewer.swf?rand=20161209" style="width: 792px; height: 1120px;"><div id="flash_34"></div></div></div><div id="page_35" class="model panel"><div class="panel_inner scrollLoading" data-url="http://pics.wanlibo.com/players/PageViewer.swf?rand=20161209" style="width: 792px; height: 1120px;"><div id="flash_35"></div></div></div><div id="page_36" class="model panel"><div class="panel_inner scrollLoading" data-url="http://pics.wanlibo.com/players/PageViewer.swf?rand=20161209" style="width: 792px; height: 1120px;"><div id="flash_36"></div></div></div><div id="page_37" class="model panel"><div class="panel_inner scrollLoading" data-url="http://pics.wanlibo.com/players/PageViewer.swf?rand=20161209" style="width: 792px; height: 1120px;"><div id="flash_37"></div></div></div><div id="page_38" class="model panel"><div class="panel_inner scrollLoading" data-url="http://pics.wanlibo.com/players/PageViewer.swf?rand=20161209" style="width: 792px; height: 1120px;"><div id="flash_38"></div></div></div><div id="page_39" class="model panel"><div class="panel_inner scrollLoading" data-url="http://pics.wanlibo.com/players/PageViewer.swf?rand=20161209" style="width: 792px; height: 1120px;"><div id="flash_39"></div></div></div><div id="page_40" class="model panel"><div class="panel_inner scrollLoading" data-url="http://pics.wanlibo.com/players/PageViewer.swf?rand=20161209" style="width: 792px; height: 1120px;"><div id="flash_40"></div></div></div><div id="page_41" class="model panel"><div class="panel_inner scrollLoading" data-url="http://pics.wanlibo.com/players/PageViewer.swf?rand=20161209" style="width: 792px; height: 1120px;"><div id="flash_41"></div></div></div><div id="page_42" class="model panel"><div class="panel_inner scrollLoading" data-url="http://pics.wanlibo.com/players/PageViewer.swf?rand=20161209" style="width: 792px; height: 1120px;"><div id="flash_42"></div></div></div><div id="page_43" class="model panel"><div class="panel_inner scrollLoading" data-url="http://pics.wanlibo.com/players/PageViewer.swf?rand=20161209" style="width: 792px; height: 1120px;"><div id="flash_43"></div></div></div><div id="page_44" class="model panel"><div class="panel_inner scrollLoading" data-url="http://pics.wanlibo.com/players/PageViewer.swf?rand=20161209" style="width: 792px; height: 1120px;"><div id="flash_44"></div></div></div><div id="page_45" class="model panel"><div class="panel_inner scrollLoading" data-url="http://pics.wanlibo.com/players/PageViewer.swf?rand=20161209" style="width: 792px; height: 1120px;"><div id="flash_45"></div></div></div><div id="page_46" class="model panel"><div class="panel_inner scrollLoading" data-url="http://pics.wanlibo.com/players/PageViewer.swf?rand=20161209" style="width: 792px; height: 1120px;"><div id="flash_46"></div></div></div><div id="page_47" class="model panel"><div class="panel_inner scrollLoading" data-url="http://pics.wanlibo.com/players/PageViewer.swf?rand=20161209" style="width: 792px; height: 1120px;"><div id="flash_47"></div></div></div><div id="page_48" class="model panel"><div class="panel_inner scrollLoading" data-url="http://pics.wanlibo.com/players/PageViewer.swf?rand=20161209" style="width: 792px; height: 1120px;"><div id="flash_48"></div></div></div><div id="page_49" class="model panel"><div class="panel_inner scrollLoading" data-url="http://pics.wanlibo.com/players/PageViewer.swf?rand=20161209" style="width: 792px; height: 1120px;"><div id="flash_49"></div></div></div><div id="page_50" class="model panel"><div class="panel_inner scrollLoading" data-url="http://pics.wanlibo.com/players/PageViewer.swf?rand=20161209" style="width: 792px; height: 1120px;"><div id="flash_50"></div></div></div><div id="page_51" class="model panel"><div class="panel_inner scrollLoading" data-url="http://pics.wanlibo.com/players/PageViewer.swf?rand=20161209" style="width: 792px; height: 1120px;"><div id="flash_51"></div></div></div><div id="page_52" class="model panel"><div class="panel_inner scrollLoading" data-url="http://pics.wanlibo.com/players/PageViewer.swf?rand=20161209" style="width: 792px; height: 1120px;"><div id="flash_52"></div></div></div><div id="page_53" class="model panel"><div class="panel_inner scrollLoading" data-url="http://pics.wanlibo.com/players/PageViewer.swf?rand=20161209" style="width: 792px; height: 1120px;"><div id="flash_53"></div></div></div><div id="page_54" class="model panel"><div class="panel_inner scrollLoading" data-url="http://pics.wanlibo.com/players/PageViewer.swf?rand=20161209" style="width: 792px; height: 1120px;"><div id="flash_54"></div></div></div><div id="page_55" class="model panel"><div class="panel_inner scrollLoading" data-url="http://pics.wanlibo.com/players/PageViewer.swf?rand=20161209" style="width: 792px; height: 1120px;"><div id="flash_55"></div></div></div><div id="page_56" class="model panel"><div class="panel_inner scrollLoading" data-url="http://pics.wanlibo.com/players/PageViewer.swf?rand=20161209" style="width: 792px; height: 1120px;"><div id="flash_56"></div></div></div><div id="page_57" class="model panel"><div class="panel_inner scrollLoading" data-url="http://pics.wanlibo.com/players/PageViewer.swf?rand=20161209" style="width: 792px; height: 1120px;"><div id="flash_57"></div></div></div><div id="page_58" class="model panel"><div class="panel_inner scrollLoading" data-url="http://pics.wanlibo.com/players/PageViewer.swf?rand=20161209" style="width: 792px; height: 1120px;"><div id="flash_58"></div></div></div><div id="page_59" class="model panel"><div class="panel_inner scrollLoading" data-url="http://pics.wanlibo.com/players/PageViewer.swf?rand=20161209" style="width: 792px; height: 1120px;"><div id="flash_59"></div></div></div><div id="page_60" class="model panel"><div class="panel_inner scrollLoading" data-url="http://pics.wanlibo.com/players/PageViewer.swf?rand=20161209" style="width: 792px; height: 1120px;"><div id="flash_60"></div></div></div><div id="page_61" class="model panel"><div class="panel_inner scrollLoading" data-url="http://pics.wanlibo.com/players/PageViewer.swf?rand=20161209" style="width: 792px; height: 1120px;"><div id="flash_61"></div></div></div><div id="page_62" class="model panel"><div class="panel_inner scrollLoading" data-url="http://pics.wanlibo.com/players/PageViewer.swf?rand=20161209" style="width: 792px; height: 1120px;"><div id="flash_62"></div></div></div><div id="page_63" class="model panel"><div class="panel_inner scrollLoading" data-url="http://pics.wanlibo.com/players/PageViewer.swf?rand=20161209" style="width: 792px; height: 1120px;"><div id="flash_63"></div></div></div><div id="page_64" class="model panel"><div class="panel_inner scrollLoading" data-url="http://pics.wanlibo.com/players/PageViewer.swf?rand=20161209" style="width: 792px; height: 1120px;"><div id="flash_64"></div></div></div><div id="page_65" class="model panel"><div class="panel_inner scrollLoading" data-url="http://pics.wanlibo.com/players/PageViewer.swf?rand=20161209" style="width: 792px; height: 1120px;"><div id="flash_65"></div></div></div><div id="page_66" class="model panel"><div class="panel_inner scrollLoading" data-url="http://pics.wanlibo.com/players/PageViewer.swf?rand=20161209" style="width: 792px; height: 1120px;"><div id="flash_66"></div></div></div><div id="page_67" class="model panel"><div class="panel_inner scrollLoading" data-url="http://pics.wanlibo.com/players/PageViewer.swf?rand=20161209" style="width: 792px; height: 1120px;"><div id="flash_67"></div></div></div><div id="moveHandel" style="cursor: url(&quot;http://pics.wanlibo.com/images_cn/news/html_reader/cursor_hand1.ico?rand=20140721&quot;), auto;"></div></div>
+							
+							<div class="no_more_mod" id="j_isend" style="display: block;">
+								<div class="no_more_tips">
+									<p>君，已阅读到文档的结尾了呢~~</p>
+									<div class="down_btns">
+										<a onmousedown="return inpmv(5772);" href="javascript:void(0)" id="docDownload2" class="ico_button orange" onclick="javascript:clickDownload(&#39;848543477&#39;,&#39;&#39;);return false;"><span class="ico_mini ico_download"></span>立即下载</a>
+												<a href="http://www.docin.com/p-1312889191.html?docfrom=rrela" style="" id="simiSelect" class="ico_button btnc_blue" onmousedown="return inpmv(5773);" target="_blank">相似精选，再来一篇</a>
+									</div>
+									<div class="share_new_style">
+										<span class="txt">分享到</span> <span class="ico_share_raduis ico_qzone_raduis" title="分享到QQ空间" onclick="docinShare(2,event,2,&#39;848543477&#39;);"></span><span class="ico_share_raduis ico_wb_raduis" title="分享到新浪微博" onclick="docinShare(1,event,2,&#39;848543477&#39;);"></span><span class="ico_share_raduis ico_wx_raduis" onclick="docinShare(6,event,2,&#39;848543477&#39;);" title="分享到微信"></span>
+									</div>	
+								</div>
+							</div>
+							</div>
+					</div>
+				</div>
+				<div id="jControlDiv" style="display: block;"><div id="likeToo" class="like_too_mod" style="display: block;">
+	
+	<div class="hd">
+		
+		<a class="f_r" href="http://www.docin.com/mydoc-49378921-1.html" target="_blank" onmousedown="return inpmv(2158);">更多&gt;&gt;</a>
+		
+		<h3>
+			该用户其他文档
+		</h3>
+	</div>
+	<div class="bd" style="height: 210px;">
+		<ul class="doc_list clear">
+	
+			<li>
+				<div class="li_wrap">
+					<div class="cover">
+						<a target="_blank" onmousedown="return inpmv(5268);" href="http://www.docin.com/p-1954989989.html"> <img src="./基于感知器算法的高效中文分词与词性标注系统设计与实现_files/docin_1954989989_110x140.jpg" alt="全等三角形的证明技巧与方法.doc"><span class="pageno">10</span>
+						</a>
+					</div>
+					<p class="title">
+						<a title="全等三角形的证明技巧与方法.doc" target="_blank" onmousedown="return inpmv(5268);" href="http://www.docin.com/p-1954989989.html">全等三角形的证明技巧与方法.doc</a>
+					</p>
+				</div>
+			</li>
+			
+			<li>
+				<div class="li_wrap">
+					<div class="cover">
+						<a target="_blank" onmousedown="return inpmv(5268);" href="http://www.docin.com/p-1954989215.html"> <img src="./基于感知器算法的高效中文分词与词性标注系统设计与实现_files/docin_1954989215_110x140.jpg" alt="新路径英语三年级期末测试[1].pdf"><span class="pageno">4</span>
+						</a>
+					</div>
+					<p class="title">
+						<a title="新路径英语三年级期末测试[1].pdf" target="_blank" onmousedown="return inpmv(5268);" href="http://www.docin.com/p-1954989215.html">新路径英语三年级期末测试[1].pd..</a>
+					</p>
+				</div>
+			</li>
+			
+			<li>
+				<div class="li_wrap">
+					<div class="cover">
+						<a target="_blank" onmousedown="return inpmv(5268);" href="http://www.docin.com/p-1954988987.html"> <img src="./基于感知器算法的高效中文分词与词性标注系统设计与实现_files/docin_1954988987_110x140.jpg" alt="【四季人生主题】超级精美动态ppt作品.pptx"><span class="pageno">14</span>
+						</a>
+					</div>
+					<p class="title">
+						<a title="【四季人生主题】超级精美动态ppt作品.pptx" target="_blank" onmousedown="return inpmv(5268);" href="http://www.docin.com/p-1954988987.html">【四季人生主题】超级精美动态ppt作品..</a>
+					</p>
+				</div>
+			</li>
+			
+			<li>
+				<div class="li_wrap">
+					<div class="cover">
+						<a target="_blank" onmousedown="return inpmv(5268);" href="http://www.docin.com/p-1954987034.html"> <img src="./基于感知器算法的高效中文分词与词性标注系统设计与实现_files/docin_1954987034_110x140.jpg" alt="【名师测控】（2018秋季版）七年级语文上册 专题三 名著阅读《小王子》课件 苏教版.ppt"><span class="pageno">10</span>
+						</a>
+					</div>
+					<p class="title">
+						<a title="【名师测控】（2018秋季版）七年级语文上册 专题三 名著阅读《小王子》课件 苏教版.ppt" target="_blank" onmousedown="return inpmv(5268);" href="http://www.docin.com/p-1954987034.html">【名师测控】（2018秋季版）七年级语..</a>
+					</p>
+				</div>
+			</li>
+			
+			<li>
+				<div class="li_wrap">
+					<div class="cover">
+						<a target="_blank" onmousedown="return inpmv(5268);" href="http://www.docin.com/p-1954987024.html"> <img src="./基于感知器算法的高效中文分词与词性标注系统设计与实现_files/docin_1954987024_110x140.jpg" alt="文化生活  第三单元测试题及答案.doc"><span class="pageno">7</span>
+						</a>
+					</div>
+					<p class="title">
+						<a title="文化生活  第三单元测试题及答案.doc" target="_blank" onmousedown="return inpmv(5268);" href="http://www.docin.com/p-1954987024.html">文化生活  第三单元测试题及答案...</a>
+					</p>
+				</div>
+			</li>
+			
+			<li>
+				<div class="li_wrap">
+					<div class="cover">
+						<a target="_blank" onmousedown="return inpmv(5268);" href="http://www.docin.com/p-1954986785.html"> <img src="./基于感知器算法的高效中文分词与词性标注系统设计与实现_files/docin_1954986785_110x140.jpg" alt="【名师测控】2018年秋新版七年级历史上册 第12课 汉武帝巩固大一统王朝课件 新人教版.ppt"><span class="pageno">24</span>
+						</a>
+					</div>
+					<p class="title">
+						<a title="【名师测控】2018年秋新版七年级历史上册 第12课 汉武帝巩固大一统王朝课件 新人教版.ppt" target="_blank" onmousedown="return inpmv(5268);" href="http://www.docin.com/p-1954986785.html">【名师测控】2018年秋新版七年级历史..</a>
+					</p>
+				</div>
+			</li>
+			
+			<li>
+				<div class="li_wrap">
+					<div class="cover">
+						<a target="_blank" onmousedown="return inpmv(5268);" href="http://www.docin.com/p-1954986404.html"> <img src="./基于感知器算法的高效中文分词与词性标注系统设计与实现_files/docin_1954986404_110x140.jpg" alt="【名师测控】2018年秋新版七年级历史上册 第10课 秦末农民大起义课件 新人教版.ppt"><span class="pageno">17</span>
+						</a>
+					</div>
+					<p class="title">
+						<a title="【名师测控】2018年秋新版七年级历史上册 第10课 秦末农民大起义课件 新人教版.ppt" target="_blank" onmousedown="return inpmv(5268);" href="http://www.docin.com/p-1954986404.html">【名师测控】2018年秋新版七年级历史..</a>
+					</p>
+				</div>
+			</li>
+			
+			<li>
+				<div class="li_wrap">
+					<div class="cover">
+						<a target="_blank" onmousedown="return inpmv(5268);" href="http://www.docin.com/p-1954986008.html"> <img src="./基于感知器算法的高效中文分词与词性标注系统设计与实现_files/docin_1954986008_110x140.jpg" alt="【名师测控】2018年七年级政治上册 第四单元 生命的思考教材习题答案课件 新人教版（道德与法治） .ppt"><span class="pageno">11</span>
+						</a>
+					</div>
+					<p class="title">
+						<a title="【名师测控】2018年七年级政治上册 第四单元 生命的思考教材习题答案课件 新人教版（道德与法治） .ppt" target="_blank" onmousedown="return inpmv(5268);" href="http://www.docin.com/p-1954986008.html">【名师测控】2018年七年级政治上册 第..</a>
+					</p>
+				</div>
+			</li>
+			
+		</ul>
+	</div>
+		
+	
+</div></div>
+				</div>
+			<div class="aside" style="position: fixed; top: 56px; right: 66.5px; left: auto; margin: 0px;">
+				<div class="asideWrap">					
+					<!--用户信息-->
+					<div class="user_doc_mod" style="display: none;">
+						<div class="user_doc_bd">
+							<div class="inner">
+								<div class="user_info clear">
+									<div class="user_cover">
+										<a href="http://www.docin.com/doc12580" target="_blank" onmousedown="return inpmv(5029);">
+											<img src="./基于感知器算法的高效中文分词与词性标注系统设计与实现_files/docin_u_49378921_118x118.gif" alt="一按我帮您" data-original="http://img2.vonibo.com/docin_u_49378921_118x118.gif" onerror="this.src=&#39;http://pics.wanlibo.com/images_cn/people01.gif&#39;">
+										</a>
+									</div>
+									<p class="user_name">
+										<a onmousedown="return inpmv(5029);" title="一按我帮您" href="http://www.docin.com/doc12580" target="_blank">一按我帮您</a>
+										</p>
+									<p class="share_time">分享于2014-06-29 09:50</p>
+								</div>
+								<p class="doc_desc">
+									基于感知器算法的高效中文分词与词性标注系统设计与实现,感知器算法,分词算法,词性标注,crf 词性标注,中科院分词算法,中文分词算法,英语词性标注,python 词性标注,java 分词算法,最短词典分词算法</p>
+								<div class="doc_info">
+									<dl class="info_list">
+										<dt>文档格式：</dt>
+										<dd><em class="ico ic_pdf" title="pdf"></em>.pdf</dd>
+										<dt>文档页数：</dt>
+										<dd>67页</dd>
+										<dt>文档大小：</dt>
+										<dd>0.0K</dd>
+										<dt>文档热度：</dt>
+										<dd><span class="viewhot5"></span></dd>
+										<dt>文档分类：</dt>
+										<dd>
+											<a onmousedown="return inpmv(5031);" href="http://www.docin.com/l-10008-0-0-0-0-1.html" target="_blank">论文 </a>&nbsp;--&nbsp;
+												<a onmousedown="return inpmv(5031);" href="http://www.docin.com/l-10122-0-0-0-0-1.html" target="_blank">期刊/会议论文</a>
+												</dd>
+									<dt>文档标签：</dt>
+										<dd>
+										<a onmousedown="return inpmv(4379);" href="http://www.docin.com/search.do?searchcat=1003&amp;searchType_banner=p&amp;nkey=%E5%9F%BA%E4%BA%8E" target="_blank">基于</a>
+										<a onmousedown="return inpmv(4379);" href="http://www.docin.com/search.do?searchcat=1003&amp;searchType_banner=p&amp;nkey=%E6%84%9F%E7%9F%A5" target="_blank">感知</a>
+										<a onmousedown="return inpmv(4379);" href="http://www.docin.com/search.do?searchcat=1003&amp;searchType_banner=p&amp;nkey=%E5%99%A8" target="_blank">器</a>
+										<a onmousedown="return inpmv(4379);" href="http://www.docin.com/search.do?searchcat=1003&amp;searchType_banner=p&amp;nkey=%E7%AE%97%E6%B3%95" target="_blank">算法</a>
+										<a onmousedown="return inpmv(4379);" href="http://www.docin.com/search.do?searchcat=1003&amp;searchType_banner=p&amp;nkey=%E9%AB%98%E6%95%88" target="_blank">高效</a>
+										<a onmousedown="return inpmv(4379);" href="http://www.docin.com/search.do?searchcat=1003&amp;searchType_banner=p&amp;nkey=%E4%B8%AD%E6%96%87" target="_blank">中文</a>
+										<a onmousedown="return inpmv(4379);" href="http://www.docin.com/search.do?searchcat=1003&amp;searchType_banner=p&amp;nkey=%E5%88%86%E8%AF%8D" target="_blank">分词</a>
+										<a onmousedown="return inpmv(4379);" href="http://www.docin.com/search.do?searchcat=1003&amp;searchType_banner=p&amp;nkey=%E8%AF%8D%E6%80%A7%E6%A0%87%E6%B3%A8" target="_blank">词性标注</a>
+										<a onmousedown="return inpmv(4379);" href="http://www.docin.com/search.do?searchcat=1003&amp;searchType_banner=p&amp;nkey=%E7%B3%BB%E7%BB%9F" target="_blank">系统</a>
+										<a onmousedown="return inpmv(4379);" href="http://www.docin.com/search.do?searchcat=1003&amp;searchType_banner=p&amp;nkey=%E8%AE%BE%E8%AE%A1" target="_blank">设计</a>
+										</dd>
+									</dl>
+								</div>
+								<a id="openAll" class="show_all" href="javascript:void(0);" onmousedown="return inpmv(5030);"><span id="showTxt">详情</span><span class="ico_arrow ico_arrow_down"></span></a>
+							</div>
+						</div>
+					</div>
+					<div class="j_sidercontrol">	
+				<!--相关文档部分-->
+						<div class="relative_doc_mod" id="relative_doc_mod">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+	function logForSpUserClick(productid){
+		jQuery.post("/app/p/end/ajax/logForSpUserClick",{productId:productid});
+	}
+</script>
+
+
+
+
+
+
+<div class="relative_doc_inner" style="height: 238px;">
+	<h2 class="hd">
+		<a onmousedown="return inpmv(5071);" class="more" target="_blank" href="http://www.docin.com/search.do?nkey=%E5%9F%BA%E4%BA%8E%E6%84%9F%E7%9F%A5%E5%99%A8%E7%AE%97%E6%B3%95%E7%9A%84%E9%AB%98%E6%95%88%E4%B8%AD%E6%96%87%E5%88%86%E8%AF%8D%E4%B8%8E%E8%AF%8D%E6%80%A7%E6%A0%87%E6%B3%A8%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%AE%9E%E7%8E%B0&amp;searchcat=1002&amp;from=end&amp;mode=4">更多&gt;&gt;</a>
+		<span class="hd_tit">相关精品文档</span>
+	</h2>
+	<div class="relative_bd">
+		
+		
+		<!-- 医疗文档疾病名称匹配文档标题添加医疗百科显示 -->
+		
+		
+		<!-- 视频 -->
+		
+		
+		<!--商业工具  -->
+		
+		
+		<!-- 外经贸定向专题 -->
+		
+		
+		<!-- 专题 -->
+		
+		
+		<!-- 豆单 -->
+		
+		<!-- 普通文档 -->
+		
+		
+			
+			
+				
+				
+				
+				
+				
+				
+				
+				<div class="list_item list_p">
+					<p class="item_title">
+						<em title="docx" class="ico ic_docx">docx</em>
+						
+						 <span class="ico_you" title="网友选出的优质文档"></span>
+						
+						
+							<a onclick="logForRelitive(1,&#39;文档ID：&#39;+160039312)" onmousedown="return inpmv(6056);" title="模式识别感知器算法matlab实现" href="http://www.docin.com/p-160039312.html?docfrom=rrela" target="_blank">模式识别感知器算法matlab实现</a>
+							
+						
+					</p>
+					<div class="item_icon">
+						热度: <span class="viewhot5"></span>
+					</div>
+				</div>
+				
+				   
+			
+		
+			
+			
+				
+				
+				
+				
+				
+				
+				
+				<div class="list_item list_p">
+					<p class="item_title">
+						<em title="doc" class="ico ic_doc">doc</em>
+						
+						 <span class="ico_you" title="网友选出的优质文档"></span>
+						
+						
+							<a onclick="logForRelitive(2,&#39;文档ID：&#39;+497016339)" onmousedown="return inpmv(6057);" title="毕业设计（论文）-基于双向匹配的中文分词算法的研究与实现" href="http://www.docin.com/p-497016339.html?docfrom=rrela" target="_blank">毕业设计（论文）-基于双向匹配的中文分词算法的研究与实现</a>
+							
+						
+					</p>
+					<div class="item_icon">
+						热度: <span class="viewhot5"></span>
+					</div>
+				</div>
+				
+				   
+			
+		
+			
+			
+				
+				
+				
+				
+				
+				
+				
+				<div class="list_item list_p">
+					<p class="item_title">
+						<em title="doc" class="ico ic_doc">doc</em>
+						
+						
+							<a onclick="logForRelitive(3,&#39;文档ID：&#39;+1640664409)" onmousedown="return inpmv(6058);" title="[精品文档]基于VC  的人工分词及词性标注辅助程序的设计与实现" href="http://www.docin.com/p-1640664409.html?docfrom=rrela" target="_blank">[精品文档]基于VC  的人工分词及词性标注辅助程序的设计与实现</a>
+							
+						
+					</p>
+					<div class="item_icon">
+						热度: <span class="viewhot4"></span>
+					</div>
+				</div>
+				
+				   
+			
+		
+			
+			
+				
+				
+				
+				
+				
+				
+				
+				<div class="list_item list_p">
+					<p class="item_title">
+						<em title="pdf" class="ico ic_pdf">pdf</em>
+						
+						 <span class="ico_you" title="网友选出的优质文档"></span>
+						
+						
+							<a onclick="logForRelitive(4,&#39;文档ID：&#39;+462074166)" onmousedown="return inpmv(6059);" title="[豆丁]基于CRF的中文分词研究与实现" href="http://www.docin.com/p-462074166.html?docfrom=rrela" target="_blank">[豆丁]基于CRF的中文分词研究与实现</a>
+							
+						
+					</p>
+					<div class="item_icon">
+						热度: <span class="viewhot5"></span>
+					</div>
+				</div>
+				
+				   
+			
+		
+			
+			
+				
+				
+				
+				
+				
+				
+				
+				<div class="list_item list_p">
+					<p class="item_title">
+						<em title="pdf" class="ico ic_pdf">pdf</em>
+						
+						 <span class="ico_you" title="网友选出的优质文档"></span>
+						
+						
+							<a onclick="logForRelitive(5,&#39;文档ID：&#39;+418378653)" onmousedown="return inpmv(6060);" title="中文词性标注的研究与实现" href="http://www.docin.com/p-418378653.html?docfrom=rrela" target="_blank">中文词性标注的研究与实现</a>
+							
+						
+					</p>
+					<div class="item_icon">
+						热度: <span class="viewhot5"></span>
+					</div>
+				</div>
+				
+				   
+			
+		
+			
+			
+				
+				
+				
+				
+				
+				
+				
+				<div class="list_item list_p">
+					<p class="item_title">
+						<em title="doc" class="ico ic_doc">doc</em>
+						
+						
+							<a onclick="logForRelitive(6,&#39;文档ID：&#39;+782285405)" onmousedown="return inpmv(6061);" title="基于VC＋＋的人工分词及词性标注辅助程序设计与实现" href="http://www.docin.com/p-782285405.html?docfrom=rrela" target="_blank">基于VC＋＋的人工分词及词性标注辅助程序设计与实现</a>
+							
+						
+					</p>
+					<div class="item_icon">
+						热度: <span class="viewhot2"></span>
+					</div>
+				</div>
+				
+				   
+			
+		
+			
+			
+				
+				
+				
+				
+				
+				
+				
+				<div class="list_item list_p">
+					<p class="item_title">
+						<em title="pdf" class="ico ic_pdf">pdf</em>
+						
+						 <span class="ico_you" title="网友选出的优质文档"></span>
+						
+						
+							<a onclick="logForRelitive(7,&#39;文档ID：&#39;+55961669)" onmousedown="return inpmv(6062);" title="基于词典的中文分词算法研究" href="http://www.docin.com/p-55961669.html?docfrom=rrela" target="_blank">基于词典的中文分词算法研究</a>
+							
+						
+					</p>
+					<div class="item_icon">
+						热度: <span class="viewhot5"></span>
+					</div>
+				</div>
+				
+				   
+			
+		
+			
+			
+				
+				
+				
+				
+				
+				
+				
+				<div class="list_item list_p">
+					<p class="item_title">
+						<em title="pdf" class="ico ic_pdf">pdf</em>
+						
+						
+							<a onclick="logForRelitive(8,&#39;文档ID：&#39;+144305080)" onmousedown="return inpmv(6063);" title="基于Linux的中文垃圾邮件过滤系统设计与实现" href="http://www.docin.com/p-144305080.html?docfrom=rrela" target="_blank">基于Linux的中文垃圾邮件过滤系统设计与实现</a>
+							
+						
+					</p>
+					<div class="item_icon">
+						热度: <span class="viewhot3"></span>
+					</div>
+				</div>
+				
+				   
+			
+		
+			
+			
+				
+				
+				
+				
+				
+				
+				
+				<div class="list_item list_p">
+					<p class="item_title">
+						<em title="pdf" class="ico ic_pdf">pdf</em>
+						
+						 <span class="ico_you" title="网友选出的优质文档"></span>
+						
+						
+							<a onmousedown="return inpmv(6055);" title="[豆丁]基于大规模语料的中文新词抽取算法的设计与实现" href="http://www.docin.com/p-462160318.html?docfrom=rrela" target="_blank">[豆丁]基于大规模语料的中文新词抽取算法的设计与实现</a>
+						
+					</p>
+					<div class="item_icon">
+						热度: <span class="viewhot5"></span>
+					</div>
+				</div>
+				
+				   
+			
+		
+			
+			
+				
+				
+				
+				
+				
+				
+				
+				<div class="list_item list_p">
+					<p class="item_title">
+						<em title="ppt" class="ico ic_ppt">ppt</em>
+						
+						 <span class="ico_you" title="网友选出的优质文档"></span>
+						
+						
+							<a onmousedown="return inpmv(6055);" title="感知器算法" href="http://www.docin.com/p-1312889191.html?docfrom=rrela" target="_blank">感知器算法</a>
+						
+					</p>
+					<div class="item_icon">
+						热度: <span class="viewhot5"></span>
+					</div>
+				</div>
+				
+				   
+			
+		
+			
+			
+				
+				
+				
+				
+				
+				
+				
+				<div class="list_item list_p">
+					<p class="item_title">
+						<em title="doc" class="ico ic_doc">doc</em>
+						
+						
+							<a onmousedown="return inpmv(6055);" title="ICTCLAS 中科院分词系统 代码 注释 中文分词 词性标注" href="http://www.docin.com/p-1819671012.html?docfrom=rrela" target="_blank">ICTCLAS 中科院分词系统 代码 注释 中文分词 词性标注</a>
+						
+					</p>
+					<div class="item_icon">
+						热度: <span class="viewhot3"></span>
+					</div>
+				</div>
+				
+				   
+			
+		
+			
+			
+				
+				
+				
+				
+				
+				
+				
+				<div class="list_item list_p">
+					<p class="item_title">
+						<em title="pdf" class="ico ic_pdf">pdf</em>
+						
+						 <span class="ico_you" title="网友选出的优质文档"></span>
+						
+						
+							<a onmousedown="return inpmv(6055);" title="基于自然语言理解的中文分词和词性标注方法的研究" href="http://www.docin.com/p-172639901.html?docfrom=rrela" target="_blank">基于自然语言理解的中文分词和词性标注方法的研究</a>
+						
+					</p>
+					<div class="item_icon">
+						热度: <span class="viewhot5"></span>
+					</div>
+				</div>
+				
+				   
+			
+		
+			
+			
+				
+				
+				
+				
+				
+				
+				
+				<div class="list_item list_p">
+					<p class="item_title">
+						<em title="pdf" class="ico ic_pdf">pdf</em>
+						
+						
+							<a onmousedown="return inpmv(6055);" title="中文分词与词性标注研究" href="http://www.docin.com/p-1187093121.html?docfrom=rrela" target="_blank">中文分词与词性标注研究</a>
+						
+					</p>
+					<div class="item_icon">
+						热度: <span class="viewhot2"></span>
+					</div>
+				</div>
+				
+				   
+			
+		
+			
+			
+				
+				
+				
+				
+				
+				
+				
+				<div class="list_item list_p">
+					<p class="item_title">
+						<em title="pdf" class="ico ic_pdf">pdf</em>
+						
+						 <span class="ico_you" title="网友选出的优质文档"></span>
+						
+						
+							<a onmousedown="return inpmv(6055);" title="基于回溯算法的排课系统的设计与实现" href="http://www.docin.com/p-217952746.html?docfrom=rrela" target="_blank">基于回溯算法的排课系统的设计与实现</a>
+						
+					</p>
+					<div class="item_icon">
+						热度: <span class="viewhot5"></span>
+					</div>
+				</div>
+				
+				   
+			
+		
+		
+		
+		<script type="text/javascript">
+			_pageId_right_gdzt=433;
+			inpv_right_gdzt();
+		</script>
+		
+		<script type="text/javascript">
+				var dd=[ {"down":8,"adv":30,"title":"模式识别感知器算法matlab实现","pid":160039312,"pageno":7},{"down":4,"adv":5,"title":"毕业设计（论文）-基于双向匹配的中文分词算法的研究与实现","pid":497016339,"pageno":31},{"down":0,"adv":0,"title":"[精品文档]基于VC  的人工分词及词性标注辅助程序的设计与实现","pid":1640664409,"pageno":33},{"down":4,"adv":17,"title":"[豆丁]基于CRF的中文分词研究与实现","pid":462074166,"pageno":72},{"down":5,"adv":2,"title":"中文词性标注的研究与实现","pid":418378653,"pageno":49},{"down":0,"adv":0,"title":"基于VC＋＋的人工分词及词性标注辅助程序设计与实现","pid":782285405,"pageno":12},{"down":6,"adv":2,"title":"基于词典的中文分词算法研究","pid":55961669,"pageno":5},{"down":4,"adv":0,"title":"基于Linux的中文垃圾邮件过滤系统设计与实现","pid":144305080,"pageno":6},{"down":3,"adv":4,"title":"[豆丁]基于大规模语料的中文新词抽取算法的设计与实现","pid":462160318,"pageno":59},{"down":2,"adv":3,"title":"感知器算法","pid":1312889191,"pageno":48},{"down":0,"adv":0,"title":"ICTCLAS 中科院分词系统 代码 注释 中文分词 词性标注","pid":1819671012,"pageno":10},{"down":1,"adv":10,"title":"基于自然语言理解的中文分词和词性标注方法的研究","pid":172639901,"pageno":46},{"down":0,"adv":0,"title":"中文分词与词性标注研究","pid":1187093121,"pageno":7},{"down":4,"adv":5,"title":"基于回溯算法的排课系统的设计与实现","pid":217952746,"pageno":54}]
+			</script>
+	</div>
+</div>
+</div>	
+						<div class="sider_guanggao sider_gg" style="display:block;"> 
+								<a id="j_closeCurMod" href="javascript:void(0);" class="closeCurMod" title="去除文档页所有广告"></a>
+								<div class="gg1" id="xgwd_adv_1" style="width: 300px;height: 70px;margin:0 auto;">
+								<iframe width="100%" height="100%" scrolling="no" frameborder="0" style="display:block;margin:0 auto;" src="./基于感知器算法的高效中文分词与词性标注系统设计与实现_files/adv(1).html"></iframe></div>
+								<div class="gg4" style="width:300px;height:250px;margin:10px auto 0;" id="right_end_new_adv_taobao">
+								<iframe width="100%" height="100%" scrolling="no" frameborder="0" style="display:block;margin:0 auto;" src="./基于感知器算法的高效中文分词与词性标注系统设计与实现_files/adv(2).html"></iframe></div>
+							</div>
+						</div>
+				</div>
+				<a id="floderbtn" class="btn_floder" href="javascript:void(0);"></a>
+			</div>
+</div>
+	</div>
+</div>
+<!--二维码弹层-->
+<div class="docinDialogBox dimCodeDiv" id="dimCodeDiv">
+	<iframe scrolling="no" frameborder="0" style="height:100%;_height:150px;width:100%;position:absolute;top:0;left:0;z-index:-1;" src="./基于感知器算法的高效中文分词与词性标注系统设计与实现_files/saved_resource(1).html"></iframe>
+	<div class="dialogBody">
+		<div class="dialogTitle">
+			<h3>扫扫二维码，随身浏览文档</h3><a class="dialog_closed" title="关闭" href="javascript:closeDimDiv();"></a>
+		</div>
+		<div class="dialogCont clear">
+			<div class="dimcodeIntro">
+				<p class="fcqh pad5">手机或平板扫扫即可继续访问</p>
+				<p class="dimcode-info fcqh pad5">推荐<a href="http://www.docin.com/mobile_web/index.jsp" target="_blank" title="豆丁书房APP">豆丁书房APP</a>&nbsp;&nbsp;<span class="login_ico">扫扫更高清</span></p>
+				<h4>基于感知器算法的高效中文分词与词性标注系统设计与实现</h4>
+			</div>
+			<div class="dimcode_pic">
+				<img id="dimcode_pic" width="135" height="135" alt="获取二维码" title="获取二维码">
+				<i id="dimcode_docin_icon" class="ico_docin_dimcode" style="display: none;"></i>
+			</div>
+		</div>
+	</div>
+</div>
+<!--举报-->
+<div class="docinDialogBox lightTips" id="feekBackDiv">
+	<iframe scrolling="no" frameborder="0" style="height:100%;_height:150px;width:100%;position:absolute;top:0;left:0;z-index:-1;" src="./基于感知器算法的高效中文分词与词性标注系统设计与实现_files/saved_resource(2).html"></iframe>
+	<div class="dialogBody">
+		<div class="dialogTitle">
+			<a class="dialog_closed" title="关闭" href="javascript:hiddenFeekback();"></a>
+		</div>
+		<div class="dialogCont">
+			<div id="reportMessageDiv" style="display: none;">
+				<p>
+					<label for="error6"><input type="radio" onclick="javascript:changeRadio();" value="举报该文档为侵权文档。" name="error" id="error6"> 举报该文档为侵权文档。</label></p>
+				<p>
+					<label for="error1"><input type="radio" onclick="javascript:changeRadio();" value="举报该文档含有违规或不良信息。" name="error" id="error1"> 举报该文档含有违规或不良信息。</label></p>
+				<p>
+					<label for="error4"><input type="radio" onclick="javascript:changeRadio();" value="反馈该文档无法正常浏览。" name="error" id="error4"> 反馈该文档无法正常浏览。</label></p>
+				<p>
+					<label for="error2"><input type="radio" onclick="javascript:changeRadio();" id="error2" name="error" value="举报该文档为重复文档。"> 举报该文档为重复文档。</label></p>
+				<p id="repeatproduct" class="repeatUrlBox marT15"><input id="purl" class="repeatUrl" type="text" placeholder="请输入与本篇重复的文档网址"></p>
+				<p class="marT15"><textarea id="error3" placeholder="请输入您的反馈和联系方式"></textarea></p>
+				<div class="dialog_buttons">
+					<a onclick="feekSubmit(848543477);" class="btn_blue" href="javascript:;">提交</a>
+					<a onclick="hiddenFeekback();" class="btn_blue btn_gray" href="javascript:;">取消</a>
+				</div>
+			 </div>
+			 <div id="recommendedMessageDiv" style="display: none;">
+				<p><label for="recommendMessage">推荐理由：</label></p>
+				<p><textarea id="recommendMessage" name="recommendMessage" class="marT15"></textarea></p>
+				<div class="dialog_buttons">
+					<a id="insertRecommendMessageBtn" onclick="recommendProduct_zhf(1);" class="btn_blue" href="javascript:;">提交</a>
+					<a onclick="hiddenFeekback();" class="btn_blue btn_gray" href="javascript:;">取消</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- 分享 -->
+<div class="docinDialogBox endShare-skills" id="docinPopBox1" display="none">
+	<iframe scrolling="no" frameborder="0" style="height:100%;_height:300px;width:100%;position:absolute;top:0;left:0;z-index:-1;" src="./基于感知器算法的高效中文分词与词性标注系统设计与实现_files/saved_resource(3).html"></iframe>
+	<div class="dialogBody">
+		<div class="dialogTitle">
+			<h3>分享文档</h3>
+			<a class="dialog_closed" title="关闭" onclick="closeOpenShare(&quot;docinPopBox1&quot;);" href="javascript:void(0);"></a>
+		</div>
+		<div class="dialogCont">
+			<dl class="shareDocinBox clear">
+				<dt>将文档分享至：</dt>
+				<dd>
+					<div class="bdsharebuttonbox bdshare-button-style0-16" data-bd-bind="1500346906997">
+					<a onclick="kaixinBdShare(848543477,0);" href="http://www.docin.com/p-848543477.html#" class="bds_renren" data-cmd="renren" title="分享到人人网"></a>
+					<a onclick="kaixinBdShare(848543477,0);" href="http://www.docin.com/p-848543477.html#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a>
+					<a onclick="kaixinBdShare(848543477,0);" href="http://www.docin.com/p-848543477.html#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+					<a onclick="kaixinBdShare(848543477,0);" href="http://www.docin.com/p-848543477.html#" class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博"></a>
+					<a onclick="kaixinBdShare(848543477,0);" href="http://www.docin.com/p-848543477.html#" class="bds_sqq" data-cmd="sqq" title="分享到QQ好友"></a>
+					<a onclick="kaixinBdShare(848543477,0);" href="http://www.docin.com/p-848543477.html#" class="bds_kaixin001" data-cmd="kaixin001" title="分享到开心网"></a>
+					</div>
+				</dd>
+			</dl>
+			<form name="sj">
+				<div class="pop_title">
+					<h5>分享完整地址</h5>
+				</div>
+				<div class="endShareUrl end_jl clear">
+					<span class="endUrl_tit">文档地址：</span><input type="text" name="textUrl" id="textUrl" class="tUrl" value="http://www.docin.com/p-848543477.html">
+					<a id="docUrl" style="z-index:1000;" class="btn_blue" href="javascript:;">复制</a>
+				</div>
+				<div class="pop_title">
+					<h5>粘贴到BBS或博客</h5>
+				</div>
+				<div class="endShareUrl clear">
+					<span class="endUrl_tit">flash地址：</span><input type="text" name="flUrl" class="tUrl" id="flUrl" value="http://www.docin.com/DocinViewer-848543477-144.swf">
+					<a id="flashUrl" style="z-index:1000;" class="btn_blue" href="javascript:;">复制</a>
+					<p class="clear">
+						支持嵌入FLASH地址的网站使用
+					</p>
+				</div>
+				<div class="endShareUrl clear">
+					<span class="endUrl_tit">html代码：</span>
+					<textarea class="endShareCode" id="endShareCode" name="endShareCode">&lt;embed src='http://www.docin.com/DocinViewer-848543477-144.swf' width='100%' height='600' type=application/x-shockwave-flash ALLOWFULLSCREEN='true' ALLOWSCRIPTACCESS='always'&gt;&lt;/embed&gt;</textarea>
+					<a id="embedTxt" style="z-index:1000;" class="btn_blue" href="javascript:;">复制</a>
+					<p id="b_size" class="end_PlayerSize clear">
+						<a class="cur" onclick="javascript:changeSize(&quot;http://www.docin.com/DocinViewer-848543477-144.swf&quot;,&quot;100%&quot;,600,this);" href="javascript:void(0);">默认尺寸</a><a onclick="javascript:changeSize(&quot;http://www.docin.com/DocinViewer-848543477-144.swf&quot;,450,300,this);" href="javascript:void(0);">450px*300px</a><a onclick="javascript:changeSize(&quot;http://www.docin.com/DocinViewer-848543477-144.swf&quot;,480,400,this);" href="javascript:void(0); ">480px*400px</a><a onclick="javascript:changeSize(&quot;http://www.docin.com/DocinViewer-848543477-144.swf&quot;,650,490,this);" href="javascript:void(0);">650px*490px</a>
+					</p>
+					<p>
+						支持嵌入HTML代码的网站使用
+					</p>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
+<div id="docinShareSlider" style="right: -116px;">
+	<span class="slideButton"></span>
+	<div class="bdshare-slide-list-box">
+		<div class="bdshare-slide-top">分享到</div>
+		<div class="bdshare-slide-list">
+			<ul class="bdshare-slide-list-ul" style="width: 116px;">
+				<li>
+					<div class="bdsharebuttonbox bdshare-button-style0-16" data-bd-bind="1500346906997">
+						<a onmousedown="return inpmv(5771);" href="http://www.docin.com/p-848543477.html#" onclick="kaixinBdShare(848543477,0);" class="slide-qzone" data-cmd="qzone" title="分享到QQ空间">QQ空间</a>
+						<a onmousedown="return inpmv(5771);" href="http://www.docin.com/p-848543477.html#" onclick="kaixinBdShare(848543477,0);" class="slide-tsina" data-cmd="tsina" title="分享到新浪微博">新浪微博</a>
+						<a onmousedown="return inpmv(5771);" href="http://www.docin.com/p-848543477.html#" onclick="kaixinBdShare(848543477,0);" class="slide-weixin" data-cmd="weixin" title="分享到微信">微信</a>
+						<a onmousedown="return inpmv(5771);" href="http://www.docin.com/p-848543477.html#" onclick="kaixinBdShare(848543477,0);" class="slide-tqq" data-cmd="tqq" title="分享到腾讯微博">腾讯微博</a>
+						<a onmousedown="return inpmv(5771);" href="http://www.docin.com/p-848543477.html#" onclick="kaixinBdShare(848543477,0);" class="slide-sqq" data-cmd="sqq" title="分享到QQ好友">QQ好友</a>
+					</div>
+				</li>
+			</ul>
+		</div>
+		<div class="bdshare-slide-bottom" style="width: 116px;"><a href="javascript:void(0);" class="slide-more">更多...</a></div></div>
+</div>
+<script type="text/javascript">
+ var qdyShow=false;
+</script>
+<!--commonJs start-->
+<!--[if lt IE 9]>
+<script type="text/javascript" src="http://pics.wanlibo.com/js/html5.js?rand=20170717"></script>
+<![endif]-->
+<script type="text/javascript" src="./基于感知器算法的高效中文分词与词性标注系统设计与实现_files/jquery-1.11.1.min.js.下载"></script>
+<script type="text/javascript" src="./基于感知器算法的高效中文分词与词性标注系统设计与实现_files/jquery.mailAutoComplete-4.0.js.下载"></script>
+<script type="text/javascript" src="./基于感知器算法的高效中文分词与词性标注系统设计与实现_files/common_v1.js.下载"></script><div class="backToTop" style="right: 6.5px; display: block;"><div class="gobackTop" style="display: block;"><a href="javascript:void(0);" class="t">返回顶部</a></div><div class="advice"><a href="http://www.docin.com/newMessage/talksWithSys.do" target="_blank" class="t">意见反馈</a></div><div class="docinDownApp"><a style="cursor:default;" href="javascript:void(0);" class="t">扫二维码</a><div class="downloadApp" style="left: -145px;"><a href="javascript:void(0);" style="cursor:default;"><img title="获取二维码" alt="获取二维码"></a>用手机继续访问</div></div><div class="docinWX"><a href="javascript:void(0);" class="t">微信推广</a><div class="downloadMore"><p>添加微信关注，<span>惊喜好礼不定期派送中</span></p><dl class="clear"><dt><img class="DocinWxImg" src="http://www.docin.com/p-848543477.html" alt="豆丁网"></dt><dd>豆丁网</dd><dd class="txt5">微信号：doudingwang</dd><dd>扫左侧二维码关注“豆丁网”微信公众号，</dd><dd><span>随时随地即可享受多重好礼</span></dd></dl><span class="line clear"></span><p>更多豆丁微信号</p><div class="downloadList clear"><ul class=""><li><img class="docBuildImg" src="http://www.docin.com/p-848543477.html" alt="豆丁建筑"></li><li>豆丁建筑</li><li>微信号：doudingjz</li></ul><ul class=""><li><img class="docWordImg" src="http://www.docin.com/p-848543477.html" alt="豆丁文档"></li><li style="padding-left:15px;">豆丁文档<img class="docWordDyh" src="http://www.docin.com/p-848543477.html" style="vertical-align:middle;padding-left:10px;"></li><li>微信号：docin2013</li></ul><ul class=""><li><img class="docActiveImg" src="http://www.docin.com/p-848543477.html" alt="不止于书"></li><li>不止于书</li><li>微信号：buzhiyushu</li></ul></div></div></div><div class="connectOnline"><a class="t" href="javascript:window.open(&#39;http://b.qq.com/webc.htm?new=0&amp;sid=800004241&amp;eid=2188z8p8p8p8p8Q8K8Q8q&amp;o=http://www.docin.com&amp;q=7&amp;ref=http://www.docin.com/p-848543477.html&#39;, &#39;_blank&#39;, &#39;height=544, width=644,toolbar=no,scrollbars=no,menubar=no,status=no&#39;);" title="在线客服">在线客服</a></div></div>
+<script type="text/javascript" src="./基于感知器算法的高效中文分词与词性标注系统设计与实现_files/FileAs.js.下载"></script>
+<script type="text/javascript">boxShare("channelMore","navChannelSkills");</script>
+<!--commonJs end-->
+<script type="text/javascript">
+var iscanread = 1</script>
+<input type="hidden" id="productId" name="productId" value="848543477">
+<input type="hidden" value="0" id="messageCount" name="messageCount">
+<input type="hidden" id="ajaxReMessageId" name="ajaxReMessageId">
+<input type="hidden" id="msgcpage" name="msgcpage" value="1">
+<input type="hidden" id="ismy" name="ismy" value="0">
+<input type="hidden" id="total" name="total" value="0">
+<input type="hidden" id="userIp" name="userIp" value="124.65.156.*">
+<script>
+	var audit_sec = 10;
+	var audit_timeid = 0;
+	var auditType = "";
+	function audit_div(){
+		// document.getElementById("audit_div").style.display = "block";
+		// document.getElementById("audit_div").style.marginTop = 120+getScrollTop()+"px";
+		setObjCenter('audit_div');
+		if(audit_sec > 0){
+			document.getElementById("audit_span").innerHTML = audit_sec;
+			audit_sec = audit_sec - 1;
+			audit_timeid = window.setTimeout("audit_div()",1000);
+		}else{ 
+		    clearTimeout(audit_timeid);
+		    document.getElementById("audit_div").style.display = "none";
+			audit_sec = 10;
+			if(auditType=="edubbsmain"){
+				document.getElementById("formAdd").submit();
+			}else if(auditType=="edubbsre"){
+				document.getElementById("formRe").submit();
+			}else if(auditType=="groupset"){
+				window.location.reload();
+			}else if(auditType=="groupcreate"){
+				document.forms[0].submit();
+			}else if(auditType=="groupmain"){
+				document.getElementById("talk").submit();
+			}else if(auditType=="regroup"){
+				document.getElementById("reform").submit();
+			}else if(auditType=="updateTalk"){
+				document.getElementById("updatefrom").submit();
+			}
+		}
+	}
+	function audit_close(){
+		clearTimeout(audit_timeid);
+		audit_sec = 10;
+		document.getElementById("audit_div").style.display = "none";
+		if(auditType=="edubbsmain"){
+			document.getElementById("formAdd").submit();
+		}else if(auditType=="edubbsre"){
+			document.getElementById("formRe").submit();
+		}else if(auditType=="groupmain"){
+			document.getElementById("talk").submit();
+		}else if(auditType=="regroup"){
+			document.getElementById("reform").submit();
+		}else if(auditType=="groupset"){
+			window.location.reload();
+		}else if(auditType=="groupcreate"){
+			document.forms[0].submit();
+		}else if(auditType=="updateTalk"){
+				document.getElementById("updatefrom").submit();
+		}
+	}
+	function getScrollTop() {   
+		var scrollPos = 0;    
+		if (typeof window.pageYOffset != 'undefined') {    
+			scrollPos = window.pageYOffset;    
+		}else if (typeof window.document.compatMode != 'undefined' &&    
+			window.document.compatMode != 'BackCompat') {    
+			scrollPos = window.document.documentElement.scrollTop;    
+		}else if (typeof window.document.body != 'undefined') {    
+        	scrollPos = window.document.body.scrollTop;    
+     	}
+     	return scrollPos;   
+ 	}
+</script>
+<div class="docinDialogBox endAudit-skills" id="audit_div" style="display:none;">
+	<iframe scrolling="no" frameborder="0" style="height:100%;_height:145px;width:100%;position:absolute;top:0;left:0;z-index:-1;" src="./基于感知器算法的高效中文分词与词性标注系统设计与实现_files/saved_resource(4).html"></iframe>
+	<div class="dialogBody">
+		<div class="dialogTitle">
+			<h3>豆丁提示</h3>
+			<a href="javascript:void(0);" onclick="audit_close();" title="关闭" class="dialog_closed"></a>
+		</div>
+		<div class="dialogCont">
+			<p style="font-size: 14px; line-height: 22px; text-align: center;"><span style="display:inline-block;text-align:left"><strong>您的内容已经提交成功</strong></span></p>
+			<p style="font-size: 12px; line-height: 22px; text-align: center;padding:5px 0"><span style="display:inline-block;text-align:left">您所提交的内容需要审核后才能发布，请您等待！</span></p>
+			<div class="fcr" style="text-align:center;"><span id="audit_span">3</span>秒自动关闭窗口</div>
+		</div>
+		<div class="dialog_buttons">
+			<a href="javascript:void(0);" class="btn_blue" onclick="audit_close();">确定</a>
+		</div>
+	</div>
+</div>
+<div id="loginwindow">
+
+
+
+
+
+
+
+<div style="display: none; left: 422.5px; margin: 0px; position: fixed; top: 180px;" id="newlogin" class="docinDialogBox dialogLogin">
+	<iframe scrolling="no" frameborder="0" style="height:100%;_height:330px;width:100%;position:absolute;top:0;left:0;z-index:-1;" src="./基于感知器算法的高效中文分词与词性标注系统设计与实现_files/saved_resource(5).html"></iframe>
+	<div class="dialogBody">
+		<div class="dialogTitle">
+			<h3>扫码登录</h3>
+			<a class="dialog_closed" title="关闭" href="javascript:closeShowMessage_first();"></a>
+		</div>
+		<div class="dialogCont">
+			<div class="dialogPwd" style="display:none;">
+				<form id="loginnew" name="loginnew" method="post" action="http://www.docin.com/app/login">
+					
+					<table>
+						<tbody>
+							<tr>
+								<td width="200">
+									<div class="pad11">
+									
+										<label class="textLabel" for="username_new">用户名/邮箱/手机号</label>
+										<ul class="emailist" style="position: absolute; margin-top: -1px; visibility: hidden; z-index: 11;"></ul><input type="text" id="username_new" name="username" gtbfieldid="7" class="txt" placeholder="用户名/邮箱/手机号" onblur="showLoginCodeTitle();">									
+									
+									</div>
+								</td>
+								<td>
+									<div class="pad11">
+										<label class="textLabel" for="password_new">登录密码</label>
+										<input placeholder="登录密码" type="password" onkeypress="if (event.keyCode==32) {event.returnvalue=false;return false;}" onkeyup="if(event.keyCode==13){this.blur();check_login_title();this.focus();}" maxlength="16" id="password_new" onkeydown="if(event.keyCode==32) return false" name="password" class="txt">
+									</div>
+								</td> 
+							</tr>
+							<tr>
+								<td colspan="2">
+								<input type="hidden" name="showcode4login" id="showcode4logintitle" value="0">
+								<p id="titleloginfailshowid" class="yzm" style="display:none;">
+									<input type="text" value="" id="loginfalsecodetitle" name="loginfalsecode" maxlength="5" onfocus="javascript:titleNoticeYzmTitleD();" onkeydown="if(event.keyCode==13){check_login_title();}" class="txt">
+									&nbsp;<img width="95" onclick="javascript:refCodeLogin();" id="titleloginimg" name="titleloginimg" src="http://www.docin.com/p-848543477.html" alt="" title="请输入图片中的字符">&nbsp;<a style="font-weight:normal;" title="换张图片" href="javascript:refCodeLogin();">换张图</a>
+									<span id="titleNoticeYzmTitleDiv" class="checkCode" style="display:none;">请输入图片中的字符</span>
+								</p>
+								</td>
+							</tr>
+							<tr>
+								<td colspan="2">
+									<div class="formItem clear">
+										<a title="登录" class="btn" style="padding:0;margin-right:6px;" onclick="check_login_title();">登录</a>
+										<a title="微信登录" class="btn wxBtn" style="padding:0;" onclick="openDocWx();"><span class="ico_wx"></span>微信登录</a>
+										<a href="http://www.docin.com/app/forward?forward=findPsw1" title="忘记密码？" target="_blank" class="forget-link f_r">忘记密码？</a>
+									</div>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</form>
+				<div class="connectLogin">
+					<div class="connectLoginTit">或者你也可以用以下账号登录</div> 
+					<ul class="connectLoginList clear">
+						<li onclick="openrr()"><span class="connect_renren"></span>人人登录</li>
+						<li onclick="openqq()"><span class="connect_qq"></span> QQ登录</li>
+						<li onclick="openss()"><span class="connect_tsina"></span>微博登录</li>
+						<li onclick="showsd()"><span class="connect_sd"></span>盛大通行证</li>
+						<li onclick="openmsn()"><span class="connect_msn"></span>MSN登录</li>
+						<li onclick="opendx()"><span class="connect_dianxin"></span>电信登录</li>
+						<li onclick="openalipay()"><span class="connect_alipay"></span>快捷登录</li>
+						<!-- <li onclick='openDocWx()'><span class="connect_weixin"></span>微信登录</li> -->
+						<!--<li onclick="opentb()"><span class="connect_taobao"></span>淘宝登录</li>
+						  <img src="" onclick="openlt()" title="用联通账号登录" alt="用联通账号登录">-->
+					</ul>
+				</div>
+				<div class="newUserReg">
+					
+					新用户？
+					
+						<a target="_blank" title="" href="http://www.docin.com/app/forward?forward=register&amp;end_registstat=106_848543477&amp;registerFrom=1">注册豆丁会员</a>
+						
+					
+				</div>
+				<div class="login_by_code"></div>
+			</div>
+			<div class="dialogCode">
+				<div class="login_code_con">
+					<div class="login_code_wrap">
+						<div class="login_code_loading"></div>
+						<div class="login_code_show">
+
+
+
+
+
+
+
+
+
+
+  
+    <title>扫码登陆</title>
+  
+  
+  
+    
+
+<img alt="" src="./基于感知器算法的高效中文分词与词性标注系统设计与实现_files/create2wm">   
+<span class="docin-code-icon"></span>    
+   
+
+    
+  
+
+</div>
+						<div class="login_code_reload" style="">
+							<p>二维码已失效</p>
+							<p><a class="login_code_reload_btn" href="javascript:;" title="点击刷新">点击刷新</a></p>
+						</div>
+						<div class="login_code_succ" style="display:none;">
+							<p><span style="color:#333;">扫码成功</span></p>
+							<p style="color:#ccc;padding-left:20px;">登录中...</p>
+						</div>
+					</div>
+					<div class="login_code_tips">
+						<p>使用 <a href="http://www.docin.com/mobile_web/index.jsp" target="_blank" title="豆丁书房APP">豆丁书房APP</a></p>
+						<p><span class="login_ico">扫一扫登录</span></p>
+					</div>
+				</div>
+				<div style="line-height:28px;">或者你也可以用以下帐号登录</div>
+				<div class="login_ctrl login_connect clear">
+					<ul class="connectLoginList">
+						<li>
+							<a onmousedown="return inpmv();" onclick="openwx()" href="javascript:void(0);"><span class="connect_weixin"></span>微信</a>
+							<em class="vline">|</em>
+							<a onmousedown="return inpmv();" onclick="loadnewlogin();openqq();" href="javascript:void(0);"><span class="connect_qq"></span> QQ</a>
+							<em class="vline">|</em>
+							<a onmousedown="return inpmv();" onclick="loadnewlogin();openss();" href="javascript:void(0);"><span class="connect_tsina"></span>微博</a>
+							<em class="vline">|</em>
+							<a onmousedown="return inpmv();" onclick="loadnewlogin();openrr();" href="javascript:void(0);"><span class="connect_renren"></span>人人</a>
+							<em class="vline">|</em>
+							<a onmousedown="return inpmv();" href="javascript:void(0);" class="more showPwd">更多&gt;&gt;</a>
+						</li>
+					</ul>
+				</div>
+				<div class="newUserReg">
+					新用户？
+					
+						<a target="_blank" title="" href="http://www.docin.com/app/forward?forward=register&amp;end_registstat=106_848543477&amp;registerFrom=1">注册豆丁会员</a>
+						
+					
+				</div>
+				<div class="login_by_pwd"></div>
+				<div class="login_by_pwd_tips"><span>密码登录在这里</span><i class="point_a"></i><i class="point_b"></i></div>
+			</div>
+		</div>
+	</div>
+</div>
+<div id="open"></div>
+<div id="after_login"></div>
+<div id="setwb"></div>
+
+<script>
+	jQuery('.dialogPwd .login_by_code').on('click', function(){
+		jQuery('.dialogCode').show();
+		jQuery('.dialogPwd').hide();
+		jQuery('#newlogin .dialogTitle h3').html('扫码登录');
+	});
+	jQuery('.dialogCode .login_by_pwd, .showPwd, .dialogCode .login_by_pwd_tips').on('click', function(){
+		jQuery('.dialogPwd').show();
+		jQuery('.dialogCode').hide();
+		jQuery('#newlogin .dialogTitle h3').html('登录');
+	});
+	loginByCode();
+</script>
+
+<script type="text/javascript">
+    function useSDOLogin(){
+
+		
+		var url_sd = "https://cas.sdo.com/cas/login?gateway=true&service="+encodeURI("http://www.docin.com/app/shengda/login")+"&appId=700038700&appArea=0"
+		tologin(url_sd);
+		
+	
+		}
+	function ibwSpInit() {
+		ibw.appid = "700038700";
+		ibw.useSDOLogin = useSDOLogin;
+	}
+</script>
+      <!--  <script type="text/javascript"
+src="http://x.res.ibw.staticsdo.com/connect/webwidget.js"
+charset="utf-8"></script>-->
+</div>
+<div id="wxwindow"></div>
+<script type="text/javascript">
+var isNewTradeProd = "false",
+specialProd = "true",
+idflag = "",
+showComment = "null",
+isFreeDoc = "",
+tmp_userId = 0,
+tmp_product = 848543477,
+downPath = "";
+var qwpart=0;
+var showPageNum=1;
+var product_id = js_pid= 848543477;
+var js_cid = 10122;
+var _DOCIN_PATH = "http://pics.wanlibo.com";
+var showStyle = 1;
+var isUserLogin = "0";
+var isFromSearch = "";
+var webSearchFlag = 0;
+var isAdvShow = "true"
+
+var login_email = "";
+var landingEmail = "";
+var domailUrl = "";
+var isZuZhi = "0";
+var isFreeProduct = "0";
+var sec_cate = "10122";
+var isPageStat = "false";
+var pcatid = "10008";
+
+	var docDesc = "基于感知器算法的高效中文分词与词性标注系统设计与实现,感知器算法,分词算法,词性标注,crf 词性标注,中科院分词算法,中文分词算法,英语词性标注,python 词性标注,java 分词算法,最短词典分词算法";
+
+
+if(false == true){
+	showStyle = 2;
+}
+if(0==3){
+	showStyle=2;
+}
+if(false == true){
+	var j_qtp = 1;
+}
+else if(false == true){
+	var j_qtp = 2;
+}
+var readerConfig = {
+	allPage:67,
+	productId:848543477,
+	flashUrl:picture_image_path_v1+"/players/PageViewer.swf?rand=20161209",
+	bookMark:0,
+	isLogin:0,
+	bookmarkid:0,
+	previewNum:0,
+	isBuy:1,
+	showStyle:showStyle,
+	showAd:true,
+	yjAdvStyle:0,//0:显示页内 1：显示页外（仅针对页间2广告）
+	load_url:'page2.douding.cn',
+	docstatus:0,//1:转换中  2：审核中  3：转换失败 0:普通
+	referer:7,
+	isBD:0,
+	isType:1,//普通终极页
+	isBFD:false,//是否使用百分点推荐右侧相关文档
+	appCanRead:"1"
+};
+var bdshareconfig = {
+	url:"http://www.docin.com/p-"+product_id+".html",
+	to:1,
+	pic:'http://img2.vonibo.com/docin_848543477_110x140.jpg',
+	title:'基于感知器算法的高效中文分词与词性标注系统设计与实现',
+	desc:docDesc,
+	comment:"嗯，这个文档不错！"
+};
+var docinShareConfig = {
+	url:"http://www.docin.com/p-"+product_id+".html",
+	pic:'http://img2.vonibo.com/docin_848543477_110x140.jpg',
+	titleWB:"基于感知器算法的高效中文分词与词性标注系统设计与实现   基于感知器算法的高效中文分词与词性标注系统设计与实现,感知器算法,分词算法,词性标注,crf 词性标注,中科院分词算法,中文分词算法,英语词性标注,python 词性标注,java 分词算法,最短词典分词算法",  
+	title:"基于感知器算法的高效中文分词与词性标注系统设计与实现",
+	desc:"嗯，这个文档不错！",
+	summary:docDesc
+};
+var showInfoConfig = {
+	id:'docinfo',
+	title:'文档信息',
+	button:2,
+	shadow:1,
+	content:(function(){
+			var tempDiv = jQuery('<div><dl class="current_doc_info clear"><dt><img src="http://img2.vonibo.com/docin_848543477_110x140.jpg" alt="基于感知器算法的高效中文分词与词性标注系统设计与实现"></dt><dd><span class="tit">标题:</span><p class="fwb">基于感知器算法的高效中文分词与词性标注系统设计与实现</p></dd><dd><span class="tit">介绍:</span><p>'+docDesc+'</p></dd><dd><span class="tit">格式:</span><p><em class="ico ic_pdf"></em>.pdf</p></dd></dl></div>');
+			return tempDiv.html();
+		})()
+}
+</script>
+<script type="text/javascript">
+	var comdocsConf = {
+		zhtotal : 0,
+		zhPages : ''
+	}
+</script>
+<script type="text/javascript" src="./基于感知器算法的高效中文分词与词性标注系统设计与实现_files/swfobject-2.0.js.下载"></script>
+<script type="text/javascript" src="./基于感知器算法的高效中文分词与词性标注系统设计与实现_files/ZeroClipboard.js.下载"></script>
+<script type="text/javascript" src="./基于感知器算法的高效中文分词与词性标注系统设计与实现_files/product_end_flat.js.下载"></script>
+<script type="text/javascript" src="./基于感知器算法的高效中文分词与词性标注系统设计与实现_files/new_reader_tab_test1.js.下载"></script>
+
+<script type="text/javascript">
+	function hoverLabel(){
+		jQuery(document).on("mouseover", "a[data-label]", function(){
+			var oLeft = jQuery(this).offset().left-jQuery(window).scrollLeft();
+			var otop = jQuery(this).offset().top;
+			var tempTips = jQuery('<div style="left:'+oLeft+'px;" class="new_tip opaque"><div class="tip_inner">'+jQuery(this).data('label')+'</div></div>').appendTo(jQuery(".tooltip_container"));
+			jQuery(".tooltip_container").show();
+			if(jQuery(this).hasClass('btn_fullscreen')){
+				oGap = (tempTips.width()-68)/2;
+			}
+			else{
+				oGap = (tempTips.width()-30)/2;
+			}
+			tempTips.css({left:oLeft-oGap+'px'});
+		}).on("mouseleave", "a[data-label]", function(){
+			jQuery(".tooltip_container").html("").hide();
+		});
+		jQuery(".doc_active_info").on("mouseover", "a[data-tips]", function(){
+			var oLeft = jQuery(this).position().left;
+			var otop = jQuery(this).position().top;
+			var tempTips = jQuery('<div id="funcTips" style="left:'+oLeft+'px;" class="new_tip opaque"><div class="tip_inner">'+jQuery(this).data('tips')+'</div></div>').appendTo(jQuery(".doc_fun_tips"));
+			jQuery(".doc_fun_tips").show();
+			var oGap1 = (jQuery(this).width()-tempTips.width())/2;
+			if(jQuery(this).hasClass("ico_arrow")){
+				tempTips.css({left:oLeft+oGap1-65+'px'});
+			}
+			else{
+				tempTips.css({left:oLeft+oGap1+'px'});
+			}
+		}).on("mouseleave", "a[data-tips]", function(){
+			jQuery(".doc_fun_tips").html("").hide();
+		});
+
+	}
+	hoverLabel();
+</script>
+<script type="text/javascript" id="bdshare_js" data="type=tools" src="./基于感知器算法的高效中文分词与词性标注系统设计与实现_files/bds_s_v2.js.下载"></script> 
+
+<script type="text/javascript">
+document.getElementById('bdshell_js').src = "http://bdimg.share.baidu.com/static/js/shell_v2.js?cdnversion=" + Math.ceil(new Date()/3600000);
+</script>
+<script type="text/javascript">
+_pageId=397;//统计ID
+
+
+function logForRelitive(position,r_productId){
+	jQuery.post("/app/p/end/ajax/logForRelitive",{productId:848543477,position:position,r_productId:r_productId,flag_cookieId:''});
+}
+
+
+(function(){
+	var url = "/app/p/end/ajax/getOtherDocs";
+	jQuery.post(url,{"type":"1","pubInt":"0","productId":"848543477",
+				"userId":"49378921","productName":"基于感知器算法的高效中文分词与词性标注系统设计与实现",
+				"userName":"doc12580","userLikePsFlag":"0",
+				"showStyle":showStyle,"isotherdoc":"2IUZTGywSZHhwmfohPCC7T3kHhPaoue-eZuuTpxtiI8n4-4hgFzldo"},function(re){
+		//将请求结果放置到相关文档div中
+		var dataHtml = jQuery.trim(re),
+			dlLength = jQuery(dataHtml).find('li').length;
+			jQuery("#jControlDiv").append(dataHtml);
+			var oLikeToo = jQuery("#likeToo");
+				oLikeToo.show();
+				if(dlLength>0&&dlLength<10){
+					jQuery("#likeToo .bd").css({height:210});
+				}
+				else if(dlLength>=10){
+					jQuery("#likeToo .bd").css({height:'auto'});
+				}
+	});
+	function docinShareSlider(id){
+		var oSlider = jQuery("#"+id);
+		if(oSlider.length == 0){return;}
+		oSlider.mouseover(function(event) {
+			oSlider.stop();
+			oSlider.animate({right:0},"fast",function(){
+
+			});
+		});
+		oSlider.mouseout(function(event) {
+			oSlider.stop();
+			oSlider.animate({right:-116},"fast",function(){
+
+			});
+		});
+	}
+docinShareSlider('docinShareSlider');
+})();
+
+</script>
+<!--举报end-->
+<script type="text/javascript">
+//举报弹层
+//showFeekback('feekBackDiv','feekback1');
+</script>
+
+<!-- 这个a5就是用来装载js代码的 -->
+<div id="a5"></div>
+<!-- ... -->
+<!-- 今日免费倒计时 -->
+<script type="text/javascript">
+
+var if_show_jump = false;
+
+	if_show_jump = true;
+</script>
+<!-- 今日免费倒计时 end-->
+<script type="text/javascript" src="./基于感知器算法的高效中文分词与词性标注系统设计与实现_files/pagemodulestat.js.下载"></script>
+<script type="text/javascript" src="./基于感知器算法的高效中文分词与词性标注系统设计与实现_files/index_zhuce_new.js.下载"></script>
+<!-- 阿里云 start -->
+<script>
+alivisit_2014('848543477');
+</script>
+<script type="text/javascript">
+
+var refresh = "-1";
+
+
+
+	docin_adload('49','top_right_ad');//右上角文字链广告
+	docin_adload('50','xgwd_adv_1');//相关文档 1
+	
+		docin_adload('96','right_end_new_adv_taobao');//相关文档 3
+	
+	
+var _st = 1500346906273;	
+window.onunload=function(){
+	jQuery("#a5").load("/jsp_cn/oper.jsp?fn=close&pageid=" + _pageId + "&pid=848543477&n=" + _st);
+};
+</script>		
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdDesc":docDesc,"bdUrl":"","bdPic":bdshareconfig.pic,"bdStyle":"0","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+<!-- 阿里云 end -->
+
+
+
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+	ga('create', 'UA-3158355-1', 'auto');
+	ga('require', 'displayfeatures');
+	
+	ga('send', 'pageview');
+
+</script>
+<script type="text/javascript">
+	var url;
+	
+	url = "/app/jquery/hadoopLog?hadoop_stat_type_id=44&hadoop_stat_uid=0&hadoop_stat_cat_id=10122&hadoop_stat_doc_id=848543477&hadoop_stat_doclist_id=null&ali=null";
+	
+	jQuery.post(url,null,null);
+</script>
+
+
+
+
+<iframe class="bdSug_sd" style="display: none; position: absolute; border-width: 0px;" src="./基于感知器算法的高效中文分词与词性标注系统设计与实现_files/saved_resource(6).html"></iframe><div id="bdSug_1500346906732" class="bdSug_wpr" style="display: none;"></div></body></html>
