@@ -8,8 +8,10 @@
 |[第10章] 隐马尔可夫模型|2017/06/27|
 
 ###  NLP
-*  2017.07.11 到 2017.07.18，通读了基于词表的分词程序friso。Segmentation\friso-master
-*  2017.07.21 到 2017.07.24，通读、单步了“200行Python代码实现感知机词性标注器”。 LiHang\Ch02\AveragedPerceptronPython
+|阅读源码|完成时间|资料地址|
+|:----------|:----------|:---------:|
+|基于词表的分词程序friso|2017.07.18|Segmentation\friso-master|
+|200行Python代码实现感知机词性标注器|2017/07/24|iHang\Ch02\AveragedPerceptronPython|
 
 ### Andrew Ng: Machine Learning 
 |在线课堂|完成时间|
