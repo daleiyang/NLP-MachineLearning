@@ -7,11 +7,11 @@
 |[第09章] EM算法及其推广|2017/07/03|
 |[第10章] 隐马尔可夫模型|2017/06/27|
 
-###  NLP
+###  自然语言处理
 |阅读源码|完成时间|资料地址|
-|:----------|:----------|:---------:|
+|:----------|:----------|----------:|
 |基于词表的分词程序friso|2017.07.18|Segmentation\friso-master|
-|200行Python代码实现感知机词性标注器|2017/07/24|iHang\Ch02\AveragedPerceptronPython|
+|200行Python代码实现感知机词性标注器|2017/07/24|LiHang\Ch02\AveragedPerceptronPython|
 
 ### Andrew Ng: Machine Learning 
 |在线课堂|完成时间|
