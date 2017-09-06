@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<!-- saved from url=(0091)http://licstar.net/archives/category/%e8%87%aa%e7%84%b6%e8%af%ad%e8%a8%80%e5%a4%84%e7%90%86 -->
+<html lang="zh-CN"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="profile" href="http://gmpg.org/xfn/11">
+	<link rel="pingback" href="http://licstar.net/xmlrpc.php">
+	<title>自然语言处理 – licstar的博客</title>
+
+<script async="" src="./自然语言处理 – licstar的博客_files/analytics.js.下载"></script><script async="" src="./自然语言处理 – licstar的博客_files/58a1850f339cc50012f85588.js.下载"></script><script type="text/x-mathjax-config;executed=true">
+MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']], processEscapes: true}});
+</script>
+<link rel="dns-prefetch" href="http://cdn.mathjax.org/">
+<link rel="dns-prefetch" href="http://platform-api.sharethis.com/">
+<link rel="dns-prefetch" href="http://fonts.googleapis.com/">
+<link rel="dns-prefetch" href="http://s.w.org/">
+<link rel="alternate" type="application/rss+xml" title="licstar的博客 » Feed" href="http://licstar.net/feed">
+<link rel="alternate" type="application/rss+xml" title="licstar的博客 » 评论Feed" href="http://licstar.net/comments/feed">
+<link rel="alternate" type="application/rss+xml" title="licstar的博客 » 自然语言处理分类目录Feed" href="http://licstar.net/archives/category/%e8%87%aa%e7%84%b6%e8%af%ad%e8%a8%80%e5%a4%84%e7%90%86/feed">
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2\/svg\/","svgExt":".svg","source":{"concatemoji":"http:\/\/licstar.net\/wp-includes\/js\/wp-emoji-release.min.js?ver=4.6.6"}};
+			!function(a,b,c){function d(a){var c,d,e,f,g,h=b.createElement("canvas"),i=h.getContext&&h.getContext("2d"),j=String.fromCharCode;if(!i||!i.fillText)return!1;switch(i.textBaseline="top",i.font="600 32px Arial",a){case"flag":return i.fillText(j(55356,56806,55356,56826),0,0),!(h.toDataURL().length<3e3)&&(i.clearRect(0,0,h.width,h.height),i.fillText(j(55356,57331,65039,8205,55356,57096),0,0),c=h.toDataURL(),i.clearRect(0,0,h.width,h.height),i.fillText(j(55356,57331,55356,57096),0,0),d=h.toDataURL(),c!==d);case"diversity":return i.fillText(j(55356,57221),0,0),e=i.getImageData(16,16,1,1).data,f=e[0]+","+e[1]+","+e[2]+","+e[3],i.fillText(j(55356,57221,55356,57343),0,0),e=i.getImageData(16,16,1,1).data,g=e[0]+","+e[1]+","+e[2]+","+e[3],f!==g;case"simple":return i.fillText(j(55357,56835),0,0),0!==i.getImageData(16,16,1,1).data[0];case"unicode8":return i.fillText(j(55356,57135),0,0),0!==i.getImageData(16,16,1,1).data[0];case"unicode9":return i.fillText(j(55358,56631),0,0),0!==i.getImageData(16,16,1,1).data[0]}return!1}function e(a){var c=b.createElement("script");c.src=a,c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var f,g,h,i;for(i=Array("simple","flag","unicode8","diversity","unicode9"),c.supports={everything:!0,everythingExceptFlag:!0},h=0;h<i.length;h++)c.supports[i[h]]=d(i[h]),c.supports.everything=c.supports.everything&&c.supports[i[h]],"flag"!==i[h]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[i[h]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(g=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",g,!1),a.addEventListener("load",g,!1)):(a.attachEvent("onload",g),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),f=c.source||{},f.concatemoji?e(f.concatemoji):f.wpemoji&&f.twemoji&&(e(f.twemoji),e(f.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script><script src="./自然语言处理 – licstar的博客_files/wp-emoji-release.min.js.下载" type="text/javascript"></script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+<link rel="stylesheet" id="flat-fonts-css" href="./自然语言处理 – licstar的博客_files/css" media="all">
+<link rel="stylesheet" id="flat-theme-css" href="./自然语言处理 – licstar的博客_files/flat.min.css" media="all">
+<link rel="stylesheet" id="flat-style-css" href="./自然语言处理 – licstar的博客_files/style.css" media="all">
+<link rel="stylesheet" id="tablepress-default-css" href="./自然语言处理 – licstar的博客_files/tablepress-combined.min.css" media="all">
+<link rel="stylesheet" id="aj-collapse-style-css" href="./自然语言处理 – licstar的博客_files/aj-collapse.css" media="all">
+<script src="./自然语言处理 – licstar的博客_files/MathJax.js.下载" id=""></script>
+<script src="./自然语言处理 – licstar的博客_files/jquery.js.下载"></script>
+<script src="./自然语言处理 – licstar的博客_files/jquery-migrate.min.js.下载"></script>
+<script src="./自然语言处理 – licstar的博客_files/flat.min.js.下载"></script>
+<!--[if lt IE 9]>
+<script src='http://licstar.net/wp-content/themes/flat/assets/js/html5shiv.min.js?ver=3.7.2'></script>
+<![endif]-->
+<script src="./自然语言处理 – licstar的博客_files/sharethis.js.下载"></script><style type="text/css">.MathJax_Hover_Frame {border-radius: .25em; -webkit-border-radius: .25em; -moz-border-radius: .25em; -khtml-border-radius: .25em; box-shadow: 0px 0px 15px #83A; -webkit-box-shadow: 0px 0px 15px #83A; -moz-box-shadow: 0px 0px 15px #83A; -khtml-box-shadow: 0px 0px 15px #83A; border: 1px solid #A6D ! important; display: inline-block; position: absolute}
+.MathJax_Menu_Button .MathJax_Hover_Arrow {position: absolute; cursor: pointer; display: inline-block; border: 2px solid #AAA; border-radius: 4px; -webkit-border-radius: 4px; -moz-border-radius: 4px; -khtml-border-radius: 4px; font-family: 'Courier New',Courier; font-size: 9px; color: #F0F0F0}
+.MathJax_Menu_Button .MathJax_Hover_Arrow span {display: block; background-color: #AAA; border: 1px solid; border-radius: 3px; line-height: 0; padding: 4px}
+.MathJax_Hover_Arrow:hover {color: white!important; border: 2px solid #CCC!important}
+.MathJax_Hover_Arrow:hover span {background-color: #CCC!important}
+</style><style type="text/css">#MathJax_About {position: fixed; left: 50%; width: auto; text-align: center; border: 3px outset; padding: 1em 2em; background-color: #DDDDDD; color: black; cursor: default; font-family: message-box; font-size: 120%; font-style: normal; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; border-radius: 15px; -webkit-border-radius: 15px; -moz-border-radius: 15px; -khtml-border-radius: 15px; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+#MathJax_About.MathJax_MousePost {outline: none}
+.MathJax_Menu {position: absolute; background-color: white; color: black; width: auto; padding: 2px; border: 1px solid #CCCCCC; margin: 0; cursor: default; font: menu; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+.MathJax_MenuItem {padding: 2px 2em; background: transparent}
+.MathJax_MenuArrow {position: absolute; right: .5em; padding-top: .25em; color: #666666; font-size: .75em}
+.MathJax_MenuActive .MathJax_MenuArrow {color: white}
+.MathJax_MenuArrow.RTL {left: .5em; right: auto}
+.MathJax_MenuCheck {position: absolute; left: .7em}
+.MathJax_MenuCheck.RTL {right: .7em; left: auto}
+.MathJax_MenuRadioCheck {position: absolute; left: 1em}
+.MathJax_MenuRadioCheck.RTL {right: 1em; left: auto}
+.MathJax_MenuLabel {padding: 2px 2em 4px 1.33em; font-style: italic}
+.MathJax_MenuRule {border-top: 1px solid #CCCCCC; margin: 4px 1px 0px}
+.MathJax_MenuDisabled {color: GrayText}
+.MathJax_MenuActive {background-color: Highlight; color: HighlightText}
+.MathJax_MenuDisabled:focus, .MathJax_MenuLabel:focus {background-color: #E8E8E8}
+.MathJax_ContextMenu:focus {outline: none}
+.MathJax_ContextMenu .MathJax_MenuItem:focus {outline: none}
+#MathJax_AboutClose {top: .2em; right: .2em}
+.MathJax_Menu .MathJax_MenuClose {top: -10px; left: -10px}
+.MathJax_MenuClose {position: absolute; cursor: pointer; display: inline-block; border: 2px solid #AAA; border-radius: 18px; -webkit-border-radius: 18px; -moz-border-radius: 18px; -khtml-border-radius: 18px; font-family: 'Courier New',Courier; font-size: 24px; color: #F0F0F0}
+.MathJax_MenuClose span {display: block; background-color: #AAA; border: 1.5px solid; border-radius: 18px; -webkit-border-radius: 18px; -moz-border-radius: 18px; -khtml-border-radius: 18px; line-height: 0; padding: 8px 0 6px}
+.MathJax_MenuClose:hover {color: white!important; border: 2px solid #CCC!important}
+.MathJax_MenuClose:hover span {background-color: #CCC!important}
+.MathJax_MenuClose:hover:focus {outline: none}
+</style><style type="text/css">.MathJax_Preview .MJXf-math {color: inherit!important}
+</style><style type="text/css">.MJX_Assistive_MathML {position: absolute!important; top: 0; left: 0; clip: rect(1px, 1px, 1px, 1px); padding: 1px 0 0 0!important; border: 0!important; height: 1px!important; width: 1px!important; overflow: hidden!important; display: block!important; -webkit-touch-callout: none; -webkit-user-select: none; -khtml-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none}
+.MJX_Assistive_MathML.MJX_Assistive_MathML_Block {width: 100%!important}
+</style><style type="text/css">#MathJax_Zoom {position: absolute; background-color: #F0F0F0; overflow: auto; display: block; z-index: 301; padding: .5em; border: 1px solid black; margin: 0; font-weight: normal; font-style: normal; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; -webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box; box-shadow: 5px 5px 15px #AAAAAA; -webkit-box-shadow: 5px 5px 15px #AAAAAA; -moz-box-shadow: 5px 5px 15px #AAAAAA; -khtml-box-shadow: 5px 5px 15px #AAAAAA; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+#MathJax_ZoomOverlay {position: absolute; left: 0; top: 0; z-index: 300; display: inline-block; width: 100%; height: 100%; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+#MathJax_ZoomFrame {position: relative; display: inline-block; height: 0; width: 0}
+#MathJax_ZoomEventTrap {position: absolute; left: 0; top: 0; z-index: 302; display: inline-block; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+</style><style type="text/css">.MathJax_Preview {color: #888}
+#MathJax_Message {position: fixed; left: 1em; bottom: 1.5em; background-color: #E6E6E6; border: 1px solid #959595; margin: 0px; padding: 2px 8px; z-index: 102; color: black; font-size: 80%; width: auto; white-space: nowrap}
+#MathJax_MSIE_Frame {position: absolute; top: 0; left: 0; width: 0px; z-index: 101; border: 0px; margin: 0px; padding: 0px}
+.MathJax_Error {color: #CC0000; font-style: italic}
+</style>
+<script src="./自然语言处理 – licstar的博客_files/aj-collapse.js.下载"></script>
+<link rel="https://api.w.org/" href="http://licstar.net/wp-json/">
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://licstar.net/xmlrpc.php?rsd">
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://licstar.net/wp-includes/wlwmanifest.xml"> 
+<meta name="generator" content="WordPress 4.6.6">
+	<link href="./自然语言处理 – licstar的博客_files/SyntaxHighlighter.css" type="text/css" rel="stylesheet">
+	<script type="text/javascript">
+                    var cwpCustomBarIcon = '';
+                    var isSetToPro = '';
+                    var trackcolor = '#ebebeb';
+                </script><style type="text/css"></style><style type="text/css">#masthead .site-title {font-family:Amatic SC}body {font-family:Roboto }h1,h2,h3,h4,h5,h6 {font-family:Roboto Slab}#masthead .site-description, .hentry .entry-meta {font-family:Roboto Condensed}</style>		<style type="text/css">.recentcomments a{display:inline !important;padding:0 !important;margin:0 !important;}</style>
+		<style type="text/css" id="custom-background-css">
+body.custom-background { background-image: url('http://licstar.net/wp-content/themes/flat/assets/img/default-background.jpg'); background-repeat: repeat; background-position: top left; background-attachment: scroll; }
+</style>
+	<style type="text/css">.MJXp-script {font-size: .8em}
+.MJXp-right {-webkit-transform-origin: right; -moz-transform-origin: right; -ms-transform-origin: right; -o-transform-origin: right; transform-origin: right}
+.MJXp-bold {font-weight: bold}
+.MJXp-italic {font-style: italic}
+.MJXp-scr {font-family: MathJax_Script,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-frak {font-family: MathJax_Fraktur,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-sf {font-family: MathJax_SansSerif,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-cal {font-family: MathJax_Caligraphic,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-mono {font-family: MathJax_Typewriter,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-largeop {font-size: 150%}
+.MJXp-largeop.MJXp-int {vertical-align: -.2em}
+.MJXp-math {display: inline-block; line-height: 1.2; text-indent: 0; font-family: 'Times New Roman',Times,STIXGeneral,serif; white-space: nowrap; border-collapse: collapse}
+.MJXp-display {display: block; text-align: center; margin: 1em 0}
+.MJXp-math span {display: inline-block}
+.MJXp-box {display: block!important; text-align: center}
+.MJXp-box:after {content: " "}
+.MJXp-rule {display: block!important; margin-top: .1em}
+.MJXp-char {display: block!important}
+.MJXp-mo {margin: 0 .15em}
+.MJXp-mfrac {margin: 0 .125em; vertical-align: .25em}
+.MJXp-denom {display: inline-table!important; width: 100%}
+.MJXp-denom > * {display: table-row!important}
+.MJXp-surd {vertical-align: top}
+.MJXp-surd > * {display: block!important}
+.MJXp-script-box > *  {display: table!important; height: 50%}
+.MJXp-script-box > * > * {display: table-cell!important; vertical-align: top}
+.MJXp-script-box > *:last-child > * {vertical-align: bottom}
+.MJXp-script-box > * > * > * {display: block!important}
+.MJXp-mphantom {visibility: hidden}
+.MJXp-munderover {display: inline-table!important}
+.MJXp-over {display: inline-block!important; text-align: center}
+.MJXp-over > * {display: block!important}
+.MJXp-munderover > * {display: table-row!important}
+.MJXp-mtable {vertical-align: .25em; margin: 0 .125em}
+.MJXp-mtable > * {display: inline-table!important; vertical-align: middle}
+.MJXp-mtr {display: table-row!important}
+.MJXp-mtd {display: table-cell!important; text-align: center; padding: .5em 0 0 .5em}
+.MJXp-mtr > .MJXp-mtd:first-child {padding-left: 0}
+.MJXp-mtr:first-child > .MJXp-mtd {padding-top: 0}
+.MJXp-mlabeledtr {display: table-row!important}
+.MJXp-mlabeledtr > .MJXp-mtd:first-child {padding-left: 0}
+.MJXp-mlabeledtr:first-child > .MJXp-mtd {padding-top: 0}
+.MJXp-merror {background-color: #FFFF88; color: #CC0000; border: 1px solid #CC0000; padding: 1px 3px; font-style: normal; font-size: 90%}
+.MJXp-scale0 {-webkit-transform: scaleX(.0); -moz-transform: scaleX(.0); -ms-transform: scaleX(.0); -o-transform: scaleX(.0); transform: scaleX(.0)}
+.MJXp-scale1 {-webkit-transform: scaleX(.1); -moz-transform: scaleX(.1); -ms-transform: scaleX(.1); -o-transform: scaleX(.1); transform: scaleX(.1)}
+.MJXp-scale2 {-webkit-transform: scaleX(.2); -moz-transform: scaleX(.2); -ms-transform: scaleX(.2); -o-transform: scaleX(.2); transform: scaleX(.2)}
+.MJXp-scale3 {-webkit-transform: scaleX(.3); -moz-transform: scaleX(.3); -ms-transform: scaleX(.3); -o-transform: scaleX(.3); transform: scaleX(.3)}
+.MJXp-scale4 {-webkit-transform: scaleX(.4); -moz-transform: scaleX(.4); -ms-transform: scaleX(.4); -o-transform: scaleX(.4); transform: scaleX(.4)}
+.MJXp-scale5 {-webkit-transform: scaleX(.5); -moz-transform: scaleX(.5); -ms-transform: scaleX(.5); -o-transform: scaleX(.5); transform: scaleX(.5)}
+.MJXp-scale6 {-webkit-transform: scaleX(.6); -moz-transform: scaleX(.6); -ms-transform: scaleX(.6); -o-transform: scaleX(.6); transform: scaleX(.6)}
+.MJXp-scale7 {-webkit-transform: scaleX(.7); -moz-transform: scaleX(.7); -ms-transform: scaleX(.7); -o-transform: scaleX(.7); transform: scaleX(.7)}
+.MJXp-scale8 {-webkit-transform: scaleX(.8); -moz-transform: scaleX(.8); -ms-transform: scaleX(.8); -o-transform: scaleX(.8); transform: scaleX(.8)}
+.MJXp-scale9 {-webkit-transform: scaleX(.9); -moz-transform: scaleX(.9); -ms-transform: scaleX(.9); -o-transform: scaleX(.9); transform: scaleX(.9)}
+.MathJax_PHTML .noError {vertical-align: ; font-size: 90%; text-align: left; color: black; padding: 1px 3px; border: 1px solid}
+</style></head>
+
+<body class="archive category category-24 custom-background" itemscope="" itemtype="http://schema.org/WebPage">
+<div id="page">
+	<div class="container">
+		<div class="row row-offcanvas row-offcanvas-left">
+			<div id="secondary" class="col-lg-3">
+								<header id="masthead" class="site-header" role="banner">
+										<div class="hgroup">
+						<h1 class="site-title display-title"><a href="http://licstar.net/" title="licstar的博客" rel="home"><span itemprop="name">licstar的博客</span></a></h1><h2 itemprop="description" class="site-description">还是licstar的博客</h2>					</div>
+					<button type="button" class="btn btn-link hidden-lg toggle-sidebar" data-toggle="offcanvas" aria-label="Sidebar"><i class="fa fa-gear"></i></button>
+					<button type="button" class="btn btn-link hidden-lg toggle-navigation" aria-label="Navigation Menu"><i class="fa fa-bars"></i></button>
+					<nav id="site-navigation" class="navigation main-navigation" role="navigation">
+						<div class="nav-menu"><ul><li class="page_item page-item-702"><a href="http://licstar.net/links">常用链接</a></li><li class="page_item page-item-2"><a href="http://licstar.net/about">关于</a></li></ul></div>
+					</nav>
+									</header>
+				
+				<div class="sidebar-offcanvas">
+					<div id="main-sidebar" class="widget-area" role="complementary">
+													<aside id="recent-posts-2" class="widget widget_recent_entries">
+								<h3 class="widget-title">近期文章</h3>
+		<ul>
+					<li>
+				<a href="http://licstar.net/archives/787">狗池历险记（七）</a>
+						</li>
+					<li>
+				<a href="http://licstar.net/archives/773">狗池历险记（六）</a>
+						</li>
+					<li>
+				<a href="http://licstar.net/archives/754">狗池历险记（五）</a>
+						</li>
+					<li>
+				<a href="http://licstar.net/archives/742">狗池历险记（四）</a>
+						</li>
+					<li>
+				<a href="http://licstar.net/archives/717">狗池历险记（二、三）</a>
+						</li>
+				</ul>
+							</aside>
+							<aside id="categories-2" class="widget widget_categories">
+						<h3 class="widget-title">分类目录</h3>
+		<ul>
+	<li class="cat-item cat-item-23"><a href="http://licstar.net/archives/category/acmicpc">ACM-ICPC</a>
+</li>
+	<li class="cat-item cat-item-57"><a href="http://licstar.net/archives/category/programming/cc">C/C++</a>
+</li>
+	<li class="cat-item cat-item-4"><a href="http://licstar.net/archives/category/programming/csharp">C#</a>
+</li>
+	<li class="cat-item cat-item-22"><a href="http://licstar.net/archives/category/programming/js">JavaScript</a>
+</li>
+	<li class="cat-item cat-item-3"><a href="http://licstar.net/archives/category/%e5%bf%83%e6%83%85">心情</a>
+</li>
+	<li class="cat-item cat-item-21"><a href="http://licstar.net/archives/category/data-mining">数据挖掘</a>
+</li>
+	<li class="cat-item cat-item-1"><a href="http://licstar.net/archives/category/uncategorized">未分类</a>
+</li>
+	<li class="cat-item cat-item-71"><a href="http://licstar.net/archives/category/%e7%a8%8b%e5%ba%8f%e8%ae%be%e8%ae%a1/%e7%9f%bf%e6%b1%a0">矿池</a>
+</li>
+	<li class="cat-item cat-item-70"><a href="http://licstar.net/archives/category/%e7%a8%8b%e5%ba%8f%e8%ae%be%e8%ae%a1">程序设计</a>
+</li>
+	<li class="cat-item cat-item-8"><a href="http://licstar.net/archives/category/programming">程序语言</a>
+</li>
+	<li class="cat-item cat-item-65"><a href="http://licstar.net/archives/category/%e7%ae%97%e6%b3%95">算法</a>
+</li>
+	<li class="cat-item cat-item-24 current-cat"><a href="http://licstar.net/archives/category/%e8%87%aa%e7%84%b6%e8%af%ad%e8%a8%80%e5%a4%84%e7%90%86">自然语言处理</a>
+</li>
+		</ul>
+					</aside>
+					<aside id="tag_cloud-3" class="widget widget_tag_cloud">
+						<h3 class="widget-title">标签</h3>
+<div class="tagcloud"><a href="http://licstar.net/archives/tag/2-gram" class="tag-link-27 tag-link-position-1" title="1个话题" style="font-size: 8pt;">2-gram</a>
+<a href="http://licstar.net/archives/tag/acm-icpc" class="tag-link-15 tag-link-position-2" title="1个话题" style="font-size: 8pt;">ACM-ICPC</a>
+<a href="http://licstar.net/archives/tag/bug" class="tag-link-42 tag-link-position-3" title="1个话题" style="font-size: 8pt;">BUG</a>
+<a href="http://licstar.net/archives/tag/csharp" class="tag-link-68 tag-link-position-4" title="4个话题" style="font-size: 22pt;">C#</a>
+<a href="http://licstar.net/archives/tag/char" class="tag-link-51 tag-link-position-5" title="1个话题" style="font-size: 8pt;">char</a>
+<a href="http://licstar.net/archives/tag/code-unit" class="tag-link-47 tag-link-position-6" title="1个话题" style="font-size: 8pt;">code unit</a>
+<a href="http://licstar.net/archives/tag/cookiecontainer" class="tag-link-5 tag-link-position-7" title="1个话题" style="font-size: 8pt;">CookieContainer</a>
+<a href="http://licstar.net/archives/tag/cookies" class="tag-link-6 tag-link-position-8" title="1个话题" style="font-size: 8pt;">cookies</a>
+<a href="http://licstar.net/archives/tag/javascript" class="tag-link-9 tag-link-position-9" title="1个话题" style="font-size: 8pt;">Javascript</a>
+<a href="http://licstar.net/archives/tag/kdd-cup" class="tag-link-34 tag-link-position-10" title="1个话题" style="font-size: 8pt;">KDD Cup</a>
+<a href="http://licstar.net/archives/tag/pm2-5" class="tag-link-32 tag-link-position-11" title="1个话题" style="font-size: 8pt;">PM2.5</a>
+<a href="http://licstar.net/archives/tag/topcoder" class="tag-link-38 tag-link-position-12" title="1个话题" style="font-size: 8pt;">TopCoder</a>
+<a href="http://licstar.net/archives/tag/utf-8" class="tag-link-48 tag-link-position-13" title="1个话题" style="font-size: 8pt;">UTF-8</a>
+<a href="http://licstar.net/archives/tag/utf-16" class="tag-link-49 tag-link-position-14" title="1个话题" style="font-size: 8pt;">UTF-16</a>
+<a href="http://licstar.net/archives/tag/utf-32" class="tag-link-50 tag-link-position-15" title="1个话题" style="font-size: 8pt;">UTF-32</a>
+<a href="http://licstar.net/archives/tag/wikipedia-extractor" class="tag-link-44 tag-link-position-16" title="1个话题" style="font-size: 8pt;">Wikipedia Extractor</a>
+<a href="http://licstar.net/archives/tag/world-final" class="tag-link-14 tag-link-position-17" title="1个话题" style="font-size: 8pt;">World Final</a>
+<a href="http://licstar.net/archives/tag/%e4%ba%8c%e5%85%83%e8%af%ad%e6%b3%95" class="tag-link-26 tag-link-position-18" title="1个话题" style="font-size: 8pt;">二元语法</a>
+<a href="http://licstar.net/archives/tag/%e4%bf%a1%e6%81%af%e6%8a%bd%e5%8f%96" class="tag-link-19 tag-link-position-19" title="1个话题" style="font-size: 8pt;">信息抽取</a>
+<a href="http://licstar.net/archives/tag/%e5%85%ac%e8%93%9d%e5%8c%97%e4%ba%ac" class="tag-link-31 tag-link-position-20" title="1个话题" style="font-size: 8pt;">公蓝北京</a>
+<a href="http://licstar.net/archives/tag/%e5%88%86%e8%af%8d" class="tag-link-25 tag-link-position-21" title="1个话题" style="font-size: 8pt;">分词</a>
+<a href="http://licstar.net/archives/tag/%e5%8c%97%e9%82%ae" class="tag-link-16 tag-link-position-22" title="1个话题" style="font-size: 8pt;">北邮</a>
+<a href="http://licstar.net/archives/tag/%e5%8e%8b%e7%bc%a9" class="tag-link-37 tag-link-position-23" title="1个话题" style="font-size: 8pt;">压缩</a>
+<a href="http://licstar.net/archives/tag/%e5%8f%82%e6%95%b0" class="tag-link-29 tag-link-position-24" title="2个话题" style="font-size: 14.3pt;">参数</a>
+<a href="http://licstar.net/archives/tag/%e5%8f%af%e8%a7%86%e5%8c%96" class="tag-link-40 tag-link-position-25" title="2个话题" style="font-size: 14.3pt;">可视化</a>
+<a href="http://licstar.net/archives/tag/%e5%b9%b3%e6%bb%91" class="tag-link-28 tag-link-position-26" title="1个话题" style="font-size: 8pt;">平滑</a>
+<a href="http://licstar.net/archives/tag/%e5%ba%8f%e5%88%97%e5%8c%96" class="tag-link-7 tag-link-position-27" title="1个话题" style="font-size: 8pt;">序列化</a>
+<a href="http://licstar.net/archives/tag/%e5%bf%83%e6%83%85" class="tag-link-67 tag-link-position-28" title="1个话题" style="font-size: 8pt;">心情</a>
+<a href="http://licstar.net/archives/tag/%e6%8a%93%e5%8f%96" class="tag-link-41 tag-link-position-29" title="1个话题" style="font-size: 8pt;">抓取</a>
+<a href="http://licstar.net/archives/tag/%e6%8a%bd%e8%b1%a1" class="tag-link-12 tag-link-position-30" title="1个话题" style="font-size: 8pt;">抽象</a>
+<a href="http://licstar.net/archives/tag/%e6%95%b0%e6%8d%ae%e6%8c%96%e6%8e%98" class="tag-link-17 tag-link-position-31" title="4个话题" style="font-size: 22pt;">数据挖掘</a>
+<a href="http://licstar.net/archives/tag/%e6%99%92%e4%bb%a3%e7%a0%81" class="tag-link-20 tag-link-position-32" title="1个话题" style="font-size: 8pt;">晒代码</a>
+<a href="http://licstar.net/archives/tag/%e7%88%ac%e8%99%ab" class="tag-link-18 tag-link-position-33" title="2个话题" style="font-size: 14.3pt;">爬虫</a>
+<a href="http://licstar.net/archives/tag/%e7%8a%80%e7%89%9b%e4%b9%a6" class="tag-link-11 tag-link-position-34" title="1个话题" style="font-size: 8pt;">犀牛书</a>
+<a href="http://licstar.net/archives/tag/%e7%9f%bf%e6%b1%a0" class="tag-link-72 tag-link-position-35" title="3个话题" style="font-size: 18.5pt;">矿池</a>
+<a href="http://licstar.net/archives/tag/%e7%a0%81%e5%85%83" class="tag-link-46 tag-link-position-36" title="1个话题" style="font-size: 8pt;">码元</a>
+<a href="http://licstar.net/archives/tag/%e7%b9%81%e7%ae%80%e8%bd%ac%e6%8d%a2" class="tag-link-45 tag-link-position-37" title="1个话题" style="font-size: 8pt;">繁简转换</a>
+<a href="http://licstar.net/archives/tag/%e7%bb%8f%e9%aa%8c" class="tag-link-35 tag-link-position-38" title="1个话题" style="font-size: 8pt;">经验</a>
+<a href="http://licstar.net/archives/tag/%e7%bb%9f%e8%ae%a1" class="tag-link-33 tag-link-position-39" title="1个话题" style="font-size: 8pt;">统计</a>
+<a href="http://licstar.net/archives/tag/%e7%bb%b4%e5%9f%ba%e7%99%be%e7%a7%91" class="tag-link-43 tag-link-position-40" title="1个话题" style="font-size: 8pt;">维基百科</a>
+<a href="http://licstar.net/archives/tag/%e8%a7%86%e9%a2%91%e7%9b%b4%e6%92%ad" class="tag-link-13 tag-link-position-41" title="1个话题" style="font-size: 8pt;">视频直播</a>
+<a href="http://licstar.net/archives/tag/%e8%af%8d%e5%90%91%e9%87%8f" class="tag-link-60 tag-link-position-42" title="3个话题" style="font-size: 18.5pt;">词向量</a>
+<a href="http://licstar.net/archives/tag/%e9%97%ad%e5%8c%85" class="tag-link-10 tag-link-position-43" title="1个话题" style="font-size: 8pt;">闭包</a>
+<a href="http://licstar.net/archives/tag/%e9%a3%8e%e8%93%9d%e5%8c%97%e4%ba%ac" class="tag-link-30 tag-link-position-44" title="1个话题" style="font-size: 8pt;">风蓝北京</a>
+<a href="http://licstar.net/archives/tag/%e9%a9%ac%e6%8b%89%e6%9d%be" class="tag-link-39 tag-link-position-45" title="1个话题" style="font-size: 8pt;">马拉松</a></div>
+					</aside>
+					<aside id="recent-comments-2" class="widget widget_recent_comments">
+						<h3 class="widget-title">近期评论</h3>
+<ul id="recentcomments"><li class="recentcomments"><span class="comment-author-link"><a href="http://ucas/" rel="external nofollow" class="url">Nan.Y</a></span>发表在《<a href="http://licstar.net/archives/328#comment-1603">Deep Learning in NLP （一）词向量和语言模型</a>》</li><li class="recentcomments"><span class="comment-author-link">licstar</span>发表在《<a href="http://licstar.net/archives/620#comment-1602">《How to Generate a Good Word Embedding?》导读</a>》</li><li class="recentcomments"><span class="comment-author-link">licstar</span>发表在《<a href="http://licstar.net/archives/328#comment-1601">Deep Learning in NLP （一）词向量和语言模型</a>》</li><li class="recentcomments"><span class="comment-author-link">licstar</span>发表在《<a href="http://licstar.net/archives/328#comment-1600">Deep Learning in NLP （一）词向量和语言模型</a>》</li><li class="recentcomments"><span class="comment-author-link"><a href="http://ucas/" rel="external nofollow" class="url">Nan.Y</a></span>发表在《<a href="http://licstar.net/archives/328#comment-1599">Deep Learning in NLP （一）词向量和语言模型</a>》</li></ul>					</aside>
+					<aside id="archives-2" class="widget widget_archive">
+						<h3 class="widget-title">文章归档</h3>
+		<ul>
+			<li><a href="http://licstar.net/archives/date/2017/04">2017年四月</a></li>
+	<li><a href="http://licstar.net/archives/date/2017/03">2017年三月</a></li>
+	<li><a href="http://licstar.net/archives/date/2017/01">2017年一月</a></li>
+	<li><a href="http://licstar.net/archives/date/2016/12">2016年十二月</a></li>
+	<li><a href="http://licstar.net/archives/date/2016/11">2016年十一月</a></li>
+	<li><a href="http://licstar.net/archives/date/2016/05">2016年五月</a></li>
+	<li><a href="http://licstar.net/archives/date/2016/02">2016年二月</a></li>
+	<li><a href="http://licstar.net/archives/date/2015/07">2015年七月</a></li>
+	<li><a href="http://licstar.net/archives/date/2014/04">2014年四月</a></li>
+	<li><a href="http://licstar.net/archives/date/2013/07">2013年七月</a></li>
+	<li><a href="http://licstar.net/archives/date/2013/05">2013年五月</a></li>
+	<li><a href="http://licstar.net/archives/date/2013/04">2013年四月</a></li>
+	<li><a href="http://licstar.net/archives/date/2013/01">2013年一月</a></li>
+	<li><a href="http://licstar.net/archives/date/2012/07">2012年七月</a></li>
+	<li><a href="http://licstar.net/archives/date/2012/04">2012年四月</a></li>
+	<li><a href="http://licstar.net/archives/date/2012/03">2012年三月</a></li>
+	<li><a href="http://licstar.net/archives/date/2012/02">2012年二月</a></li>
+		</ul>
+							</aside>
+					<aside id="linkcat-66" class="widget widget_links">
+						<h3 class="widget-title">友情链接</h3>
+
+	<ul class="xoxo blogroll">
+<li><a href="http://bellastream.com/blog/">Bella Blog</a></li>
+<li><a href="http://www.xperseverance.net/blogs/">xlh Blog</a></li>
+<li><a href="http://diaorui.net/">刁瑞 Dora Blog</a></li>
+<li><a href="http://www.shuizilong.com/house/">小岛 Blog</a></li>
+
+	</ul>
+					</aside>
+
+											</div>
+				</div>
+			</div>
+
+						<div id="primary" class="content-area col-lg-9" itemprop="mainContentOfPage">
+					<h1 class="page-title">分类：自然语言处理</h1>		
+	
+	<div id="content" class="site-content" role="main">
+								<article itemscope="" itemtype="http://schema.org/Article" id="post-687" class="post-687 post type-post status-publish format-standard hentry category-24 tag-73 tag-74 tag-60">
+	<header class="entry-header">
+		<h2 class="entry-title" itemprop="name">
+			<a itemprop="url" href="http://licstar.net/archives/687" title="链向博士论文《基于神经网络的词和文档语义向量表示方法研究》的固定链接" rel="bookmark">博士论文《基于神经网络的词和文档语义向量表示方法研究》</a>
+		</h2>
+							<div class="entry-meta"><span class="entry-date"><a href="http://licstar.net/archives/687" rel="bookmark"><time class="entry-date published" datetime="2016-02-15T09:30:40+00:00" itemprop="datepublished">2016 年 2 月 15 日</time></a></span> by <span class="author vcard" itemscope="" itemprop="author" itemtype="http://schema.org/Person"><a class="url fn n" href="http://licstar.net/archives/author/licstar" rel="author" itemprop="url"><span itemprop="name">licstar</span></a></span><span class="sep">·</span><span class="comments-link"><a href="http://licstar.net/archives/687#comments" itemprop="discussionUrl">57条评论</a></span></div>
+			</header>
+								<div class="entry-content" itemprop="articleBody">
+						<p>前前后后写论文也有将近一年的时间了。这个研究的课题到目前还比较热门，在此分享博士论文。希望读者有所收获，少走一些弯路。</p>
+<p>论文下载地址：<a href="http://pan.baidu.com/s/1jGWmmZO" target="_blank">http://pan.baidu.com/s/1jGWmmZO</a>。<br>
+arXiv 地址：<a href="https://arxiv.org/abs/1611.05962" target="_blank">https://arxiv.org/abs/1611.05962</a></p>
+<p>感谢赵老师的指导，以及各位老师同学的宝贵建议！</p>
+<p>有什么疑问或者发现什么问题都可以直接在这里评论。</p>
+								</div>
+			</article>
+					<article itemscope="" itemtype="http://schema.org/Article" id="post-620" class="post-620 post type-post status-publish format-standard hentry category-24 tag-17 tag-60">
+	<header class="entry-header">
+		<h2 class="entry-title" itemprop="name">
+			<a itemprop="url" href="http://licstar.net/archives/620" title="链向《How to Generate a Good Word Embedding?》导读的固定链接" rel="bookmark">《How to Generate a Good Word Embedding?》导读</a>
+		</h2>
+							<div class="entry-meta"><span class="entry-date"><a href="http://licstar.net/archives/620" rel="bookmark"><time class="entry-date published" datetime="2015-07-21T08:16:30+00:00" itemprop="datepublished">2015 年 7 月 21 日</time></a></span> by <span class="author vcard" itemscope="" itemprop="author" itemtype="http://schema.org/Person"><a class="url fn n" href="http://licstar.net/archives/author/licstar" rel="author" itemprop="url"><span itemprop="name">licstar</span></a></span><span class="sep">·</span><span class="comments-link"><a href="http://licstar.net/archives/620#comments" itemprop="discussionUrl">91条评论</a></span></div>
+			</header>
+								<div class="entry-content" itemprop="articleBody">
+						<p>　　自认为这是一篇有用的文章，因此在发表之前先放到 arXiv 上，供大家参考，请批评指正。<br>
+　　论文地址：<a href="http://arxiv.org/abs/1507.05523" target="_blank">http://arxiv.org/abs/1507.05523</a><br>
+　　实验代码地址：<a href="https://github.com/licstar/compare" target="_blank">https://github.com/licstar/compare</a></p>
+<p>　　准备这篇论文大概花了半年时间，从去年 11 月开始做实验，到今年成文。期间消耗大约 10 万 CPU 小时，然后在几十万个结果里面做人肉数据挖掘，最后得到了一些可能有用的结论。</p>
+<p>　　看标题就能够猜到论文的大概内容了，就是希望找到一种简单有效的词向量学习方法。怎么会想到做这件苦逼的事情呢？半年之前在我准备上一篇论文的时候（RCNN，强行广告，欢迎引用，<a href="https://www.aaai.org/ocs/index.php/AAAI/AAAI15/paper/download/9745/9552" target="_blank">文章点此</a>，上面的<a href="http://licstar.net/links">常用链接</a>里有文章相关信息）有一个意外的发现：选用不同的词向量作为模型的初始值，效果的差异非常大！！！当时正值我已经调了好几天参数，黔驴技穷之时，没想到手滑用错了个词向量，效果突然变 NB 了。这下我就脑洞大开了，要是能搞出个宇宙第一词向量，岂不是以后可以随便灌水？后面的故事肯定就能猜到了，半年之前我掉进这个坑里，只为寻找这个“宇宙第一”词向量。然后我实现了几个主流的词向量模型，遍历了各种语料和参数，榨干了实验室机器的空闲资源跑词向量，从生成的几十万个词向量里寻找规律，最后发现“宇宙第一”词向量应该是不存在的，不过生成一个好用的词向量还是有一定套路可循的。为避免某些读者对后面冗长的文字没有兴趣，我先用最简单的话描述我们发现的这个套路，那就是：</p>
+<div style="background: #fbfbfb; border: solid 1px #e1e4e5; padding:15px 20px; margin: 0 40px 20px; font-style:normal;">
+首先根据具体任务，选一个领域相似的语料，在这个条件下，语料越大越好。然后下载一个 word2vec 的新版（14年9月更新），语料小（小于一亿词，约 500MB 的文本文件）的时候用 Skip-gram 模型，语料大的时候用 CBOW 模型。最后记得设置迭代次数为三五十次，维度至少选 50，就可以了。</div>
+<p>　　似乎结论很“显然”，不过这种简单的策略，真的就这么有效吗？word2vec 在半年前已经是最流行的词向量生成工具了，它之所以能这么流行，除了头上顶着 Google 光环，很大程度上是因为这是一个好用的工具包，而不一定是因为它的效果就是最好的。质疑 word2vec 的效果，是因为它的两个模型（Skip-gram 和 CBOW）相对前人的模型做了大量简化，去掉了词序，又去掉了神经网络的隐藏层，最后变成了一个 log 线性模型。我主观地认为，这些简化是会影响词向量的性能的，毕竟词序很有用（上面提到的我的上一篇论文就是讲这个的，再次广告）；然后神经网络的表达能力也比 logistic 回归要强得多。这两部分简化到底会带来多少损失，还是要靠数据来说话。所以我考虑的第一个问题就是，什么模型效果好。<a href="http://licstar.net/archives/328" target="_blank">前面博客</a>提到过的经典模型（NNLM、LBL、C&amp;W）在 word2vec 出现之前，是最主流的方法。这些方法就保留了词序信息，而且也有隐藏层，都放到一起比较。有了这些模型，还缺一个只保留词序，但没有隐藏层的模型。所以我设计了一个中间模型，叫 Order，保留了词序，但没有隐藏层。最后再加上开源的 GloVe，一共比较了 Skip-gram、CBOW、Order、LBL、NNLM、C&amp;W、GloVe 这 7 个模型。</p>
+<p>　　那么最严峻的问题来了，怎么样才算好的词向量呢，应该用什么指标来衡量呢？Mikolov 推广 word2vec 的时候，设计了一个经典的指标（king-queen=man-woman），由于有开放的数据集和评测代码，后来大量的工作都只用这一个指标来评价词向量。我觉得只用这个指标肯定是不对的，为什么词向量非得有这种线性平移的特性啊，如果说这是个加分项，还说得过去，但要成为唯一衡量标准，似乎没什么道理。我觉得 GloVe 那篇论文就做的很好，里面比较了一大堆指标。所以我就从根源想起，我们拿词向量是用来干什么呢？①有人拿它寻找近义词或者相关词，直接根据向量空间里的距离远近来判定词的关系。②也有不少早期的工作，直接拿词向量做特征，在现有系统中加入词向量作为特征。特征嘛，就是要个多样性，虽然不知道词向量包含了什么信息，但是说不定就带着新的信息，效果就能提升了。③还有大量基于神经网络的工作，拿词向量作为神经网络的初始值。神经网络的初始值选得好，就有可能收敛到更好的局部最优解。好，就是这三种指标了：语义特性、用作特征、用作初始值。基于这三大类用法，我们具体找了 8 个指标，进行比较，综合评价词向量的性能。（题外话，其实我从一开始就很想找到一个终极指标，用一个指标定江山，但是自从看到这 8 个指标的结果如此不一致之后，我终于放弃了这个念头。）</p>
+<p>　　为了公平的比较，肯定需要设定一个相同的语料，所有模型都用同样的语料来训练。选个什么语料呢？脑海中的第一反应是：大语料。其实小规模语料（几十兆） Turian 在 2010 年已经做过一些实验了，比较了 C&amp;W 和 HLBL 这两个模型。大规模语料下，结论会不会不一样呢？找了两个大语料，维基百科英文版和纽约时报。此前，主流论点是：语料越大越好。所有语料都堆到一起，不管是什么内容，我语料越大，涵盖的语义信息就越丰富，效果就越好。GloVe 和 C&amp;W 都是这么干的。自然，我也把这两个大语料混合在一起训练了。同时由于好奇心，我还把这两个语料单独拿出来训练词向量。反正就是挂机跑嘛。另一方面，为了验证一下是不是真的语料越大越好，我也在大语料中抽了 10M、100M、1G 词的子集，顺便验证一下别人的结论。说到这里我忍不住剧透了，实验中最意外的结果就是，语料对词向量的影响比模型的影响要重要得多得多得多（重要的事说三遍）。本来我只想固定一个语料，公平比较模型，结果却发现语料比模型重要（抱歉，是四遍）……后来又加了一个小规模的 IMDB 语料，进一步证实了这个结论。实验结果就是这样。</p>
+<p>　　当然，为了公平比较，还有一些其它的因素需要考虑，比如上下文窗口都开成一样大，词向量的维度也需要统一。还有个很重要的参数，那就是迭代次数。这些词向量模型都是用迭代方法优化的，迭代次数肯定会影响性能。对所有模型固定迭代次数可能不合适，毕竟模型之间的差异还是蛮大的。所以为了省事，我们对所有实验迭代足够多的次数，从 100 次到 10000 次，取最好的那次。做了这个决定之后，人省事了，机器累死了，而且对于每个语料、每个模型、每个参数，还要保留不同迭代次数的词向量，很快就把 3T 硬盘塞满了……一边删数据，一边继续做实验……这种暴力手段肯定是不适合实际应用的，所以我们也努力从实验数据中寻找规律，希望找到一种合适的迭代停止条件。</p>
+<p>　　最后总结一下，我们认为模型、语料、参数三方面会影响词向量的训练，所以从这三方面入手分析到底应该怎么生成一个好的词向量，论文由此展开。在博客里主要就介绍一下不方便写进论文里的故事和背景。</p>
+<p>—————-枯燥开始的分割线—————-</p>
+<p>　　简单列举一下文章的贡献。<br>
+　　模型方面，因为所有的词向量模型都是基于<del datetime="2015-10-27T06:30:25+00:00">分布式</del>分布假说的（distributional hypothesis）：拥有相似上下文的词，词义相似。这里有两个对象，一个是我们需要关注的词（目标词），另一个是这个词对应的上下文。所以，我们从两个角度去总结模型：1.目标词和上下文的关系，2.上下文怎么表示。在这种分类体系下，我们对现有的主流词向量模型进行了总结和比较，发现，目标词和上下文的关系主要有两种，大多数模型都是根据上下文，预测目标词。而 C&amp;W 模型则是对目标词和上下文这一组合，打分。实验发现，通过上下文预测目标词的模型，得到的词向量，更能捕获替换关系（paradigmatic）。在上下文的表示方面，我们分析了几种表示方法之后，发现可以通过模型复杂程度对这些模型进行排序。排序之后，实验结果就容易解释了：简单的模型（Skip-gram）在小语料下表现好，复杂的模型在大语料下略有优势。从实践中看，word2vec 的 CBOW 模型在 GB 级别的语料下已经足够好。我前面提到的 Order 模型，加入了词序信息，其实很多时候比 CBOW 更好，不过带来的提升并不大。</p>
+<p>　　语料方面，很多论文都提到语料越大越好，我们发现，语料的领域更重要。领域选好了，可能只要 1/10 甚至 1/100 的语料，就能达到一个大规模泛领域语料的效果。有时候语料选的不对，甚至会导致负面效果（比随机词向量效果还差）。文章还做了实验，当只有小规模的领域内语料，而有大规模的领域外语料时，到底是语料越纯越好，还是越大越好。在我们的实验中，是越纯越好。这一部分实验数据比较丰富，原文相对清楚一些。</p>
+<p>　　参数方面，主要考虑了迭代次数和词向量的维度。其实词向量都是迭代算法，一般迭代算法都需要多迭代几次。旧版的 word2vec 只迭代了一次，效果很受限制，换新版就好了（也欢迎用我们论文实验的方法，用 AdaGrad 优化，相比原版 word2vec 的学习速率下降法，这样还能在之前的基础上继续迭代）。然后迭代次数怎么选呢？机器学习里很常用的迭代停止指标是看验证集的损失是否到达峰值，认为这个时候模型开始过拟合了。按照这个方法，我们可以从训练语料中分出一个验证集看损失函数的变化。但是实验中我们发现，这种策略并不好。主要原因就是，训练词向量的目标是，尽可能精确地预测目标词，这一目标和实际任务并不一致。所以更好的方法是，直接拿实际任务的验证集来做终止条件。如果实际任务做起来很慢（比如 NER 任务的开源实现大概做一次要两小时），文章还给了一种参考的方法，随便挑一个任务当验证集用，一般都比损失函数靠谱。<br>
+　　词向量的维度则只有一些实验结果。做词向量语义分析任务的时候，一般维度越大效果越好。做具体 NLP 任务（用作特征、用作神经网络初始化）的时候，50 维之后效果提升就比较少了。这部分的结果很依赖于具体任务的实现，或许用上了更先进的神经网络优化方法，词向量作为初始值带来的影响又会有新的结论。</p>
+<p>—————-枯燥结束的分割线—————-</p>
+<p>　　完全公平以及全面的比较是很难做到的，我们也在尽可能尝试逼近这个目标，希望这些结论会有用。请批评指正。当然，也非常非常欢迎引用~~~~~</p>
+								</div>
+			</article>
+					<article itemscope="" itemtype="http://schema.org/Article" id="post-328" class="post-328 post type-post status-publish format-standard hentry category-24 tag-deep-learning tag-nlp tag-word-embedding tag-word-representation tag-69 tag-60 tag-62">
+	<header class="entry-header">
+		<h2 class="entry-title" itemprop="name">
+			<a itemprop="url" href="http://licstar.net/archives/328" title="链向Deep Learning in NLP （一）词向量和语言模型的固定链接" rel="bookmark">Deep Learning in NLP （一）词向量和语言模型</a>
+		</h2>
+							<div class="entry-meta"><span class="entry-date"><a href="http://licstar.net/archives/328" rel="bookmark"><time class="entry-date published" datetime="2013-07-29T15:45:00+00:00" itemprop="datepublished">2013 年 7 月 29 日</time></a></span> by <span class="author vcard" itemscope="" itemprop="author" itemtype="http://schema.org/Person"><a class="url fn n" href="http://licstar.net/archives/author/licstar" rel="author" itemprop="url"><span itemprop="name">licstar</span></a></span><span class="sep">·</span><span class="comments-link"><a href="http://licstar.net/archives/328#comments" itemprop="discussionUrl">295条评论</a></span></div>
+			</header>
+								<div class="entry-content" itemprop="articleBody">
+						<p>　　这篇博客是我看了半年的论文后，自己对 Deep Learning 在 NLP 领域中应用的理解和总结，在此分享。其中必然有局限性，欢迎各种交流，随便拍。</p>
+<p>　　Deep Learning 算法已经在图像和音频领域取得了惊人的成果，但是在 NLP 领域中尚未见到如此激动人心的结果。关于这个原因，引一条我比较赞同的微博。</p>
+<div style="background: #fbfbfb; border: solid 1px #e1e4e5; padding:15px 20px; margin: 0 40px 20px; font-style:normal;">
+<a href="http://weibo.com/u/1657470871" target="_blank">@王威廉</a>：Steve Renals算了一下icassp录取文章题目中包含deep learning的数量，发现有44篇，而naacl则有0篇。有一种说法是，语言（词、句子、篇章等）属于人类认知过程中产生的高层认知抽象实体，而语音和图像属于较为底层的原始输入信号，所以后两者更适合做deep learning来学习特征。<br>
+<a href="http://weibo.com/1657470871/zlSokuVxV" target="_blank">2013年3月4日 14:46</a></div>
+<p>　　第一句就先不用管了，毕竟今年的 ACL 已经被灌了好多 Deep Learning 的论文了。第二句我很认同，不过我也有信心以后一定有人能挖掘出语言这种高层次抽象中的本质。不论最后这种方法是不是 Deep Learning，就目前而言，Deep Learning 在 NLP 领域中的研究已经将高深莫测的人类语言撕开了一层神秘的面纱。<br>
+　　我觉得其中最有趣也是最基本的，就是“词向量”了。</p>
+<p>　　将词用“词向量”的方式表示可谓是将 Deep Learning 算法引入 NLP 领域的一个核心技术。大多数宣称用了 Deep Learning 的论文，其中往往也用了词向量。</p>
+<p><a class="btn btn-default btn-sm" href="http://licstar.net/archives/328">继续阅读<i class="fa fa-angle-double-right"></i></a></p>
+								</div>
+			</article>
+					<article itemscope="" itemtype="http://schema.org/Article" id="post-282" class="post-282 post type-post status-publish format-standard hentry category-csharp category-24 tag-csharp tag-char tag-code-unit tag-java tag-unicode tag-unicode- tag-utf-16 tag-utf-32 tag-utf-8 tag-46 tag-55">
+	<header class="entry-header">
+		<h2 class="entry-title" itemprop="name">
+			<a itemprop="url" href="http://licstar.net/archives/282" title="链向字符编码的那些事——原来C#、Java的一个char并不是对应一个显示字符的固定链接" rel="bookmark">字符编码的那些事——原来C#、Java的一个char并不是对应一个显示字符</a>
+		</h2>
+							<div class="entry-meta"><span class="entry-date"><a href="http://licstar.net/archives/282" rel="bookmark"><time class="entry-date published" datetime="2013-04-05T23:07:13+00:00" itemprop="datepublished">2013 年 4 月 5 日</time></a></span> by <span class="author vcard" itemscope="" itemprop="author" itemtype="http://schema.org/Person"><a class="url fn n" href="http://licstar.net/archives/author/licstar" rel="author" itemprop="url"><span itemprop="name">licstar</span></a></span><span class="sep">·</span><span class="comments-link"><a href="http://licstar.net/archives/282#comments" itemprop="discussionUrl">5条评论</a></span></div>
+			</header>
+								<div class="entry-content" itemprop="articleBody">
+						<p>　　很久很久以前，当我想用 C 语言处理中文时，遇到了一些麻烦：C 语言中的 char 只占用 1 字节，但是 GBK 编码的汉字会占用两个字节。如果直接使用 char，会遇到一些非常神奇的问题，比如“页苑估”字符串中含有“吃饭”子串[1]。处理 GBK 编码其实也挺简单，判断一下，如果发现某个 char 的最高位是1，就和下一个 char 合起来考虑。偷懒的办法就是预处理一遍，把合并后的结果存到 short int（其实还有 wchar_t 这种专用的宽字符变量类型，使用时需要注意在 Windows 下是2字节，而在 Linux 下是4字节) 里，这样每个变量就可以表示一个字符了。</p>
+<p>　　当我知道 C#、Java 的 char 是一个 16 位的存储单元时，我就开始天真的以为“终于一个 char 可以表示一个汉字了”。虽然之后也听说了 C# 和 Java 中的 char 是以 Unicode 的形式存储的（确切的说，是 UTF-16），但是对一个 char 表示一个字符的观念，一直没有改变，直到昨天膝盖中了一箭……</p>
+<p>　　我在处理维基百科语料时，想统计一下里面出现了多少种不同的字符。随手就写了一个逐 char 的循环，统计之后输出 &lt;char, 出现次数&gt; 的二元组。 结果写文件的时候，抛出了这个异常：</p>
+<blockquote><p>未经处理的异常:  System.Text.EncoderFallbackException: 无法将位于索引 551 处的 Unicode 字符 \uD86A 转换为指定的代码页。</p></blockquote>
+<p>　　搜索良久，没发现有人遇到这个问题。只好开始猜想，是不是有些字符能用 UTF-16 表示，但不能用 UTF-8 表示？又或许有些 char 不能独立存在？</p>
+<p>　　第二个猜想在 Unicode 的官网找到了答案[2]，同时也否定了第一个猜想：</p>
+<blockquote><p>The Unicode Standard encodes characters in the range U+0000..U+10FFFF, which amounts to a 21-bit code space. Depending on the encoding form you choose (UTF-8, UTF-16, or UTF-32), each character will then be represented either as a sequence of one to four 8-bit bytes, one or two 16-bit code units, or a single 32-bit code unit.</p></blockquote>
+<p>　　里面涉及了两个要点。1. Unicode 编码的范围是固定的，Unicode 字符可以选用 UTF-8、UTF-16、UTF-32 这些编码方式来存储，也就是说这三种编码方式可以无损转换。2. 一个 Unicode 字符，在使用 UTF-16 编码方式存储时，会使用1个或两个码元（code unit），也就是 C# 里面的 char。</p>
+<p>　　于是有些Unicode字符，在 UTF-16 编码方式下，需要用两个码元来表示。在维基百科里找到一个例子：“<span style="font-size:50px;">𪚥</span>”。这个字就需要两个码元来表示。UTF-16 把表示这种字的两个码元称作“代理对（surrogate pair）”，代理对由高位代理和低位代理组合而成，下面的 C# 代码展示了这个分解过程。</p>
+<div class="dp-highlighter"><div class="bar"><div class="tools"><a href="http://licstar.net/archives/category/%e8%87%aa%e7%84%b6%e8%af%ad%e8%a8%80%e5%a4%84%e7%90%86#" onclick="dp.sh.Toolbar.Command(&#39;ViewSource&#39;,this);return false;">view plain</a><a href="http://licstar.net/archives/category/%e8%87%aa%e7%84%b6%e8%af%ad%e8%a8%80%e5%a4%84%e7%90%86#" onclick="dp.sh.Toolbar.Command(&#39;CopyToClipboard&#39;,this);return false;">copy to clipboard</a><a href="http://licstar.net/archives/category/%e8%87%aa%e7%84%b6%e8%af%ad%e8%a8%80%e5%a4%84%e7%90%86#" onclick="dp.sh.Toolbar.Command(&#39;PrintSource&#39;,this);return false;">print</a><a href="http://licstar.net/archives/category/%e8%87%aa%e7%84%b6%e8%af%ad%e8%a8%80%e5%a4%84%e7%90%86#" onclick="dp.sh.Toolbar.Command(&#39;About&#39;,this);return false;">?</a></div></div><ol start="1" class="dp-c"><li class="alt"><span><span>var&nbsp;str&nbsp;=&nbsp;</span><span class="string">"𪚥"</span><span>;&nbsp;&nbsp;</span></span></li><li class=""><span>Console.WriteLine(str.Length);&nbsp;&nbsp;</span></li><li class="alt"><span>Console.WriteLine(Char.IsHighSurrogate(str[0]));&nbsp;&nbsp;</span></li><li class=""><span>Console.WriteLine(Char.IsLowSurrogate(str[1]));&nbsp;&nbsp;</span></li></ol></div><pre name="code" class="c#" style="display: none;">var str = "𪚥";
+Console.WriteLine(str.Length);
+Console.WriteLine(Char.IsHighSurrogate(str[0]));
+Console.WriteLine(Char.IsLowSurrogate(str[1]));</pre>
+<p>　　那是不是一个 Unicode 字符就是一个显示字符呢？答案居然是“否”！</p>
+<p>　　世界上还有“组合字符[4]”这种神一般的存在，最常见的一个肯定很多人都见过“ส้้้้้้้้้้้้้้้้้้้้้้้้้้้้้้้้้้้้้้”。用来破坏排版的神器。这真的是一个显示字符，不信的话，你可以把它复制下来粘贴到 Word 里，看看是不是占了一个字符的位置。当然，一些比较弱的软件可能不能正常显示这个字符。组合字符一般是用来给拉丁文加重音符号等附加符号的，比如 Ä = A + ¨，也可以在一个字符后面加入一堆附加符号，形成刚才那个神器的效果。</p>
+<p>　　当然，C#这样的高级语言处理显示字符也是比较方便的，使用 StringInfo [5]类即可，比如下面的代码会输出 39、1。想要逐字符提取可以用 StringInfo 类中的其它方法，非常方便。Java 中应该也有类似的方法，没去调研。</p>
+<div class="dp-highlighter"><div class="bar"><div class="tools"><a href="http://licstar.net/archives/category/%e8%87%aa%e7%84%b6%e8%af%ad%e8%a8%80%e5%a4%84%e7%90%86#" onclick="dp.sh.Toolbar.Command(&#39;ViewSource&#39;,this);return false;">view plain</a><a href="http://licstar.net/archives/category/%e8%87%aa%e7%84%b6%e8%af%ad%e8%a8%80%e5%a4%84%e7%90%86#" onclick="dp.sh.Toolbar.Command(&#39;CopyToClipboard&#39;,this);return false;">copy to clipboard</a><a href="http://licstar.net/archives/category/%e8%87%aa%e7%84%b6%e8%af%ad%e8%a8%80%e5%a4%84%e7%90%86#" onclick="dp.sh.Toolbar.Command(&#39;PrintSource&#39;,this);return false;">print</a><a href="http://licstar.net/archives/category/%e8%87%aa%e7%84%b6%e8%af%ad%e8%a8%80%e5%a4%84%e7%90%86#" onclick="dp.sh.Toolbar.Command(&#39;About&#39;,this);return false;">?</a></div></div><ol start="1" class="dp-c"><li class="alt"><span><span>var&nbsp;str&nbsp;=&nbsp;</span><span class="string">"ส้้้้้้้้้้้้้้้้้้้้้้้้้้้้้้้้้้้้้้"</span><span>;&nbsp;&nbsp;</span></span></li><li class=""><span>Console.WriteLine(str.Length);&nbsp;&nbsp;</span></li><li class="alt"><span>StringInfo&nbsp;si&nbsp;=&nbsp;<span class="keyword">new</span><span>&nbsp;StringInfo(str);&nbsp;&nbsp;</span></span></li><li class=""><span>Console.WriteLine(si.LengthInTextElements);&nbsp;&nbsp;</span></li></ol></div><pre name="code" class="c#" style="display: none;">var str = "ส้้้้้้้้้้้้้้้้้้้้้้้้้้้้้้้้้้้้้้";
+Console.WriteLine(str.Length);
+StringInfo si = new StringInfo(str);
+Console.WriteLine(si.LengthInTextElements);</pre>
+<p>　　最后，在@trouger 的帮助下，我们发现 UTF-8 编码[6]在多字节时，各字节的首位均是 1。利用这一点，如果我想用 C 语言写一个简单的程序，把 UTF-8 编码的文件按照空格分割（或者任意ASCII字符），直接使用 C 语言的 char 就可以完全胜任，无需考虑复杂的编码方式。</p>
+<p>[1] 百度之星2007程序设计大赛 两场初赛题目点评 <a href="http://www.baiduer.com.cn/2007-06/1207.html" title="百度之星2007程序设计大赛 两场初赛题目点评" target="_blank">http://www.baiduer.com.cn/2007-06/1207.html</a><br>
+[2] UTF-8, UTF-16, UTF-32 &amp; BOM <a href="http://www.unicode.org/faq/utf_bom.html" title="UTF-8, UTF-16, UTF-32 &amp; BOM" target="_blank">http://www.unicode.org/faq/utf_bom.html</a><br>
+[3] 码元 – 维基百科 <a href="http://zh.wikipedia.org/wiki/%E7%A0%81%E5%85%83#.E5.AD.97.E7.AC.A6.E9.9B.86.E3.80.81.E4.BB.A3.E7.A0.81.E9.A1.B5.EF.BC.8C.E4.B8.8E.E5.AD.97.E7.AC.A6.E6.98.A0.E5.B0.84" title="码元" target="_blank">http://zh.wikipedia.org/wiki/码元</a><br>
+[4] 组合字符 – 维基百科 <a href="http://zh.wikipedia.org/wiki/%E7%B5%84%E5%90%88%E5%AD%97%E7%AC%A6" title="组合字符" target="_blank">http://zh.wikipedia.org/wiki/组合字符</a><br>
+[5] StringInfo Class <a href="http://msdn.microsoft.com/en-us/library/system.globalization.stringinfo.aspx" title="StringInfo Class" target="_blank">http://msdn.microsoft.com/en-us/library/system.globalization.stringinfo.aspx</a><br>
+[6] UTF-8 – 维基百科 <a href="http://zh.wikipedia.org/wiki/UTF-8" title="UTF-8" target="_blank">http://zh.wikipedia.org/wiki/UTF-8</a></p>
+								</div>
+			</article>
+					<article itemscope="" itemtype="http://schema.org/Article" id="post-262" class="post-262 post type-post status-publish format-standard hentry category-24 tag-csharp tag-wikipedia-extractor tag-45 tag-43">
+	<header class="entry-header">
+		<h2 class="entry-title" itemprop="name">
+			<a itemprop="url" href="http://licstar.net/archives/262" title="链向维基百科简体中文语料的获取的固定链接" rel="bookmark">维基百科简体中文语料的获取</a>
+		</h2>
+							<div class="entry-meta"><span class="entry-date"><a href="http://licstar.net/archives/262" rel="bookmark"><time class="entry-date published" datetime="2013-04-04T20:35:39+00:00" itemprop="datepublished">2013 年 4 月 4 日</time></a></span> by <span class="author vcard" itemscope="" itemprop="author" itemtype="http://schema.org/Person"><a class="url fn n" href="http://licstar.net/archives/author/licstar" rel="author" itemprop="url"><span itemprop="name">licstar</span></a></span><span class="sep">·</span><span class="comments-link"><a href="http://licstar.net/archives/262#comments" itemprop="discussionUrl">55条评论</a></span></div>
+			</header>
+								<div class="entry-content" itemprop="articleBody">
+						<p>　　最近做实验需要较大规模的中文语料，很自然的就想到使用维基百科的中文数据。</p>
+<p>　　使用维基百科做训练语料有很多好处：</p>
+<ol>
+<li>维基百科资源获取非常方便，有 Wiki Dump 可以直接下载，所有的最新备份都在里面。最近的一次备份是3月底，也就是5天前。相比之下，其他很多语料都需要用爬虫抓取，或者付费获得。</li>
+<li>维基百科的文档解析有非常多的成熟工具，直接使用开源工具即可完成正文的提取。</li>
+<li>维基百科的质量较高，而且领域广泛（比较适合我要做的问题）。</li>
+</ol>
+<p>　　当然，缺点也有：最主要的就是数量较少，相比国内的百度百科、互动百科等，数据量要少一个数量级。</p>
+<p>　　直接切入正题。<br>
+　　<br>
+</p><h1>第一步，下载中文的 Wiki Dump</h1>
+<p>　　链接是：<a href="http://download.wikipedia.com/zhwiki/latest/zhwiki-latest-pages-articles.xml.bz2" title="http://download.wikipedia.com/zhwiki/latest/zhwiki-latest-pages-articles.xml.bz2" target="_blank">http://download.wikipedia.com/zhwiki/latest/zhwiki-latest-pages-articles.xml.bz2</a>。这个压缩包里面存的是标题、正文部分，如果需要其他数据，如页面跳转、历史编辑记录等，可以到目录下找别的下载链接。<br>
+　　<br>
+</p><h1>第二步，使用 <a href="http://medialab.di.unipi.it/wiki/Wikipedia_Extractor" title="Wikipedia Extractor" target="_blank">Wikipedia Extractor</a> 抽取正文文本</h1>
+<p>　　Wikipedia Extractor 是意大利人用 Python 写的一个维基百科抽取器，使用非常方便。下载之后直接使用这条命令即可完成抽取，运行了大约半小时的时间。<br>
+　　<strong>bzcat zhwiki-latest-pages-articles.xml.bz2 | python WikiExtractor.py -b 1000M -o extracted &gt;output.txt</strong><br>
+　　参数 -b 1000M 表示以 1000M 为单位切分文件，默认是 500K。由于最后生成的正文文本不到 600M，把参数设置的大一些可以保证最后的抽取结果全部存在一个文件里。<br>
+　　<br>
+</p><h1>第三步，繁简转换</h1>
+<p>　　维基百科的中文数据是繁简混杂的，里面包含大陆简体、台湾繁体、港澳繁体等多种不同的数据。有时候在一篇文章的不同段落间也会使用不同的繁简字。<br>
+　　解决这个问题最佳的办法应该是直接使用维基百科自身的繁简转换方法（参照 <a href="http://zh.wikipedia.org/wiki/Wikipedia:%E7%B9%81%E7%AE%80%E5%A4%84%E7%90%86" target="_blank">http://zh.wikipedia.org/wiki/Wikipedia:繁简处理</a>）。不过维基百科网站虽然是开源的，但要把里面的繁简转换功能拆解出来，有一定的难度。<br>
+　　为了方便起见，我直接使用了开源项目 opencc。参照<a href="https://github.com/BYVoid/OpenCC#installation-安裝" target="_blank">安装说明</a>的方法，安装完成之后，使用下面的命令进行繁简转换，整个过程大约需要1分钟。<br>
+　　<strong>opencc -i wiki_00 -o wiki_chs -c zht2zhs.ini</strong><br>
+　　命令中的 wiki_00 这个文件是此前使用 Wikipedia Extractor 得到的。</p>
+<p>　　到此为止，已经完成了大部分繁简转换工作。实际上，维基百科使用的繁简转换方法是以词表为准，外加人工修正。人工修正之后的文字是这种格式，多数是为了解决各地术语名称不同的问题：</p>
+<blockquote><p>他的主要成就包括Emacs及後來的GNU Emacs，GNU C 編譯器及-{zh-hant:GNU 除錯器;zh-hans:GDB 调试器}-。</p></blockquote>
+<p>　　对付这种可以简单的使用正则表达式来解决。一般简体中文的限定词是 zh-hans 或 zh-cn，在C#中用以下代码即可完成替换：</p>
+<div class="dp-highlighter"><div class="bar"><div class="tools"><a href="http://licstar.net/archives/category/%e8%87%aa%e7%84%b6%e8%af%ad%e8%a8%80%e5%a4%84%e7%90%86#" onclick="dp.sh.Toolbar.Command(&#39;ViewSource&#39;,this);return false;">view plain</a><a href="http://licstar.net/archives/category/%e8%87%aa%e7%84%b6%e8%af%ad%e8%a8%80%e5%a4%84%e7%90%86#" onclick="dp.sh.Toolbar.Command(&#39;CopyToClipboard&#39;,this);return false;">copy to clipboard</a><a href="http://licstar.net/archives/category/%e8%87%aa%e7%84%b6%e8%af%ad%e8%a8%80%e5%a4%84%e7%90%86#" onclick="dp.sh.Toolbar.Command(&#39;PrintSource&#39;,this);return false;">print</a><a href="http://licstar.net/archives/category/%e8%87%aa%e7%84%b6%e8%af%ad%e8%a8%80%e5%a4%84%e7%90%86#" onclick="dp.sh.Toolbar.Command(&#39;About&#39;,this);return false;">?</a></div></div><ol start="1" class="dp-c"><li class="alt"><span><span>s&nbsp;=&nbsp;Regex.Replace(s,&nbsp;@</span><span class="string">"-\{.*?(zh-hans|zh-cn):([^;]*?);.*?\}-"</span><span>,&nbsp;@</span><span class="string">"$2"</span><span>);&nbsp;&nbsp;</span></span></li></ol></div><pre name="code" class="c#" style="display: none;">s = Regex.Replace(s, @"-\{.*?(zh-hans|zh-cn):([^;]*?);.*?\}-", @"$2");</pre>
+<p>　　由于 Wikipedia Extractor 抽取正文时，会将有特殊标记的外文直接剔除，最后形成类似这样的正文：</p>
+<blockquote><p>西方语言中“数学”（；）一词源自于古希腊语的（）</p></blockquote>
+<p>　　虽然上面这句话是读不通的，但鉴于这种句子对我要处理的问题影响不大，就暂且忽略了。最后再将「」｢｣『』这些符号替换成引号，顺便删除空括号，就大功告成了！</p>
+<p>　　通过上述方法得到的维基百科简体中文纯文本语料约 528M。</p>
+								</div>
+			</article>
+					<article itemscope="" itemtype="http://schema.org/Article" id="post-91" class="post-91 post type-post status-publish format-standard hentry category-24 tag-2-gram tag-26 tag-25 tag-29 tag-28">
+	<header class="entry-header">
+		<h2 class="entry-title" itemprop="name">
+			<a itemprop="url" href="http://licstar.net/archives/91" title="链向二元语法（2-gram）分词中的平滑算法的固定链接" rel="bookmark">二元语法（2-gram）分词中的平滑算法</a>
+		</h2>
+							<div class="entry-meta"><span class="entry-date"><a href="http://licstar.net/archives/91" rel="bookmark"><time class="entry-date published" datetime="2012-03-08T16:55:32+00:00" itemprop="datepublished">2012 年 3 月 8 日</time></a></span> by <span class="author vcard" itemscope="" itemprop="author" itemtype="http://schema.org/Person"><a class="url fn n" href="http://licstar.net/archives/author/licstar" rel="author" itemprop="url"><span itemprop="name">licstar</span></a></span><span class="sep">·</span><span class="comments-link"><a href="http://licstar.net/archives/91#respond" itemprop="discussionUrl">0评论</a></span></div>
+			</header>
+								<div class="entry-content" itemprop="articleBody">
+						<p>　　从一年前的计算语言学作业开始，我一直没明白，为什么我写的二元语法分词要比一元语法差。两天来我仔细分析了一下之前的实验细节，发现二元语法分词要超过一元语法，可以有两种方式：1.超大的语料；2.强大的平滑算法。</p>
+<p>　　实验采用北大人民日报1-6月语料，大约700万字，选其中90%作为训练数据，另外10%作为测试数据。先看下实验结果：<br>
+
+</p><div id="tablepress-1_wrapper" class="dataTables_wrapper no-footer"><table id="tablepress-1" class="tablepress tablepress-id-1 dataTable no-footer" role="grid">
+<thead>
+<tr class="row-1 odd" role="row"><th class="column-1 sorting" tabindex="0" aria-controls="tablepress-1" rowspan="1" colspan="1" aria-label="分词方法: 以升序排列此列" style="width: 297px;">分词方法</th><th class="column-2 sorting" tabindex="0" aria-controls="tablepress-1" rowspan="1" colspan="1" aria-label="准确率: 以升序排列此列" style="width: 110px;">准确率</th><th class="column-3 sorting" tabindex="0" aria-controls="tablepress-1" rowspan="1" colspan="1" aria-label="召回率: 以升序排列此列" style="width: 110px;">召回率</th><th class="column-4 sorting" tabindex="0" aria-controls="tablepress-1" rowspan="1" colspan="1" aria-label="F值: 以升序排列此列" style="width: 91px;">F值</th></tr>
+</thead>
+<tbody>
+
+
+
+
+
+<tr class="row-2 even" role="row">
+	<td class="column-1">最大正向匹配</td><td class="column-2">0.9040</td><td class="column-3">0.9189</td><td class="column-4">0.9114</td>
+</tr><tr class="row-3 odd" role="row">
+	<td class="column-1">一元语法</td><td class="column-2">0.9280</td><td class="column-3">0.9502</td><td class="column-4">0.9389</td>
+</tr><tr class="row-4 even" role="row">
+	<td class="column-1">二元语法（+1平滑）	</td><td class="column-2">0.9093</td><td class="column-3">0.9276</td><td class="column-4">0.9184</td>
+</tr><tr class="row-5 odd" role="row">
+	<td class="column-1">二元语法（+eps平滑）</td><td class="column-2">0.9102</td><td class="column-3">0.9529</td><td class="column-4">0.9311</td>
+</tr><tr class="row-6 even" role="row">
+	<td class="column-1">二元语法（删除插值）</td><td class="column-2">0.9317</td><td class="column-3">0.9615</td><td class="column-4">0.9463</td>
+</tr></tbody>
+</table></div>
+<!-- #tablepress-1 from cache --><p></p>
+<p><a class="btn btn-default btn-sm" href="http://licstar.net/archives/91">继续阅读<i class="fa fa-angle-double-right"></i></a></p>
+								</div>
+			</article>
+								</div>
+
+												<footer class="site-info" itemscope="" itemtype="http://schema.org/WPFooter">
+										<a href="http://cn.wordpress.org/" title="优雅的个人发布平台">由WordPress自豪地提供</a>.
+					主题：Flat 1.7.6 by <a rel="nofollow" href="https://themeisle.com/themes/flat/" title="Flat WordPress Theme">Themeisle</a>				</footer>
+														</div>
+					</div>
+	</div>
+</div>
+<script class="javascript" src="./自然语言处理 – licstar的博客_files/shCore.js.下载"></script>
+<script class="javascript" src="./自然语言处理 – licstar的博客_files/shBrushCSharp.js.下载"></script>
+<script class="javascript" src="./自然语言处理 – licstar的博客_files/shBrushPhp.js.下载"></script>
+<script class="javascript" src="./自然语言处理 – licstar的博客_files/shBrushJScript.js.下载"></script>
+<script class="javascript" src="./自然语言处理 – licstar的博客_files/shBrushJava.js.下载"></script>
+<script class="javascript" src="./自然语言处理 – licstar的博客_files/shBrushVb.js.下载"></script>
+<script class="javascript" src="./自然语言处理 – licstar的博客_files/shBrushSql.js.下载"></script>
+<script class="javascript" src="./自然语言处理 – licstar的博客_files/shBrushXml.js.下载"></script>
+<script class="javascript" src="./自然语言处理 – licstar的博客_files/shBrushDelphi.js.下载"></script>
+<script class="javascript" src="./自然语言处理 – licstar的博客_files/shBrushPython.js.下载"></script>
+<script class="javascript" src="./自然语言处理 – licstar的博客_files/shBrushRuby.js.下载"></script>
+<script class="javascript" src="./自然语言处理 – licstar的博客_files/shBrushCss.js.下载"></script>
+<script class="javascript" src="./自然语言处理 – licstar的博客_files/shBrushCpp.js.下载"></script>
+<script class="javascript">
+dp.SyntaxHighlighter.ClipboardSwf = 'http://licstar.net/wp-content/plugins/google-syntax-highlighter/Scripts/clipboard.swf';
+dp.SyntaxHighlighter.HighlightAll('code');
+</script><style>.dp-c .vars { color: #d00; }</style><style>.dp-c .vars { color: #d00; }</style><style>.dp-c .vars { color: #d00; }</style>
+	<style type="text/css">
+
+		@media (min-width: 820px) {
+			#review-statistics .review-wrap-up .review-wu-left .rev-wu-image, #review-statistics .review-wrap-up .review-wu-left .review-wu-grade {
+				height: 156.88px;
+			}
+
+			#review-statistics .review-wrap-up .review-wu-left .review-wu-grade .cwp-review-chart .cwp-review-percentage {
+
+				margin-top: 14.688%;
+			}
+
+			#review-statistics .review-wrap-up .review-wu-left .review-wu-grade .cwp-review-chart span {
+				font-size: 31px;
+			}
+
+		
+		}
+
+		#review-statistics .review-wrap-up div.cwpr-review-top {
+			border-top: 5px solid #3BAEDA;
+		}
+
+		.user-comments-grades .comment-meta-grade-bar,
+		#review-statistics .review-wu-bars ul li {
+			background: #E1E2E0;
+		}
+
+		#review-statistics .rev-option.customBarIcon ul li {
+			color: #E1E2E0;
+		}
+
+		#review-statistics .review-wrap-up .review-wu-right ul li, #review-statistics .review-wu-bars h3, .review-wu-bars span, #review-statistics .review-wrap-up .cwpr-review-top .cwp-item-category a {
+			color: #3D3D3D;
+		}
+
+		#review-statistics .review-wrap-up .review-wu-right .pros h2 {
+			color: #8DC153;
+		}
+
+		#review-statistics .review-wrap-up .review-wu-right .cons h2 {
+			color: #C15353;
+		}
+
+		div.affiliate-button a {
+			border: 2px solid #3BAEDA;
+		}
+
+		div.affiliate-button a:hover {
+			border: 2px solid #3BAEDA;
+		}
+
+		div.affiliate-button a {
+			background: #ffffff;
+		}
+
+		div.affiliate-button a:hover {
+			background: #3BAEDA;
+		}
+
+		div.affiliate-button a span {
+			color: #3BAEDA;
+		}
+
+		div.affiliate-button a:hover span {
+			color: #FFFFFF;
+		}
+
+				div.affiliate-button a span {
+			background: url("http://licstar.net/wp-content/plugins/wp-product-review/images/cart-icon.png") no-repeat left center;
+		}
+
+		div.affiliate-button a:hover span {
+			background: url("http://licstar.net/wp-content/plugins/wp-product-review/images/cart-icon-hover.png") no-repeat left center;
+		}
+
+		
+			</style>
+	<script type="text/javascript">
+		var c1 = "#FF7F66";
+		var c2 = "#FFCE55";
+		var c3 = "#50C1E9";
+		var c4 = "#8DC153";
+	</script>
+	<script>
+    jQuery(document).ready(function () {
+		jQuery.post('http://licstar.net?ga_action=googleanalytics_get_script', {action: 'googleanalytics_get_script'}, function(response) {
+			var F = new Function ( response );
+			return( F() );
+		});
+    });
+</script><script src="./自然语言处理 – licstar的博客_files/wp-embed.min.js.下载"></script>
+<script src="./自然语言处理 – licstar的博客_files/jquery.datatables.min.js.下载"></script>
+<script type="text/javascript">
+jQuery(document).ready(function($){
+var DataTables_language={};
+DataTables_language["zh_CN"]={"emptyTable":"表中数据为空","info":"显示第 _START_ 至 _END_ 项结果，共 _TOTAL_ 项","infoEmpty":"显示第 0 至 0 项结果，共 0 项","infoFiltered":"(由 _MAX_ 项结果过滤)","infoPostFix":"","lengthMenu":"显示 _MENU_ 项结果","loadingRecords":"载入中...","processing":"处理中...","search":"搜索:","zeroRecords":"没有匹配结果","paginate": {"first":"首页","previous":"上页","next":"下页","last":"末页"},"aria": {"sortAscending":": 以升序排列此列","sortDescending":": 以降序排列此列"},"decimal":"","thousands":","};
+$('#tablepress-1').dataTable({"language":DataTables_language["zh_CN"],"order":[],"orderClasses":false,"stripeClasses":['even','odd'],"paging":false,"searching":false,"info":false});
+});
+</script>
+
+<!-- Dynamic page generated in 0.701 seconds. -->
+<!-- Cached page generated by WP-Super-Cache on 2017-08-30 15:29:11 -->
+
+<!-- super cache --></body></html>

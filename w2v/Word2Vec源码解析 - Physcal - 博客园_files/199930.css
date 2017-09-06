@@ -1,0 +1,74 @@
+.code{
+border:1px solid #ccc;
+    font-family: Courier New!important;
+    border-style: dashed;
+    padding:10px;
+    border-left: solid 5px rgb(27,161,226);
+}
+.code pre {
+  font-family: Courier New!important;
+  font-size: 14px!important;
+  word-wrap: break-word;
+  white-space: pre-wrap;
+}
+h2 {
+    background: none repeat 0% 0% rgb(27,161,226);
+    #border-radius: 3px 3px 3px 3px;
+    box-shadow: 1px 1px 1px 1px rgb(95, 90, 75), 1px 1px 6px 1px rgba(10, 10, 0, 0.5);
+    color: rgb(255, 255, 255);
+    font-family: "微软雅黑","黑体","宋体",Arial;
+    font-size: 17px;
+    font-weight: bold;
+    height: 32px;
+    line-height: 25px;
+    margin: 15px 0px !important;
+    padding: 5px 0px 5px 20px;
+    text-shadow: 2px 2px 3px rgb(34, 34, 34);
+    width: 97%;
+}
+h3 {
+font-family: "微软雅黑",Arial,sans-serif;
+font-size: 24px;
+font-weight: bold;
+color: #369;
+padding-bottom: 4px;
+border-bottom: 1px solid #999;
+}
+#blogTitle h2{
+background:none;
+box-shadow: none;
+border-radius: 0px 0px 0px 0px;
+display:block;
+font-family: Arial, sans-serif;
+font-size: 24px;
+font-weight: bold;
+color: #369;
+padding-bottom: 4px;
+border-bottom: 1px solid #999;
+text-shadow: none;
+}
+.dayTitle 
+{background-color:rgb(27,161,226);
+border-radius: 3px 3px 3px 3px;
+text-shadow: 2px 2px 3px rgb(34, 34, 34);
+//box-shadow: 1px 1px 1px 1px rgb(95, 90, 75), 6px 1px 6px 1px rgba(10, 10, 0, 0.5);
+}
+//.dayTitle {background-color:rgb(27,161,226);}
+#lnkBlogLogo {background-color:rgb(27,161,226);display:none;}
+.postTitle {
+background-image:url("http://files.cnblogs.com/files/neopenx/logoC.gif");
+background-position:0px 0px;
+padding-left:50px;
+}
+#comment_nav {background-color:rgb(27,161,226);}
+.postBody a{color:rgb(27,161,226);}
+#home {width:1100px;opacity:0.85;}
+body
+{background-image: url("http://images.cnblogs.com/cnblogs_com/neopenx/690760/o_xx2.jpg");
+background-size:100% 100%background-repeat:repeat}
+#mainContent {width:850px;}
+#sideBar {width:210px;}
+#MyLinks1_MyHomeLink {display:none;}
+#MyLinks1_NewPostLink {display:none;}
+#MyLinks1_Admin {display:none;}
+#footer {border-top:2px solid rgb(27,161,226)}
