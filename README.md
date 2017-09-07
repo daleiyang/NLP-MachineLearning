@@ -24,7 +24,7 @@
 4. hankcs 文章中的推导清晰、简洁，多看几遍就能理解，其中的梯度更新公式和 BP/source/bpnn.py 十分匹配，BP/source/code_recognizer.py 是使用BP/source/bpnn.py 的例子。
 
 5. 我用一个月的时间，找材料、读论文、看代码、找到了最好的训练方法、结合适合的对齐方式、活用w2v的能力，使得句子相似度匹配的精确度有了大幅度提高。具体项目细节、实现方法，不便说。这里我记录一下学习的路径和心得，方便后来人。
- - word2vec 短短700行代码，博大精深，叹为观止，作者 Tomas Mikolov 应该是 OIer 出身，程序写法十分竞赛风格。
+5.1 word2vec 短短700行代码，博大精深，叹为观止，作者 Tomas Mikolov 应该是 OIer 出身，程序写法十分竞赛风格。
 
 ### Andrew Ng: Machine Learning 
 |在线课堂|完成时间|
