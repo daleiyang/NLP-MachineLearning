@@ -165,7 +165,7 @@ class NN:
         # 1/2 是为了好看，**2 是平方
         error = 0.0
         for k in range(len(targets)):
-            error = 0.5 * (targets[k] - self.ao[k]) ** 2
+            error += 0.5 * (targets[k] - self.ao[k]) ** 2
         return error
 
 
@@ -204,6 +204,7 @@ class NN:
             for p in patterns:
                 inputs = p[0]
                 targets = p[1]
+                
                 self.runNN(inputs)
                 error = self.backPropagate(targets, N, M)
             if i % 50 == 0:

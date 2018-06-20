@@ -1,0 +1,6 @@
+{
+    "files.associations": {
+        "friso_api.h": "c",
+        "friso.h": "c"
+    }
+}
