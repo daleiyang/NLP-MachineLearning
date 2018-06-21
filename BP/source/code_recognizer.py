@@ -71,9 +71,9 @@ if __name__ == '__main__':
 
     # Open the input data, and read a sample line for parameters
     # fh_data = open(sys.argv[1], 'r')
-    fh_data = open("testdata.200", 'r')
+    fh_data = open("C:\\Dalei\\Git\\NLP-MachineLearning\\BP\\source\\testdata.200", 'r')
     line = fh_data.readline()
-    inputs, targets = string.split(line,'>')
+    inputs, targets = string.split(line.strip(),'>')
 
     # create a network (input, hidden, output)
     INPUTS = len(string.split(inputs))
@@ -86,7 +86,7 @@ if __name__ == '__main__':
     for n in xrange(TRAINSIZE+TESTSIZE):
         line = fh_data.readline()
         try:
-            inputs, targets = string.split(line,'>')
+            inputs, targets = string.split(line.strip(),'>')
         except:
             raise IOError, 'Input data set is not large enough'
         in_lst = string.split(inputs)
@@ -111,4 +111,3 @@ if __name__ == '__main__':
     # test it
     net.test(testpat)
     #net.weights()
-
