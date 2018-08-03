@@ -39,6 +39,12 @@ X = data(:, 1:2);
 y = data(:, 3);
 m = length(y);
 
+figure;
+stem3(data(:,1), data(:,2), data(:,3));
+xlabel('size');
+ylabel('number of bedrooms');
+zlabel('price');
+
 % Print out some data points
 fprintf('First 10 examples from the dataset: \n');
 fprintf(' x = [%.0f %.0f], y = %.0f \n', [X(1:10,:) y(1:10,:)]');
@@ -50,6 +56,12 @@ pause;
 fprintf('Normalizing Features ...\n');
 
 [X mu sigma] = featureNormalize(X);
+
+figure;
+stem3(X(:,1), X(:,2), data(:,3));
+xlabel('size');
+ylabel('number of bedrooms');
+zlabel('price');
 
 % Add intercept term to X
 X = [ones(m, 1) X];
