@@ -56,5 +56,7 @@ for c = 1:num_labels
          fmincg (@(t)(lrCostFunction(t, X, (y == c), lambda)), ...
                  initial_theta, options);
 end
+
 % =========================================================================
+
 end
