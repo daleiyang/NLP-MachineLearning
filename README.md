@@ -53,6 +53,7 @@
 |Week 2|2017/04/10|Andrew Ng/machine-learning-ex1|
 |Week 3|2017/05/13|Andrew Ng/machine-learning-ex2|
 |Week 4|2017/05/15|Andrew Ng/machine-learning-ex3|
+|Week 5|2018/08/13|Andrew Ng/machine-learning-ex4|
 
 ### 可汗学院公开课：统计学
 |章节|完成时间|

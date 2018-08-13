@@ -1,0 +1,77 @@
+.shadow {
+  -moz-box-shadow: 0 2px 2px #333;
+  -webkit-box-shadow: 0 2px 2px #333;
+  box-shadow: 0 2px 2px #333;
+}
+
+.arrow {
+  display: block;
+  height: 40px;
+  position: absolute;
+  width: 20px;
+  z-index: 10;
+}
+
+.arrow.left {
+  -moz-transform: matrix(-1, 0, 0, 1, 0, 0);
+  -webkit-transform: matrix(-1, 0, 0, 1, 0, 0);
+  transform: matrix(-1, 0, 0, 1, 0, 0);
+}
+
+.product-image {
+  border: 1px solid #989898;
+  position: relative;
+  vertical-align: middle;
+}
+
+.product-image:hover:after {
+  border-color: #f00;
+  box-shadow: inset 0 0 8px #f00;
+}
+
+.product-image::after {
+  bottom: 0;
+  content: '';
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  -webkit-transition: box-shadow 150ms linear;
+  transition: box-shadow 150ms linear;
+}
+
+.logo {
+  overflow: visible !important;
+  position: relative;
+}
+
+.round .product-image {
+  border-radius: 4px;
+}
+
+.carousel-wrapper .carousel-item {
+  display: block;
+  float: left;
+}
+
+/* workaround for image-fit align=topLeft */
+.shrink-width img {
+  left: 0 !important;
+}
+
+.shrink-height img {
+  top: 0 !important;
+}
+
+.change {
+  -webkit-transition: opacity 0.5s linear;
+  transition: opacity 0.5s linear;
+}
+
+.change.invisible {
+  opacity: 0;
+}
+
+.product-image.noImage {
+  background-color: #fff;
+}
