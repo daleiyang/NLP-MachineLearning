@@ -1,3 +1,14 @@
+### Andrew Ng: Machine Learning 
+|在线课堂|完成时间|资料地址|
+|:----------|:----------|:---------:|
+|Week 1|2017/03/11||
+|Week 2|2017/04/10|Andrew Ng/machine-learning-ex1|
+|Week 3|2017/05/13|Andrew Ng/machine-learning-ex2|
+|Week 4|2017/05/15|Andrew Ng/machine-learning-ex3|
+|Week 5|2018/08/13|Andrew Ng/machine-learning-ex4|
+|Week 6|2018/08/16|Andrew Ng/machine-learning-ex5|
+|Week 7|2018/08/19|Andrew Ng/machine-learning-ex6|
+
 ### 李航 统计学习方法
 |章节|完成时间|示例代码|
 |:----------|:---------:|:----------|
@@ -45,16 +56,6 @@
    * Alex 的两篇文章讲解了原理，值得一读，里面的公式推导能够对应一部分代码实现。
    * hankcs 的“反向传播神经网络极简入门“ （BP目录下）讲述的”前向传播“”反向传播“ 的原理和公式推导，完美对应源码中 skip-gram 和 negative-sampling 这种组合的代码。
    * licstar 的两篇文章是训练 w2v 和 词向量历史故事的集大成之作，是分量很重的指导性文章。
-
-### Andrew Ng: Machine Learning 
-|在线课堂|完成时间|资料地址|
-|:----------|:----------|:---------:|
-|Week 1|2017/03/11||
-|Week 2|2017/04/10|Andrew Ng/machine-learning-ex1|
-|Week 3|2017/05/13|Andrew Ng/machine-learning-ex2|
-|Week 4|2017/05/15|Andrew Ng/machine-learning-ex3|
-|Week 5|2018/08/13|Andrew Ng/machine-learning-ex4|
-|Week 6|2018/08/16|Andrew Ng/machine-learning-ex5|
 
 ### 可汗学院公开课：统计学
 |章节|完成时间|
