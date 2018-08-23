@@ -9,6 +9,7 @@
 |Week 6|2018/08/16|Andrew Ng/machine-learning-ex5|
 |Week 7|2018/08/19|Andrew Ng/machine-learning-ex6|
 |Week 8|2018/08/20|Andrew Ng/machine-learning-ex7|
+|Week 9|2018/08/23|Andrew Ng/machine-learning-ex8|
 
 ### 李航 统计学习方法
 |章节|完成时间|示例代码|
