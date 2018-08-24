@@ -1,16 +1,17 @@
 ### Andrew Ng: [Machine Learning](https://www.coursera.org/learn/machine-learning/home/welcome) 
-|在线课堂|完成时间|资料地址|
+|在线课堂|完成时间|代码地址|
 |:----------|:----------|:---------:|
-|Week 01|2017/03/11||
-|Week 02|2017/04/10|Andrew Ng/machine-learning-ex1|
-|Week 03|2017/05/13|Andrew Ng/machine-learning-ex2|
-|Week 04|2017/05/15|Andrew Ng/machine-learning-ex3|
-|Week 05|2018/08/13|Andrew Ng/machine-learning-ex4|
-|Week 06|2018/08/16|Andrew Ng/machine-learning-ex5|
-|Week 07|2018/08/19|Andrew Ng/machine-learning-ex6|
-|Week 08|2018/08/20|Andrew Ng/machine-learning-ex7|
-|Week 09|2018/08/23|Andrew Ng/machine-learning-ex8|
-|Week 10|2018/08/23||
+|Introduction|2017/03/11||
+|Linear Regression with Multiple Variables|2017/04/10|Andrew Ng/machine-learning-ex1|
+|Logistic Regression|2017/05/13|Andrew Ng/machine-learning-ex2|
+|Neural Networks: Representation|2017/05/15|Andrew Ng/machine-learning-ex3|
+|Neural Networks: Learning|2018/08/13|Andrew Ng/machine-learning-ex4|
+|Advice for Applying Machine Learning|2018/08/16|Andrew Ng/machine-learning-ex5|
+|Support Vector Machines|2018/08/19|Andrew Ng/machine-learning-ex6|
+|Unsupervised Learning|2018/08/20|Andrew Ng/machine-learning-ex7|
+|Anomaly Detection & Recommender Systems|2018/08/23|Andrew Ng/machine-learning-ex8|
+|Large Scale Machine Learning|2018/08/23||
+|Application Example: Photo OCR|2018/08/24||
 
 ### 李航 统计学习方法
 |章节|完成时间|示例代码|
