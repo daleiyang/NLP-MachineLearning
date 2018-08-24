@@ -13,6 +13,11 @@
 |Large Scale Machine Learning|2018/08/23||
 |Application Example: Photo OCR|2018/08/24||
 
+### Andrew Ng: [Deep Learning Specialization - Neural Networks and Deep Learning](https://www.coursera.org/learn/machine-learning/home/welcome) 
+|在线课堂|完成时间|代码地址|
+|:----------|:----------|:---------:|
+|Introduction to deep learning|2018/08/25||
+
 ### 李航 统计学习方法
 |章节|完成时间|示例代码|
 |:----------|:---------:|:----------|
