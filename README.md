@@ -16,8 +16,8 @@
 ### Andrew Ng: [Deep Learning Specialization - Neural Networks and Deep Learning](https://www.coursera.org/learn/machine-learning/home/welcome) 
 |在线课堂|完成时间|代码地址|
 |:----------|:----------|:---------:|
-|Introduction to deep learning|2018/08/25||
-|Neural Networks Basics|2018/08/28||
+|Introduction to deep learning|2018/08/25|Coursera - Deep Learning Specialization/Neural Networks and Deep Learning/Week 1|
+|Neural Networks Basics|2018/08/28|Coursera - Deep Learning Specialization/Neural Networks and Deep Learning/Week 2|
 
 ### 李航 统计学习方法
 |章节|完成时间|示例代码|
