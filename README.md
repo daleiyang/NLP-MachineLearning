@@ -2,14 +2,14 @@
 |在线课堂|完成时间|代码地址|
 |:----------|:----------|:---------:|
 |Introduction|2017/03/11||
-|Linear Regression with Multiple Variables|2017/04/10|Andrew Ng/machine-learning-ex1|
-|Logistic Regression|2017/05/13|Andrew Ng/machine-learning-ex2|
-|Neural Networks: Representation|2017/05/15|Andrew Ng/machine-learning-ex3|
-|Neural Networks: Learning|2018/08/13|Andrew Ng/machine-learning-ex4|
-|Advice for Applying Machine Learning|2018/08/16|Andrew Ng/machine-learning-ex5|
-|Support Vector Machines|2018/08/19|Andrew Ng/machine-learning-ex6|
-|Unsupervised Learning|2018/08/20|Andrew Ng/machine-learning-ex7|
-|Anomaly Detection & Recommender Systems|2018/08/23|Andrew Ng/machine-learning-ex8|
+|Linear Regression with Multiple Variables|2017/04/10|Coursera - Machine Learning/machine-learning-ex1|
+|Logistic Regression|2017/05/13|Coursera - Machine Learning/machine-learning-ex2|
+|Neural Networks: Representation|2017/05/15|Coursera - Machine Learning/machine-learning-ex3|
+|Neural Networks: Learning|2018/08/13|Coursera - Machine Learning/machine-learning-ex4|
+|Advice for Applying Machine Learning|2018/08/16|Coursera - Machine Learning/machine-learning-ex5|
+|Support Vector Machines|2018/08/19|Coursera - Machine Learning/machine-learning-ex6|
+|Unsupervised Learning|2018/08/20|Coursera - Machine Learning/machine-learning-ex7|
+|Anomaly Detection & Recommender Systems|2018/08/23|Coursera - Machine Learning/machine-learning-ex8|
 |Large Scale Machine Learning|2018/08/23||
 |Application Example: Photo OCR|2018/08/24||
 
@@ -17,6 +17,7 @@
 |在线课堂|完成时间|代码地址|
 |:----------|:----------|:---------:|
 |Introduction to deep learning|2018/08/25||
+|Neural Networks Basics|2018/08/28||
 
 ### 李航 统计学习方法
 |章节|完成时间|示例代码|
