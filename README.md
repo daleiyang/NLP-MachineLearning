@@ -18,6 +18,7 @@
 |:----------|:----------|:---------:|
 |Introduction to deep learning|2018/08/25|Coursera - Deep Learning Specialization/Neural Networks and Deep Learning/Week 1|
 |Neural Networks Basics|2018/08/28|Coursera - Deep Learning Specialization/Neural Networks and Deep Learning/Week 2|
+|Shallow neural networks|2018/08/30|Coursera - Deep Learning Specialization/Neural Networks and Deep Learning/Week 3|
 
 ### 李航 统计学习方法
 |章节|完成时间|示例代码|
