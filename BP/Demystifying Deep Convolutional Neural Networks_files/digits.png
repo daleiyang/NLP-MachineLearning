@@ -1,0 +1,493 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Department of Computer Science - Ryerson University</title>
+<link href="css/style.css" rel="stylesheet" type="text/css" />
+<link title=A++++ href="css/font++++.css" type=text/css rel="alternate stylesheet" />
+<link title=A+++ href="css/font+++.css" type=text/css rel="alternate stylesheet" />
+<link title=A++ href="css/font++.css" type=text/css rel="alternate stylesheet" />
+<link title=A+ href="css/font+.css" type=text/css rel="alternate stylesheet" />
+<link title=A href="css/font.css" type=text/css rel="alternate stylesheet" />
+<!--[if IE]>
+<link href="css/ie.css" rel="stylesheet" type="text/css" />
+<![endif]-->
+<script type="text/javascript" src="js/main.js" language="javascript"></script>
+<script type="text/javascript" src="js/fontsize.js" language="javascript"></script>
+</head>
+<body>
+<div id="top"> <a href="http://www.ryerson.ca" target="_blank"><img src="images/layout_06.gif" alt="ryerson logo" width="244" height="40" border="0" /></a>
+  <div class="ryersonMenu"> <a href="sitemap.php">site
+      map</a> <a target="_blank" href="https://webmail.scs.ryerson.ca">scs webmail</a> <a target="_blank" href="http://gmail.ryerson.ca/">ryerson mail</a> <a href="http://my.ryerson.ca/" target="_blank">my.ryerson</a><a target="_black" href="http://wiki.scs.ryerson.ca">wiki</a> </div>
+</div>
+
+<div id="mid"> <a href="index.php"><img src="images/spacer.png" alt="Ryerson Computer Science" width="755" height="150" border="0" /></a> </div>
+<div id="menuWrapper">
+  <div class="mainMenu"> <a href="index.php" style="	padding-left:30px;">Home</a> <a href="courses.php">Current
+      Students</a> <a href="usoverview.php">Undergraduate</a> <a href="http://www.ryerson.ca/science/programs/graduate/computerscience" target="_blank">Graduate</a> <a href="faculty.php">People</a> <a href="groups.php">Groups</a> <a href="research.php">Research</a> <a href="news.php">News</a> <a href="contact.php">Contact</a> <a href="links.php" style="border-right:none; padding-right:28px;">Links</a> </div>
+</div>
+<div id="wrapper">
+<table id="main" width="755px" cellpadding="0" cellspacing="0">
+  <tr>
+        <td width="155px" valign="top" align="left"><img src="images/home.jpg" alt="Ryerson CompSci" width="155" height="620" /></td>
+    <td id="content"><div class="search">
+        <div class="fontchanger"><a id="plusa" href="javascript:void(0);" onclick="fontsizeup()" style="border:none;"><img id="plusi" src="images/icon-plus.gif" style="border:none;"/></a><img id="fontguide" src="images/font1.jpg" style="border:none;"/><a id="minusa" style="border:none;" href="javascript:void(0);" onclick="fontsizedown()"><img id="minusi" src="images/icon-minus.gif" style="border:none;" /></a> Change Text Size</div>
+<script type="text/javascript" language="javascript">setActiveStyleSheet('A');</script>
+<!-- Google CSE Search Box Begins -->
+<form id="searchbox_012597341899949783465:dy2fheu5jam"
+action="results.php" style="float:left">
+  <input type="hidden" name="cx" value="012597341899949783465:dy2fheu5jam" />
+  <label>Search</label> <input name="q" type="text" size="40" />
+  <input type="image" name="sa" value="Search" src="images/button_go_off.gif" style="top:3px; position:relative;"/>
+  <input type="hidden" name="cof" value="FORID:11" />
+</form>
+<script type="text/javascript"
+src="http://google.com/coop/cse/brand?form=searchbox_012597341899949783465%3Ady2fheu5jam"></script>
+<!-- Google CSE Search Box Ends -->      </div>
+      <div class="ribbon"> Home</div>
+      <table cellpadding="0" cellpadding="0">
+  <tr>
+    <td valign="top"><div class="section"> <span class="heading">Department of
+          Computer Science</span>
+        <div class="text" style="text-align:justify;">The Department of Computer
+          Science is located at The Centre for Computing and Engineering - 245
+          Church Street. Moriyama &amp; Teshima designed the new Centre for Computing
+          and Engineering on the urban campus of Ryerson University in the heart
+          of downtown Toronto, Canada. The building features a sculptural treatment
+          of the Church Street facade that dramatically changes throughout the
+          day as the sun and ambient light varies. At times reflective and at
+          time transparent, the building is a distinctive symbol of Ryerson.
+          The facility brings together a number of departments including Aerospace,
+          Civil Engineering, Computing Science and Electrical and Computing Engineering.
+          Design started in February 2002 and the facility opened to students
+          in the fall term of 2004. <br />
+      </div></td>
+  </tr>
+</table>
+<div class="section"> <span class="heading"><a href="news.php" style="color:#FFFFFF">Computer
+      Science News &amp; Announcements</a></span>
+  <div class="listing">
+        <a href="javascript:void(0);" onmousedown="menuOpen('news130','news130arrow')"> <img id="news130arrow"src="images/arrowup.gif" alt="expand/collapse" width="12" height="10" /> 'Minor' change to comp sci program - Ryersonian  </a>
+    <div class="itemdes" id="news130" style="text-align:justify;display:block;">
+      <script type="text/javascript" language="javascript">document.getElementById("news130").style.display = "none";
+				document.getElementById("news130arrow").src = "images/arrowdown.gif";</script>
+      <span class="date"> Mon, 30 Jul 2018 </span><br /><br />
+<br />
+Starting in September, students can enrol in classes for or declare a computer science minor. The new minor will allow more students to learn programming skills, according to Marcus Santos, associate dean of undergraduate science at Ryerson.
+<br />
+
+For more details links are below 
+<br />
+<a href="https://ryersonian.ca/minor-change-to-comp-sci-program/">https://ryersonian.ca/minor-change-to-comp-sci-program/</a>
+
+<br />
+<br />
+    </div>
+        <a href="javascript:void(0);" onmousedown="menuOpen('news129','news129arrow')"> <img id="news129arrow"src="images/arrowup.gif" alt="expand/collapse" width="12" height="10" /> Dr. Maryam Davoudpour selected as an Honorable Mention for the 2018 WIE Inspiring Member of the Year Award </a>
+    <div class="itemdes" id="news129" style="text-align:justify;display:block;">
+      <script type="text/javascript" language="javascript">document.getElementById("news129").style.display = "none";
+				document.getElementById("news129arrow").src = "images/arrowdown.gif";</script>
+      <span class="date"> Tue, 06 Jun 2018 </span><br /><br />
+<br />
+The IEEE is the worldâs largest association of technical professionals, in
+over 160 countries around the world.
+<br />
+<br />
+The IEEE Women in Engineering Committee (WIEC), has selected Dr. Maryam
+Davoudpour as an Honorable Mention for the 2018 WIE Inspiring Member of the
+Year Award.
+<br />
+<br />
+The purpose of this award is to recognize a professional member of IEEE
+Women in Engineering (WIE) who has made an outstanding contribution to WIE,
+their community and the engineering community, through dedication and
+involvement in projects or activities directed toward fulfilling one or
+more of the WIE goals and objectives.
+<br />
+<br />
+Also, IEEE Women in Engineering Committee (WIEC), has selected the IEEE
+Toronto WIE Affinity Group as the recipient of an Honorable Mention for the
+2017 WIE Affinity Group of the Year Award.
+<br />
+<br />
+Dr. Maryam Davoudpour is the chair of WIE IEEE Toronto section, and the
+vice chair of WIE IEEE Canada.
+<br />
+<br />
+Congratulations and best wishes for continued success!
+<br />
+<br />
+    </div>
+        <a href="javascript:void(0);" onmousedown="menuOpen('news128','news128arrow')"> <img id="news128arrow"src="images/arrowup.gif" alt="expand/collapse" width="12" height="10" /> Prof. Miri is chairing the 29th Biennial Symposium on Communications (BSC 2018) </a>
+    <div class="itemdes" id="news128" style="text-align:justify;display:block;">
+      <script type="text/javascript" language="javascript">document.getElementById("news128").style.display = "none";
+				document.getElementById("news128arrow").src = "images/arrowdown.gif";</script>
+      <span class="date"> Wed, 16 May 2018 </span><br /><br />
+<br />
+The 29th Biennial Symposium on Communications (BSC 2018)
+<br />
+
+<br />
+Biennial Symposium on Communications is a prestigious international research conference in communications, information theory, and signal processing. Organized since 1962 by QueenÂs University, the Symposium is now presented by the Canadian Society of Information Theory, and its 29th biennial symposium will be held at Ryerson from June 6 to 7, 2018.
+
+<br />
+<br />
+For more details links are below 
+<br />
+<a href="http://infotheory.ca/bsc2018/index.php/cfp/">http://infotheory.ca/bsc2018/index.php/cfp/</a>
+
+<br />
+<br />
+Ali Miri, PhD, PEng
+<br />
+BSC 2018 General Chair
+    </div>
+        <a href="javascript:void(0);" onmousedown="menuOpen('news127','news127arrow')"> <img id="news127arrow"src="images/arrowup.gif" alt="expand/collapse" width="12" height="10" /> Rodney Yip, Computer Science '82 - Driven to lend a hand </a>
+    <div class="itemdes" id="news127" style="text-align:justify;display:block;">
+      <script type="text/javascript" language="javascript">document.getElementById("news127").style.display = "none";
+				document.getElementById("news127arrow").src = "images/arrowdown.gif";</script>
+      <span class="date"> Mon, 23 Apr 2018 </span><br /><br />
+Rodney Yip, Computer Science '82  was instrumental in initiation and execution of a robotics display at the Ontario Science Centre over March Break.
+
+<a href="https://www.ryerson.ca/alumni/enewsletter/2018/04/main/driven-to-lend-a-hand/">https://www.ryerson.ca/alumni/enewsletter/2018/04/main/driven-to-lend-a-hand/</a>
+
+    </div>
+      </div>
+</div>
+<div class="section"> <span class="heading"><a href="news.php" style="color:#FFFFFF">Computer
+      Science Events</a></span>
+  <div class="listing">
+        <a href="javascript:void(0);" onmousedown="menuOpen('event0','event0arrow')"> <img id="event0arrow"src="images/arrowup.gif" alt="expand/collapse" width="12" height="10" /> Greater Toronto Area Linux User Group</a>
+    <div class="itemdes" id="event0" style="text-align:justify;display:block;">
+      <script type="text/javascript" language="javascript">document.getElementById("event0").style.display = "none";
+				document.getElementById("event0arrow").src = "images/arrowdown.gif";</script>
+      <span class="date"> Ongoing Monthly </span><br /><br />
+		Monthly meetings held at <br />George Vari Engineering and Computing Centre<br />
+245 Church Street, Room ENG211<br />
+Ryerson University 		<br />
+Please visit:  http://gtalug.org/  for more information.
+ </div>    </div>
+  </div>
+<div class="section"> <span class="heading"><a href="news.php" style="color:#FFFFFF">
+      Computer Science Job Postings</a></span>
+  <div class="listing">
+        <a href="javascript:void(0);" onmousedown="menuOpen('job7','job7arrow')"> <img id="job7arrow"src="images/arrowup.gif" alt="expand/collapse" width="12" height="10" /> JOB POSTING: AP1 Inc. - iOS Developer
+</a>
+    <div class="itemdes" id="job7" style="text-align:justify;display:block;">
+      <script type="text/javascript" language="javascript">document.getElementById("job7").style.display = "none";
+				document.getElementById("job7arrow").src = "images/arrowdown.gif";</script>
+      <span class="date"> Thu, 18 Apr 2018 </span><br /><br />
+<br />
+<br />
+Position:
+iOS Developer
+About:
+AP1 Inc. is a proximity service provider offering the world's most innovative proximity ecosystem of location-based solutions. Committed to creating innovative 
+enterprise solutions by using cutting-edge software and proprietary hardware, AP1 seeks to standardize wireless communication and local positioning technologies by 
+providing developers with our SDK to integrate with any platform. Our advanced communication platform will develop mutually beneficial relationships between 
+organizations and the people they serve, by bringing new levels of communication to new and existing software solutions. AP1 enables brands to reach their goals by 
+providing numerous unprecedented proximity solutions. Through private wireless networks and a suite of software solutions, our product generates valuable analytics, 
+creates direct marketing opportunities, and connects social networks to a physical location.
+<br />
+We are looking for someone that has strong experience developing user interfaces for applications on iOS for both iPhone and iPad. Responsibilities will include the full 
+lifecycle of mobile application development, design, coding, and debugging of mobile applications. You must be able to pick up new technology, follow best practices and 
+work well independently as well as part of a team. We require 3+ years programming experience and building iOS apps. Experience working with command line and Linux 
+based server backend is beneficial. Understanding of Bluetooth Low Energy (BLE) and Core Bluetooth framework required. Must have experience submitting apps to app store 
+and have strong understanding of submission process and guidelines.
+
+<br />
+<br />
+Primary Responsibilities:
+<br />
+-Hands on development of a complex mobile application
+<br />
+-Act as subject matter expert in all iOS development projects
+<br />
+-Helping to define and deliver against functional and non-functional requirements 
+<br />
+-such as performance, reliability and latency requirements
+<br />
+-Building unit tests and acceptance test suites
+<br />
+-Integrate software with existing systems
+<br />
+-Prepare applications for apple app store submission and review
+<br />
+-Maintain standards compliance
+<br />
+-Interface with product managers, architects, support personnel and other developers
+<br />
+<br />
+
+Qualifications
+<br />
+-Bachelor's degree in Computer Science, Information Systems, Computer Engineering or a related field
+<br />
+-PhD student or PhD candidate or PhD 
+<br />
+-3-5 year's experience in developing enterprise applications and at least 2 years of experience developing in iOS Platform
+<br />
+-Experience building complex iPhone Apps that have been successfully delivered to customers
+<br />
+-Exceptional analytical aptitude and attention to detail
+<br />
+-Good organizational and problem solving skills
+<br />
+-Good team player who is self-motivated and well organized
+<br />
+-Strong oral and written communication skills
+<br />
+
+<br />
+Desired Skills and Technology Experience:
+<br />
+-Experience with iOS APIs and Frameworks
+<br />
+-3-5 years experience in mobile application development
+<br />
+-Fundamentals in object-oriented design, data structures, algorithm design, problem solving, and complexity analysis
+<br />
+-Excellent understanding of latest changes and features in iOS 9 and 10.
+<br />
+-Experience developing in Swift (ver. 3 and 4), Objective-C, or Java preferred
+<br />
+-Experience in JSON, XML, REST, and Web Services Technologies preferred
+<br />
+-Have worked on at least one published iOS app in app store
+<br />
+-Passion for front end development with heavy mobile app development focus.
+<br />
+-Linux backend or server experience knowledge a plus.
+<br />
+<br />
+
+Job Types: Full-time, Contract
+<br />
+
+To Apply: Please email your cover letter and resume with Subject "iOS Developer Application" to Jessica Santa, jsanta@ap1.io
+<br />
+
+<br />
+
+
+
+ </div>    <a href="javascript:void(0);" onmousedown="menuOpen('job6','job6arrow')"> <img id="job6arrow"src="images/arrowup.gif" alt="expand/collapse" width="12" height="10" /> JOB POSTING: Blue Prism / RPA Consultant - Manager / Senior Consultant
+</a>
+    <div class="itemdes" id="job6" style="text-align:justify;display:block;">
+      <script type="text/javascript" language="javascript">document.getElementById("job6").style.display = "none";
+				document.getElementById("job6arrow").src = "images/arrowdown.gif";</script>
+      <span class="date"> Mon, 24 May 2016 </span><br /><br />
+<br />
+<br />
+EY's people in more than 150 countries are committed to operating with integrity, 
+quality and professionalism in the provision of audit, tax, transaction and advisory services.
+We strive to help all of our people achieve their professional and personal goals through
+an inclusive environment that values everyone's contributions, appreciates diversity of thought, 
+fosters growth, and provides continuous opportunities for development. Recognized as one of
+Canada's top employers, EY continually strives to be a great place to work.
+<br />
+We currently have career opportunities for Manager / Senior Consultant in our Toronto
+IT Advisory Services team. The individuals will work directly with clients to transform
+their business challenges into technology solutions. The goal is to support our 
+clients' efforts to make their business units more effective and efficient and,
+where required, provide services in connection with the development and implementation
+of technology solutions. Our experience is also important to the analysis of specific 
+business requirements for alignment with technology architecture, technology infrastructure
+design, and vendor selection decisions that support the line of business IT organizations
+of our clients.
+This position falls within our IT Advisory team, which helps our clients enhance the 
+effectiveness of Operations functions by assisting them as they shift their emphasis
+from transaction-level control, processing and reporting to more value driven, decision
+support and analytics. 
+Click here(https://ey.taleo.net/careersection/gexp01/jobdetail.ftl?job=TOR002BO) for the detailed job description.
+<br />
+
+
+
+ </div>    <a href="javascript:void(0);" onmousedown="menuOpen('job5','job5arrow')"> <img id="job5arrow"src="images/arrowup.gif" alt="expand/collapse" width="12" height="10" /> JOB POSTING: HRI Software Engineer - Humatics
+</a>
+    <div class="itemdes" id="job5" style="text-align:justify;display:block;">
+      <script type="text/javascript" language="javascript">document.getElementById("job5").style.display = "none";
+				document.getElementById("job5arrow").src = "images/arrowdown.gif";</script>
+      <span class="date"> Fri, 05 Feb 2016 </span><br /><br />
+<br />
+<br />
+Humatics (http://site.humatics.com) - an MIT-connected HRI/sensor tech startup is hiring a
+senior software engineer.
+<br />
+<br />
+We need someone with a demonstrated track record building software that
+enables more productive interactions between humans and robotic systems. If
+you join us now, you'll be getting in at the ground floor of a company
+founded to build integrated hardware and software systems that optimize and
+enrich human-robot interaction. Click here (https://goo.gl/RI9XNh) for the
+detailed job description.
+<br />
+<br />
+Apply with resume, samples of previous work and one academic or professional reference to jacky@cjru.ca. Students must be enrolled in part-time or full-time post-secondary classes in Toronto.
+<br />
+<br />
+ </div>    <a href="javascript:void(0);" onmousedown="menuOpen('job4','job4arrow')"> <img id="job4arrow"src="images/arrowup.gif" alt="expand/collapse" width="12" height="10" /> JOB POSTING: Mobile/Web Developer (Junior Level, full-time)
+</a>
+    <div class="itemdes" id="job4" style="text-align:justify;display:block;">
+      <script type="text/javascript" language="javascript">document.getElementById("job4").style.display = "none";
+				document.getElementById("job4arrow").src = "images/arrowdown.gif";</script>
+      <span class="date"> Thu, 02 Feb 2016 </span><br /><br />
+Location: Wolfville (NS) or telecommute (Eastern or Atlantic Time Zone
+only)
+<br />
+*Start Date*: April 1st, 2016
+<br />
+*Salary*: $46,000 - $51,000 /year (depending on qualifications and
+experience)
+<br />
+*Vacation pay*: Yes (2 weeks)
+<br />
+*Health benefits*: Yes
+<br />
+*Application Deadline*: Feb 26th, 2016
+<br />
+<br />
+*Description*: We are looking for a recent Computer Science graduate and
+highly talented junior mobile/web developer to join our technical team on
+the East coast. Our company atmosphere is collaborative, passionate, and
+fun. We are always innovating and creating new technologies and tools for
+ourselves and our clients. Come and work with a great team - we learn from
+and share knowledge with each other every day. The ideal candidate should
+be a recent graduate in Computer Science and have:
+<br />
+Experience in native and hybrid mobile development including PhoneGap.
+<br />
+Expertise in HTML / JavaScript / CSS.
+<br />
+Experience with Java, Android OS and Android Studio IDE.
+<br />
+Some experience with C# and .NET framework would be a big asset.
+<br />
+Experience with PHP/MySQL would be another big plus.
+<br />
+Basic skills debugging and profiling client-side code.
+<br />
+Experience testing and debugging in multiple browsers/operating systems.
+<br />
+Plenty of attention to detail.
+<br />
+Excellent oral and written communication skills for effective
+communication.
+<br />
+A desire to learn and grow with us.
+<br />
+<br />
+Responsibilities include:
+<br />
+Work on our in-house software product TrailMark Office (LAMP stack) and
+TrailMark Mobile (Android, Windows Embedded 6.5)
+<br />
+Help to develop our new hybrid mobile app (PhoneGap).
+<br />
+Collaborate with other developers to create highly functional, reusable
+code.
+<br />
+Participate in all software development phases: from design, through
+implementation, debugging, and testing.
+<br />
+Test, debug and refine software to produce the required product.
+Please send us your resume including two references via email with the
+subject line "Mobile/Web Developer" to joerg.tews@trailmarksys.com
+<br />
+ </div>    </div>
+  </div>
+  <table width="100%">
+    <tr>
+      <td width="40%" valign="top"><div class="section"> <span class="heading"><a href="http://www.ryerson.ca/news/news/" target="_blank" style="color:#FFFFFF">Ryerson
+              University News</a></span>
+          <div class="listing">
+                      </div>
+        </div></td>
+      <td width="40%" valign="top"><div class="section"> <span class="heading">Computer
+            Science Seminars</span> 
+			
+		<div class="listing">
+                        <a href="javascript:void(0);" onmousedown="menuOpen('rsems1','rsems1arrow')"> <img id="rsems1arrow"src="images/arrowup.gif" alt="expand/collapse" width="12" height="10" /> Machine Learning and Big Data for eReading </a>
+            <div class="itemdes" id="rsems1" style="text-align:justify;display:block;">
+              <script type="text/javascript" language="javascript">document.getElementById("rsems1").style.display = "none";
+				document.getElementById("rsems1arrow").src = "images/arrowdown.gif";</script>
+              <span class="date"> Thursday, February 11, 2016 </span><br /><br /><strong>Inmar Givoni, VP of Big Data at Kobo</strong> <br />Ryerson SLC 514 <br /><br /><span class="inlinelisting"><a href="http://www.ryerson.ca/news/events/General_Public/20160211-science-lecture-series.html" target="_blank">Abstract</a></span><br />            </div>
+                        <a href="javascript:void(0);" onmousedown="menuOpen('rsems0','rsems0arrow')"> <img id="rsems0arrow"src="images/arrowup.gif" alt="expand/collapse" width="12" height="10" /> Michael Hoffman - Principal Investigator at Princess Margaret Cancer Centre </a>
+            <div class="itemdes" id="rsems0" style="text-align:justify;display:block;">
+              <script type="text/javascript" language="javascript">document.getElementById("rsems0").style.display = "none";
+				document.getElementById("rsems0arrow").src = "images/arrowdown.gif";</script>
+              <span class="date"> Thursday, February 11, 2016 </span><br /><br /><strong>Michael Hoffman, Principal Investigator at Princess Margaret Cancer Center, University of Toronto</strong> <br />Room LG04 ENG <br /><br /><span class="inlinelisting"><a href="http://www.scs.ryerson.ca/news.php" target="_blank">Abstract</a></span><br />            </div>
+                      </div>
+
+		</div>
+		</td>
+    </tr>
+  </table>
+</div>
+</td>
+</tr>
+</table>
+<br />
+<br />
+<div class="section" style="background-image:url(images/footer.jpg); background-repeat:repeat-x; background-position:-50px; border:none; border-top:5px solid #AF7F00"> 
+    <div class="text">
+      <table cellspacing="10px" width="100%" style="border:none;">
+        <tr valign="top">
+          <td style="padding-right: 20px;"><strong>E-mail &amp; Blackboard</strong><br />
+              <a href="http://mail.ryerson.ca">Ryerson E-Mail</a><br />
+              <a href="https://webmail.scs.ryerson.ca">Computer
+                Science E-mail</a><br />
+                          <a href="http://my.ryerson.ca">Blackboard &amp; RAMSS</a><br />
+                          <br /></td>
+          <td><strong>General</strong><br />
+				<br />
+				<a href="http://www.ryerson.ca/maps/">Campus Map</a>
+				<br/>
+				<a href="/site_public_dir/CS-Root-key.pem">Computer Science Public Key</a></td>
+ <td rowspan="2">
+<img style="border:4px solid orange;" src="images/compsci.jpg">
+</td>
+        </tr>
+        <tr>
+          <td><strong>Services</strong><br />
+              <a href="http://www.ryerson.ca/essr/">Enrollment Services and Student Records</a><br />
+              <a href="http://www.ryerson.ca/financialaid/">Financial Aid</a><br />
+              <a href="http://www.ryerson.ca/library/">Ryerson Library</a><br />
+              <a href="http://www.ryerson.ca/studentservices/">Student
+                Services</a><br />
+                          <a href="http://www.ryerson.ca/career/">Career Centre</a><br />
+                          <br />
+          </td>
+<td>
+  <a href="http://www.ryerson.ca/ryerson.ca/webpolicy.html" target="_blank">Web
+  Policy<br />
+  </a><a href="http://www.ryerson.ca/ryerson.ca/privacy.html" target="_blank">Privacy
+  Policy</a><br />  <a href="http://www.ryerson.ca/accessibility/" target="_blank">Accessibility</a><br />  <a href="http://www.ryerson.ca/ryerson.ca/terms.html" target="_blank">Terms &amp; Conditions</a><br />
+<br /><a title="Follow us on Twitter" target="_blank" href="http://twitter.com/RU_CSCI"><img src="images/twitter.png" border="0" alt="Twitter"></a><a title="Join us on Facebook" target="_blank" href="http://www.facebook.com/ryecs"><img src="images/facebook.png" border="0" alt="Facebook">
+</td>
+        </tr>
+      </table>
+    </div>
+</div>
+<div id="footer">
+<img src="images/cips.jpg" alt="cips logo" width="148" height="41" border="0" /><br />
+<font size="-2">
+The Computer Science Honours and Major programs are accredited 
+      by the <br /> Canadian Information Processing Society's (CIPS) <br /> <a href="http://www.cips.ca">Computer Science Accreditation Council (CSAC)</a>
+
+<br />
+<br />
+  All contents copyright &copy; 2018 Department of Computer Science,
+  Ryerson University. All rights reserved.<br />
+<br />
+  <br />
+</div>
+</div>
+<script type="text/javascript">
+var pageName = document.getElementsByTagName("span");
+#str = '<script type="text\/javascript" src="addtotoplist.php?pname='+pageName[1].innerHTML+'&fname=index.php"><\/script>';
+document.write(str);
+</script>
+<div id="bottom"> </div>
+</body></html>

@@ -1,0 +1,6 @@
+pre .matlab-keyword, code .matlab-keyword {color: #008; font-weight: bold;}
+pre .matlab-string,  code .matlab-string  {color: #880;}
+pre .matlab-number,  code .matlab-number  {color: #800;}
+pre .matlab-bracket, code .matlab-bracket {color: #808;}
+pre .matlab-comment, code .matlab-comment {color: #080;}
+pre .matlab-comment span, code .matlab-comment span {color: #080; font-weight: normal;}
