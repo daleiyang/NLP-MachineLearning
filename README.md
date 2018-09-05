@@ -19,6 +19,7 @@
 |Introduction to deep learning|2018/08/25|Deep Learning Specialization/Neural Networks and Deep Learning/Week 1|
 |Neural Networks Basics|2018/08/28|Deep Learning Specialization/Neural Networks and Deep Learning/Week 2|
 |Shallow neural networks|2018/08/30|Deep Learning Specialization/Neural Networks and Deep Learning/Week 3|
+|Deep Neural Networks|2018/09/06|Deep Learning Specialization/Neural Networks and Deep Learning/Week 4|
 
 ### 李航 统计学习方法
 |章节|完成时间|示例代码|
@@ -58,7 +59,7 @@
    * 体会到 python 用很短的代码就能够完成复杂功能，但是训练起来很慢。
    * 很想做一份 C 的实现，和清华分词比比效果，以后有时间再做吧。
 
-4. 下面两篇文章，讲解了：单层、多层神经网络的前向、反向传播公式推导和代码实现。
+4. 下面两篇文章讲解了单层、多层神经网络的前向、反向传播公式推导和代码实现。
    * hankcs 文章推导了单隐藏层的公式，清晰、简洁，多看几遍就能理解，其中的梯度更新公式和 BP/source/bpnn.py 十分匹配，BP/source/code_recognizer.py 是使用BP/source/bpnn.py 的例子。
    * Demystifying Deep Convolutional Neural Networks 文章推导了多隐藏层的公式，图文并茂的讲解了原理，并且用Matlab编码实现，强烈推荐。
 
