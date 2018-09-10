@@ -21,6 +21,11 @@
 |Shallow neural networks|2018/08/30|Deep Learning Specialization/Neural Networks and Deep Learning/Week 3|
 |Deep Neural Networks|2018/09/06|Deep Learning Specialization/Neural Networks and Deep Learning/Week 4|
 
+### Andrew Ng: [Deep Learning Specialization - Improving Deep Neural Networks](https://www.coursera.org/learn/machine-learning/home/welcome) 
+|在线课堂|完成时间|代码地址|
+|:----------|:----------|:---------:|
+|Practical aspects of Deep Learning|2018/09/10|Deep Learning Specialization/Improving Deep Neural Networks/Week 1|
+
 ### 李航 统计学习方法
 |章节|完成时间|示例代码|
 |:----------|:---------:|:----------|
