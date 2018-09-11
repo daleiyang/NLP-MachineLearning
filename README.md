@@ -25,6 +25,7 @@
 |在线课堂|完成时间|代码地址|
 |:----------|:----------|:---------:|
 |Practical aspects of Deep Learning|2018/09/10|Deep Learning Specialization/Improving Deep Neural Networks/Week 1|
+|Optimization algorithms|2018/09/12|Deep Learning Specialization/Improving Deep Neural Networks/Week 2|
 
 ### 李航 统计学习方法
 |章节|完成时间|示例代码|
