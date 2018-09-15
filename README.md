@@ -24,7 +24,7 @@
 ### Andrew Ng: [Deep Learning Specialization - Improving Deep Neural Networks](https://www.coursera.org/learn/machine-learning/home/welcome) 
 |在线课堂|完成时间|代码地址|
 |:----------|:----------|:---------:|
-|Hyperparameter tuning, Batch Normalization and Programming Frameworks|2018/09/10|[代码](https://github.com/daleiyang/NLP-MachineLearning/tree/master/Deep%20Learning%20Specialization/2-Improving%20Deep%20Neural%20Networks/Week%201)|
+|Practical aspects of Deep Learning|2018/09/10|[代码](https://github.com/daleiyang/NLP-MachineLearning/tree/master/Deep%20Learning%20Specialization/2-Improving%20Deep%20Neural%20Networks/Week%201)|
 |Optimization algorithms|2018/09/12|[代码](https://github.com/daleiyang/NLP-MachineLearning/tree/master/Deep%20Learning%20Specialization/2-Improving%20Deep%20Neural%20Networks/Week%202)|
 |Hyperparameter tuning, Batch Normalization and Programming Frameworks|2018/09/15|[代码](https://github.com/daleiyang/NLP-MachineLearning/tree/master/Deep%20Learning%20Specialization/2-Improving%20Deep%20Neural%20Networks/Week%203)|
 
