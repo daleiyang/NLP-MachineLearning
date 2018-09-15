@@ -2,31 +2,31 @@
 |在线课堂|完成时间|代码地址|
 |:----------|:----------|:---------:|
 |Introduction|2017/03/11||
-|Linear Regression with Multiple Variables|2017/04/10|Machine Learning/machine-learning-ex1|
-|Logistic Regression|2017/05/13| Machine Learning/machine-learning-ex2|
-|Neural Networks: Representation|2017/05/15|Machine Learning/machine-learning-ex3|
-|Neural Networks: Learning|2018/08/13| Machine Learning/machine-learning-ex4|
-|Advice for Applying Machine Learning|2018/08/16|Machine Learning/machine-learning-ex5|
-|Support Vector Machines|2018/08/19|Machine Learning/machine-learning-ex6|
-|Unsupervised Learning|2018/08/20|Machine Learning/machine-learning-ex7|
-|Anomaly Detection & Recommender Systems|2018/08/23|Machine Learning/machine-learning-ex8|
+|Linear Regression with Multiple Variables|2017/04/10|[代码](https://github.com/daleiyang/NLP-MachineLearning/tree/master/Machine%20Learning/machine-learning-ex1)|
+|Logistic Regression|2017/05/13| [代码](https://github.com/daleiyang/NLP-MachineLearning/tree/master/Machine%20Learning/machine-learning-ex2)|
+|Neural Networks: Representation|2017/05/15|[代码](https://github.com/daleiyang/NLP-MachineLearning/tree/master/Machine%20Learning/machine-learning-ex3)|
+|Neural Networks: Learning|2018/08/13|[代码](https://github.com/daleiyang/NLP-MachineLearning/tree/master/Machine%20Learning/machine-learning-ex4)|
+|Advice for Applying Machine Learning|2018/08/16|[代码](https://github.com/daleiyang/NLP-MachineLearning/tree/master/Machine%20Learning/machine-learning-ex5)|
+|Support Vector Machines|2018/08/19|[代码](https://github.com/daleiyang/NLP-MachineLearning/tree/master/Machine%20Learning/machine-learning-ex6)|
+|Unsupervised Learning|2018/08/20|[代码](https://github.com/daleiyang/NLP-MachineLearning/tree/master/Machine%20Learning/machine-learning-ex7)|
+|Anomaly Detection & Recommender Systems|2018/08/23|[代码](https://github.com/daleiyang/NLP-MachineLearning/tree/master/Machine%20Learning/machine-learning-ex8)|
 |Large Scale Machine Learning|2018/08/23||
 |Application Example: Photo OCR|2018/08/24||
 
 ### Andrew Ng: [Deep Learning Specialization - Neural Networks and Deep Learning](https://www.coursera.org/learn/machine-learning/home/welcome) 
 |在线课堂|完成时间|代码地址|
 |:----------|:----------|:---------:|
-|Introduction to deep learning|2018/08/25|Deep Learning Specialization/Neural Networks and Deep Learning/Week 1|
-|Neural Networks Basics|2018/08/28|Deep Learning Specialization/Neural Networks and Deep Learning/Week 2|
-|Shallow neural networks|2018/08/30|Deep Learning Specialization/Neural Networks and Deep Learning/Week 3|
-|Deep Neural Networks|2018/09/06|Deep Learning Specialization/Neural Networks and Deep Learning/Week 4|
+|Introduction to deep learning|2018/08/25|[代码](https://github.com/daleiyang/NLP-MachineLearning/tree/master/Deep%20Learning%20Specialization/1-Neural%20Networks%20and%20Deep%20Learning/Week%201)|
+|Neural Networks Basics|2018/08/28|[代码](https://github.com/daleiyang/NLP-MachineLearning/tree/master/Deep%20Learning%20Specialization/1-Neural%20Networks%20and%20Deep%20Learning/Week%202)|
+|Shallow neural networks|2018/08/30|[代码](https://github.com/daleiyang/NLP-MachineLearning/tree/master/Deep%20Learning%20Specialization/1-Neural%20Networks%20and%20Deep%20Learning/Week%203)|
+|Deep Neural Networks|2018/09/06|[代码](https://github.com/daleiyang/NLP-MachineLearning/tree/master/Deep%20Learning%20Specialization/1-Neural%20Networks%20and%20Deep%20Learning/Week%204)|
 
 ### Andrew Ng: [Deep Learning Specialization - Improving Deep Neural Networks](https://www.coursera.org/learn/machine-learning/home/welcome) 
 |在线课堂|完成时间|代码地址|
 |:----------|:----------|:---------:|
-|Week 1|2018/09/10|Deep Learning Specialization/Improving Deep Neural Networks/Week 1|
-|Week 2|2018/09/12|Deep Learning Specialization/Improving Deep Neural Networks/Week 2|
-|Week 3|2018/09/15|Deep Learning Specialization/Improving Deep Neural Networks/Week 3|
+|Hyperparameter tuning, Batch Normalization and Programming Frameworks|2018/09/10|[代码](https://github.com/daleiyang/NLP-MachineLearning/tree/master/Deep%20Learning%20Specialization/2-Improving%20Deep%20Neural%20Networks/Week%201)|
+|Optimization algorithms|2018/09/12|[代码](https://github.com/daleiyang/NLP-MachineLearning/tree/master/Deep%20Learning%20Specialization/2-Improving%20Deep%20Neural%20Networks/Week%202)|
+|Hyperparameter tuning, Batch Normalization and Programming Frameworks|2018/09/15|[代码](https://github.com/daleiyang/NLP-MachineLearning/tree/master/Deep%20Learning%20Specialization/2-Improving%20Deep%20Neural%20Networks/Week%203)|
 
 ### 李航 统计学习方法
 |章节|完成时间|示例代码|
