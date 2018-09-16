@@ -31,7 +31,7 @@
 ### Andrew Ng: [Deep Learning Specialization - Structuring Machine Learning Projects](https://www.coursera.org/learn/machine-learning/home/welcome) 
 |在线课堂|完成时间|代码地址|
 |:----------|:----------|:---------:|
-|ML Strategy (1)|2018/09/17|[代码]()|
+|ML Strategy (1)|2018/09/17|[代码](https://github.com/daleiyang/NLP-MachineLearning/tree/master/Deep%20Learning%20Specialization/3-Structuring%20Machine%20Learning%20Projects/Week%201)|
 |ML Strategy (2)||[代码]()|
 
 ### 李航 统计学习方法
