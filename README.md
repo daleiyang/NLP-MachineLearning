@@ -32,7 +32,7 @@
 |在线课堂|完成时间|代码地址|
 |:----------|:----------|:---------:|
 |ML Strategy (1)|2018/09/17|[代码](https://github.com/daleiyang/NLP-MachineLearning/tree/master/Deep%20Learning%20Specialization/3-Structuring%20Machine%20Learning%20Projects/Week%201)|
-|ML Strategy (2)||[代码]()|
+|ML Strategy (2)|2018/09/17|[代码](https://github.com/daleiyang/NLP-MachineLearning/tree/master/Deep%20Learning%20Specialization/3-Structuring%20Machine%20Learning%20Projects/Week%202)|
 
 ### 李航 统计学习方法
 |章节|完成时间|示例代码|
