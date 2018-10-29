@@ -40,6 +40,7 @@
 |Foundations of Convolutional Neural Networks|2018/09/21|[代码](https://github.com/daleiyang/NLP-MachineLearning/tree/master/Deep%20Learning%20Specialization/4-Convolutional%20Neural%20Networks/Week%201)|
 |Deep convolutional models: case studies|2018/09/25|[代码](https://github.com/daleiyang/NLP-MachineLearning/tree/master/Deep%20Learning%20Specialization/4-Convolutional%20Neural%20Networks/Week%202)|
 |Object detection|2018/09/28|[代码](https://github.com/daleiyang/NLP-MachineLearning/tree/master/Deep%20Learning%20Specialization/4-Convolutional%20Neural%20Networks/Week%203)|
+|Special applications: Face recognition & Neural style transfer|2018/10/29|[代码](https://github.com/daleiyang/NLP-MachineLearning/tree/master/Deep%20Learning%20Specialization/4-Convolutional%20Neural%20Networks/Week%204)|
 
 ### 李航 统计学习方法
 |章节|完成时间|示例代码|
