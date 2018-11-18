@@ -42,6 +42,11 @@
 |Object detection|2018/09/28|[代码](https://github.com/daleiyang/NLP-MachineLearning/tree/master/Deep%20Learning%20Specialization/4-Convolutional%20Neural%20Networks/Week%203)|
 |Special applications: Face recognition & Neural style transfer|2018/10/29|[代码](https://github.com/daleiyang/NLP-MachineLearning/tree/master/Deep%20Learning%20Specialization/4-Convolutional%20Neural%20Networks/Week%204)|
 
+### Andrew Ng: [Deep Learning Specialization - Sequence Models](https://www.coursera.org/learn/machine-learning/home/welcome) 
+|在线课堂|完成时间|代码地址|
+|:----------|:----------|:---------:|
+|Recurrent Neural Networks|2018/11/18|[代码](https://github.com/daleiyang/NLP-MachineLearning/tree/master/Deep%20Learning%20Specialization/5-%20Sequence%20Models/Week%201)|
+|
 ### 李航 统计学习方法
 |章节|完成时间|示例代码|
 |:----------|:---------:|:----------|
