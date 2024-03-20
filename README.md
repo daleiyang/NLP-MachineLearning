@@ -1,125 +1,128 @@
 ### Andrew Ng: [Machine Learning](https://www.coursera.org/learn/machine-learning/home/welcome) 
-|ÔÚÏß¿ÎÌÃ|Íê³ÉÊ±¼ä|´úÂëµØÖ·|
+|åœ¨çº¿è¯¾å ‚|å®Œæˆæ—¶é—´|ä»£ç åœ°å€|
 |:----------|:----------|:---------:|
 |Introduction|2017/03/11||
-|Linear Regression with Multiple Variables|2017/04/10|[´úÂë](https://github.com/daleiyang/NLP-MachineLearning/tree/master/Machine%20Learning/machine-learning-ex1)|
-|Logistic Regression|2017/05/13| [´úÂë](https://github.com/daleiyang/NLP-MachineLearning/tree/master/Machine%20Learning/machine-learning-ex2)|
-|Neural Networks: Representation|2017/05/15|[´úÂë](https://github.com/daleiyang/NLP-MachineLearning/tree/master/Machine%20Learning/machine-learning-ex3)|
-|Neural Networks: Learning|2018/08/13|[´úÂë](https://github.com/daleiyang/NLP-MachineLearning/tree/master/Machine%20Learning/machine-learning-ex4)|
-|Advice for Applying Machine Learning|2018/08/16|[´úÂë](https://github.com/daleiyang/NLP-MachineLearning/tree/master/Machine%20Learning/machine-learning-ex5)|
-|Support Vector Machines|2018/08/19|[´úÂë](https://github.com/daleiyang/NLP-MachineLearning/tree/master/Machine%20Learning/machine-learning-ex6)|
-|Unsupervised Learning|2018/08/20|[´úÂë](https://github.com/daleiyang/NLP-MachineLearning/tree/master/Machine%20Learning/machine-learning-ex7)|
-|Anomaly Detection & Recommender Systems|2018/08/23|[´úÂë](https://github.com/daleiyang/NLP-MachineLearning/tree/master/Machine%20Learning/machine-learning-ex8)|
+|Linear Regression with Multiple Variables|2017/04/10|[ä»£ç ](https://github.com/daleiyang/NLP-MachineLearning/tree/master/Machine%20Learning/machine-learning-ex1)|
+|Logistic Regression|2017/05/13| [ä»£ç ](https://github.com/daleiyang/NLP-MachineLearning/tree/master/Machine%20Learning/machine-learning-ex2)|
+|Neural Networks: Representation|2017/05/15|[ä»£ç ](https://github.com/daleiyang/NLP-MachineLearning/tree/master/Machine%20Learning/machine-learning-ex3)|
+|Neural Networks: Learning|2018/08/13|[ä»£ç ](https://github.com/daleiyang/NLP-MachineLearning/tree/master/Machine%20Learning/machine-learning-ex4)|
+|Advice for Applying Machine Learning|2018/08/16|[ä»£ç ](https://github.com/daleiyang/NLP-MachineLearning/tree/master/Machine%20Learning/machine-learning-ex5)|
+|Support Vector Machines|2018/08/19|[ä»£ç ](https://github.com/daleiyang/NLP-MachineLearning/tree/master/Machine%20Learning/machine-learning-ex6)|
+|Unsupervised Learning|2018/08/20|[ä»£ç ](https://github.com/daleiyang/NLP-MachineLearning/tree/master/Machine%20Learning/machine-learning-ex7)|
+|Anomaly Detection & Recommender Systems|2018/08/23|[ä»£ç ](https://github.com/daleiyang/NLP-MachineLearning/tree/master/Machine%20Learning/machine-learning-ex8)|
 |Large Scale Machine Learning|2018/08/23||
 |Application Example: Photo OCR|2018/08/24||
 
 ### Andrew Ng: [Deep Learning Specialization - Neural Networks and Deep Learning](https://www.coursera.org/learn/machine-learning/home/welcome) 
-|ÔÚÏß¿ÎÌÃ|Íê³ÉÊ±¼ä|´úÂëµØÖ·|
+|åœ¨çº¿è¯¾å ‚|å®Œæˆæ—¶é—´|ä»£ç åœ°å€|
 |:----------|:----------|:---------:|
-|Introduction to deep learning|2018/08/25|[´úÂë](https://github.com/daleiyang/NLP-MachineLearning/tree/master/Deep%20Learning%20Specialization/1-Neural%20Networks%20and%20Deep%20Learning/Week%201)|
-|Neural Networks Basics|2018/08/28|[´úÂë](https://github.com/daleiyang/NLP-MachineLearning/tree/master/Deep%20Learning%20Specialization/1-Neural%20Networks%20and%20Deep%20Learning/Week%202)|
-|Shallow neural networks|2018/08/30|[´úÂë](https://github.com/daleiyang/NLP-MachineLearning/tree/master/Deep%20Learning%20Specialization/1-Neural%20Networks%20and%20Deep%20Learning/Week%203)|
-|Deep Neural Networks|2018/09/06|[´úÂë](https://github.com/daleiyang/NLP-MachineLearning/tree/master/Deep%20Learning%20Specialization/1-Neural%20Networks%20and%20Deep%20Learning/Week%204)|
+|Introduction to deep learning|2018/08/25|[ä»£ç ](https://github.com/daleiyang/NLP-MachineLearning/tree/master/Deep%20Learning%20Specialization/1-Neural%20Networks%20and%20Deep%20Learning/Week%201)|
+|Neural Networks Basics|2018/08/28|[ä»£ç ](https://github.com/daleiyang/NLP-MachineLearning/tree/master/Deep%20Learning%20Specialization/1-Neural%20Networks%20and%20Deep%20Learning/Week%202)|
+|Shallow neural networks|2018/08/30|[ä»£ç ](https://github.com/daleiyang/NLP-MachineLearning/tree/master/Deep%20Learning%20Specialization/1-Neural%20Networks%20and%20Deep%20Learning/Week%203)|
+|Deep Neural Networks|2018/09/06|[ä»£ç ](https://github.com/daleiyang/NLP-MachineLearning/tree/master/Deep%20Learning%20Specialization/1-Neural%20Networks%20and%20Deep%20Learning/Week%204)|
 
 ### Andrew Ng: [Deep Learning Specialization - Improving Deep Neural Networks](https://www.coursera.org/learn/machine-learning/home/welcome) 
-|ÔÚÏß¿ÎÌÃ|Íê³ÉÊ±¼ä|´úÂëµØÖ·|
+|åœ¨çº¿è¯¾å ‚|å®Œæˆæ—¶é—´|ä»£ç åœ°å€|
 |:----------|:----------|:---------:|
-|Practical aspects of Deep Learning|2018/09/10|[´úÂë](https://github.com/daleiyang/NLP-MachineLearning/tree/master/Deep%20Learning%20Specialization/2-Improving%20Deep%20Neural%20Networks/Week%201)|
-|Optimization algorithms|2018/09/12|[´úÂë](https://github.com/daleiyang/NLP-MachineLearning/tree/master/Deep%20Learning%20Specialization/2-Improving%20Deep%20Neural%20Networks/Week%202)|
-|Hyperparameter tuning, Batch Normalization and Programming Frameworks|2018/09/15|[´úÂë](https://github.com/daleiyang/NLP-MachineLearning/tree/master/Deep%20Learning%20Specialization/2-Improving%20Deep%20Neural%20Networks/Week%203)|
+|Practical aspects of Deep Learning|2018/09/10|[ä»£ç ](https://github.com/daleiyang/NLP-MachineLearning/tree/master/Deep%20Learning%20Specialization/2-Improving%20Deep%20Neural%20Networks/Week%201)|
+|Optimization algorithms|2018/09/12|[ä»£ç ](https://github.com/daleiyang/NLP-MachineLearning/tree/master/Deep%20Learning%20Specialization/2-Improving%20Deep%20Neural%20Networks/Week%202)|
+|Hyperparameter tuning, Batch Normalization and Programming Frameworks|2018/09/15|[ä»£ç ](https://github.com/daleiyang/NLP-MachineLearning/tree/master/Deep%20Learning%20Specialization/2-Improving%20Deep%20Neural%20Networks/Week%203)|
 
 ### Andrew Ng: [Deep Learning Specialization - Structuring Machine Learning Projects](https://www.coursera.org/learn/machine-learning/home/welcome) 
-|ÔÚÏß¿ÎÌÃ|Íê³ÉÊ±¼ä|´úÂëµØÖ·|
+|åœ¨çº¿è¯¾å ‚|å®Œæˆæ—¶é—´|ä»£ç åœ°å€|
 |:----------|:----------|:---------:|
-|ML Strategy (1)|2018/09/17|[´úÂë](https://github.com/daleiyang/NLP-MachineLearning/tree/master/Deep%20Learning%20Specialization/3-Structuring%20Machine%20Learning%20Projects/Week%201)|
-|ML Strategy (2)|2018/09/17|[´úÂë](https://github.com/daleiyang/NLP-MachineLearning/tree/master/Deep%20Learning%20Specialization/3-Structuring%20Machine%20Learning%20Projects/Week%202)|
+|ML Strategy (1)|2018/09/17|[ä»£ç ](https://github.com/daleiyang/NLP-MachineLearning/tree/master/Deep%20Learning%20Specialization/3-Structuring%20Machine%20Learning%20Projects/Week%201)|
+|ML Strategy (2)|2018/09/17|[ä»£ç ](https://github.com/daleiyang/NLP-MachineLearning/tree/master/Deep%20Learning%20Specialization/3-Structuring%20Machine%20Learning%20Projects/Week%202)|
 
 ### Andrew Ng: [Deep Learning Specialization - Convolutional Neural Networks](https://www.coursera.org/learn/machine-learning/home/welcome) 
-|ÔÚÏß¿ÎÌÃ|Íê³ÉÊ±¼ä|´úÂëµØÖ·|
+|åœ¨çº¿è¯¾å ‚|å®Œæˆæ—¶é—´|ä»£ç åœ°å€|
 |:----------|:----------|:---------:|
-|Foundations of Convolutional Neural Networks|2018/09/21|[´úÂë](https://github.com/daleiyang/NLP-MachineLearning/tree/master/Deep%20Learning%20Specialization/4-Convolutional%20Neural%20Networks/Week%201)|
-|Deep convolutional models: case studies|2018/09/25|[´úÂë](https://github.com/daleiyang/NLP-MachineLearning/tree/master/Deep%20Learning%20Specialization/4-Convolutional%20Neural%20Networks/Week%202)|
-|Object detection|2018/09/28|[´úÂë](https://github.com/daleiyang/NLP-MachineLearning/tree/master/Deep%20Learning%20Specialization/4-Convolutional%20Neural%20Networks/Week%203)|
-|Special applications: Face recognition & Neural style transfer|2018/10/29|[´úÂë](https://github.com/daleiyang/NLP-MachineLearning/tree/master/Deep%20Learning%20Specialization/4-Convolutional%20Neural%20Networks/Week%204)|
+|Foundations of Convolutional Neural Networks|2018/09/21|[ä»£ç ](https://github.com/daleiyang/NLP-MachineLearning/tree/master/Deep%20Learning%20Specialization/4-Convolutional%20Neural%20Networks/Week%201)|
+|Deep convolutional models: case studies|2018/09/25|[ä»£ç ](https://github.com/daleiyang/NLP-MachineLearning/tree/master/Deep%20Learning%20Specialization/4-Convolutional%20Neural%20Networks/Week%202)|
+|Object detection|2018/09/28|[ä»£ç ](https://github.com/daleiyang/NLP-MachineLearning/tree/master/Deep%20Learning%20Specialization/4-Convolutional%20Neural%20Networks/Week%203)|
+|Special applications: Face recognition & Neural style transfer|2018/10/29|[ä»£ç ](https://github.com/daleiyang/NLP-MachineLearning/tree/master/Deep%20Learning%20Specialization/4-Convolutional%20Neural%20Networks/Week%204)|
 
 ### Andrew Ng: [Deep Learning Specialization - Sequence Models](https://www.coursera.org/learn/machine-learning/home/welcome) 
-|ÔÚÏß¿ÎÌÃ|Íê³ÉÊ±¼ä|´úÂëµØÖ·|
+|åœ¨çº¿è¯¾å ‚|å®Œæˆæ—¶é—´|ä»£ç åœ°å€|
 |:----------|:----------|:---------:|
-|Recurrent Neural Networks|2018/11/18|[´úÂë](https://github.com/daleiyang/NLP-MachineLearning/tree/master/Deep%20Learning%20Specialization/5-%20Sequence%20Models/Week%201)|
+|Recurrent Neural Networks|2018/11/18|[ä»£ç ](https://github.com/daleiyang/NLP-MachineLearning/tree/master/Deep%20Learning%20Specialization/5-%20Sequence%20Models/Week%201)|
 
-### Àîº½ Í³¼ÆÑ§Ï°·½·¨
-|ÕÂ½Ú|Íê³ÉÊ±¼ä|Ê¾Àı´úÂë|
+### æèˆª ç»Ÿè®¡å­¦ä¹ æ–¹æ³•
+|ç« èŠ‚|å®Œæˆæ—¶é—´|ç¤ºä¾‹ä»£ç |
 |:----------|:---------:|:----------|
-|[µÚ01ÕÂ] Í³¼ÆÑ§Ï°·½·¨¸ÅÂÛ|2017/06/15|ÎŞ
-|[µÚ02ÕÂ] ¸ĞÖª»ú|2017/07/20|LiHang\Ch02\ÏÂµÄPerceptron.pyºÍPerceptron2.py
-|[µÚ04ÕÂ] ÆÓËØ±´Ò¶Ë¹·¨|2017/06/17|LiHang\Ch04\ÏÂµÄBayes.py
-|[µÚ09ÕÂ] EMËã·¨¼°ÆäÍÆ¹ã|2017/07/03|LiHang\Ch09\ÏÂµÄem.pyºÍtest.py
-|[µÚ10ÕÂ] ÒşÂí¶û¿É·òÄ£ĞÍ|2017/06/27|LiHang\Ch10\ÏÂµÄhmm.pyºÍtest.py
+|[ç¬¬01ç« ] ç»Ÿè®¡å­¦ä¹ æ–¹æ³•æ¦‚è®º|2017/06/15|æ— 
+|[ç¬¬02ç« ] æ„ŸçŸ¥æœº|2017/07/20|LiHang\Ch02\ä¸‹çš„Perceptron.pyå’ŒPerceptron2.py
+|[ç¬¬04ç« ] æœ´ç´ è´å¶æ–¯æ³•|2017/06/17|LiHang\Ch04\ä¸‹çš„Bayes.py
+|[ç¬¬09ç« ] EMç®—æ³•åŠå…¶æ¨å¹¿|2017/07/03|LiHang\Ch09\ä¸‹çš„em.pyå’Œtest.py
+|[ç¬¬10ç« ] éšé©¬å°”å¯å¤«æ¨¡å‹|2017/06/27|LiHang\Ch10\ä¸‹çš„hmm.pyå’Œtest.py
 
-###  ×ÔÈ»ÓïÑÔ´¦Àí
-|ÔÄ¶ÁÔ´Âë|Íê³ÉÊ±¼ä|×ÊÁÏµØÖ·|ĞÄµÃ|
+###  è‡ªç„¶è¯­è¨€å¤„ç†
+|é˜…è¯»æºç |å®Œæˆæ—¶é—´|èµ„æ–™åœ°å€|å¿ƒå¾—|
 |:----------|:----------|:----------|:----------|
-|»ùÓÚ´Ê±íµÄ·Ö´Ê³ÌĞòfriso|2017/07/18|Segmentation\friso-master|1|
-|»ùÓÚ½á¹¹»¯Æ½¾ù¸ĞÖª»úµÄ´ÊĞÔ±ê×¢Æ÷|2017/07/24|POSTagging\AveragedPerceptron|2|
-|»ùÓÚ½á¹¹»¯Æ½¾ù¸ĞÖª»úµÄ·Ö´ÊÆ÷|2017/08/02|Segmentation\½á¹¹»¯Æ½¾ù¸ĞÖª»úµÄ·Ö´ÊÆ÷|3|
-|Éñ¾­ÍøÂçÕıÏò·´Ïò´«²¥Ëã·¨|2017/08/18|BP|4|
+|åŸºäºè¯è¡¨çš„åˆ†è¯ç¨‹åºfriso|2017/07/18|Segmentation\friso-master|1|
+|åŸºäºç»“æ„åŒ–å¹³å‡æ„ŸçŸ¥æœºçš„è¯æ€§æ ‡æ³¨å™¨|2017/07/24|POSTagging\AveragedPerceptron|2|
+|åŸºäºç»“æ„åŒ–å¹³å‡æ„ŸçŸ¥æœºçš„åˆ†è¯å™¨|2017/08/02|Segmentation\ç»“æ„åŒ–å¹³å‡æ„ŸçŸ¥æœºçš„åˆ†è¯å™¨|3|
+|ç¥ç»ç½‘ç»œæ­£å‘åå‘ä¼ æ’­ç®—æ³•|2017/08/18|BP|4|
 |word2vector|2017/09/07|w2v|5|
-1. ÕâÊÇÒ»·İ»ùÓÚ´Ê±íµÄ·Ö´ÊÆ÷Ô´Âë£¬Ê¹ÓÃ MMSEG ÏûÆç¡£Ìå»áÈçÏÂ£º
-   * ×÷Õß C ¹¦µ×Éîºñ£¬ÊµÏÖÁË string¡¢¶¯Ì¬Êı×é¡¢Ë«ÏòÁ´±í¡¢»ùÓÚ buckte µÄ hash ±íµÈ»ù´¡Êı¾İ½á¹¹¡£
-   * ¾«Ï¸µÄÄÚ´æ¿ØÖÆÊÖ·¨ÖµµÃÑ§Ï°¡£
-   * FMM ºÍ MMSEG Ëã·¨´úÂëÇåÎúÒ×¶®£¬Ò×ÓÚ×ö¶ş´Î¿ª·¢£¬½â bad case¡£
-   * Ã¿ÖÖÊı¾İ½á¹¹¶¼ÓĞÏà¶ÔÓ¦µÄ²âÊÔ³ÌĞò£¬ÉÔ¼Ó¸Ä¶¯ MakeFile ºó£¬¾ÍÄÜÓÃ make debug¡¢gdb µ¥²½¡£
-   * Êı×ÖÓ¢ÎÄ¡¢Ó¢ÎÄÊı×Ö×éºÏÒÔ¼°¶ş´ÎÇĞ·ÖµÄÂß¼­¸´ÔÓ£¬ÒÔºóÓĞĞèÒªµÄ»°ÔÙ×ĞÏ¸ÑĞ¾¿¡£
+1. è¿™æ˜¯ä¸€ä»½åŸºäºè¯è¡¨çš„åˆ†è¯å™¨æºç ï¼Œä½¿ç”¨ MMSEG æ¶ˆæ­§ã€‚ä½“ä¼šå¦‚ä¸‹ï¼š
+   * ä½œè€… C åŠŸåº•æ·±åšï¼Œå®ç°äº† stringã€åŠ¨æ€æ•°ç»„ã€åŒå‘é“¾è¡¨ã€åŸºäº buckte çš„ hash è¡¨ç­‰åŸºç¡€æ•°æ®ç»“æ„ã€‚
+   * ç²¾ç»†çš„å†…å­˜æ§åˆ¶æ‰‹æ³•å€¼å¾—å­¦ä¹ ã€‚
+   * FMM å’Œ MMSEG ç®—æ³•ä»£ç æ¸…æ™°æ˜“æ‡‚ï¼Œæ˜“äºåšäºŒæ¬¡å¼€å‘ï¼Œè§£ bad caseã€‚
+   * æ¯ç§æ•°æ®ç»“æ„éƒ½æœ‰ç›¸å¯¹åº”çš„æµ‹è¯•ç¨‹åºï¼Œç¨åŠ æ”¹åŠ¨ MakeFile åï¼Œå°±èƒ½ç”¨ make debugã€gdb å•æ­¥ã€‚
+   * æ•°å­—è‹±æ–‡ã€è‹±æ–‡æ•°å­—ç»„åˆä»¥åŠäºŒæ¬¡åˆ‡åˆ†çš„é€»è¾‘å¤æ‚ï¼Œä»¥åæœ‰éœ€è¦çš„è¯å†ä»”ç»†ç ”ç©¶ã€‚
 
-2. ÕâÊÇÒ»·İ»ùÓÚ¸ĞÖª»úµÄ´ÊĞÔ±ê×¢Æ÷Ô´Âë¡£Ìå»áÈçÏÂ£º
-   * ÓÃ½á¹¹»¯Æ½¾ù¸ĞÖª»úÕâÖÖÅĞ±ğÊ½Ä£ĞÍÑ§Ï°ÌØÕ÷µÄ¸ÅÂÊ£¬È»ºóÓÃ HMM ÕâÖÖÉú³ÉÊ½Ä£ĞÍÉú³É½á¹û£¬ÕâÊÇºÜÏÈ½øµÄ·½·¨¡£
-   * ´ÊĞÔ±ê×¢µÄÌØÕ÷³éÈ¡·½·¨¡£
-   * Collins ÂÛÎÄÖĞµÄËã·¨ÊÇÈçºÎÔÚ½á¹¹»¯Æ½¾ù¸ĞÖª»úµÄÑ§Ï°Ëã·¨ÖĞÊµÏÖµÄ¡£
+2. è¿™æ˜¯ä¸€ä»½åŸºäºæ„ŸçŸ¥æœºçš„è¯æ€§æ ‡æ³¨å™¨æºç ã€‚ä½“ä¼šå¦‚ä¸‹ï¼š
+   * ç”¨ç»“æ„åŒ–å¹³å‡æ„ŸçŸ¥æœºè¿™ç§åˆ¤åˆ«å¼æ¨¡å‹å­¦ä¹ ç‰¹å¾çš„æ¦‚ç‡ï¼Œç„¶åç”¨ HMM è¿™ç§ç”Ÿæˆå¼æ¨¡å‹ç”Ÿæˆç»“æœï¼Œè¿™æ˜¯å¾ˆå…ˆè¿›çš„æ–¹æ³•ã€‚
+   * è¯æ€§æ ‡æ³¨çš„ç‰¹å¾æŠ½å–æ–¹æ³•ã€‚
+   * Collins è®ºæ–‡ä¸­çš„ç®—æ³•æ˜¯å¦‚ä½•åœ¨ç»“æ„åŒ–å¹³å‡æ„ŸçŸ¥æœºçš„å­¦ä¹ ç®—æ³•ä¸­å®ç°çš„ã€‚
 
-3. ÕâÊÇÒ»·İ»ùÓÚ¸ĞÖª»úµÄ·Ö´ÊÔ´Âë¡£´úÂë¶ÌĞ¡¾«º·£¬¼¼·¨´¿Êì¡£Ìå»áÈçÏÂ£º
-   * ÓÃ½á¹¹»¯Æ½¾ù¸ĞÖª»úÕâÖÖÅĞ±ğÊ½Ä£ĞÍÑ§Ï°ÌØÕ÷µÄ¸ÅÂÊ£¬È»ºóÓÃ HMM ÕâÖÖÉú³ÉÊ½Ä£ĞÍÉú³É½á¹û£¬ÕâÊÇºÜÏÈ½øµÄ·½·¨¡£
-   * ·Ö´Ê£¬ÃüÃûÊµÌåÊ¶±ğ²ÉÓÃµÄÌØÕ÷³éÈ¡·½·¨¡¢´ÊĞÔ±ê×¢µÄÌØÕ÷³éÈ¡·½·¨ÆäÊµ´óÍ¬Ğ¡Òì¡£
-   * ÈçºÎÊµÏÖ Collins ÂÛÎÄÖĞµÄÑ§Ï°Ëã·¨¡¢Ãæ¶Ô L1 , L2 ÕıÔò»¯Ê±ÈçºÎ±äÍ¨ ¡£
-   * Ê¹ÓÃ Bakeoff05 µÄ MSR ÑµÁ·¡¢²âÊÔÓïÁÏ£¬¾­¹ı5ÂÖÑµÁ·£¬ÎŞÕıÔò»¯´¦Àí£¬F ÖµÔÚ 0.9472¡£
-   * ´æÔÚµÄÎÊÌâÊÇ L1 , L2 µÄÑ§Ï°ÂÊĞèÒªµ÷Õû£¬Ä£ĞÍ¼ô²ÃÒ²»¹Ã»ÊµÑé¡£
-   * Ìå»áµ½ python ÓÃºÜ¶ÌµÄ´úÂë¾ÍÄÜ¹»Íê³É¸´ÔÓ¹¦ÄÜ£¬µ«ÊÇÑµÁ·ÆğÀ´ºÜÂı¡£
-   * ºÜÏë×öÒ»·İ C µÄÊµÏÖ£¬ºÍÇå»ª·Ö´Ê±È±ÈĞ§¹û£¬ÒÔºóÓĞÊ±¼äÔÙ×ö°É¡£
+3. è¿™æ˜¯ä¸€ä»½åŸºäºæ„ŸçŸ¥æœºçš„åˆ†è¯æºç ã€‚ä»£ç çŸ­å°ç²¾æ‚ï¼ŒæŠ€æ³•çº¯ç†Ÿã€‚ä½“ä¼šå¦‚ä¸‹ï¼š
+   * ç”¨ç»“æ„åŒ–å¹³å‡æ„ŸçŸ¥æœºè¿™ç§åˆ¤åˆ«å¼æ¨¡å‹å­¦ä¹ ç‰¹å¾çš„æ¦‚ç‡ï¼Œç„¶åç”¨ HMM è¿™ç§ç”Ÿæˆå¼æ¨¡å‹ç”Ÿæˆç»“æœï¼Œè¿™æ˜¯å¾ˆå…ˆè¿›çš„æ–¹æ³•ã€‚
+   * åˆ†è¯ï¼Œå‘½åå®ä½“è¯†åˆ«é‡‡ç”¨çš„ç‰¹å¾æŠ½å–æ–¹æ³•ã€è¯æ€§æ ‡æ³¨çš„ç‰¹å¾æŠ½å–æ–¹æ³•å…¶å®å¤§åŒå°å¼‚ã€‚
+   * å¦‚ä½•å®ç° Collins è®ºæ–‡ä¸­çš„å­¦ä¹ ç®—æ³•ã€é¢å¯¹ L1 , L2 æ­£åˆ™åŒ–æ—¶å¦‚ä½•å˜é€š ã€‚
+   * ä½¿ç”¨ Bakeoff05 çš„ MSR è®­ç»ƒã€æµ‹è¯•è¯­æ–™ï¼Œç»è¿‡5è½®è®­ç»ƒï¼Œæ— æ­£åˆ™åŒ–å¤„ç†ï¼ŒF å€¼åœ¨ 0.9472ã€‚
+   * å­˜åœ¨çš„é—®é¢˜æ˜¯ L1 , L2 çš„å­¦ä¹ ç‡éœ€è¦è°ƒæ•´ï¼Œæ¨¡å‹å‰ªè£ä¹Ÿè¿˜æ²¡å®éªŒã€‚
+   * ä½“ä¼šåˆ° python ç”¨å¾ˆçŸ­çš„ä»£ç å°±èƒ½å¤Ÿå®Œæˆå¤æ‚åŠŸèƒ½ï¼Œä½†æ˜¯è®­ç»ƒèµ·æ¥å¾ˆæ…¢ã€‚
+   * å¾ˆæƒ³åšä¸€ä»½ C çš„å®ç°ï¼Œå’Œæ¸…ååˆ†è¯æ¯”æ¯”æ•ˆæœï¼Œä»¥åæœ‰æ—¶é—´å†åšå§ã€‚
 
-4. ÏÂÃæÁ½ÆªÎÄÕÂ½²½âÁËµ¥²ã¡¢¶à²ãÉñ¾­ÍøÂçµÄÇ°Ïò¡¢·´Ïò´«²¥¹«Ê½ÍÆµ¼ºÍ´úÂëÊµÏÖ¡£
-   * hankcs ÎÄÕÂÍÆµ¼ÁËµ¥Òş²Ø²ãµÄ¹«Ê½£¬ÇåÎú¡¢¼ò½à£¬¶à¿´¼¸±é¾ÍÄÜÀí½â£¬ÆäÖĞµÄÌİ¶È¸üĞÂ¹«Ê½ºÍ BP/source/bpnn.py Ê®·ÖÆ¥Åä£¬BP/source/code_recognizer.py ÊÇÊ¹ÓÃBP/source/bpnn.py µÄÀı×Ó¡£
-   * Demystifying Deep Convolutional Neural Networks ÎÄÕÂÍÆµ¼ÁË¶àÒş²Ø²ãµÄ¹«Ê½£¬Í¼ÎÄ²¢Ã¯µÄ½²½âÁËÔ­Àí£¬²¢ÇÒÓÃMatlab±àÂëÊµÏÖ£¬Ç¿ÁÒÍÆ¼ö¡£
+4. ä¸‹é¢ä¸¤ç¯‡æ–‡ç« è®²è§£äº†å•å±‚ã€å¤šå±‚ç¥ç»ç½‘ç»œçš„å‰å‘ã€åå‘ä¼ æ’­å…¬å¼æ¨å¯¼å’Œä»£ç å®ç°ã€‚
+   * hankcs æ–‡ç« æ¨å¯¼äº†å•éšè—å±‚çš„å…¬å¼ï¼Œæ¸…æ™°ã€ç®€æ´ï¼Œå¤šçœ‹å‡ éå°±èƒ½ç†è§£ï¼Œå…¶ä¸­çš„æ¢¯åº¦æ›´æ–°å…¬å¼å’Œ BP/source/bpnn.py ååˆ†åŒ¹é…ï¼ŒBP/source/code_recognizer.py æ˜¯ä½¿ç”¨BP/source/bpnn.py çš„ä¾‹å­ã€‚
+   * Demystifying Deep Convolutional Neural Networks æ–‡ç« æ¨å¯¼äº†å¤šéšè—å±‚çš„å…¬å¼ï¼Œå›¾æ–‡å¹¶èŒ‚çš„è®²è§£äº†åŸç†ï¼Œå¹¶ä¸”ç”¨Matlabç¼–ç å®ç°ï¼Œå¼ºçƒˆæ¨èã€‚
 
-5. ÎÒÓÃÒ»¸öÔÂµÄÊ±¼ä£¬ÕÒ²ÄÁÏ¡¢¶ÁÂÛÎÄ¡¢¿´´úÂë¡¢ÕÒµ½ÁË×îºÃµÄÑµÁ··½·¨¡¢½áºÏÊÊºÏµÄ¶ÔÆë·½Ê½¡¢»îÓÃw2vµÄÄÜÁ¦£¬Ê¹µÃ¾ä×ÓÏàËÆ¶ÈÆ¥ÅäµÄ¾«È·¶ÈÓĞÁË´ó·ù¶ÈÌá¸ß¡£¾ßÌåÏîÄ¿Ï¸½Ú¡¢ÊµÏÖ·½·¨£¬Çë²Î¿¼["¶Ì¾ä×ÓÏàËÆ¶È¼ÆËãÒıÇæ"](https://github.com/daleiyang/Similarity)¡£
-   *  word2vec ¶Ì¶Ì700ĞĞ´úÂë£¬²©´ó¾«Éî£¬ÁîÈËÌ¾Îª¹ÛÖ¹¡£×÷Õß Tomas Mikolov Ó¦¸ÃÊÇ OIer ³öÉí£¬³ÌĞòĞ´·¨Ê®·Ö¾ºÈü·ç¸ñ¡£´Ó´úÂëÖĞÑ§µ½µÄ±à³Ì¼¼ÇÉÓĞ£º´¦Àí²ÎÊıÊäÈë¡¢ÓÃ·Ö¶Î²é±íµÄ·½·¨¼ÓËÙ sigmoid º¯Êı¼ÆËã¡¢´øÈ¨²ÉÑù¡¢¶ÁÎÄ¼şµÄ¼¼ÇÉ¡¢¶¯Ì¬¿ØÖÆ¹şÏ£±í´óĞ¡¡¢½¨¹ş·òÂüÊ÷¡¢°´Ïß³Ì²ğ·ÖÎÄ¼ş¡¢Ëæ»úÊıÉú³É·½·¨¡¢Ëæ»ú´°¿Ú´óĞ¡¡¢×ÔÊÊÓ¦Ñ§Ï°ÂÊ¡£ÕâĞ©¼¼ÇÉ¶¼¿ÉÒÔÖ±½ÓÄÃÀ´ÓÃ¡£
-   * <<word2vec ÖĞµÄÊıÑ§Ô­ÀíÏê½â>> ½²½âÏ¸ÖÂÈëÎ¢£ºÂß¼­»Ø¹é¡¢ÓïÑÔÄ£ĞÍ¡¢ÓÅ»¯Ä¿±ê¡¢¹«Ê½ÍÆµ¼¡¢Ìİ¶È¸üĞÂ¡¢¸÷ÖÖÏ¸½Ú¼¼ÇÉÃæÃæ¾ãµ½£¬¹«Ê½ÍÆµ¼ºÍ´úÂëÊµÏÖÒ»ÖÂ¶ÈºÜ¸ß¡£Àí½âw2v£¬¿´¶®ÕâÆªÎÄÕÂ¾Í¹»ÁË¡£
-   * <<How to Generate a Good Word Embedding?>> Í¨¹ı´óÁ¿ÊµÑé£¬¶Ô±ÈÁË¸÷ÖÖ´ÊÏòÁ¿ºÍ²»Í¬ÑµÁ·²ÎÊıµÄĞ§¹û£¬²¢ÍÆ¼öÁË×î¼ÑÑ¡Ôñ£¬¿ÉÒÔÖ±½ÓÄÃÀ´ÓÃ¡£
+5. w2v Principle and Source Code Analysis         
+   *  word2vec is a short 700 lines of code, but the depth of the programing skill is breathtaking. The author, Tomas Mikolov, is supposed to be an algorithm contest player, judging by his code style. Programming skills that can be learned from this code are: Handling of input parameters, Accelerate sigmoid function calculations with a segmented lookup table, Weighted sampling, Tips for reading files, Dynamically control the size of the hash table, Building Huffman trees, Splitting files by thread, Random number generation methods, Randomizing window size, Adaptive learning rate.
+   *  
+5. æˆ‘ç”¨ä¸€ä¸ªæœˆçš„æ—¶é—´ï¼Œæ‰¾ææ–™ã€è¯»è®ºæ–‡ã€çœ‹ä»£ç ã€æ‰¾åˆ°äº†æœ€å¥½çš„è®­ç»ƒæ–¹æ³•ã€ç»“åˆé€‚åˆçš„å¯¹é½æ–¹å¼ã€æ´»ç”¨w2vçš„èƒ½åŠ›ï¼Œä½¿å¾—å¥å­ç›¸ä¼¼åº¦åŒ¹é…çš„ç²¾ç¡®åº¦æœ‰äº†å¤§å¹…åº¦æé«˜ã€‚å…·ä½“é¡¹ç›®ç»†èŠ‚ã€å®ç°æ–¹æ³•ï¼Œè¯·å‚è€ƒ["çŸ­å¥å­ç›¸ä¼¼åº¦è®¡ç®—å¼•æ“"](https://github.com/daleiyang/Similarity)ã€‚
+   *  word2vec çŸ­çŸ­700è¡Œä»£ç ï¼Œåšå¤§ç²¾æ·±ï¼Œä»¤äººå¹ä¸ºè§‚æ­¢ã€‚ä½œè€… Tomas Mikolov åº”è¯¥æ˜¯ OIer å‡ºèº«ï¼Œç¨‹åºå†™æ³•ååˆ†ç«èµ›é£æ ¼ã€‚ä»ä»£ç ä¸­å­¦åˆ°çš„ç¼–ç¨‹æŠ€å·§æœ‰ï¼šå¤„ç†å‚æ•°è¾“å…¥ã€ç”¨åˆ†æ®µæŸ¥è¡¨çš„æ–¹æ³•åŠ é€Ÿ sigmoid å‡½æ•°è®¡ç®—ã€å¸¦æƒé‡‡æ ·ã€è¯»æ–‡ä»¶çš„æŠ€å·§ã€åŠ¨æ€æ§åˆ¶å“ˆå¸Œè¡¨å¤§å°ã€å»ºå“ˆå¤«æ›¼æ ‘ã€æŒ‰çº¿ç¨‹æ‹†åˆ†æ–‡ä»¶ã€éšæœºæ•°ç”Ÿæˆæ–¹æ³•ã€éšæœºçª—å£å¤§å°ã€è‡ªé€‚åº”å­¦ä¹ ç‡ã€‚è¿™äº›æŠ€å·§éƒ½å¯ä»¥ç›´æ¥æ‹¿æ¥ç”¨ã€‚
+   * <<word2vec ä¸­çš„æ•°å­¦åŸç†è¯¦è§£>> è®²è§£ç»†è‡´å…¥å¾®ï¼šé€»è¾‘å›å½’ã€è¯­è¨€æ¨¡å‹ã€ä¼˜åŒ–ç›®æ ‡ã€å…¬å¼æ¨å¯¼ã€æ¢¯åº¦æ›´æ–°ã€å„ç§ç»†èŠ‚æŠ€å·§é¢é¢ä¿±åˆ°ï¼Œå…¬å¼æ¨å¯¼å’Œä»£ç å®ç°ä¸€è‡´åº¦å¾ˆé«˜ã€‚ç†è§£w2vï¼Œçœ‹æ‡‚è¿™ç¯‡æ–‡ç« å°±å¤Ÿäº†ã€‚
+   * <<How to Generate a Good Word Embedding?>> é€šè¿‡å¤§é‡å®éªŒï¼Œå¯¹æ¯”äº†å„ç§è¯å‘é‡å’Œä¸åŒè®­ç»ƒå‚æ•°çš„æ•ˆæœï¼Œå¹¶æ¨èäº†æœ€ä½³é€‰æ‹©ï¼Œå¯ä»¥ç›´æ¥æ‹¿æ¥ç”¨ã€‚
 
-### ¿Éº¹Ñ§Ôº¹«¿ª¿Î£ºÍ³¼ÆÑ§
-|ÕÂ½Ú|Íê³ÉÊ±¼ä|
+### å¯æ±—å­¦é™¢å…¬å¼€è¯¾ï¼šç»Ÿè®¡å­¦
+|ç« èŠ‚|å®Œæˆæ—¶é—´|
 |:----------|:----------|
-|01µ½28½Ú|2017/06/07|
-|29µ½50½Ú|2017/06/08|
-|51µ½55½Ú|2017/06/09|
-|56µ½61½Ú|2017/06/11|
-|62µ½85½Ú|2017/06/12|
+|01åˆ°28èŠ‚|2017/06/07|
+|29åˆ°50èŠ‚|2017/06/08|
+|51åˆ°55èŠ‚|2017/06/09|
+|56åˆ°61èŠ‚|2017/06/11|
+|62åˆ°85èŠ‚|2017/06/12|
 
-### MIT 18.06£ºLinear Algebra
-|¿ÎÌÃ½²¿Î|Íê³ÉÊ±¼ä|Ï°Ìâ¿Î|Íê³ÉÊ±¼ä|
+### MIT 18.06ï¼šLinear Algebra
+|è¯¾å ‚è®²è¯¾|å®Œæˆæ—¶é—´|ä¹ é¢˜è¯¾|å®Œæˆæ—¶é—´|
 |:----------|:----------|:----------|:---------:|
-|[µÚ1¼¯] ·½³Ì×éµÄ¼¸ºÎ½âÊÍ|2017/02/13|[µÚ1¼¯] ÏßĞÔ´úÊıÖĞµÄ¼¸ºÎÑ§|2017/02/13|
-|[µÚ2¼¯] ¾ØÕóÏûÔª|2017/02/14|[µÚ3¼¯] ¾ØÕóµÄÏûÈ¥·¨|2017/02/14|
-|[µÚ3¼¯] ³Ë·¨ºÍÄæ¾ØÕó|2017/02/15|[µÚ4¼¯] Äæ¾ØÕó|2017/02/15|
-|[µÚ4¼¯] AµÄLU·Ö½â|2017/02/16|[µÚ5¼¯] LU·Ö½â|2017/02/16|
-|[µÚ5¼¯] ×ªÖÃ-ÖÃ»»-ÏòÁ¿¿Õ¼äR |2017/02/18|[µÚ6¼¯] ÈıÎ¬¿Õ¼äµÄ×Ó¿Õ¼ä|2017/02/18|
-|[µÚ6¼¯] ÁĞ¿Õ¼äºÍÁã¿Õ¼ä|2017/02/18|[µÚ7¼¯] ÏòÁ¿×Ó¿Õ¼ä|2017/02/18|
-|[µÚ7¼¯] Çó½âAx=0£ºÖ÷±äÁ¿¡¢ÌØ½â|2017/02/19|[µÚ8¼¯] ½âAx=0|2017/02/19|
-|[µÚ8¼¯] Çó½âAx=b£º¿É½âĞÔºÍ½âµÄ½á¹¹|2017/02/23|[µÚ9¼¯] ½âAx=b|2017/02/23|
+|[ç¬¬1é›†] æ–¹ç¨‹ç»„çš„å‡ ä½•è§£é‡Š|2017/02/13|[ç¬¬1é›†] çº¿æ€§ä»£æ•°ä¸­çš„å‡ ä½•å­¦|2017/02/13|
+|[ç¬¬2é›†] çŸ©é˜µæ¶ˆå…ƒ|2017/02/14|[ç¬¬3é›†] çŸ©é˜µçš„æ¶ˆå»æ³•|2017/02/14|
+|[ç¬¬3é›†] ä¹˜æ³•å’Œé€†çŸ©é˜µ|2017/02/15|[ç¬¬4é›†] é€†çŸ©é˜µ|2017/02/15|
+|[ç¬¬4é›†] Açš„LUåˆ†è§£|2017/02/16|[ç¬¬5é›†] LUåˆ†è§£|2017/02/16|
+|[ç¬¬5é›†] è½¬ç½®-ç½®æ¢-å‘é‡ç©ºé—´R |2017/02/18|[ç¬¬6é›†] ä¸‰ç»´ç©ºé—´çš„å­ç©ºé—´|2017/02/18|
+|[ç¬¬6é›†] åˆ—ç©ºé—´å’Œé›¶ç©ºé—´|2017/02/18|[ç¬¬7é›†] å‘é‡å­ç©ºé—´|2017/02/18|
+|[ç¬¬7é›†] æ±‚è§£Ax=0ï¼šä¸»å˜é‡ã€ç‰¹è§£|2017/02/19|[ç¬¬8é›†] è§£Ax=0|2017/02/19|
+|[ç¬¬8é›†] æ±‚è§£Ax=bï¼šå¯è§£æ€§å’Œè§£çš„ç»“æ„|2017/02/23|[ç¬¬9é›†] è§£Ax=b|2017/02/23|
 
-### MIT 18.01£ºSingle Variable Calculus
-|¿ÎÌÃ½²¿Î|Íê³ÉÊ±¼ä|Ï°Ìâ¿Î|Íê³ÉÊ±¼ä|
+### MIT 18.01ï¼šSingle Variable Calculus
+|è¯¾å ‚è®²è¯¾|å®Œæˆæ—¶é—´|ä¹ é¢˜è¯¾|å®Œæˆæ—¶é—´|
 |:----------|:----------|:----------|:---------:
-|[µÚ1¼¯] µ¼ÊıºÍ±ä»¯ÂÊ|2017/03/04|[µÚ1¼¯] ¿Î³Ì¼ò½é|2017/03/04|
-|[µÚ2¼¯] ¼«ÏŞºÍÁ¬Ğø|2017/03/04|[µÚ2¼¯] µ¼ÊıµÄ¶¨Òå [µÚ3¼¯] µ¼ÊıµÄÍ¼Ïñ|2017/03/04|
-|[µÚ3¼¯] Çóµ¼ËÄÔòÔËËã¼°Èı½Çº¯Êıµ¼Êı|2017/03/05|[µÚ4¼¯] ·Ö¶Îº¯ÊıµÄ¹â»¬»¯|2017/03/05|
-|[µÚ4¼¯] Á´Ê½·¨Ôò¼°¸ß½×µ¼Êı|2017/03/05|||
-|[µÚ5¼¯] Òşº¯ÊıÎ¢·Ö·¨ºÍÄæº¯Êıµ¼Êı |2017/03/05|||
+|[ç¬¬1é›†] å¯¼æ•°å’Œå˜åŒ–ç‡|2017/03/04|[ç¬¬1é›†] è¯¾ç¨‹ç®€ä»‹|2017/03/04|
+|[ç¬¬2é›†] æé™å’Œè¿ç»­|2017/03/04|[ç¬¬2é›†] å¯¼æ•°çš„å®šä¹‰ [ç¬¬3é›†] å¯¼æ•°çš„å›¾åƒ|2017/03/04|
+|[ç¬¬3é›†] æ±‚å¯¼å››åˆ™è¿ç®—åŠä¸‰è§’å‡½æ•°å¯¼æ•°|2017/03/05|[ç¬¬4é›†] åˆ†æ®µå‡½æ•°çš„å…‰æ»‘åŒ–|2017/03/05|
+|[ç¬¬4é›†] é“¾å¼æ³•åˆ™åŠé«˜é˜¶å¯¼æ•°|2017/03/05|||
+|[ç¬¬5é›†] éšå‡½æ•°å¾®åˆ†æ³•å’Œé€†å‡½æ•°å¯¼æ•° |2017/03/05|||
